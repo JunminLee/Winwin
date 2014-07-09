@@ -28,11 +28,11 @@
 </Reference>
 <Reference URI="bin/WinWin.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/iZm+2fqZQV1h0mmkPjId8K2JYT1INI31iatp2Rq/ZA=</DigestValue>
+<DigestValue>Bq1hto2Y6z2vzUp7DWs+xO14sKfLrMs5Mt6kBkZn7FA=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>efHGRPF9EOxenbA6iOa96CWXpTbhZNGn9sWcd1UeQpI=</DigestValue>
+<DigestValue>SCKHpE037k5rtNQGlobmF6dJxZ/2ouYIvNyOgXxCfQc=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -43,9 +43,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-O+CuFMeyEOxO9VxlLKprllvnaZYlQZxfc1aJmNoHDYJEIbG7PWXpnlulXpeybztMFjfqp9EwkZQ+
-3jYT84xgxxLdknG7MFJSAesad9m/K9XYztiPQucyOVCCSD6h6yyGHAbIQpTFXF5S4u2eV4Z+8alI
-bejMFfXy6uF3uEAVruo=
+cVtqX7rhnj6v6IjZTOfsvyZGZ1ubzTO6d/ZayT+urcatQG882bVzjlocMunq1ukaOJWfcegh421Y
+LEPqogfjsLcI+FZjNPNYdHWpHG1XHqA5V431IcjdiemaTWT5iD4mlu0RIsFUZpKcLWRTFEBCd/8v
++Fj3nJ2xxl2mwFoxUsE=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

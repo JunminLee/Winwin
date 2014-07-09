@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="bin/WinWin.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/iZm+2fqZQV1h0mmkPjId8K2JYT1INI31iatp2Rq/ZA=</DigestValue>
+<DigestValue>Bq1hto2Y6z2vzUp7DWs+xO14sKfLrMs5Mt6kBkZn7FA=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -39,9 +39,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-D/oXaDCaYZbPta6pkUjZsqHXqKzYkomWwdCI3P+dYkhvuHcEjCNdfuzPmJHHFPuLiB5/uUwXsRWt
-AoWAQpcAWKCQVdr37p6jQzv826vkO4gNctkrEShd7qwv1k+CkgD+qtE/ok373XRrpK3Sjvxwe4He
-wKw01iS9OpxPiOqFqxk=
+gxnBnp0lNo87nYvhVRQufnCSEIFLL6GH2X7oEGJVI0mB9q+h85SlGYh0ZN6Tlrp9kuxG+gn8InS5
+Bv2xsN0/ClPVfamgNWoXriLCdt2Tq1WBvFkKlKlRb3BaG48SxUVhzYXo/yUCyg1ZzEiBWiqEqMgR
+axWF70ZKrxVRtJqvNRc=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
