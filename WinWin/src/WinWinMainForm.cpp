@@ -125,6 +125,8 @@ WinWinMainForm::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::G
 void
 WinWinMainForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_10));
 	// TODO: Add your implementation codes here
 
 }
@@ -132,6 +134,8 @@ WinWinMainForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen
 void
 WinWinMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_5));
 	// TODO: Add your implementation codes here
 
 }
@@ -139,6 +143,10 @@ WinWinMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Grap
 void
 WinWinMainForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_3));
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_4));
+	
 	// TODO: Add your implementation codes here
 
 }

@@ -2,11 +2,23 @@
 <Workflow>
     <Scene Form="IDL_FORM" Id="MainScene"/>
     <Scene Form="IDL_INTRO" Id="IntroScene"/>
+    <Scene Form="IDL_SETTING" Id="IDL_SETTING"/>
+    <Scene Form="IDL_PartnerSearch" Id="IDL_PartnerSearch"/>
+    <Scene Form="IDL_PartnerList" Id="IDL_PartnerList"/>
+    <Scene Form="IDL_Chatting" Id="IDL_Chatting"/>
     <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_1" Method="" SourceId="" SourceResourceType="" TargetId="IntroScene"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_3" Method="OnTouchLongPressed" SourceId="MainScene" SourceResourceType="IDL_FORM" TargetId="IDL_Chatting"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_4" Method="OnTouchMoved" SourceId="MainScene" SourceResourceType="IDL_FORM" TargetId="IDL_PartnerList"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_6" Method="OnTouchPressed" SourceId="MainScene" SourceResourceType="IDL_FORM" TargetId="IDL_SETTING"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_5" Method="OnTouchPressed" SourceId="MainScene" SourceResourceType="IDL_FORM" TargetId="IDL_PartnerSearch"/>
     <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_2" Method="OnTouchPressed" SourceId="IntroScene" SourceResourceType="IDL_INTRO" TargetId="MainScene"/>
     <!--UI Builder(Workflow Designer) only-->
     <WorkflowDesigner>
         <Position Name="MainScene" X="546" Y="81"/>
         <Position Name="IntroScene" X="181" Y="23"/>
+        <Position Name="IDL_SETTING" X="557" Y="489"/>
+        <Position Name="IDL_PartnerSearch" X="358" Y="489"/>
+        <Position Name="IDL_PartnerList" X="-18" Y="491"/>
+        <Position Name="IDL_Chatting" X="170" Y="490"/>
     </WorkflowDesigner>
 </Workflow>
