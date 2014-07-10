@@ -44,6 +44,11 @@ WinWinMainForm::OnInitializing(void)
 	FooterItem footerTimeline, footerChatting, footerPartnerList, footerPartnerReseach, footerSetting;
 
 	*/
+	Button* pButton1 = static_cast<Button*>(GetControl(IDC_BUTTON1));  
+	if(pButton1)
+	{
+		pButton1->AddTouchEventListener(*this);
+	}
 	return r;
 }
 
@@ -95,3 +100,52 @@ WinWinMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentScen
 
 }
 
+
+void
+WinWinMainForm::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+WinWinMainForm::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
