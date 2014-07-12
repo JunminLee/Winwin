@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.184825462">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.184825462" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="exe" artifactName="${ProjName}" buildArtefactType="org.tizen.nativecpp.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.tizen.nativecpp.buildArtefactType.app" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;" id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.184825462" name="Debug" parent="org.tizen.nativecpp.config.sbi.gcc45.app.debug">
+					<folderInfo id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.184825462." name="/" resourcePath="">
+						<toolChain id="org.tizen.nativecpp.toolchain.sbi.gcc45.app.debug.1683915643" name="Tizen Native Toolchain" superClass="org.tizen.nativecpp.toolchain.sbi.gcc45.app.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.1329555417" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/Test2/Debug}" enableAutoBuild="true" id="org.tizen.nativecpp.target.sbi.gnu.builder.1756939121" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Tizen Application Builder" superClass="org.tizen.nativecpp.target.sbi.gnu.builder"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.gnu.archiver.1837790320" name="Archiver" superClass="org.tizen.nativecpp.tool.sbi.gnu.archiver"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler.1435628353" name="C++ Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1569050168" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="sbi.gnu.cpp.compiler.option.debugging.level.136418619" name="Debug level" superClass="sbi.gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="sbi.gnu.cpp.compiler.option.debug.applog.1841271023" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.cpp.compiler.option.debug.applog" value="true" valueType="boolean"/>
+								<option id="sbi.gnu.cpp.compiler.option.1660040635" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp.1236529989" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp.202653546" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.1105852156" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks.cpp.2047688900" superClass="sbi.gnu.cpp.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1301459229" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+								</option>
+								<inputType id="sbi.gnu.cpp.compiler.tizen.inputType.1752616713" superClass="sbi.gnu.cpp.compiler.tizen.inputType"/>
+							</tool>
+							<tool command="clang" id="org.tizen.nativecpp.tool.sbi.gnu.c.compiler.442381048" name="C Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.253600343" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="sbi.gnu.c.compiler.option.debugging.level.1389750374" name="Debug level" superClass="sbi.gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="sbi.gnu.c.compiler.option.debug.applog.350420241" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.c.compiler.option.debug.applog" value="true" valueType="boolean"/>
+								<option id="sbi.gnu.c.compiler.option.1258426391" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_inc.cpp.285745813" superClass="sbi.gnu.c.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_cflags.cpp.1576836107" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.787106219" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks.cpp.968132262" superClass="sbi.gnu.c.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1451847984" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+								</option>
+								<inputType id="sbi.gnu.c.compiler.tizen.inputType.1514792143" superClass="sbi.gnu.c.compiler.tizen.inputType"/>
+							</tool>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.base.1749906578" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.base"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker.415900218" name="C++ Linker" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker">
+								<option id="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp.1620032748" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Xlinker --as-needed"/>
+									<listOptionValue builtIn="false" value="-pie -lpthread "/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/opt/usr/apps/tX6EkrQxFJ/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/home/developer/sdk_tools/lib&quot;"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib/osp&quot;"/>
+									<listOptionValue builtIn="false" value="-losp-uifw"/>
+									<listOptionValue builtIn="false" value="-losp-appfw"/>
+									<listOptionValue builtIn="false" value="-losp-image"/>
+									<listOptionValue builtIn="false" value="-losp-json"/>
+									<listOptionValue builtIn="false" value="-losp-ime"/>
+									<listOptionValue builtIn="false" value="-losp-net"/>
+									<listOptionValue builtIn="false" value="-lpthread"/>
+									<listOptionValue builtIn="false" value="-losp-content"/>
+									<listOptionValue builtIn="false" value="-losp-locations"/>
+									<listOptionValue builtIn="false" value="-losp-telephony"/>
+									<listOptionValue builtIn="false" value="-losp-uix"/>
+									<listOptionValue builtIn="false" value="-losp-media"/>
+									<listOptionValue builtIn="false" value="-losp-messaging"/>
+									<listOptionValue builtIn="false" value="-losp-web"/>
+									<listOptionValue builtIn="false" value="-losp-social"/>
+									<listOptionValue builtIn="false" value="-losp-wifi"/>
+									<listOptionValue builtIn="false" value="-losp-bluetooth"/>
+									<listOptionValue builtIn="false" value="-losp-nfc"/>
+									<listOptionValue builtIn="false" value="-losp-face"/>
+									<listOptionValue builtIn="false" value="-losp-secure-element"/>
+									<listOptionValue builtIn="false" value="-losp-speech-tts"/>
+									<listOptionValue builtIn="false" value="-losp-speech-stt"/>
+									<listOptionValue builtIn="false" value="-losp-shell"/>
+									<listOptionValue builtIn="false" value="-losp-shell-core"/>
+									<listOptionValue builtIn="false" value="-losp-vision"/>
+									<listOptionValue builtIn="false" value="-lxml2"/>
+									<listOptionValue builtIn="false" value="-lalut"/>
+									<listOptionValue builtIn="false" value="-lopenal"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.193416575" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1134174233" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool command="i386-linux-gnueabi-as" id="org.tizen.nativeapp.tool.sbi.gnu.assembler.base.294859477" name="Assembler" superClass="org.tizen.nativeapp.tool.sbi.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.96834040" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="org.tizen.nativecpp.tool.sbi.po.compiler.570280749" name="PO Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.po.compiler"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.edc.compiler.640711753" name="EDC Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.edc.compiler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="res"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="org.tizen.nativecpp.config.sbi.gcc45.app.release.1368545365">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativecpp.config.sbi.gcc45.app.release.1368545365" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="exe" artifactName="${ProjName}" buildArtefactType="org.tizen.nativecpp.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.tizen.nativecpp.buildArtefactType.app" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;" id="org.tizen.nativecpp.config.sbi.gcc45.app.release.1368545365" name="Release" parent="org.tizen.nativecpp.config.sbi.gcc45.app.release">
+					<folderInfo id="org.tizen.nativecpp.config.sbi.gcc45.app.release.1368545365." name="/" resourcePath="">
+						<toolChain id="org.tizen.nativecpp.toolchain.sbi.gcc45.app.release.1763538534" name="Tizen Native Toolchain" superClass="org.tizen.nativecpp.toolchain.sbi.gcc45.app.release">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.594695897" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
+							<builder buildPath="${workspace_loc:/Test2/Release}" id="org.tizen.nativecpp.target.sbi.gnu.builder.163262433" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Tizen Application Builder" superClass="org.tizen.nativecpp.target.sbi.gnu.builder"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.gnu.archiver.1356696550" name="Archiver" superClass="org.tizen.nativecpp.tool.sbi.gnu.archiver"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler.729384768" name="C++ Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.604932303" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="sbi.gnu.cpp.compiler.option.debugging.level.251680013" name="Debug level" superClass="sbi.gnu.cpp.compiler.option.debugging.level"/>
+								<option id="sbi.gnu.cpp.compiler.option.debug.applog.210430883" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.cpp.compiler.option.debug.applog"/>
+								<option id="sbi.gnu.cpp.compiler.option.305647361" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp.1525953174" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp.1254731768" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.76615893" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks.cpp.75347819" superClass="sbi.gnu.cpp.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<inputType id="sbi.gnu.cpp.compiler.tizen.inputType.502024896" superClass="sbi.gnu.cpp.compiler.tizen.inputType"/>
+							</tool>
+							<tool command="clang" id="org.tizen.nativecpp.tool.sbi.gnu.c.compiler.512653984" name="C Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.177220454" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="sbi.gnu.c.compiler.option.debugging.level.1899086755" name="Debug level" superClass="sbi.gnu.c.compiler.option.debugging.level"/>
+								<option id="sbi.gnu.c.compiler.option.debug.applog.316147351" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.c.compiler.option.debug.applog"/>
+								<option id="sbi.gnu.c.compiler.option.1338321689" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_inc.cpp.2015396286" superClass="sbi.gnu.c.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_cflags.cpp.1490763426" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.2034361405" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks.cpp.1080996036" superClass="sbi.gnu.c.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<inputType id="sbi.gnu.c.compiler.tizen.inputType.1673549029" superClass="sbi.gnu.c.compiler.tizen.inputType"/>
+							</tool>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.base.1900849081" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.base"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker.715172649" name="C++ Linker" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker">
+								<option id="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp.1404452903" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Xlinker --as-needed"/>
+									<listOptionValue builtIn="false" value="-pie -lpthread "/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/opt/usr/apps/tX6EkrQxFJ/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/home/developer/sdk_tools/lib&quot;"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib/osp&quot;"/>
+									<listOptionValue builtIn="false" value="-losp-uifw"/>
+									<listOptionValue builtIn="false" value="-losp-appfw"/>
+									<listOptionValue builtIn="false" value="-losp-image"/>
+									<listOptionValue builtIn="false" value="-losp-json"/>
+									<listOptionValue builtIn="false" value="-losp-ime"/>
+									<listOptionValue builtIn="false" value="-losp-net"/>
+									<listOptionValue builtIn="false" value="-lpthread"/>
+									<listOptionValue builtIn="false" value="-losp-content"/>
+									<listOptionValue builtIn="false" value="-losp-locations"/>
+									<listOptionValue builtIn="false" value="-losp-telephony"/>
+									<listOptionValue builtIn="false" value="-losp-uix"/>
+									<listOptionValue builtIn="false" value="-losp-media"/>
+									<listOptionValue builtIn="false" value="-losp-messaging"/>
+									<listOptionValue builtIn="false" value="-losp-web"/>
+									<listOptionValue builtIn="false" value="-losp-social"/>
+									<listOptionValue builtIn="false" value="-losp-wifi"/>
+									<listOptionValue builtIn="false" value="-losp-bluetooth"/>
+									<listOptionValue builtIn="false" value="-losp-nfc"/>
+									<listOptionValue builtIn="false" value="-losp-face"/>
+									<listOptionValue builtIn="false" value="-losp-secure-element"/>
+									<listOptionValue builtIn="false" value="-losp-speech-tts"/>
+									<listOptionValue builtIn="false" value="-losp-speech-stt"/>
+									<listOptionValue builtIn="false" value="-losp-shell"/>
+									<listOptionValue builtIn="false" value="-losp-shell-core"/>
+									<listOptionValue builtIn="false" value="-losp-vision"/>
+									<listOptionValue builtIn="false" value="-lxml2"/>
+									<listOptionValue builtIn="false" value="-lalut"/>
+									<listOptionValue builtIn="false" value="-lopenal"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.1377841981" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.376281932" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool command="i386-linux-gnueabi-as" id="org.tizen.nativeapp.tool.sbi.gnu.assembler.base.1573205708" name="Assembler" superClass="org.tizen.nativeapp.tool.sbi.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.539619432" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="org.tizen.nativecpp.tool.sbi.po.compiler.1758965154" name="PO Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.po.compiler"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.edc.compiler.433579143" name="EDC Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.edc.compiler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="res"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da.552899435">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da.552899435" moduleId="org.eclipse.cdt.core.settings" name="Dynamic Analyzer">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="exe" artifactName="${ProjName}" buildArtefactType="org.tizen.nativecpp.buildArtefactType.app" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.tizen.nativecpp.buildArtefactType.app" description="" id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da.552899435" name="Dynamic Analyzer" parent="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da">
+					<folderInfo id="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da.552899435." name="/" resourcePath="">
+						<toolChain id="org.tizen.nativecpp.toolchain.sbi.gcc45.app.debug.da.1001705102" name="Tizen Native Toolchain" superClass="org.tizen.nativecpp.toolchain.sbi.gcc45.app.debug.da">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.2044069918" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
+							<builder buildPath="${workspace_loc:/Test2/Dynamic Analyzer}" id="org.tizen.nativecpp.target.sbi.gnu.builder.1175362915" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Tizen Application Builder" superClass="org.tizen.nativecpp.target.sbi.gnu.builder"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.gnu.archiver.1039532413" name="Archiver" superClass="org.tizen.nativecpp.tool.sbi.gnu.archiver"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler.da.588114062" name="C++ Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.compiler.da">
+								<option id="gnu.cpp.compiler.option.optimization.level.527474776" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="sbi.gnu.cpp.compiler.option.debugging.level.1381592248" name="Debug level" superClass="sbi.gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="sbi.gnu.cpp.compiler.option.debug.applog.1472307249" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.cpp.compiler.option.debug.applog" value="true" valueType="boolean"/>
+								<option id="sbi.gnu.cpp.compiler.option.719537532" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp.1292451668" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp.311159895" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.814294072" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SDK_INSTALL_PATH}/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.337298037" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_USE_DA_"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+								</option>
+								<option id="sbi.gnu.cpp.compiler.option.frameworks.cpp.2017343805" superClass="sbi.gnu.cpp.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<inputType id="sbi.gnu.cpp.compiler.tizen.inputType.837518320" superClass="sbi.gnu.cpp.compiler.tizen.inputType"/>
+							</tool>
+							<tool command="clang" id="org.tizen.nativecpp.tool.sbi.gnu.c.compiler.1754377301" name="C Compiler" superClass="org.tizen.nativecpp.tool.sbi.gnu.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1110968410" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="sbi.gnu.c.compiler.option.debugging.level.1141494926" name="Debug level" superClass="sbi.gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="sbi.gnu.c.compiler.option.debug.applog.1433415884" name="Enable application logging (-D_APP_LOG)" superClass="sbi.gnu.c.compiler.option.debug.applog" value="true" valueType="boolean"/>
+								<option id="sbi.gnu.c.compiler.option.80036395" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="tizen-emulator-2.2.native_llvm31.i386.cpp.app"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_inc.cpp.1753545079" superClass="sbi.gnu.c.compiler.option.frameworks_inc.cpp" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Users/pji/tizen-sdk/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/osp&quot;"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks_cflags.cpp.1918583732" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu"/>
+									<listOptionValue builtIn="false" value=" -fPIE"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.1888419990" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${SDK_INSTALL_PATH}/library&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.62611379" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_USE_DA_"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+								</option>
+								<option id="sbi.gnu.c.compiler.option.frameworks.cpp.640349863" superClass="sbi.gnu.c.compiler.option.frameworks.cpp" valueType="userObjs">
+									<listOptionValue builtIn="false" value="osp"/>
+								</option>
+								<inputType id="sbi.gnu.c.compiler.tizen.inputType.1611846270" superClass="sbi.gnu.c.compiler.tizen.inputType"/>
+							</tool>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.base.1079552638" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.base"/>
+							<tool command="clang++" id="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker.da.767876519" name="C++ Linker" superClass="org.tizen.nativecpp.tool.sbi.gnu.cpp.linker.da">
+								<option id="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp.2026405679" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.cpp" valueType="stringList">
+									<listOptionValue builtIn="false" value="-target i386-tizen-linux-gnueabi -gcc-toolchain /Users/pji/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Xlinker --as-needed"/>
+									<listOptionValue builtIn="false" value="-pie -lpthread "/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/opt/usr/apps/tX6EkrQxFJ/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-Xlinker -rpath=&quot;/home/developer/sdk_tools/lib&quot;"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib/osp&quot;"/>
+									<listOptionValue builtIn="false" value="-losp-uifw"/>
+									<listOptionValue builtIn="false" value="-losp-appfw"/>
+									<listOptionValue builtIn="false" value="-losp-image"/>
+									<listOptionValue builtIn="false" value="-losp-json"/>
+									<listOptionValue builtIn="false" value="-losp-ime"/>
+									<listOptionValue builtIn="false" value="-losp-net"/>
+									<listOptionValue builtIn="false" value="-lpthread"/>
+									<listOptionValue builtIn="false" value="-losp-content"/>
+									<listOptionValue builtIn="false" value="-losp-locations"/>
+									<listOptionValue builtIn="false" value="-losp-telephony"/>
+									<listOptionValue builtIn="false" value="-losp-uix"/>
+									<listOptionValue builtIn="false" value="-losp-media"/>
+									<listOptionValue builtIn="false" value="-losp-messaging"/>
+									<listOptionValue builtIn="false" value="-losp-web"/>
+									<listOptionValue builtIn="false" value="-losp-social"/>
+									<listOptionValue builtIn="false" value="-losp-wifi"/>
+									<listOptionValue builtIn="false" value="-losp-bluetooth"/>
+									<listOptionValue builtIn="false" value="-losp-nfc"/>
+									<listOptionValue builtIn="false" value="-losp-face"/>
+									<listOptionValue builtIn="false" value="-losp-secure-element"/>
+									<listOptionValue builtIn="false" value="-losp-speech-tts"/>
+									<listOptionValue builtIn="false" value="-losp-speech-stt"/>
+									<listOptionValue builtIn="false" value="-losp-shell"/>
+									<listOptionValue builtIn="false" value="-losp-shell-core"/>
+									<listOptionValue builtIn="false" value="-losp-vision"/>
+									<listOptionValue builtIn="false" value="-lxml2"/>
+									<listOptionValue builtIn="false" value="-lalut"/>
+									<listOptionValue builtIn="false" value="-lopenal"/>
+								</option>
+								<option id="gnu.cpp.link.option.libs.1293812313" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="daprobe"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.1422839604" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${SDK_INSTALL_PATH}/library/da/x86&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1456486132" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool command="i386-linux-gnueabi-as" id="org.tizen.nativeapp.tool.sbi.gnu.assembler.base.849243033" name="Assembler" superClass="org.tizen.nativeapp.tool.sbi.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1833447032" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="org.tizen.nativecpp.tool.sbi.po.compiler.1192946335" name="PO Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.po.compiler"/>
+							<tool id="org.tizen.nativecpp.tool.sbi.edc.compiler.129004711" name="EDC Resource Compiler" superClass="org.tizen.nativecpp.tool.sbi.edc.compiler"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="res"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Test2.org.tizen.nativecpp.target.sbi.gcc45.app.1634101490" name="Tizen Application" projectType="org.tizen.nativecpp.target.sbi.gcc45.app"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="org.tizen.nativecpp.config.sbi.gcc45.app.debug.184825462">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.tizen.nativecommon.TizenGCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.tizen.nativecpp.config.sbi.gcc45.app.debug.da.552899435">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.tizen.nativecommon.TizenGCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.tizen.nativecpp.config.sbi.gcc45.app.release.1368545365">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.tizen.nativecommon.TizenGCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="com.samsung.tizen.nativeapp.projectInfo" version="1.0.0"/>
+</cproject>

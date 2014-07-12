@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Workflow>
+    <Scene Form="IDL_FORM" Id="TabScene1"/>
+    <Scene Form="IDL_FORM" Id="TabScene2" Panel="IDL_PANEL2"/>
+    <Scene Form="IDL_FORM" Id="TabScene3" Panel="IDL_PANEL3"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_START" Method="" SourceId="" SourceResourceType="" TargetId="TabScene1"/>
+    <!--UI Builder(Workflow Designer) only-->
+    <WorkflowDesigner>
+        <Position Name="TabScene1" X="310" Y="112"/>
+        <Position Name="TabScene2" X="408" Y="378"/>
+        <Position Name="TabScene3" X="10" Y="380"/>
+    </WorkflowDesigner>
+</Workflow>
