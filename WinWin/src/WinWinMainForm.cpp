@@ -1,11 +1,14 @@
 #include "WinWinMainForm.h"
 #include "AppResourceId.h"
+#include <FMedia.h>
 
 using namespace Tizen::Base;
 using namespace Tizen::App;
 using namespace Tizen::Ui;
 using namespace Tizen::Ui::Controls;
 using namespace Tizen::Ui::Scenes;
+using namespace Tizen::Graphics;
+using namespace Tizen::Media;
 
 WinWinMainForm::WinWinMainForm(void)
 {
@@ -29,26 +32,62 @@ WinWinMainForm::OnInitializing(void)
 {
 	result r = E_SUCCESS;
 
+
+	String Activation_Path[5];
+	Image Activation_Image[5];
+
+	String InActivation_Path[5];
+	Image InActivation_Image[5];
+
+	FooterItem footerItem[5];
+
+	for(int i=0; i<5; i++)
+	{
+		InActivation_Image[i].Construct();
+		InActivation_Path[i] = App::GetInstance()->GetAppResourcePath();
+
+		Activation_Image[i].Construct();
+		Activation_Path[i] = App::GetInstance()->GetAppResourcePath();
+	}
+
+	InActivation_Path[0] += L"screen-density-xhigh/TimeLine_InAct.png";
+	Activation_Path[0] += L"screen-density-xhigh/TimeLine_Act.png";
+
+	footerItem[0].Construct(ID_FOOTER_ITEM1);
+	footerItem[1].Construct(ID_FOOTER_ITEM2);
+	footerItem[2].Construct(ID_FOOTER_ITEM3);
+	footerItem[3].Construct(ID_FOOTER_ITEM4);
+	footerItem[4].Construct(ID_FOOTER_ITEM5);
+
+	//inActivation_Bitmap[0] = inActivation_Image[0].DecodeN(inActivation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888);
+
+	footerItem[0].SetText(L"1");
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
+	InActivation_Image[0].DecodeN(InActivation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
+	//inActivation_Bitmap[0].SetMaskingColor(Color(125,125,125,125));
+	//footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_SELECTED, inActivation_Bitmap[0]);
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
+	Activation_Image[0].DecodeN(Activation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
+
 	// TODO: Add your initialization code here
 
 	// Setup back event listener
+	Footer* pFooter = GetFooter();
+	if (pFooter)
+	{
+		pFooter->AddActionEventListener(*this);
+	}
+
+	pFooter->AddItem(footerItem[0]);
+	pFooter->AddItem(footerItem[1]);
+	pFooter->AddItem(footerItem[2]);
+	pFooter->AddItem(footerItem[3]);
+	pFooter->AddItem(footerItem[4]);
+
 	SetFormBackEventListener(this);
 
-	// Get a button via resource ID
-	/*
-	SetFormStyle(FORM_STYLE_FOOTER | FORM_STYLE_ICON_TAB);
-	Footer* pFooter = GetFooter();
-	pFooter->AddActionEventListener(*this);
 
-	pFooter->SetStyle(FOOTER_STYLE_BUTTON_ICON);
-	FooterItem footerTimeline, footerChatting, footerPartnerList, footerPartnerReseach, footerSetting;
 
-	*/
-	Button* pButton1 = static_cast<Button*>(GetControl(IDC_BUTTON1));  
-	if(pButton1)
-	{
-		pButton1->AddTouchEventListener(*this);
-	}
 	return r;
 }
 
@@ -65,14 +104,34 @@ void
 WinWinMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
 	SceneManager* pSceneManager = SceneManager::GetInstance();
+	/*
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_3));
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_4));
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_5));
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_6));
+	pSceneManager->GoForward(SceneTransitionId(IDSCNT_7));
+	*/
 	AppAssert(pSceneManager);
 
 	switch(actionId)
 	{
-
-
-	default:
-		break;
+	case ID_FOOTER_ITEM1:
+			pSceneManager->GoForward(SceneTransitionId(IDSCNT_3));
+			break;
+		case ID_FOOTER_ITEM2:
+			pSceneManager->GoForward(SceneTransitionId(IDSCNT_4));
+			break;
+		case ID_FOOTER_ITEM3:
+			pSceneManager->GoForward(SceneTransitionId(IDSCNT_5));
+			break;
+		case ID_FOOTER_ITEM4:
+			pSceneManager->GoForward(SceneTransitionId(IDSCNT_6));
+			break;
+		case ID_FOOTER_ITEM5:
+			pSceneManager->GoForward(SceneTransitionId(IDSCNT_7));
+			break;
+		default:
+			break;
 	}
 }
 
@@ -100,62 +159,3 @@ WinWinMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentScen
 
 }
 
-
-void
-WinWinMainForm::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	SceneManager* pSceneManager = SceneManager::GetInstance();
-	pSceneManager->GoForward(SceneTransitionId(IDSCNT_10));
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	SceneManager* pSceneManager = SceneManager::GetInstance();
-	pSceneManager->GoForward(SceneTransitionId(IDSCNT_5));
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	SceneManager* pSceneManager = SceneManager::GetInstance();
-	
-	if(pSceneManager->GetCurrentScene() == IDSCNT_MAIN_SCENE)
-		pSceneManager->GoForward(SceneTransitionId(IDL_INTRO));
-	//pSceneManager->GoForward(SceneTransitionId(IDSCNT_4));
-
-	// TODO: Add your implementation codes here
-
-}
-
-void
-WinWinMainForm::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
-{
-	// TODO: Add your implementation codes here
-
-}
