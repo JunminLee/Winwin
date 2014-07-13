@@ -5,6 +5,7 @@ const wchar_t* ChattingScenePanel = L"ChattingScenePanel";
 const wchar_t* FriendsListScene = L"FriendsListScene";
 const wchar_t* FriendsListScenePanel = L"FriendsListScenePanel";
 const wchar_t* FriendslistScene = L"FriendslistScene";
+const wchar_t* IDC_CHECKBUTTON1 = L"IDC_CHECKBUTTON1";
 const wchar_t* IDC_LABEL1 = L"IDC_LABEL1";
 const wchar_t* IDC_LABEL2 = L"IDC_LABEL2";
 const wchar_t* IDC_LABEL3 = L"IDC_LABEL3";

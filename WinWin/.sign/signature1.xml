@@ -66,10 +66,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>+bH5WWBp9yoAmOX/HBGYzAgzBYlBryImszPOFMPp9a4=</DigestValue>
 </Reference>
-<Reference URI="res/screen-size-normal/SettingPanel.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>r+YUlIALpThHZkE2jB8/hxmzUltvo10dDdvxnrer3MI=</DigestValue>
-</Reference>
 <Reference URI="res/screen-size-normal/workflow.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>FjqHSt88/32bGJeg07vArs6SnhMaUcfZrjIIZV0KAj4=</DigestValue>
@@ -88,11 +84,15 @@
 </Reference>
 <Reference URI="bin/WinWin.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ULQFn5K7uQ6pzCa+p+AbS99Z+KDRE+vXudAqkfPIgHI=</DigestValue>
+<DigestValue>fl+LHT5+YXnamgA7ciVGPOkP/U8az/3Im8frrxmsPgI=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/SettingPanel.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+37cg+EENMPh29Poxvdv+Lv1kvzcrF0dX5D3pxatFdg=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HTn+YLgyvZR+2Pg7F4o7wf4/T5hMk9PgyY3nAizrf+A=</DigestValue>
+<DigestValue>672Uq07ilucvOu4xeGMou7aRK5RzXII4s+QpbCi6O50=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -103,9 +103,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-VA2s0bRgNwvuiAdklCzJU4W2wR9FwCxHgiD6ANbTC+cWsKMWKo3R7oJVKqghElbPkd6bMCdp8P1K
-sNYoRVGMaSmnJ3q/4OunvhQns0oIBN8rFHTWMHKubhprSdu6qEmcKm3i4XT9mU+qOr7WWHCsb0mE
-vN/uIbKds9oMVDP8yuM=
+fUsKvjXIcFH4RHVMjrNuWhvg4Hnw4+LnWL653m+tPrcvFs0yo+rZkEXK7G2Tz2lEvWaQfLaIJSPm
+YDuxp8RVZP3cIajndqM7Xy9EJmUqs2RN7TkkaYg4uliRnL4XAgQDgRkKo33iC+Xs1h4jfxt4zEA+
+uL8/TYCb7eUNcEbkKM0=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

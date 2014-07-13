@@ -6,6 +6,7 @@ extern const wchar_t* ChattingScenePanel;
 extern const wchar_t* FriendsListScene;
 extern const wchar_t* FriendsListScenePanel;
 extern const wchar_t* FriendslistScene;
+extern const wchar_t* IDC_CHECKBUTTON1;
 extern const wchar_t* IDC_LABEL1;
 extern const wchar_t* IDC_LABEL2;
 extern const wchar_t* IDC_LABEL3;

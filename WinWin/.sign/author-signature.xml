@@ -66,10 +66,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>+bH5WWBp9yoAmOX/HBGYzAgzBYlBryImszPOFMPp9a4=</DigestValue>
 </Reference>
-<Reference URI="res/screen-size-normal/SettingPanel.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>r+YUlIALpThHZkE2jB8/hxmzUltvo10dDdvxnrer3MI=</DigestValue>
-</Reference>
 <Reference URI="res/screen-size-normal/workflow.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>FjqHSt88/32bGJeg07vArs6SnhMaUcfZrjIIZV0KAj4=</DigestValue>
@@ -86,26 +82,26 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ehYvCFtxe4kRAjYv+ExB9nLY4Ri9WEsk/6q/fkyXMRs=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/PartnerReasearch_Act.png">
+<Reference URI="bin/WinWin.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue></DigestValue>
+<DigestValue>fl+LHT5+YXnamgA7ciVGPOkP/U8az/3Im8frrxmsPgI=</DigestValue>
 </Reference>
-<Reference URI="C:/Users/Gants/git/Winwin/WinWin/Debug/WinWin.exe__DEL__bin/WinWin.exe">
+<Reference URI="res/screen-size-normal/SettingPanel.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue></DigestValue>
+<DigestValue>+37cg+EENMPh29Poxvdv+Lv1kvzcrF0dX5D3pxatFdg=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
 <Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
 </Transforms>
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue></DigestValue>
+<DigestValue>lpo8tUDs054eLlBQXiDPVDVKfw30ZZdtkRs1jd7H5K8=</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-QI+rk7dltQJCt5q2T6UYX5V/VzlAP75Z172ej2xPFakn6jaQ2M/CMOhs9qZR/e0unw7OwUqkt/kE
-j6ikqCoaYLJxDMe3g2jgA45AuV+kwIIYC6ueofYuBu4u7b1NPrnWw4gUk4UacBANrBVjZAN1j6ap
-QUppGwwbKkN29Z7vT/E=
+I9XACAjZtcDq6QcWFevjXQ2L+QgXDQsz0J7UIyKeFcK4BFAcOwmCHaGvqF51SBAyt9mSAu0jHxnD
+ap1a6v0IPtxBGrqG8XfL0SoxyGSOszVToNBBQBLR1mqr6LEFvGgug+6vt4vt5r1dNElTGZQEq/IL
+9Z7Htwj5QqIHka5HVVc=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

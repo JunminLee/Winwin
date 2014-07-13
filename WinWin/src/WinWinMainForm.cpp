@@ -24,8 +24,6 @@ WinWinMainForm::Initialize(void)
 	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
-	//result r = Construct(IDL_FORM);
-	//TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
 	return true;
 }
@@ -33,9 +31,9 @@ WinWinMainForm::Initialize(void)
 result
 WinWinMainForm::OnInitializing(void)
 {
-	result r = E_SUCCESS;
+	 result r = E_SUCCESS;
 
-	FooterItem footerItem[5];
+	 FooterItem footerItem[5];
 
 	 Image inActivation_Image[5];
 	 String inActivation_Path[5];
