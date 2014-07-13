@@ -2,10 +2,6 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
-<Reference URI="bin/WinWin.exe">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>czSVIjRIfAbms3PxO7gy+/vOb7J1e9VYQfkGn48TSCw=</DigestValue>
-</Reference>
 <Reference URI="info/manifest.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>SfrQlKq3QO4UEXwntgww1I6iOXCLOdb95BGRZbve6HU=</DigestValue>
@@ -29,10 +25,6 @@
 <Reference URI="res/screen-density-xhigh/PartnerList_InAct.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>dDszIGBlBmbsxFXJNYXFiaoh4EJIkSnnx1hWKqYUojU=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PartnerReasearch_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ehYvCFtxe4kRAjYv+ExB9nLY4Ri9WEsk/6q/fkyXMRs=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/PartnerResearch_InAct.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -90,18 +82,30 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+gO7fw=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/PartnerResearch_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ehYvCFtxe4kRAjYv+ExB9nLY4Ri9WEsk/6q/fkyXMRs=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/PartnerReasearch_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue></DigestValue>
+</Reference>
+<Reference URI="C:/Users/Gants/git/Winwin/WinWin/Debug/WinWin.exe__DEL__bin/WinWin.exe">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue></DigestValue>
+</Reference>
 <Reference URI="#prop">
 <Transforms>
 <Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
 </Transforms>
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>lpo8tUDs054eLlBQXiDPVDVKfw30ZZdtkRs1jd7H5K8=</DigestValue>
+<DigestValue></DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-eCJdHU6SOpsJKWG3YEED/M3571iJFm6n6ip7pQnL1rbemtK5mQHSvf/p/p+yuGJYhjCbcNRl220C
-pcDcB++yplaHbYfsSfkVHNzptmIibw+d8IcORJTUTK5yMShsOP2nvFbxYK5FMAYOqFg/dUJUWVcR
-CgERvMC6vBAdWV4rpO0=
+QI+rk7dltQJCt5q2T6UYX5V/VzlAP75Z172ej2xPFakn6jaQ2M/CMOhs9qZR/e0unw7OwUqkt/kE
+j6ikqCoaYLJxDMe3g2jgA45AuV+kwIIYC6ueofYuBu4u7b1NPrnWw4gUk4UacBANrBVjZAN1j6ap
+QUppGwwbKkN29Z7vT/E=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
