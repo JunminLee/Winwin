@@ -1,0 +1,29 @@
+#include "AppResourceId.h"
+
+const wchar_t* ChattingScene = L"ChattingScene";
+const wchar_t* ChattingScenePanel = L"ChattingScenePanel";
+const wchar_t* FriendsListScene = L"FriendsListScene";
+const wchar_t* FriendsListScenePanel = L"FriendsListScenePanel";
+const wchar_t* FriendslistScene = L"FriendslistScene";
+const wchar_t* IDC_LABEL1 = L"IDC_LABEL1";
+const wchar_t* IDC_LABEL2 = L"IDC_LABEL2";
+const wchar_t* IDC_LABEL3 = L"IDC_LABEL3";
+const wchar_t* IDC_LABEL4 = L"IDC_LABEL4";
+const wchar_t* IDC_LABEL5 = L"IDC_LABEL5";
+const wchar_t* IDC_LABEL_INTRO = L"IDC_LABEL_INTRO";
+const wchar_t* IDL_FORM = L"IDL_FORM";
+const wchar_t* IDSCNT_1 = L"IDSCNT_1";
+const wchar_t* IDSCNT_2 = L"IDSCNT_2";
+const wchar_t* IDSCNT_3 = L"IDSCNT_3";
+const wchar_t* IDSCNT_4 = L"IDSCNT_4";
+const wchar_t* IDSCNT_5 = L"IDSCNT_5";
+const wchar_t* IDSCNT_6 = L"IDSCNT_6";
+const wchar_t* IDSCNT_7 = L"IDSCNT_7";
+const wchar_t* IDSCNT_MAIN_SCENE = L"IDSCNT_MAIN_SCENE";
+const wchar_t* INTRO_FORM = L"INTRO_FORM";
+const wchar_t* MainScene = L"MainScene";
+const wchar_t* MainScene_Panel = L"MainScene_Panel";
+const wchar_t* ResearchFriendsPanel = L"ResearchFriendsPanel";
+const wchar_t* ResearchFriendsScene = L"ResearchFriendsScene";
+const wchar_t* SettingPanel = L"SettingPanel";
+const wchar_t* SettingScene = L"SettingScene";
