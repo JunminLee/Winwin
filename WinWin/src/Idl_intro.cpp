@@ -33,6 +33,7 @@ void Idl_intro::OnTimerExpired(Tizen::Base::Runtime::Timer& timer)
 {
 		SceneManager* pSceneManager = SceneManager::GetInstance();
 		pSceneManager->GoForward(SceneTransitionId(IDSCNT_2));
+
 }
 
 result

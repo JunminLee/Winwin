@@ -26,3 +26,4 @@ const wchar_t* IDSCN_1 = L"IDSCN_1";
 const wchar_t* IDSCN_2 = L"IDSCN_2";
 const wchar_t* IntroScene = L"IntroScene";
 const wchar_t* MainScene = L"MainScene";
+//dfdf
