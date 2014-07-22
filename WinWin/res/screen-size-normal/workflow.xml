@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Workflow>
-    <Scene Form="IDL_FORM" Id="MainScene" Panel="MainScene_Panel"/>
+    <Scene Form="IDL_FORM" Id="MainScene"/>
     <Scene Form="INTRO_FORM" Id="IDSCN_1"/>
-    <Scene Form="IDL_FORM" Id="ChattingScene" Panel="ChattingScenePanel"/>
-    <Scene Form="IDL_FORM" Id="FriendsListScene" Panel="FriendsListScenePanel"/>
-    <Scene Form="IDL_FORM" Id="ResearchFriendsScene" Panel="ResearchFriendsPanel"/>
-    <Scene Form="IDL_FORM" Id="SettingScene" Panel="SettingPanel"/>
     <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_1" Method="" SourceId="" SourceResourceType="" TargetId="IDSCN_1"/>
-    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_7" Method="OnActionPerformed" SourceId="MainScene" SourceResourceType="IDL_FORM" TargetId="SettingScene"/>
     <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_2" Method="OnTouchPressed" SourceId="IDSCN_1" SourceResourceType="INTRO_FORM" TargetId="MainScene"/>
-    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_3" Method="OnActionPerformed" SourceId="ChattingScene" SourceResourceType="IDL_FORM" TargetId="MainScene"/>
-    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_4" Method="OnActionPerformed" SourceId="FriendsListScene" SourceResourceType="IDL_FORM" TargetId="ChattingScene"/>
-    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_5" Method="OnActionPerformed" SourceId="ResearchFriendsScene" SourceResourceType="IDL_FORM" TargetId="FriendsListScene"/>
-    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_6" Method="OnActionPerformed" SourceId="SettingScene" SourceResourceType="IDL_FORM" TargetId="ResearchFriendsScene"/>
     <!--UI Builder(Workflow Designer) only-->
     <WorkflowDesigner>
         <Position Name="MainScene" X="348" Y="10"/>
         <Position Name="IDSCN_1" X="125" Y="10"/>
-        <Position Name="ChattingScene" X="578" Y="10"/>
-        <Position Name="FriendsListScene" X="808" Y="10"/>
-        <Position Name="ResearchFriendsScene" X="1038" Y="10"/>
-        <Position Name="SettingScene" X="1038" Y="159"/>
     </WorkflowDesigner>
 </Workflow>

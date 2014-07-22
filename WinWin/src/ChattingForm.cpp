@@ -1,4 +1,13 @@
-#include "WinWinMainForm.h"
+/*
+ * ChattingForm.cpp
+ *
+ *  Created on: Jul 22, 2014
+ *      Author: Gants
+ */
+
+
+//#include "WinWinMainForm.h"
+#include "ChattingForm.h"
 #include "AppResourceId.h"
 #include <FMedia.h>
 #include "SceneRegister.h"
@@ -12,18 +21,19 @@ using namespace Tizen::Graphics;
 using namespace Tizen::Media;
 
 static const int ITEM_COUNT = 100;
-WinWinMainForm::WinWinMainForm(void)
+ChattingForm::ChattingForm(void)
 	: __pList(null)
 {
 }
 
-WinWinMainForm::~WinWinMainForm(void)
+ChattingForm::~ChattingForm(void)
 {
 }
 
 bool
-WinWinMainForm::Initialize(void)
+ChattingForm::Initialize(void)
 {
+	AppLog("welcomechattingForm");
 	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
@@ -32,7 +42,7 @@ WinWinMainForm::Initialize(void)
 }
 
 result
-WinWinMainForm::OnInitializing(void)
+ChattingForm::OnInitializing(void)
 {
 
 
@@ -59,10 +69,10 @@ WinWinMainForm::OnInitializing(void)
 
 	 footerItem[0].Construct(ID_FOOTER_ITEM1);
 
-	 footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
+	 footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	 inActivation_Image[0].DecodeN(inActivation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	 footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
+	 footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	 Activation_Image[0].DecodeN(Activation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
 
 	 inActivation_Path[1] += L"screen-density-xhigh/Chatting_InAct.png";
@@ -70,10 +80,10 @@ WinWinMainForm::OnInitializing(void)
 
 	 footerItem[1].Construct(ID_FOOTER_ITEM2);
 
-	 footerItem[1].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
+	 footerItem[1].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	 inActivation_Image[1].DecodeN(inActivation_Path[1], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	 footerItem[1].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
+	 footerItem[1].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	 Activation_Image[1].DecodeN(Activation_Path[1], BITMAP_PIXEL_FORMAT_ARGB8888));
 
 	 inActivation_Path[2] += L"screen-density-xhigh/PartnerList_InAct.png";
@@ -122,11 +132,7 @@ WinWinMainForm::OnInitializing(void)
 	pFooter->AddItem(footerItem[4]);
 	// Setup back event listener
 
-	if(!CreateMainList())
-	{
 
-		return false;
-	}
 
 	SetFormBackEventListener(this);
 
@@ -134,7 +140,7 @@ WinWinMainForm::OnInitializing(void)
 }
 
 result
-WinWinMainForm::OnTerminating(void)
+ChattingForm::OnTerminating(void)
 {
 	result r = E_SUCCESS;
 
@@ -143,7 +149,7 @@ WinWinMainForm::OnTerminating(void)
 }
 
 void
-WinWinMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
+ChattingForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
 		SceneManager* pSceneManager = SceneManager::GetInstance();
 		AppAssert(pSceneManager);
@@ -152,23 +158,18 @@ WinWinMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId
 		{
 		case ID_FOOTER_ITEM1:
 			pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
-			AppLog("1");
 			break;
 		case ID_FOOTER_ITEM2:
 			pSceneManager->GoForward(ForwardSceneTransition(SCENE_CHATTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
-			AppLog("2");
 			break;
 		case ID_FOOTER_ITEM3:
 			pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_LIST_FORM, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
-			AppLog("3");
 			break;
 		case ID_FOOTER_ITEM4:
 			pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_SEARCH_FORM, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
-			AppLog("4");
 			break;
 		case ID_FOOTER_ITEM5:
 			pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
-			AppLog("5");
 			break;
 		default:
 			break;
@@ -177,7 +178,7 @@ WinWinMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId
 }
 
 void
-WinWinMainForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
+ChattingForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
 {
 	UiApp* pApp = UiApp::GetInstance();
 	AppAssert(pApp);
@@ -185,7 +186,7 @@ WinWinMainForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
 }
 
 void
-WinWinMainForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousSceneId,
+ChattingForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousSceneId,
 										  const Tizen::Ui::Scenes::SceneId& currentSceneId, Tizen::Base::Collection::IList* pArgs)
 {
 	// TODO: Activate your scene here.
@@ -193,7 +194,7 @@ WinWinMainForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousScen
 }
 
 void
-WinWinMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
+ChattingForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
 										   const Tizen::Ui::Scenes::SceneId& nextSceneId)
 {
 	// TODO: Deactivate your scene here.
@@ -201,7 +202,7 @@ WinWinMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentScen
 }
 
 bool
-WinWinMainForm::CreateMainList(void)
+ChattingForm::CreateMainList(void)
 {
 	__pList = new (std::nothrow) ListView();
 	__pList->Construct(FloatRectangle(0.0f, 0.0f, GetClientAreaBoundsF().width, GetClientAreaBoundsF().height), true, SCROLL_STYLE_FADE_OUT);
@@ -212,7 +213,7 @@ WinWinMainForm::CreateMainList(void)
 }
 
 void
-WinWinMainForm::OnListViewItemStateChanged(ListView& view, int index, int elementId, ListItemStatus status)
+ChattingForm::OnListViewItemStateChanged(ListView& view, int index, int elementId, ListItemStatus status)
 {
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
@@ -231,25 +232,25 @@ WinWinMainForm::OnListViewItemStateChanged(ListView& view, int index, int elemen
 }
 
 void
-WinWinMainForm::OnListViewItemSwept(ListView& listView, int index, SweepDirection direction)
+ChattingForm::OnListViewItemSwept(ListView& listView, int index, SweepDirection direction)
 {
 
 }
 
 void
-WinWinMainForm::OnListViewContextItemStateChanged(ListView& listView, int index, int elementId, ListContextItemStatus status)
+ChattingForm::OnListViewContextItemStateChanged(ListView& listView, int index, int elementId, ListContextItemStatus status)
 {
 
 }
 
 int
-WinWinMainForm::GetItemCount(void)
+ChattingForm::GetItemCount(void)
 {
 	return ITEM_COUNT;
 }
 
 bool
-WinWinMainForm::DeleteItem(int index, ListItemBase* pItem, float itemWidth)
+ChattingForm::DeleteItem(int index, ListItemBase* pItem, float itemWidth)
 {
 	delete pItem;
 	pItem = null;
@@ -257,7 +258,7 @@ WinWinMainForm::DeleteItem(int index, ListItemBase* pItem, float itemWidth)
 }
 
 ListItemBase*
-WinWinMainForm::CreateItem(int index, float itemWidth)
+ChattingForm::CreateItem(int index, float itemWidth)
 {
 	ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
 	CustomItem* pItem = new (std::nothrow) CustomItem;
@@ -267,18 +268,19 @@ WinWinMainForm::CreateItem(int index, float itemWidth)
 	switch(index)
 	{
 	case 0:
-		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Main1", true);
+		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Chatting1", true);
 		break;
 	case 1:
-		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Main2", true);
+		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Chatting2", true);
 		break;
 	case 2:
-		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Main3", true);
+		pItem->AddElement(mainListItemRect, ID_FORMAT_STRING, L"Chatting3", true);
 		break;
 	default:
 		break;
 	}
 	return pItem;
 }
+
 
 

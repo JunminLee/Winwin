@@ -2,7 +2,6 @@
 #include "AppResourceId.h"
 #include "Mainscene_panel.h"
 #include "Chattingscenepanel.h"
-#include "Friendslistscenepanel.h"
 #include "Researchfriendspanel.h"
 #include "Settingpanel.h"
 
@@ -23,7 +22,7 @@ WinWinPanelFactory::CreatePanelN(const Tizen::Base::String& panelId, const Tizen
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
 	Tizen::Ui::Controls::Panel* pNewPanel = null;
-
+	/*
 	// TODO: Add your panel creation code here
 	if (panelId == MainScene_Panel)
 	{
@@ -39,13 +38,7 @@ WinWinPanelFactory::CreatePanelN(const Tizen::Base::String& panelId, const Tizen
 		pSceneManager->AddSceneEventListener(sceneId, *pPanel);
 		pNewPanel = pPanel;
 	}
-	else if (panelId == FriendsListScenePanel)
-	{
-		Friendslistscenepanel* pPanel = new Friendslistscenepanel();
-		pPanel->Initialize();
-		pSceneManager->AddSceneEventListener(sceneId, *pPanel);
-		pNewPanel = pPanel;
-	}
+
 	else if (panelId == ResearchFriendsPanel)
 	{
 		Researchfriendspanel* pPanel = new Researchfriendspanel();
@@ -62,7 +55,7 @@ WinWinPanelFactory::CreatePanelN(const Tizen::Base::String& panelId, const Tizen
 	}
 
 
-
+*/
 
 
 return pNewPanel;

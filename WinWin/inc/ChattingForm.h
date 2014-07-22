@@ -1,5 +1,13 @@
-#ifndef _WIN_WIN_MAIN_FORM_H_
-#define _WIN_WIN_MAIN_FORM_H_
+/*
+ * ChattingForm.h
+ *
+ *  Created on: Jul 22, 2014
+ *      Author: Gants
+ */
+
+#ifndef CHATTINGFORM_H_
+#define CHATTINGFORM_H_
+
 
 #include <FApp.h>
 #include <FBase.h>
@@ -8,8 +16,9 @@
 #include <FUiIme.h>
 #include <FGraphics.h>
 #include <gl.h>
+#include "BaseForm.h"
 
-class WinWinMainForm
+class ChattingForm
 	: public Tizen::Ui::Controls::Form
 	, public Tizen::Ui::IActionEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
@@ -18,8 +27,8 @@ class WinWinMainForm
  	, public Tizen::Ui::Controls::IListViewItemProviderF
 {
 public:
-	WinWinMainForm(void);
-	virtual ~WinWinMainForm(void);
+		ChattingForm(void);
+	virtual ~ChattingForm(void);
 	bool Initialize(void);
 	virtual result OnInitializing(void);
 	virtual result OnTerminating(void);
@@ -51,4 +60,5 @@ protected:
 	static const int ID_FORMAT_STRING = 500;
 };
 
-#endif	//_WIN_WIN_MAIN_FORM_H_
+
+#endif /* CHATTINGFORM_H_ */
