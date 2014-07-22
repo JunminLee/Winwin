@@ -1,9 +1,6 @@
 #include "WinWinPanelFactory.h"
 #include "AppResourceId.h"
-#include "Mainscene_panel.h"
-#include "Chattingscenepanel.h"
-#include "Researchfriendspanel.h"
-#include "Settingpanel.h"
+
 
 using namespace Tizen::Ui::Scenes;
 

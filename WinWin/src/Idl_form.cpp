@@ -63,7 +63,7 @@ Idl_form::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
 void
 Idl_form::OnFocusGained(const Tizen::Ui::Control& source)
 {
-	SceneManager* pSceneManager = SceneManager::GetInstance();
+	//SceneManager* pSceneManager = SceneManager::GetInstance();
 	
 	// TODO: Add your implementation codes here
 

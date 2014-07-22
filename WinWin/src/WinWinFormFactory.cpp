@@ -55,7 +55,7 @@ WinWinFormFactory::CreateFormN(const Tizen::Base::String& formId, const Tizen::U
 		pForm->Initialize();
 		pNewForm = pForm;
 	}
-	/*
+
 	else if (formId == IDL_FORM3)
 	{
 		PartnerListForm* pForm = new (std::nothrow) PartnerListForm();
@@ -80,7 +80,7 @@ WinWinFormFactory::CreateFormN(const Tizen::Base::String& formId, const Tizen::U
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;
 	}
-*/
+
 	// TODO: Add your form creation code here
 
 	return pNewForm;

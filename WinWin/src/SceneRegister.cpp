@@ -12,6 +12,11 @@
 
 using namespace Tizen::Ui::Scenes;
 
+const wchar_t* SCENE_MAIN_FORM =L"SCENE_MAIN_FORM";
+const wchar_t* SCENE_CHATTING_FORM =L"SCENE_CHATTING_FORM";
+const wchar_t* SCENE_PARTNER_LIST_FORM =L"SCENE_PARTNER_LIST_FORM";
+const wchar_t* SCENE_PARTNER_SEARCH_FORM =L"SCENE_PARTNER_SEARCH_FORM";
+const wchar_t* SCENE_SETTING_FORM =L"SCENE_SETTING_FORM";
 
 
 SceneRegister::SceneRegister(void)

@@ -32,6 +32,7 @@ WinWinApp::OnAppInitializing(AppRegistry& appRegistry)
 	// PowerManager::SetScreenEventListener(*this);
 
 	// TODO: Add your application initialization code here.
+	SceneRegister::RegisterAllScenes();
 	return true;
 }
 
