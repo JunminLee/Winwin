@@ -136,7 +136,67 @@ PartnerListForm::OnInitializing(void)
 
 
 	SetFormBackEventListener(this);
+	GridLayout gridPanelLayout;
+	gridPanelLayout.Construct(3, 2);
 
+	Panel* pPanel = new Panel();
+	pPanel->Construct(gridPanelLayout, Rectangle(5, 5, 710, 1112));
+	    {
+	        // Creates instances of Label and an instance of Button
+			Panel* pPanel1 = new Panel();
+			pPanel1->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+			pPanel1->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+			pPanel->AddControl(pPanel1);
+			//pPanel1->AddTouchEventListener();
+
+			Panel* pPanel2 = new Panel();
+			pPanel2->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+			pPanel2->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+			pPanel->AddControl(pPanel2);
+
+			Panel* pPanel3 = new Panel();
+			pPanel3->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+			pPanel3->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+	        pPanel->AddControl(pPanel3);
+
+	        Panel* pPanel4 = new Panel();
+	        pPanel4->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+	        pPanel4->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+	        pPanel->AddControl(pPanel4);
+
+	        Panel* pPanel5 = new Panel();
+	        pPanel5->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+	        pPanel5->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+	        pPanel->AddControl(pPanel5);
+
+	        Panel* pPanel6 = new Panel();
+	        pPanel6->Construct(Rectangle(0, 0, 200, 200), GROUP_STYLE_SINGLE);
+	        pPanel6->SetBackgroundColor(Color(0xff, 0xff, 0xee, 0xFF));
+	        pPanel->AddControl(pPanel6);
+
+	        // Sets position to each label and button in grid layout
+
+	        gridPanelLayout.SetPosition(*pPanel1, 0, 0, 1, 1);
+	        gridPanelLayout.SetPosition(*pPanel2, 0, 1, 1, 1);
+	        gridPanelLayout.SetPosition(*pPanel3, 1, 0, 1, 1);
+	        gridPanelLayout.SetPosition(*pPanel4, 1, 1, 1, 1);
+	        gridPanelLayout.SetPosition(*pPanel5, 2, 0, 1, 1);
+	        gridPanelLayout.SetPosition(*pPanel6, 2, 1, 1, 1);
+
+	        // Sets stretchability each label and button in grid layout
+	        gridPanelLayout.SetColumnStretchable(0, true);
+	        gridPanelLayout.SetColumnStretchable(1, true);
+	        gridPanelLayout.SetRowStretchable(0, true);
+	        gridPanelLayout.SetRowStretchable(1, true);
+	        gridPanelLayout.SetRowStretchable(2, true);
+
+	        // Sets spacing
+	       // gridPanelLayout.SetColumnSpacing(1, 1);
+	      //  gridPanelLayout.SetRowSpacing(1, 1);
+	    }
+
+	    // Adds the top panel to the form
+	    AddControl(pPanel);
 	return E_SUCCESS;
 }
 

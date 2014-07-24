@@ -2,6 +2,14 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="author-signature.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>jHlsz4HnOM43ff17cb+gYZ2/yI2QRBQ4dFbNoRMEyCA=</DigestValue>
+</Reference>
+<Reference URI="bin/WinWin.exe">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ZVx4LrWMsSkbDbZEsc2UGM8gYPx74NVBPHxx6wXrQls=</DigestValue>
+</Reference>
 <Reference URI="info/manifest.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>FwPVihFFVEZGrGNV/VDVz4xp1RQ5Eav4EwockEG3zPw=</DigestValue>
@@ -68,7 +76,7 @@
 </Reference>
 <Reference URI="res/screen-size-normal/IDL_FORM3.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>q0JhxPXnSjbxo9wrp13ebV/6RbvlBBUf94wxaCYmHoI=</DigestValue>
+<DigestValue>CpDMJBLOCWXtwyhR+o4sdDYWQVC1SYVlJjPR46CDQ1c=</DigestValue>
 </Reference>
 <Reference URI="res/screen-size-normal/IDL_FORM4.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -102,14 +110,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
-<Reference URI="bin/WinWin.exe">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BknlmxUWzz+iFQNvjLnYYn+0SJOmdoQ+zVRYXNOSmWI=</DigestValue>
-</Reference>
-<Reference URI="author-signature.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/xhg7TKmEx/B3a9paBsAy6eKiV7hctERItOzu70mpd4=</DigestValue>
-</Reference>
 <Reference URI="#prop">
 <Transforms>
 <Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
@@ -119,9 +119,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Qi+KEYGZ6sBcT65rwrlrDp8StBjmx+M+HT5cOlhl15Dtm/jgsdqkFcjSDx4T3IPzjBvkxXn8R1YZ
-MsRAOtaGNlRraL+Xn4dqhMUwIe5rs3SzixQP5D9PMaceXxMB+QAs+WoravrcqfinA8Tf9LRRI8//
-/mloe7EpDxXBVN3hy7E=
+Hq7UAlP3didWHyX58Muc6RMBHhZ3MrHWtKDXbwj0GqEPv2LebIn8HYBqkZ3rl6PIbK8oCA+vnNhw
+/uQ98/jnwDbyPJxypchfbPQoTU8slrAORbXL0U6CM9boCIR82REQctC26+sx4X+K5PW9kJuO9kuA
+2MJV5TZLGfmztmYHjDA=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
