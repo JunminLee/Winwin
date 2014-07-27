@@ -2,10 +2,6 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
-<Reference URI="bin/TizenProject.exe">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9gIcHlX6a0T41W/MSuRZ8lS2bCuuItYIqCV7c5K3A+8=</DigestValue>
-</Reference>
 <Reference URI="info/manifest.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>3E/tTNes5BGTSdcG7rGstnTkAWkzt6Bw2Mbdt//bMmc=</DigestValue>
@@ -86,6 +82,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
+<Reference URI="bin/TizenProject.exe">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>D13Ib+iC93CJDRIgJL2OIhp31VLphBxoyrrn4AO7m6o=</DigestValue>
+</Reference>
 <Reference URI="#prop">
 <Transforms>
 <Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
@@ -95,9 +95,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-LzzyZpIb3vvVpsjv7vP0gB6FY4fuSOu9prdMZbdp4DPS8DVohN0R9lbgxuucI5mZOGeQZp017dWR
-iao1UhDIsSW+VQmTf2mmNoF8x1XW7Tu4FF3GpJvrkbyE9xlW2DO4xhFNzTqktn5Xbwmv1CpJCkWV
-AEiFyIPWhoqqu7oc3aI=
+jD1PRQrJcsclHXluYjifgkOO0TtnrclSYZMT9ZQgYwsC3YCqgnn4uJy222JiEqmqQJuc3z0bEXn4
+yHjglIlBK75MAs+bSiuWp26EBbVXjJXGVZZq38GFMaNy0uRNJDxO28lesXlhV4sHrXF230l3qXHX
+dfXKt+XpFhQJcpt27CI=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
