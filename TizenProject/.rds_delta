@@ -1,7 +1,6 @@
 #delete
-res/screen-density-xhigh/PartnerReasearch_Act.png
 #add
-res/screen-density-xhigh/PartnerResearch_Act.png
 #modify
 author-signature.xml
 signature1.xml
+bin/TizenProject.exe

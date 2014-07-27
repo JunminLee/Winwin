@@ -14,6 +14,8 @@ extern const wchar_t* IDSCNT_MAIN_SCENE;
 extern const wchar_t* IDC_BUTTON_OK;
 extern const wchar_t* IDSCN_1;
 extern const wchar_t* MainScene;
-
+//
 #endif // _APP_RESOURCE_ID_H_
+//
+//
 //
