@@ -39,7 +39,7 @@ CDPWinWinFormFactory::CreateFormN(const Tizen::Base::String& formId, const Tizen
 
 	if (formId == IDL_FORM)
 	{
-		//CDPWinWinMainForm* pForm = new CDPWinWinMainForm();
+		CDPWinWinMainForm* pForm = new CDPWinWinMainForm();
 		TryReturn(pForm != null, null, "The memory is insufficient.");
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
