@@ -102,10 +102,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
-<Reference URI="bin/WinWin.exe">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>VTiIh7eYDNxzZnrTR95uXw72dg9gbXuCBCAmF8S4x68=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/nationalflag.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=</DigestValue>
@@ -118,9 +114,13 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>pl2q8TDI86a1m9NJLLt63r+A5EXkqw30T5rwZBhp8xU=</DigestValue>
 </Reference>
+<Reference URI="bin/WinWin.exe">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>VTiIh7eYDNxzZnrTR95uXw72dg9gbXuCBCAmF8S4x68=</DigestValue>
+</Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>3ntlg4ocNAVOev/S67mJiVbbIC6kVtpSI7boYHAq+HI=</DigestValue>
+<DigestValue>E0w8n74tDRAI5y4sM+hMkyCafWWaEX4SbHECdgmKAaE=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -131,9 +131,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-O4tBCoB1pr8hudsyflty8FscyjLYANPV2TPAj1E6pF4swviTL76jyF1CEZCHdJDM3FOd6mCnFwbu
-ZfLRzsV+87T4u6CpLvdvY7Hpe1eGSE5oDfCSKYOe7tU2XfGC6eLrHPeaxqlPMVo7XcwPWtriSHph
-49IJj2zxYr+KrMCxUYo=
+LJ6rYgBYv6nz4ndTIQ1Gg09uQWUON2st85SeES8W76js9wkhiLAyPntlTiz6WLmeAayzxWDDb8Tc
+P2+QnOQnXA8OmlnM43rov40fVOMe7Bjcv3x80XNRt3zordyKUlqM/Dz5SBU3NUTcxjLnC1D73Gi7
+q5Wwh52ypbwx+mRZ46U=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
