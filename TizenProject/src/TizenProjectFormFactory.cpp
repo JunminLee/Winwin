@@ -2,6 +2,10 @@
 #include "TizenProjectFormFactory.h"
 #include "TizenProjectMainForm.h"
 #include "AppResourceId.h"
+#include "ChattingForm.h"
+#include "PartnerListForm.h"
+#include "PartnerSearchForm.h"
+#include "SettingForm.h"
 #include "Idl_intro.h"
 
 using namespace Tizen::Ui::Scenes;
@@ -36,8 +40,33 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 		pForm->Initialize();
 		pNewForm = pForm;
 	}
-
-	// TODO: Add your form creation code here
-
+	else if (formId == IDL_FORM2)
+	{
+		ChattingForm* pForm = new ChattingForm();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+	else if (formId == IDL_FORM3)
+	{
+		PartnerListForm* pForm = new PartnerListForm();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+	else if (formId == IDL_FORM4)
+	{
+		PartnerSearchForm* pForm = new PartnerSearchForm();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+	else if (formId == IDL_FORM5)
+	{
+		SettingForm* pForm = new SettingForm();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
 	return pNewForm;
 }

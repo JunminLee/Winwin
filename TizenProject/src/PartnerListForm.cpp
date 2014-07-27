@@ -1,4 +1,12 @@
-#include "TizenProjectMainForm.h"
+/*
+ * PartnerListForm.cpp
+ *
+ *  Created on: Jul 27, 2014
+ *      Author: Gants
+ */
+
+
+#include "PartnerListForm.h"
 #include "AppResourceId.h"
 #include "SceneRegister.h"
 
@@ -10,16 +18,16 @@ using namespace Tizen::Ui::Scenes;
 using namespace Tizen::Graphics;
 using namespace Tizen::Media;
 
-TizenProjectMainForm::TizenProjectMainForm(void)
+PartnerListForm::PartnerListForm(void)
 {
 }
 
-TizenProjectMainForm::~TizenProjectMainForm(void)
+PartnerListForm::~PartnerListForm(void)
 {
 }
 
 bool
-TizenProjectMainForm::Initialize(void)
+PartnerListForm::Initialize(void)
 {
 	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
@@ -28,7 +36,7 @@ TizenProjectMainForm::Initialize(void)
 }
 
 result
-TizenProjectMainForm::OnInitializing(void)
+PartnerListForm::OnInitializing(void)
 {
 	result r = E_SUCCESS;
 
@@ -55,10 +63,10 @@ TizenProjectMainForm::OnInitializing(void)
 
 	footerItem[0].Construct(ID_FOOTER_ITEM1);
 
-	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	inActivation_Image[0].DecodeN(inActivation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	Activation_Image[0].DecodeN(Activation_Path[0], BITMAP_PIXEL_FORMAT_ARGB8888));
 
 	inActivation_Path[1] += L"screen-density-xhigh/Chatting_InAct.png";
@@ -77,10 +85,10 @@ TizenProjectMainForm::OnInitializing(void)
 
 	footerItem[2].Construct(ID_FOOTER_ITEM3);
 
-	footerItem[2].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
+	footerItem[2].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	inActivation_Image[2].DecodeN(inActivation_Path[2], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	footerItem[2].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
+	footerItem[2].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	Activation_Image[2].DecodeN(Activation_Path[2], BITMAP_PIXEL_FORMAT_ARGB8888));
 
 	inActivation_Path[3] += L"screen-density-xhigh/PartnerResearch_InAct.png";
@@ -125,7 +133,7 @@ TizenProjectMainForm::OnInitializing(void)
 }
 
 result
-TizenProjectMainForm::OnTerminating(void)
+PartnerListForm::OnTerminating(void)
 {
 	result r = E_SUCCESS;
 
@@ -134,28 +142,29 @@ TizenProjectMainForm::OnTerminating(void)
 }
 
 void
-TizenProjectMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
+PartnerListForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
 
 	switch(actionId)
 	{
-		case ID_FOOTER_ITEM1:
-			pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
-			break;
-		case ID_FOOTER_ITEM2:
-			pSceneManager->GoForward(ForwardSceneTransition(SCENE_CHATTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
-			break;
-		case ID_FOOTER_ITEM3:
-			pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_LIST_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
-			break;
-		case ID_FOOTER_ITEM4:
-			pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_SEARCH_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
-			break;
-		case ID_FOOTER_ITEM5:
-			pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
-			break;
+	case ID_FOOTER_ITEM1:
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+	case ID_FOOTER_ITEM2:
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_CHATTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+	case ID_FOOTER_ITEM3:
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_LIST_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+	case ID_FOOTER_ITEM4:
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_PARTNER_SEARCH_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+	case ID_FOOTER_ITEM5:
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+
 
 	default:
 		break;
@@ -163,7 +172,7 @@ TizenProjectMainForm::OnActionPerformed(const Tizen::Ui::Control& source, int ac
 }
 
 void
-TizenProjectMainForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
+PartnerListForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
 {
 	UiApp* pApp = UiApp::GetInstance();
 	AppAssert(pApp);
@@ -171,7 +180,7 @@ TizenProjectMainForm::OnFormBackRequested(Tizen::Ui::Controls::Form& source)
 }
 
 void
-TizenProjectMainForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousSceneId,
+PartnerListForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousSceneId,
 										  const Tizen::Ui::Scenes::SceneId& currentSceneId, Tizen::Base::Collection::IList* pArgs)
 {
 	// TODO: Activate your scene here.
@@ -179,7 +188,7 @@ TizenProjectMainForm::OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previo
 }
 
 void
-TizenProjectMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
+PartnerListForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
 										   const Tizen::Ui::Scenes::SceneId& nextSceneId)
 {
 	// TODO: Deactivate your scene here.

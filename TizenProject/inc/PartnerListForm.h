@@ -1,5 +1,12 @@
-#ifndef _TIZEN_PROJECT_MAIN_FORM_H_
-#define _TIZEN_PROJECT_MAIN_FORM_H_
+/*
+ * PartnerListForm.h
+ *
+ *  Created on: Jul 27, 2014
+ *      Author: Gants
+ */
+
+#ifndef PartnerListForm_H_
+#define PartnerListForm_H_
 
 #include <FApp.h>
 #include <FBase.h>
@@ -10,15 +17,15 @@
 #include <gl.h>
 #include <FMedia.h>
 
-class TizenProjectMainForm
+class PartnerListForm
 	: public Tizen::Ui::Controls::Form
 	, public Tizen::Ui::IActionEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
  	, public Tizen::Ui::Scenes::ISceneEventListener
 {
 public:
-	TizenProjectMainForm(void);
-	virtual ~TizenProjectMainForm(void);
+	PartnerListForm(void);
+	virtual ~PartnerListForm(void);
 	bool Initialize(void);
 
 private:
@@ -39,4 +46,5 @@ protected:
 	static const int ID_FOOTER_ITEM5 = 105;
 };
 
-#endif	//_TIZEN_PROJECT_MAIN_FORM_H_
+
+#endif /* PartnerListForm_H_ */
