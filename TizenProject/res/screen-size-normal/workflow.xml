@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Workflow>
+    <Scene Form="IDL_FORM" Id="MainScene"/>
+    <Scene Form="IDL_INTRO" Id="IDSCN_1"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_1" Method="" SourceId="" SourceResourceType="" TargetId="IDSCN_1"/>
+    <SceneTransition AnimationType="none" DestroyOption="keep" DirectionType="forward" HistoryOption="add" Id="IDSCNT_2" Method="OnTouchPressed" SourceId="IDSCN_1" SourceResourceType="IDL_INTRO" TargetId="MainScene"/>
+    <!--UI Builder(Workflow Designer) only-->
+    <WorkflowDesigner>
+        <Position Name="MainScene" X="400" Y="108"/>
+        <Position Name="IDSCN_1" X="130" Y="57"/>
+    </WorkflowDesigner>
+</Workflow>
