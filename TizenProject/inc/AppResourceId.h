@@ -17,3 +17,4 @@ extern const wchar_t* MainScene;
 
 #endif // _APP_RESOURCE_ID_H_
 //
+//
