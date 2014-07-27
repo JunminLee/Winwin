@@ -104,7 +104,19 @@
 </Reference>
 <Reference URI="bin/WinWin.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>GmYEUdF3wSY7sRiHtlJ2HJs+r3YSAhyrnRn4/vTvh3I=</DigestValue>
+<DigestValue>VTiIh7eYDNxzZnrTR95uXw72dg9gbXuCBCAmF8S4x68=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/nationalflag.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/s-face1.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+aEeXl9SYsja0sN67BKup1+b1uiqwmH361d5S7l1MEc=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/s-face2.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>pl2q8TDI86a1m9NJLLt63r+A5EXkqw30T5rwZBhp8xU=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -115,9 +127,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Ne610YK9hkcL9VN5e/4ekA3KsSUSAQ/B2Iq8idDc4VBjFhSD0RDUtPI9kFAv3re1PKx92UxBVPJv
-zPIAMShMPgscSReo5RvPJkMNiPEr2snDzUXSi/HI8kvArKX1YxbLqU8uaMIYY4L2qsbf6hbRqEoW
-SlrDGicALMyPPRCagbE=
+Q3akyIz0ec4uoDJSOTl1+0AhxOovWFq7s2J9jTTwqMAlL5S6SLZXr4S2qeiY4nGLT8gmUDmtg1NU
+a+QG46z/SOCF0z1u5al8xdhb5AkQ0z0jXEMyWQxBSYshmwHeBVtiY7rBYP2F/yNYWmH2M2wI5pkJ
+sjIunctzyMv32ltFKW0=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

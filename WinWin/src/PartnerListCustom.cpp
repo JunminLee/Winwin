@@ -66,7 +66,7 @@ Tizen::Ui::Controls::ListItemDrawingStatus status
 
 
     canvas.SetFont(*pFont3);
-	canvas.DrawText(Point(rect.x + 30, rect.y + 150), content);
+	//canvas.DrawText(Point(rect.x + 30, rect.y + 150), content);
 
     pTextElement = new TextElement();
 
@@ -240,7 +240,7 @@ PartnerItem::operator = (const PartnerItem& rhs)
 
 	name = rhs.name;
 
-	content = rhs.content;
+
 
 	return *this;
 }
