@@ -23,6 +23,7 @@ const wchar_t* IDL_FORM2 = L"IDL_FORM2";
 const wchar_t* IDL_FORM3 = L"IDL_FORM3";
 const wchar_t* IDL_FORM4 = L"IDL_FORM4";
 const wchar_t* IDL_FORM5 = L"IDL_FORM5";
+const wchar_t* IDL_INTRO = L"IDL_INTRO";
 const wchar_t* IDSCNT_1 = L"IDSCNT_1";
 const wchar_t* IDSCNT_2 = L"IDSCNT_2";
 const wchar_t* IDSCNT_3 = L"IDSCNT_3";

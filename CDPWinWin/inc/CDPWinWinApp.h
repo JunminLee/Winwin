@@ -8,7 +8,7 @@
 #include <FUiIme.h>
 #include <FGraphics.h>
 #include <gl.h>
-
+#include "SceneRegister.h"
 
 //  The CDPWinWinApp class must inherit from the UiApp class,
 //  which provides the basic features necessary to define a UI application.

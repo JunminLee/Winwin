@@ -9,6 +9,13 @@
 #include <FGraphics.h>
 #include <gl.h>
 
+extern const wchar_t* FORM_INTRO;
+extern const wchar_t* FORM_MAIN;
+extern const wchar_t* FORM_CHATTING;
+extern const wchar_t* FORM_LIST;
+extern const wchar_t* FORM_SEARCH;
+extern const wchar_t* FORM_SETTING;
+
 class CDPWinWinPanelFactory
 	: public Tizen::Ui::Scenes::IPanelFactory
 {

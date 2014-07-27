@@ -30,7 +30,7 @@ CDPWinWinApp::OnAppInitializing(AppRegistry& appRegistry)
 
 	// Uncomment the following statement to listen to the screen on and off events:
 	// PowerManager::SetScreenEventListener(*this);
-
+	SceneRegister::RegisterAllScenes();
 	// TODO: Add your application initialization code here.
 	return true;
 }

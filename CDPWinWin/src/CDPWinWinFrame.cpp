@@ -28,7 +28,9 @@ CDPWinWinFrame::OnInitializing(void)
 	pSceneManager->RegisterScene(L"workflow");
 
 	// Go to the scene.
-	result r = pSceneManager->GoForward(SceneTransitionId(IDSCNT_MAIN_SCENE));
+	result r = E_FAILURE;
+	r = pSceneManager->GoForward(SceneTransitionId(IDSCNT_1));
+	
 
 	// TODO: Add your frame initialization code here.
 	return r;
