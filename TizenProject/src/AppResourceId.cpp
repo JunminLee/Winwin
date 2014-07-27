@@ -14,3 +14,5 @@ const wchar_t* IDC_BUTTON_OK = L"IDC_BUTTON_OK";
 const wchar_t* IDSCN_1 = L"IDSCN_1";
 const wchar_t* MainScene = L"MainScene";
 //
+//
+const wchar_t* master=L"sdsdsd";
