@@ -82,9 +82,9 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/header.png">
+<Reference URI="res/screen-density-xhigh/PostingButton.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=</DigestValue>
+<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/comment_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -98,21 +98,21 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>4lnRbm7+yig17NMe/oTjyfVjZ/CJqVUGLLV14K7Mq+g=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/tizen.png">
+<Reference URI="res/screen-density-xhigh/header.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PostingButton.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
+<DigestValue>AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/nationalflag.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/tizen.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
+</Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>UATXwc6I2SMrOY/XVuOIIEfocu5A3DxCjA0gAKOqKsM=</DigestValue>
+<DigestValue>Pw0qwxeShsVEbCp8tCe2TkFIIZFAO2HLKg/TVyoBRJA=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -123,9 +123,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-LMx2hjk23elg3BzlWkNUPRFaREyG2Ew/ez61s0NGxLediSJ+K4fqW6iBTVxMskH3MaeyCTD/BMXJ
-BIjHiyVqWPgG7k7TPlC2ue6k2rkyTAQKFYcCcb1JP2MEF9rwhKcGCoU8EAnI6xKVxH5szWx97ctZ
-me7beYzrG2ube//vNM8=
+iOA/YiF575gIie6DD6FvlXjT3HfVK8bafy66OtINZ3tQjLgTRNDEzm5hrg4UZnwTHW1F56K5rYax
+8whKOsEPcSiOtACw34iXTR8FPZywcifoL5iQugLCadwFniNzS97SLP2ffO/t7mRIudehMedkf+Vg
+1x3gSnYZoRHIhfsY+VI=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

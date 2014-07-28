@@ -88,7 +88,9 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
     RC_feedbackButton = Rectangle(RC_commentButton.x+RC_commentButton.width+20, RC_extendButton.y + 110, RC_extendButton.width/2-10, 70);
 
 	//canvas.DrawLine(Point(rect.x, rect.y), Point(rect.width, rect.height));
-    canvas.FillRectangle(Color(255,255,255,255), rect);
+    canvas.FillRectangle(Color(245,245,245,255), Rectangle(rect.x, rect.y, rect.width, rect.height));
+    canvas.FillRectangle(Color(255,255,255,255), Rectangle(rect.x, rect.y, rect.width-5, rect.height-5));
+
 	DrawEllipseImage(canvas, Color(255,255,255,255),Rectangle(rect.x + 30, rect.y + 30, 100, 100), *pAppResource->GetBitmapN(L"tizen.png"));
 	canvas.DrawBitmap(Rectangle(rect.x+195, rect.y+90, 60,30), *pAppResource->GetBitmapN(L"nationalflag.png"));
 	//canvas.FillRectangle(Color(255,255,255,255),Rectangle(rect.x + 30, rect.y + 30, 100, 100));
