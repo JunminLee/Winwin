@@ -68,7 +68,7 @@ PartnerListForm::OnInitializing(void)
 {
 	result r = E_SUCCESS;
 
-	int i=0;
+
 
 
 	// TODO: Add your initialization code here
@@ -406,7 +406,11 @@ PartnerListForm::OnFastScrollIndexSelected(Control& source, Tizen::Base::String&
 	}
 	Invalidate(true);
 }
+void
+OnGroupedListViewContextItemStateChanged(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, Tizen::Ui::Controls::ListContextItemStatus state)
+{
 
+}
 void
 PartnerListForm::OnGroupedListViewItemStateChanged(GroupedListView& listView, int groupIndex, int itemIndex, int elementId, ListItemStatus state)
 {

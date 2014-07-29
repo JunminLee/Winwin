@@ -32,7 +32,6 @@ class PartnerListForm
 	, public Tizen::Ui::IActionEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
  	, public Tizen::Ui::Scenes::ISceneEventListener
- 	, public Tizen::Ui::Controls::ICustomElementF
     , public Tizen::Ui::Controls::IGroupedListViewItemEventListener
     , public Tizen::Ui::Controls::IGroupedListViewItemProviderF
     , public Tizen::Ui::Controls::IFastScrollListener
@@ -54,6 +53,7 @@ private:
 
 
 	//IGroupedListViewItemEventListener
+	virtual void OnGroupedListViewContextItemStateChanged(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, Tizen::Ui::Controls::ListContextItemStatus state);
 	virtual void OnGroupedListViewItemStateChanged(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, Tizen::Ui::Controls::ListItemStatus state);
 	virtual void OnGroupedListViewItemSwept(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex,  int itemIndex, Tizen::Ui::Controls::SweepDirection direction);
 	virtual void OnGroupedListViewItemLongPressed(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, bool& invokeListViewItemCallback);

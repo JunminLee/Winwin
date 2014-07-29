@@ -16,15 +16,15 @@ using namespace Tizen::Base;
 using namespace Tizen::Base::Collection;
 
 
-class PartnerItem : public Tizen::Ui::Controls::ICustomElementF
+class PartnerItem : public Tizen::Ui::Controls::ICustomElement
 {
 public:
 	void			Initialize(String pName, String pProfile);
 	String			GetPartnerName();
-	char			GetPartnerFirstName();
+	wchar_t			GetPartnerFirstName();
 	String			GetProfilePath();
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap& bitmap);
-    bool 	OnDraw	(Tizen::Graphics::Canvas & 	canvas, const Tizen::Graphics::Rectangle & 	rect, Tizen::Ui::Controls::ListItemDrawingStatus status);
+    virtual bool OnDraw	(Tizen::Graphics::Canvas & 	canvas, const Tizen::Graphics::Rectangle& 	rect, Tizen::Ui::Controls::ListItemDrawingStatus status);
 //	void			ActiveButton(const Tizen::Graphics::Point &point, int state);
 	Dimension		Dim_Content;
 	String Bitmap_Pofile;
