@@ -29,7 +29,7 @@ SettingForm::~SettingForm(void)
 bool
 SettingForm::Initialize(void)
 {
-	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
+	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER| FORM_STYLE_HEADER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
 	return true;
@@ -42,6 +42,7 @@ SettingForm::OnInitializing(void)
 
 	// TODO: Add your initialization code here
 	FooterItem footerItem[5];
+	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
 	Image inActivation_Image[5];
 	String inActivation_Path[5];
@@ -113,12 +114,19 @@ SettingForm::OnInitializing(void)
 	footerItem[4].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	Activation_Image[4].DecodeN(Activation_Path[4], BITMAP_PIXEL_FORMAT_ARGB8888));
 
+	Header* pHeader = GetHeader();
+	pHeader->SetStyle(HEADER_STYLE_TITLE);
+	pHeader->SetBackgroundBitmap(pAppResource->GetBitmapN(L"header.png"));
+
 	Footer* pFooter = GetFooter();
 	if (pFooter)
 	{
 		pFooter->AddActionEventListener(*this);
 	}
-
+	if (pHeader)
+	{
+		pHeader->AddActionEventListener(*this);
+	}
 	pFooter->AddItem(footerItem[0]);
 	pFooter->AddItem(footerItem[1]);
 	pFooter->AddItem(footerItem[2]);

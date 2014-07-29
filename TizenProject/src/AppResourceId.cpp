@@ -1,5 +1,6 @@
 #include "AppResourceId.h"
 
+const wchar_t* IDC_GROUPEDLISTVIEW1 = L"IDC_GROUPEDLISTVIEW_PL";
 const wchar_t* IDC_LABEL1 = L"IDC_LABEL1";
 const wchar_t* IDL_FORM = L"IDL_FORM";
 const wchar_t* IDL_FORM2 = L"IDL_FORM2";
@@ -15,4 +16,4 @@ const wchar_t* IDSCN_1 = L"IDSCN_1";
 const wchar_t* MainScene = L"MainScene";
 //
 //
-const wchar_t* master=L"sdsdsd";
+
