@@ -5,7 +5,6 @@
  *      Author: Gants
  */
 
-
 #include "PartnerItem.h"
 
 using namespace Tizen::Graphics;
@@ -25,7 +24,8 @@ using namespace Tizen::App;
 void
 PartnerItem::Initialize(String pName, String pProfile)
 {
-	name = pName;
+
+	Partner_Name = pName;
 	Bitmap_Pofile=pProfile;
 }
 
@@ -41,14 +41,14 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 
     Font *pFont = new Font;
     Dimension Dim_Location;
-    DrawEllipseImage(canvas, Color(255,255,255,255),Rectangle(rect.x + 10, rect.y + 10, 80, 80), *pAppResource->GetBitmapN(L"tizen.png"));
+    DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 10, rect.y + 10, 80, 80), *pAppResource->GetBitmapN(Bitmap_Pofile));
 
     pFont->Construct(FONT_STYLE_PLAIN, 50);
     canvas.SetFont(*pFont);
-    pFont->GetTextExtent(name, name.GetLength(), Dim_Content);
+    pFont->GetTextExtent(Partner_Name, Partner_Name.GetLength(), Dim_Content);
 
 
-	canvas.DrawText(Point(rect.x + 150, rect.y + 10), name);
+	canvas.DrawText(Point(rect.x + 150, rect.y + 20), Partner_Name);
 
 	return 0;
 }
@@ -190,9 +190,7 @@ PartnerItem::DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangl
    canvas.Unlock();
 }
 
-String			name;
-String			location_and_time;
-String			content;
+
 
 PartnerItem&
 PartnerItem::operator = (const PartnerItem& rhs)
@@ -203,7 +201,7 @@ PartnerItem::operator = (const PartnerItem& rhs)
 
 	}
 
-	name = rhs.name;
+	Partner_Name = rhs.Partner_Name;
 	Bitmap_Pofile=rhs.Bitmap_Pofile;
 
 	return *this;
@@ -243,13 +241,13 @@ PartnerItem::operator != (const PartnerItem& rhs) const
 
 String	PartnerItem::GetPartnerName()
 {
-	return name;
+	return Partner_Name;
 }
 wchar_t	PartnerItem::GetPartnerFirstName()
 {
 	wchar_t t;
 	String lower;
-	name.ToUpperCase(lower);
+	Partner_Name.ToUpperCase(lower);
 	lower.GetCharAt(0,t);
 	return t;
 }
@@ -257,4 +255,6 @@ String PartnerItem::GetProfilePath()
 {
 	return Bitmap_Pofile;
 }
+
+
 

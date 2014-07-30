@@ -4,8 +4,6 @@
  *  Created on: Jul 27, 2014
  *      Author: pji
  */
-
-
 #include "TimeLineItem.h"
 
 
@@ -29,23 +27,14 @@ TimeLineItem::SetExtendContentViewCheck(bool t)
 	extend_content_actived_check = t;
 }
 void
-TimeLineItem::Initialize(String pName, String pLocation_and_time, String pContent)
+TimeLineItem::Initialize(String pName, String pLoation_and_time, String pContent)
 {
-	//bitmap_Profile = new Bitmap;
-	//bitmap_Flag = new Bitmap;
-
-	//bitmap_Profile = Profile;
-	//bitmap_Flag = Flag;
 	name = pName;
-	location_and_time = pLocation_and_time;
-	content = pContent;
+	location_and_time= pLoation_and_time;
 	extend_content_actived_check = false;
 	pressed_button_state = NONE;
 	released_button_state = NONE;
-
-    //RC_extendButton = Rectangle(30, 150, 60, 70);
 }
-
 bool
 TimeLineItem::OnDraw	(	Tizen::Graphics::Canvas & 	canvas,
 const Tizen::Graphics::Rectangle & 	rect,
@@ -281,9 +270,7 @@ TimeLineItem::DrawEllipseImage(Canvas& canvas, const Color& color, const Rectang
    canvas.Unlock();
 }
 
-String			name;
-String			location_and_time;
-String			content;
+
 
 TimeLineItem&
 TimeLineItem::operator = (const TimeLineItem& rhs)

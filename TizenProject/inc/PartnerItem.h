@@ -28,7 +28,7 @@ public:
 //	void			ActiveButton(const Tizen::Graphics::Point &point, int state);
 	Dimension		Dim_Content;
 	String Bitmap_Pofile;
-	String name;
+	String Partner_Name;
 public:
     //Overload the assignment operator.
 	PartnerItem& operator = (const PartnerItem& rhs);

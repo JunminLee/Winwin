@@ -45,8 +45,12 @@ const int GROUP_INDEX24 = 24;
 const int GROUP_INDEX25 = 25;
 
 int ITEM_COUNT[26];
-
-PartnerListForm::PartnerListForm(void)
+int ITEM_CREATE_CNT=0;
+int Total_COUNT;
+int Group_Item_Count[26];
+char Group_name[26];
+int Group_Scroll[26];
+PartnerListForm::PartnerListForm(void) : __pList(null)
 {
 }
 
@@ -170,47 +174,49 @@ PartnerListForm::OnInitializing(void)
 	String check_name;
 	wchar_t temp;
 
-	p.Initialize(L"Iron Man",L"s-face1.png");
-	temp = p.GetPartnerFirstName();
-	temp-='a';
-	ITEM_COUNT[temp]++;
-
-	ArrPartnerItem.Add(p);
-	p.Initialize(L"Hawk Eye",L"s-face2.png");
-	temp = p.GetPartnerFirstName();
-	temp-='a';
-	ITEM_COUNT[temp]++;
-	ArrPartnerItem.Add(p);
-
-	p.Initialize(L"Thor",L"s-face3.png");
+	p.Initialize(L"Black Widow",L"s-face7.png");
 	ArrPartnerItem.Add(p);
 	temp = p.GetPartnerFirstName();
-	temp-='a';
-	ITEM_COUNT[temp]++;
-
-	p.Initialize(L"Nick Fury",L"s-face4.png");
-	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='a';
-	ITEM_COUNT[temp]++;
-
-	p.Initialize(L"Hulk",L"s-face5.png");
-	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='a';
+	temp-='A';
 	ITEM_COUNT[temp]++;
 
 	p.Initialize(L"Captain Amerian",L"s-face6.png");
 	ArrPartnerItem.Add(p);
 	temp = p.GetPartnerFirstName();
-	temp-='a';
+	temp-='A';
 	ITEM_COUNT[temp]++;
 
-	p.Initialize(L"Black Widow",L"s-face7.png");
+	p.Initialize(L"Hawk Eye",L"s-face2.png");
+	temp = p.GetPartnerFirstName();
+	temp-='A';
+	ITEM_COUNT[temp]++;
+	ArrPartnerItem.Add(p);
+
+	p.Initialize(L"Hulk",L"s-face5.png");
 	ArrPartnerItem.Add(p);
 	temp = p.GetPartnerFirstName();
-	temp-='a';
+	temp-='A';
 	ITEM_COUNT[temp]++;
+
+	p.Initialize(L"Iron Man",L"s-face1.png");
+	ArrPartnerItem.Add(p);
+	temp = p.GetPartnerFirstName();
+	temp-='A';
+	ITEM_COUNT[temp]++;
+
+	p.Initialize(L"Nick Fury",L"s-face4.png");
+	ArrPartnerItem.Add(p);
+	temp = p.GetPartnerFirstName();
+	temp-='A';
+	ITEM_COUNT[temp]++;
+
+	p.Initialize(L"Thor",L"s-face3.png");
+	ArrPartnerItem.Add(p);
+	temp = p.GetPartnerFirstName();
+	temp-='A';
+	ITEM_COUNT[temp]++;
+
+
 
 	return r;
 }
@@ -288,7 +294,8 @@ PartnerListForm::GetBitmap(void)
 void
 PartnerListForm::CreateGroupedListView(void)
 {
-	__pList = static_cast <GroupedListView*> (GetControl(IDC_GROUPEDLISTVIEW1));
+	__pList = new GroupedListView();
+	__pList->Construct(Rectangle(0, 0, GetClientAreaBounds().width, GetClientAreaBounds().height), GROUPED_LIST_VIEW_STYLE_INDEXED, true, true);
 	__pList->SetItemProvider(*this);
 	__pList->SetFastScrollIndex(L"ABCDEFGHIJKLMNOPQRSTUVWXYZ", false);
 	__pList->AddFastScrollListener(*this);
@@ -302,112 +309,193 @@ PartnerListForm::OnFastScrollIndexSelected(Control& source, Tizen::Base::String&
 
 	if( !index.CompareTo(L"A" ))
 	{
-		__pList->ScrollToItem(GROUP_INDEX0, -1);
+		if(ITEM_COUNT[0]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[0], -1);
+		}
 	}
 	else if( !index.CompareTo(L"B"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX1, -1);
+		if(ITEM_COUNT[1]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[1], -1);
+		}
 	}
 	else if( !index.CompareTo(L"C"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX2, -1);
+		if(ITEM_COUNT[2]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[2], -1);
+		}
 	}
 	else if( !index.CompareTo(L"D"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX3, -1);
+		if(ITEM_COUNT[3]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[3], -1);
+		}
 	}
 	else if( !index.CompareTo(L"E"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX4, -1);
+		if(ITEM_COUNT[4]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[4], -1);
+		}
 	}
 	else if( !index.CompareTo(L"F"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX5, -1);
+		if(ITEM_COUNT[5]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[5], -1);
+		}
 	}
 	else if( !index.CompareTo(L"G"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX6, -1);
+		if(ITEM_COUNT[6]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[6], -1);
+		}
 	}
 	else if( !index.CompareTo(L"H"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX7, -1);
+		if(ITEM_COUNT[7]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[7], -1);
+		}
 	}
 	else if( !index.CompareTo(L"I"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX8, -1);
+		if(ITEM_COUNT[8]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[8], -1);
+		}
 	}
 	else if( !index.CompareTo(L"J"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX9, -1);
+		if(ITEM_COUNT[9]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[9], -1);
+		}
 	}
 	else if( !index.CompareTo(L"K"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX10, -1);
+		if(ITEM_COUNT[10]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[10], -1);
+		}
 	}
 	else if( !index.CompareTo(L"L"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX11, -1);
+		if(ITEM_COUNT[11]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[11], -1);
+		}
 	}
 	else if( !index.CompareTo(L"M"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX12, -1);
+		if(ITEM_COUNT[12]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[12], -1);
+		}
 	}
 	else if( !index.CompareTo(L"N"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX13, -1);
+		if(ITEM_COUNT[13]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[13], -1);
+		}
 	}
 	else if( !index.CompareTo(L"O"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX14, -1);
+		if(ITEM_COUNT[14]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[14], -1);
+		}
 	}
 	else if( !index.CompareTo(L"P"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX15, -1);
+		if(ITEM_COUNT[15]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[15], -1);
+		}
 	}
 	else if( !index.CompareTo(L"Q"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX16, -1);
+		if(ITEM_COUNT[16]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[16], -1);
+		}
 	}
 	else if( !index.CompareTo(L"R"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX17, -1);
+		if(ITEM_COUNT[17]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[17], -1);
+		}
 	}
 	else if( !index.CompareTo(L"S"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX18, -1);
+		if(ITEM_COUNT[18]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[18], -1);
+		}
 	}
 	else if( !index.CompareTo(L"T"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX19, -1);
+		if(ITEM_COUNT[19]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[19], -1);
+		}
 	}
 	else if( !index.CompareTo(L"U"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX20, -1);
+		if(ITEM_COUNT[20]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[20], -1);
+		}
 	}
 	else if( !index.CompareTo(L"V"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX21, -1);
+		if(ITEM_COUNT[21]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[21], -1);
+		}
 	}
 	else if( !index.CompareTo(L"W"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX22, -1);
+		if(ITEM_COUNT[22]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[22], -1);
+		}
 	}
 	else if( !index.CompareTo(L"X"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX23, -1);
+		if(ITEM_COUNT[23]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[23], -1);
+		}
 	}
 	else if( !index.CompareTo(L"Y"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX24, -1);
+		if(ITEM_COUNT[24]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[24], -1);
+		}
 	}
 	else if( !index.CompareTo(L"Z"))
 	{
-		__pList->ScrollToItem(GROUP_INDEX25, -1);
+		if(ITEM_COUNT[25]>0)
+		{
+			__pList->ScrollToItem(Group_Scroll[25], -1);
+		}
 	}
+
 	Invalidate(true);
 }
+
+
 void
-OnGroupedListViewContextItemStateChanged(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, Tizen::Ui::Controls::ListContextItemStatus state)
+PartnerListForm::OnGroupedListViewContextItemStateChanged(Tizen::Ui::Controls::GroupedListView &listView, int groupIndex, int itemIndex, int elementId, Tizen::Ui::Controls::ListContextItemStatus state)
 {
 
 }
@@ -435,13 +523,19 @@ int
 PartnerListForm::GetGroupCount(void)
 {
 	int i, groupcount=0;
+
 	for(i=0; i<26; i++)
 	{
 		if(ITEM_COUNT[i]!=0)
 		{
+			Group_name[groupcount]='A'+i;
+			Group_Scroll[i]=groupcount;
+			Group_Item_Count[groupcount]=ITEM_COUNT[i];
+			Total_COUNT+=ITEM_COUNT[i];
 			groupcount++;
 		}
 	}
+
 	return groupcount;
 }
 
@@ -452,86 +546,87 @@ PartnerListForm::GetItemCount(int groupIndex)
 	switch(groupIndex)
 	{
 	case GROUP_INDEX0:
-		itemCount = ITEM_COUNT[0];
+		itemCount = Group_Item_Count[0];
 		break;
 	case GROUP_INDEX1:
-		itemCount = ITEM_COUNT[1];
+		itemCount = Group_Item_Count[1];
 		break;
 	case GROUP_INDEX2:
-		itemCount = ITEM_COUNT[2];
+		itemCount = Group_Item_Count[2];
 		break;
 	case GROUP_INDEX3:
-		itemCount = ITEM_COUNT[3];
+		itemCount = Group_Item_Count[3];
 		break;
 	case GROUP_INDEX4:
-		itemCount = ITEM_COUNT[4];
+		itemCount = Group_Item_Count[4];
 		break;
 	case GROUP_INDEX5:
-		itemCount = ITEM_COUNT[5];
+		itemCount = Group_Item_Count[5];
 		break;
 	case GROUP_INDEX6:
-		itemCount = ITEM_COUNT[6];
+		itemCount = Group_Item_Count[6];
 		break;
 	case GROUP_INDEX7:
-		itemCount = ITEM_COUNT[7];
+		itemCount = Group_Item_Count[7];
 		break;
 	case GROUP_INDEX8:
-		itemCount = ITEM_COUNT[8];
+		itemCount = Group_Item_Count[8];
 		break;
 	case GROUP_INDEX9:
-		itemCount = ITEM_COUNT[9];
+		itemCount = Group_Item_Count[9];
 		break;
 	case GROUP_INDEX10:
-		itemCount = ITEM_COUNT[10];
+		itemCount = Group_Item_Count[10];
 		break;
 	case GROUP_INDEX11:
-		itemCount = ITEM_COUNT[11];
+		itemCount = Group_Item_Count[11];
 		break;
 	case GROUP_INDEX12:
-		itemCount = ITEM_COUNT[12];
+		itemCount = Group_Item_Count[12];
 		break;
 	case GROUP_INDEX13:
-		itemCount = ITEM_COUNT[13];
+		itemCount = Group_Item_Count[13];
 		break;
 	case GROUP_INDEX14:
-		itemCount = ITEM_COUNT[14];
+		itemCount = Group_Item_Count[14];
 		break;
 	case GROUP_INDEX15:
-		itemCount = ITEM_COUNT[15];
+		itemCount = Group_Item_Count[15];
 		break;
 	case GROUP_INDEX16:
-		itemCount = ITEM_COUNT[16];
+		itemCount = Group_Item_Count[16];
 		break;
 	case GROUP_INDEX17:
-		itemCount = ITEM_COUNT[17];
+		itemCount = Group_Item_Count[17];
 		break;
 	case GROUP_INDEX18:
-		itemCount = ITEM_COUNT[18];
+		itemCount = Group_Item_Count[18];
 		break;
 	case GROUP_INDEX19:
-		itemCount = ITEM_COUNT[19];
+		itemCount = Group_Item_Count[19];
 		break;
 	case GROUP_INDEX20:
-		itemCount = ITEM_COUNT[20];
+		itemCount = Group_Item_Count[20];
 		break;
 	case GROUP_INDEX21:
-		itemCount = ITEM_COUNT[21];
+		itemCount = Group_Item_Count[21];
 		break;
 	case GROUP_INDEX22:
-		itemCount = ITEM_COUNT[22];
+		itemCount = Group_Item_Count[22];
 		break;
 	case GROUP_INDEX23:
-		itemCount = ITEM_COUNT[23];
+		itemCount = Group_Item_Count[23];
 		break;
 	case GROUP_INDEX24:
-		itemCount = ITEM_COUNT[24];
+		itemCount = Group_Item_Count[24];
 		break;
 	case GROUP_INDEX25:
-		itemCount = ITEM_COUNT[25];
+		itemCount = Group_Item_Count[25];
 		break;
 	default:
 		break;
 	}
+
 	return itemCount;
 }
 
@@ -544,82 +639,83 @@ PartnerListForm::CreateGroupItem(int groupIndex, float itemWidth)
 	switch (groupIndex)
 	{
 	case GROUP_INDEX0:
-		text = L"A";
+		text.Append(Group_name[0]);
+
 		break;
 	case GROUP_INDEX1:
-		text = L"B";
+		text.Append(Group_name[1]);
 		break;
 	case GROUP_INDEX2:
-		text = L"C";
+		text.Append(Group_name[2]);
 		break;
 	case GROUP_INDEX3:
-		text = L"D";
+		text.Append(Group_name[3]);
 		break;
 	case GROUP_INDEX4:
-		text = L"E";
+		text.Append(Group_name[4]);
 		break;
 	case GROUP_INDEX5:
-		text = L"F";
+		text.Append(Group_name[5]);
 		break;
 	case GROUP_INDEX6:
-		text = L"G";
+		text.Append(Group_name[6]);
 		break;
 	case GROUP_INDEX7:
-		text = L"H";
+		text.Append(Group_name[7]);
 		break;
 	case GROUP_INDEX8:
-		text = L"I";
+		text.Append(Group_name[8]);
 		break;
 	case GROUP_INDEX9:
-		text = L"J";
+		text.Append(Group_name[9]);
 		break;
 	case GROUP_INDEX10:
-		text = L"K";
+		text.Append(Group_name[10]);
 		break;
 	case GROUP_INDEX11:
-		text = L"L";
+		text.Append(Group_name[11]);
 		break;
 	case GROUP_INDEX12:
-		text = L"M";
+		text.Append(Group_name[12]);
 		break;
 	case GROUP_INDEX13:
-		text = L"N";
+		text.Append(Group_name[13]);
 		break;
 	case GROUP_INDEX14:
-		text = L"O";
+		text.Append(Group_name[14]);
 		break;
 	case GROUP_INDEX15:
-		text = L"P";
+		text.Append(Group_name[15]);
 		break;
 	case GROUP_INDEX16:
-		text = L"Q";
+		text.Append(Group_name[16]);
 		break;
 	case GROUP_INDEX17:
-		text = L"R";
+		text.Append(Group_name[17]);
 		break;
 	case GROUP_INDEX18:
-		text = L"S";
+		text.Append(Group_name[18]);
 		break;
 	case GROUP_INDEX19:
-		text = L"T";
+		text.Append(Group_name[19]);
 		break;
 	case GROUP_INDEX20:
-		text = L"U";
+		text.Append(Group_name[20]);
 		break;
 	case GROUP_INDEX21:
-		text = L"V";
+		text.Append(Group_name[21]);
 		break;
 	case GROUP_INDEX22:
-		text = L"W";
+		text.Append(Group_name[22]);
 		break;
 	case GROUP_INDEX23:
-		text = L"X";
+		text.Append(Group_name[23]);
 		break;
 	case GROUP_INDEX24:
-		text = L"Y";
+		text.Append(Group_name[24]);
 		break;
 	case GROUP_INDEX25:
-		text = L"Z";
+		text.Append(Group_name[25]);
 		break;
 	default:
 		break;
@@ -632,16 +728,14 @@ ListItemBase*
 PartnerListForm::CreateItem(int groupIndex, int itemIndex, float itemWidth)
 {
 	ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
-	CustomItem* pItem = new (std::nothrow) CustomItem();
-	pItem->Construct(Tizen::Graphics::FloatDimension(itemWidth, 200.0f), style);
+		CustomItem* pItem = new (std::nothrow) CustomItem();
+		pItem->Construct(Tizen::Graphics::FloatDimension(itemWidth, 120.0f), style);
 
-	PartnerItem *h;
-	//AppResource* pAppResource = Application::GetInstance()->GetAppResource();
-	h = new PartnerItem;
-	ArrPartnerItem.GetAt(itemIndex, *h);
-
-
-	return pItem;
+		PartnerItem *p;
+		p= new PartnerItem;
+		ArrPartnerItem.GetAt(ITEM_CREATE_CNT++, *p);
+		pItem->AddElement(Rectangle(10, 10, itemWidth, 120.0f), 0, *(static_cast<ICustomElement *>(p)));
+		return pItem;
 }
 
 bool
