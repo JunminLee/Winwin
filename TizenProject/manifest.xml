@@ -1,23 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Manifest xmlns="http://schemas.tizen.org/2012/12/manifest">
-	<Id>ZPYDNnmVpf</Id>
-	<Version>1.0.0</Version>
-	<Type>C++App</Type>
-	<Requirements>
-	<Feature Name="http://tizen.org/feature/platform.native.api.version">2.2</Feature>
-	</Requirements>
-	<Apps>
-		<ApiVersion>2.2</ApiVersion>
-		<Privileges></Privileges>
-		<UiApp Name="TizenProject" Main="True" MenuIconVisible="True">
-			<UiScalability CoordinateSystem="Logical" BaseScreenSize="Normal" LogicalCoordinate="720"></UiScalability>
-			<UiTheme SystemTheme="White"></UiTheme>
-			<DisplayNames>
-				<DisplayName Locale="eng-GB">TizenProject</DisplayName>
-			</DisplayNames>
-			<Icons>
-				<Icon Section="MainMenu" >mainmenu.png</Icon>
-			</Icons>
-		</UiApp>
-	</Apps>
+    <Id>ZPYDNnmVpf</Id>
+    <Version>1.0.0</Version>
+    <Type>C++App</Type>
+    <Requirements>
+        <Feature Name="http://tizen.org/feature/platform.native.api.version">2.2</Feature>
+    </Requirements>
+    <Apps>
+        <ApiVersion>2.2</ApiVersion>
+        <Privileges/>
+        <UiApp LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
+            <UiScalability BaseScreenSize="Normal" CoordinateSystem="Logical" LogicalCoordinate="720"/>
+            <UiTheme SystemTheme="White" UserDefinedTheme="GoGo"/>
+            <DisplayNames>
+                <DisplayName Locale="eng-GB">TizenProject</DisplayName>
+            </DisplayNames>
+            <Icons>
+                <Icon Section="MainMenu">mainmenu.png</Icon>
+            </Icons>
+            <LaunchConditions/>
+            <Permissions>
+                <Permission Type="Signature"/>
+            </Permissions>
+        </UiApp>
+    </Apps>
 </Manifest>
