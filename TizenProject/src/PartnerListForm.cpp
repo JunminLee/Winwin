@@ -300,6 +300,8 @@ PartnerListForm::CreateGroupedListView(void)
 	__pList->SetFastScrollIndex(L"ABCDEFGHIJKLMNOPQRSTUVWXYZ", false);
 	__pList->AddFastScrollListener(*this);
 	__pList->AddGroupedListViewItemEventListener(*this);
+	__pList->SetSectionColor(Color(0,0,0,255));
+
 	AddControl(__pList);
 }
 
