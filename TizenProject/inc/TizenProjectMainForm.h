@@ -10,6 +10,7 @@
 #include <gl.h>
 #include <FMedia.h>
 #include "TimeLineItem.h"
+#include "CustomPanel.h"
 
 using namespace Tizen::Base;
 using namespace Tizen::App;
@@ -25,10 +26,8 @@ class TizenProjectMainForm
 	, public Tizen::Ui::IActionEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
  	, public Tizen::Ui::Scenes::ISceneEventListener
- 	, public Tizen::Ui::Controls::IListViewItemEventListener
- 	, public Tizen::Ui::Controls::IListViewItemProvider
  	, public Tizen::Ui::ITouchEventListener
- 	, public Tizen::Ui::Controls::IScrollEventListener
+    , public Tizen::Ui::Controls::ITableViewItemProvider
 {
 public:
 	TizenProjectMainForm(void);
@@ -47,20 +46,12 @@ private:
 
 
 public:
-    // IListViewItemEventListener
-    virtual void OnListViewContextItemStateChanged(Tizen::Ui::Controls::ListView &listView, int index, int elementId, Tizen::Ui::Controls::ListContextItemStatus state);
-    virtual void OnListViewItemStateChanged(Tizen::Ui::Controls::ListView &listView, int index, int elementId, Tizen::Ui::Controls::ListItemStatus status);
-    virtual void OnListViewItemSwept(Tizen::Ui::Controls::ListView &listView, int index, Tizen::Ui::Controls::SweepDirection direction);
-
-    // IListViewItemProvider
-    virtual Tizen::Ui::Controls::ListItemBase* CreateItem(int index, int itemWidth);
-    virtual bool DeleteItem(int index, Tizen::Ui::Controls::ListItemBase* pItem, int itemWidth);
+    // ITableViewItemProvider
     virtual int GetItemCount(void);
-
-    // IScrollEventListener
-    virtual void 	OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type);
-    virtual void 	OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition);
-    virtual void 	OnScrollStopped (Tizen::Ui::Control &source);
+    virtual Tizen::Ui::Controls::TableViewItem* CreateItem(int itemIndex, int itemWidth);
+    virtual bool DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
+    virtual void UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
+    virtual int GetDefaultItemHeight(void);
 
 protected:
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
@@ -81,14 +72,8 @@ protected:
 
 
 private:
-	Tizen::Ui::Controls::ListView*				TimeLineListView;
-	Tizen::Ui::Controls::ListContextItem*		TimeLineItemContext;
-
-	ArrayListT<TimeLineItem>					ArrTimeLineItem;
-	CustomItem*									pItem;
-
-
-	bool										PostingButtonCheck; // true = button on, false = button off
+	TableView* 		TimelineTableView;
+	ArrayList  		ArrCustomPanel;
 };
 
 #endif	//_TIZEN_PROJECT_MAIN_FORM_H_
