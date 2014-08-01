@@ -2,6 +2,18 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="author-signature.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>9mpi05sbeG4+cKl4JtWnNqIwTghz4YRk0FBQmSz8Qao=</DigestValue>
+</Reference>
+<Reference URI="bin/TizenProject.exe">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>jlQcEgwzjedguOS29bboE+4AHLHnA2mZ7uxhiE+kBm0=</DigestValue>
+</Reference>
+<Reference URI="info/manifest.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>G+Eu75NX8iqymX4bCTmdtjukHdeyZTdFWA3YhRIIv/U=</DigestValue>
+</Reference>
 <Reference URI="res/screen-density-xhigh/Chatting_Act.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>WjTZxEPQYdGBNaPz5WoDUvrZVre5VjynzRdpkeW+qH0=</DigestValue>
@@ -9,74 +21,6 @@
 <Reference URI="res/screen-density-xhigh/Chatting_InAct.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>416Y064/Ye79xtHrYkUgTlBwtC2MtlfRfhcK5tvsQY0=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Intro.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>VkG4saL4JrayphxcPxEXnFGVww7rPwoD6aes98fDgQc=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PartnerList_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>T1S/tSvqXdtPCEfi7ArpFZEcZIM4HciuJjc/RFy4rvs=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PartnerList_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dDszIGBlBmbsxFXJNYXFiaoh4EJIkSnnx1hWKqYUojU=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PartnerResearch_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ehYvCFtxe4kRAjYv+ExB9nLY4Ri9WEsk/6q/fkyXMRs=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PartnerResearch_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>MC5/mzGDuV9anx90KpF72a2sVLIrCLkccnT18kNwYkE=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Setting_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>+nANtNRoL/4egTS0YAT6QIzX7NC3T+1aPHA/hZEttaE=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Setting_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>xCFE9fA90yLERKbvB1OnelafKcBagMMwquTxuEA07Fw=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/TimeLine_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>xCDikn4nxVuka5pBey492PHNHJ6WiwF6DhVcMGEEd0o=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/TimeLine_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ipeYuTBMKKZWcosCtPBmIhkyj5oKsy+QFyTW8tVBsTk=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+gO7fw=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM2.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>MkOMcR+XpijsTwnZVeeApaxCH/tBY99o1vEqNG/RBmU=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM4.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM5.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>M/eoBcGopCvNZhHcLfKAw1/LDKY8kapRrzEK3Wc2XUA=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_INTRO.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Q6u41RPDKsdCXSrnA/tqlbPGHNQeaeC8OMP9Lo/D57c=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/workflow.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>vUFX+Ci83P9aRLE0vdbAAbIjRejD/MgQh4T3k78+GVM=</DigestValue>
-</Reference>
-<Reference URI="shared/res/screen-density-xhigh/mainmenu.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/PostingButton.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/comment_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -94,13 +38,33 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/Intro.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>VkG4saL4JrayphxcPxEXnFGVww7rPwoD6aes98fDgQc=</DigestValue>
+</Reference>
 <Reference URI="res/screen-density-xhigh/nationalflag.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/tizen.png">
+<Reference URI="res/screen-density-xhigh/PartnerList_Act.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
+<DigestValue>T1S/tSvqXdtPCEfi7ArpFZEcZIM4HciuJjc/RFy4rvs=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/PartnerList_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>dDszIGBlBmbsxFXJNYXFiaoh4EJIkSnnx1hWKqYUojU=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/PartnerResearch_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ehYvCFtxe4kRAjYv+ExB9nLY4Ri9WEsk/6q/fkyXMRs=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/PartnerResearch_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>MC5/mzGDuV9anx90KpF72a2sVLIrCLkccnT18kNwYkE=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/PostingButton.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/s-face1.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -130,521 +94,301 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>zj4SoQrU6+g0cTriwqHFQMr9VFznDqOULGiB5K/CH4g=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/Setting_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+nANtNRoL/4egTS0YAT6QIzX7NC3T+1aPHA/hZEttaE=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/Setting_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xCFE9fA90yLERKbvB1OnelafKcBagMMwquTxuEA07Fw=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/TimeLine_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>xCDikn4nxVuka5pBey492PHNHJ6WiwF6DhVcMGEEd0o=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/TimeLine_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ipeYuTBMKKZWcosCtPBmIhkyj5oKsy+QFyTW8tVBsTk=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/tizen.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+gO7fw=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM2.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>MkOMcR+XpijsTwnZVeeApaxCH/tBY99o1vEqNG/RBmU=</DigestValue>
+</Reference>
 <Reference URI="res/screen-size-normal/IDL_FORM3.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>cA7+dBm4rTVwg5J4iTRI1ACIkeuFaYxUEPz1LJ/9pjc=</DigestValue>
 </Reference>
-<Reference URI="bin/TizenProject.exe">
+<Reference URI="res/screen-size-normal/IDL_FORM4.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>qRw1SN0UxxHs+z0xPJOS1c9XsYAgNycC8J4ocZ0+Tis=</DigestValue>
+<DigestValue>ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=</DigestValue>
 </Reference>
-<Reference URI="info/manifest.xml">
+<Reference URI="res/screen-size-normal/IDL_FORM5.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dIa9dR8dXrrBmAogSPtsbd8uyRjCmk+kvTo1pWIyDII=</DigestValue>
+<DigestValue>M/eoBcGopCvNZhHcLfKAw1/LDKY8kapRrzEK3Wc2XUA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/GoGo.xml">
+<Reference URI="res/screen-size-normal/IDL_INTRO.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>nZcpqD/o0uch0Smb+c5g8OhS9GnmEPx0sAVud7NaGtQ=</DigestValue>
+<DigestValue>Q6u41RPDKsdCXSrnA/tqlbPGHNQeaeC8OMP9Lo/D57c=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_01.png">
+<Reference URI="res/screen-size-normal/workflow.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>vUFX+Ci83P9aRLE0vdbAAbIjRejD/MgQh4T3k78+GVM=</DigestValue>
+</Reference>
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_01.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ttADiyZ7YSFJkE+Tby7Ie6UHDnj6sM3PwY3TsqwYC6s=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_02.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_02.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>LZYno2RDMBbKHmiSx06hmwCi9Sz4zl9SfdvfSjhZSOQ=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_03.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_03.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>u3VFZFMteTyoxFiHn+rLhpYmvElrckTT6ri6pZRrcds=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_04.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_04.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>XhQ/phZVWWUvwTps0sNIfSDyldVEo+7aPbDdwTQA4j0=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_05.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_05.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>O9ThCW5xPcemCerh35zWZI7NzVMHAt3RHz+WMS/4vwA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_06.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_06.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>u7uZG71NbokArLbrGpKnU7bZrH8sN/ag//nnOtWjEfo=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_07.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_07.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>CrmBJTQl7n45iVSh6V8vapzu3i927rdZhFGyO5bD7RA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_08.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_08.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>wRXGM9GaNPJ8hxTfDnLETPqxbJFzRYamfTDQ/qFWgGA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_09.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_09.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>wVaBB9L08XKcGlZwOtQ0IzaAnw2ckJMMXa9fbZJUjHI=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_10.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_10.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>VGKAB6sBQHb1OYxHgaMYHvtkUP5K8yRUgesNtRvWn9Y=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_11.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_11.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>lqY04Su86XFJlRSQzDXNkBMGPACuNUqQDpnAJOLRIoM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_12.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_12.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>eAwAfl8qREqVrrsN/YbRY4lyJV0ScXyNFfXOecdm/10=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_13.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_13.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>8bRUu9jeaLPeIvJ6h94CRwE8BllZm2YlCD7FgrLOdqE=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_14.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_14.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>rvKEByXI1eep0wiKDtIKS2tfWrnTiswJhLC1GjyInxg=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_15.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_15.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Li6zDaD9tTMPYSfeqVSEmKhEpyBnNSxUaYQIq8WvZzw=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_16.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_16.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>5bjl+AvwdUWcR8uE/ULuE1Qwr5LwkB1pvuVVCag2hXs=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_17.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_17.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>PCAEopS73ZCy/irLXBrUecoZl90xa8kCJngrXb3/Er0=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_18.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_18.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>hqby6ZMVy/XlZeZJdXVO7TO0vxlyCHtGe/nf0FbBrvE=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_19.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_19.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2aenYnwLBVOqyApUlrgQJqmPc3lAvEvTmfTWp5wnurk=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_20.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_20.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>8Bqard92giRzD0spwyI64S1bGJI2H/FZ6VYcRYoYGR0=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_21.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_21.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>BwKPCZJVON8lbIkaB3oPO3p5pV73uxe8l1j5iUzKslA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_22.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_22.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>xozab4DXh5pkxRQkMrULJHLQAgK5XN45dsRnDV27zvY=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_23.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_23.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1Xuqa8d+Q/lykTIT/XZB8u8EgheDPY6QQVwHwb9QDzc=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_24.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_24.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>pTqg3bavIU0suJq3NdW6rmAUNW1YuDqzKMWHLx7AjXY=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_25.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_25.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>iS3U5+JWVD0iPilKmO8v9ZQwhGQWgzoQvipyhs1+Rqo=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_26.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_26.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>o5SaM1CAIRYyHB2FJ3CcgTIAxW/DsFkinPQffejFq9w=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_27.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_27.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>KuXFta6gwpd8q62QliV2SBG/+JPOY/neOeLTj9e2qC4=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_28.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_28.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>CrKi39NFP23Qa+uvfl5O3OiXSvRZGwkh2NeSMxpoEIY=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_29.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_29.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>M+M+kjiwams8yv71OENyXwxrl0VFeBlxsJ0P6xYQTF8=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_header_process_30.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_header_process_30.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>EmQUrFwoEMP21sF2BtTx4PdBLvbkqa4SlcfwtIOBR1g=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_01.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_01.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>7r/DpRthqHS3srmbT/h3BM5W5OTErC9tBOLBFZNkrAU=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_02.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_02.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>8Ewc1RHOR9UOyFa6uBf5aJJvMtYksEHK2uPkSiYyr0U=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_03.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_03.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>icgnivQpgqoT2HJtJRL0KRyu+t4PrFpJ8aXePW2rmwM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_04.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_04.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>AuOiiZQyA7xiUuD8YescYtzrWo6kcAMwmNS0BQNIFxA=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_05.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_05.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>CkeUJEfXw3LUhQ+8fHVAgLFfdwP0HgXeFvbhoi8YGfY=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_06.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_06.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>5AZY20eVxUjs7yHWSnplSSY14pkgIzdpcdqSblm4W1w=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_07.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_07.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>tLpGGJ7N2DTXNp5VuoZZsbgIUVktDS1yaLVyBDRs1t4=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_08.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_08.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Gh4tlua9UoEafqgitMTwUQ+nkXz/JFJN7flxuckt+wo=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_09.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_09.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>V4k2oGAzybzf8xkQvYVsS8plbEpGPereoLLqyZfnx4Q=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_10.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_10.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>5cHb+eydIz1eJ4aCQj4r8TigkqOy/C8vOpm+nFec264=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_11.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_11.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ISOxXK5baO1qeX0RKCq3cnvO27cZywmmHTU8WRH8eEo=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_12.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_12.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>DL19gJ8vXnj988psQumB+QlGney0uWFwYbDxUw/yRsM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_13.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_13.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>rggtdzBPG/pTS3GqhH1qMEkg7q8jc3/Sx1vGKyHnYrw=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_14.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_14.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>BGChPjDV/+bNbu0Cd9FdR+E4n7Qhk/OPRRRdTfX2+Us=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_15.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_15.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>hCEC5hYd+itXmHmW2ROMCz1Ldp6lYauKSidn8HIm8zM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_16.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_16.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>j/foX2/UeW+15UuxUtvY8USdvRhGVGytAaC53/JK0Jw=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_17.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_17.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>/mSWgBk4JHiDcL3gWSDmECKaAbWqHq5g+SETySEE9eM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_18.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_18.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>/b/kK23bsT3gGh/t3+u7OmY/74419J+XfjC29kzijxs=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_19.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_19.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>AJ5xRu4wHx0/WhbtOHiENlkNlNfqwVyms0J7UCVNfZ8=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_20.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_20.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ePNwYPNVvQ4qnvG65OqEx7qcCC8/V+Q7usNlL0PWVUI=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_21.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_21.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>V3Z9xZBv2FK2CzXjv0Ut8a1xptSjHYvsx4vGqNjeYeU=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_22.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_22.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>78x+4OT9hXv1WaxNij1D3x6VYr2Rv5Ggzz08M5dqHUs=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_23.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_23.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>wapvfMmIi8mAd5aRdigytTTxQs/E/rt9iC7OeNtmfMM=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_24.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_24.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>uYdr87Z3PD/zJ87fgXgyvgteWFxLCXicwK0q/Whwtf8=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_25.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_25.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>fhlBLYk24sYV4cnR8OZqVlxi7g/Wcu81jsmNqbE5oSY=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_26.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_26.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>kuSbJwSckBW4S7ap9hEoODxs3ziIwFeLK+2mdnB6UOI=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_27.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_27.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>BMpWUsjUimEptWBxoHkSo+HIJhwy8NrcVAg8kEOWQJw=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_28.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_28.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>zNYbAWAvzMFB42MbXPFD5ERJO50+JRb8Yglv7dJKumg=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_29.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_29.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>+2sdhSApCcURpMiiy9nbuThGHwhoDtAzcCbqdvAm3v0=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/00_list_process_30.png">
+<Reference URI="res/themes/WinWinTheme/screen-density-xhigh/00_list_process_30.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Native-App-Project/res/themes/GoGo/screen-density-xhigh/sample_group.jpg">
+<Reference URI="res/themes/WinWinTheme/WinWinTheme.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>T2y0elUdbDHsmCuij53zSdjToUXdr9gL0bVmA6NJWg8=</DigestValue>
+<DigestValue>/HEy7jwZBs1nZIeb9C4nuIcZIO4EQVMdZXsB2ArylmE=</DigestValue>
 </Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_01.png">
+<Reference URI="shared/res/screen-density-xhigh/mainmenu.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ttADiyZ7YSFJkE+Tby7Ie6UHDnj6sM3PwY3TsqwYC6s=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_02.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>LZYno2RDMBbKHmiSx06hmwCi9Sz4zl9SfdvfSjhZSOQ=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_03.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>u3VFZFMteTyoxFiHn+rLhpYmvElrckTT6ri6pZRrcds=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_04.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>XhQ/phZVWWUvwTps0sNIfSDyldVEo+7aPbDdwTQA4j0=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_05.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>O9ThCW5xPcemCerh35zWZI7NzVMHAt3RHz+WMS/4vwA=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_06.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>u7uZG71NbokArLbrGpKnU7bZrH8sN/ag//nnOtWjEfo=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_07.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CrmBJTQl7n45iVSh6V8vapzu3i927rdZhFGyO5bD7RA=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_08.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>wRXGM9GaNPJ8hxTfDnLETPqxbJFzRYamfTDQ/qFWgGA=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_09.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>wVaBB9L08XKcGlZwOtQ0IzaAnw2ckJMMXa9fbZJUjHI=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_10.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>VGKAB6sBQHb1OYxHgaMYHvtkUP5K8yRUgesNtRvWn9Y=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_11.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>lqY04Su86XFJlRSQzDXNkBMGPACuNUqQDpnAJOLRIoM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_12.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>eAwAfl8qREqVrrsN/YbRY4lyJV0ScXyNFfXOecdm/10=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_13.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8bRUu9jeaLPeIvJ6h94CRwE8BllZm2YlCD7FgrLOdqE=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_14.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>rvKEByXI1eep0wiKDtIKS2tfWrnTiswJhLC1GjyInxg=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_15.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Li6zDaD9tTMPYSfeqVSEmKhEpyBnNSxUaYQIq8WvZzw=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_16.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>5bjl+AvwdUWcR8uE/ULuE1Qwr5LwkB1pvuVVCag2hXs=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_17.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>PCAEopS73ZCy/irLXBrUecoZl90xa8kCJngrXb3/Er0=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_18.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hqby6ZMVy/XlZeZJdXVO7TO0vxlyCHtGe/nf0FbBrvE=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_19.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2aenYnwLBVOqyApUlrgQJqmPc3lAvEvTmfTWp5wnurk=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_20.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8Bqard92giRzD0spwyI64S1bGJI2H/FZ6VYcRYoYGR0=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_21.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BwKPCZJVON8lbIkaB3oPO3p5pV73uxe8l1j5iUzKslA=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_22.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>xozab4DXh5pkxRQkMrULJHLQAgK5XN45dsRnDV27zvY=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_23.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1Xuqa8d+Q/lykTIT/XZB8u8EgheDPY6QQVwHwb9QDzc=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_24.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>pTqg3bavIU0suJq3NdW6rmAUNW1YuDqzKMWHLx7AjXY=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_25.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>iS3U5+JWVD0iPilKmO8v9ZQwhGQWgzoQvipyhs1+Rqo=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_26.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>o5SaM1CAIRYyHB2FJ3CcgTIAxW/DsFkinPQffejFq9w=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_27.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>KuXFta6gwpd8q62QliV2SBG/+JPOY/neOeLTj9e2qC4=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_28.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CrKi39NFP23Qa+uvfl5O3OiXSvRZGwkh2NeSMxpoEIY=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_29.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>M+M+kjiwams8yv71OENyXwxrl0VFeBlxsJ0P6xYQTF8=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_header_process_30.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>EmQUrFwoEMP21sF2BtTx4PdBLvbkqa4SlcfwtIOBR1g=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_01.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7r/DpRthqHS3srmbT/h3BM5W5OTErC9tBOLBFZNkrAU=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_02.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8Ewc1RHOR9UOyFa6uBf5aJJvMtYksEHK2uPkSiYyr0U=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_03.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>icgnivQpgqoT2HJtJRL0KRyu+t4PrFpJ8aXePW2rmwM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_04.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>AuOiiZQyA7xiUuD8YescYtzrWo6kcAMwmNS0BQNIFxA=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_05.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CkeUJEfXw3LUhQ+8fHVAgLFfdwP0HgXeFvbhoi8YGfY=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_06.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>5AZY20eVxUjs7yHWSnplSSY14pkgIzdpcdqSblm4W1w=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_07.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tLpGGJ7N2DTXNp5VuoZZsbgIUVktDS1yaLVyBDRs1t4=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_08.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Gh4tlua9UoEafqgitMTwUQ+nkXz/JFJN7flxuckt+wo=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_09.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>V4k2oGAzybzf8xkQvYVsS8plbEpGPereoLLqyZfnx4Q=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_10.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>5cHb+eydIz1eJ4aCQj4r8TigkqOy/C8vOpm+nFec264=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_11.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ISOxXK5baO1qeX0RKCq3cnvO27cZywmmHTU8WRH8eEo=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_12.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>DL19gJ8vXnj988psQumB+QlGney0uWFwYbDxUw/yRsM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_13.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>rggtdzBPG/pTS3GqhH1qMEkg7q8jc3/Sx1vGKyHnYrw=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_14.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BGChPjDV/+bNbu0Cd9FdR+E4n7Qhk/OPRRRdTfX2+Us=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_15.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hCEC5hYd+itXmHmW2ROMCz1Ldp6lYauKSidn8HIm8zM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_16.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>j/foX2/UeW+15UuxUtvY8USdvRhGVGytAaC53/JK0Jw=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_17.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/mSWgBk4JHiDcL3gWSDmECKaAbWqHq5g+SETySEE9eM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_18.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/b/kK23bsT3gGh/t3+u7OmY/74419J+XfjC29kzijxs=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_19.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>AJ5xRu4wHx0/WhbtOHiENlkNlNfqwVyms0J7UCVNfZ8=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_20.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ePNwYPNVvQ4qnvG65OqEx7qcCC8/V+Q7usNlL0PWVUI=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_21.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>V3Z9xZBv2FK2CzXjv0Ut8a1xptSjHYvsx4vGqNjeYeU=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_22.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>78x+4OT9hXv1WaxNij1D3x6VYr2Rv5Ggzz08M5dqHUs=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_23.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>wapvfMmIi8mAd5aRdigytTTxQs/E/rt9iC7OeNtmfMM=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_24.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>uYdr87Z3PD/zJ87fgXgyvgteWFxLCXicwK0q/Whwtf8=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_25.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>fhlBLYk24sYV4cnR8OZqVlxi7g/Wcu81jsmNqbE5oSY=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_26.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>kuSbJwSckBW4S7ap9hEoODxs3ziIwFeLK+2mdnB6UOI=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_27.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BMpWUsjUimEptWBxoHkSo+HIJhwy8NrcVAg8kEOWQJw=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_28.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zNYbAWAvzMFB42MbXPFD5ERJO50+JRb8Yglv7dJKumg=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_29.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>+2sdhSApCcURpMiiy9nbuThGHwhoDtAzcCbqdvAm3v0=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/00_list_process_30.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/screen-density-xhigh/sample_group.jpg">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>T2y0elUdbDHsmCuij53zSdjToUXdr9gL0bVmA6NJWg8=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/Web-Project/style.css">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1OjFqpm4P8SnJKUy9EtYRV1VF12eXTGr731pDniqcKE=</DigestValue>
-</Reference>
-<Reference URI="res/themes/GoGo/data/original.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>N/4w04cZN/Sz19CwHwV+E31JOqgUqkWT4Rlj/Ek9+Dw=</DigestValue>
-</Reference>
-<Reference URI="author-signature.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>29yBRzXL6jOIR+3nn9Ja2v+0LWbb8N2OlTuiPTYRoEY=</DigestValue>
+<DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -655,9 +399,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-EqWPUV9QHQ3ID1hbvg47Lfx2tn7UtG1vIFntJNM5HsUPgmUrTGspwmwe8nNLA9yZscwZFaZQBX6t
-Hb90AjsMylYW5iF42rpyxJ7f7wBZAJjrTLV+i546C/He3pT+8xCO8ELCQOcEbaKTNkq8vO7OmsoU
-HbeskNc63RF+NwzjOPw=
+iO7uwoe4hquUAaedOjPd19Q6dThqJA5pe7DUMhjvg/LexrFwicMIgzbT4a7OhTHzIaWtxfW4AGgF
+d4tVRQeD0CkKOJP2D2gU7HXaMJWju0eqgKty9nPCCTHqdmvA34+JHUy5IMXrJOGsdUD7AtroDSkf
+XLqG5gv6W0r58FG3Reo=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

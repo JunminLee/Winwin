@@ -40,15 +40,31 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
     Font *pFont = new Font;
+    pFont->Construct(FONT_STYLE_PLAIN, 50);
+
     Dimension Dim_Location;
+
+    EnrichedText *pEnrichedText = new EnrichedText();
+    TextElement* pTextElement = new TextElement();
+
+
+
     DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 10, rect.y + 10, 80, 80), *pAppResource->GetBitmapN(Bitmap_Pofile));
 
-    pFont->Construct(FONT_STYLE_PLAIN, 50);
-    canvas.SetFont(*pFont);
-    pFont->GetTextExtent(Partner_Name, Partner_Name.GetLength(), Dim_Content);
+	pTextElement->Construct(Partner_Name);
 
+	pFont->GetTextExtent(pTextElement->GetText(), pTextElement->GetText().GetLength(), Dim_Location);
+	pEnrichedText->Construct(Dim_Location);
+    pEnrichedText->SetHorizontalAlignment(TEXT_ALIGNMENT_LEFT);
+	pEnrichedText->SetVerticalAlignment(TEXT_ALIGNMENT_MIDDLE);
+	pEnrichedText->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
+	pEnrichedText->SetTextAbbreviationEnabled(true);
 
-	canvas.DrawText(Point(rect.x + 150, rect.y + 20), Partner_Name);
+	pTextElement->SetTextColor(Color(120,120,120,255));
+
+	pTextElement->SetFont(*pFont);
+	pEnrichedText->Add(*pTextElement);
+	canvas.DrawText(Point(rect.x + 150, rect.y + 20), *pEnrichedText);
 
 	return 0;
 }

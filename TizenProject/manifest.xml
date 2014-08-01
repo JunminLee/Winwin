@@ -9,9 +9,9 @@
     <Apps>
         <ApiVersion>2.2</ApiVersion>
         <Privileges/>
-        <UiApp LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
+        <UiApp HwAcceleration="On" LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
             <UiScalability BaseScreenSize="Normal" CoordinateSystem="Logical" LogicalCoordinate="720"/>
-            <UiTheme SystemTheme="White" UserDefinedTheme="GoGo"/>
+            <UiTheme SystemTheme="White" UserDefinedTheme="Wins"/>
             <DisplayNames>
                 <DisplayName Locale="eng-GB">TizenProject</DisplayName>
             </DisplayNames>
