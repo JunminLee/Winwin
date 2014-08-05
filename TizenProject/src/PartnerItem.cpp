@@ -60,7 +60,7 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 	pEnrichedText->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
 	pEnrichedText->SetTextAbbreviationEnabled(true);
 
-	pTextElement->SetTextColor(Color(120,120,120,255));
+	pTextElement->SetTextColor(Color(123,123,123,255));
 
 	pTextElement->SetFont(*pFont);
 	pEnrichedText->Add(*pTextElement);

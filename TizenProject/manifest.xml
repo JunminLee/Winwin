@@ -11,7 +11,7 @@
         <Privileges/>
         <UiApp HwAcceleration="On" LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
             <UiScalability BaseScreenSize="Normal" CoordinateSystem="Logical" LogicalCoordinate="720"/>
-            <UiTheme SystemTheme="White" UserDefinedTheme="Wins"/>
+            <UiTheme SystemTheme="White" UserDefinedTheme="WinWinsTheme"/>
             <DisplayNames>
                 <DisplayName Locale="eng-GB">TizenProject</DisplayName>
             </DisplayNames>

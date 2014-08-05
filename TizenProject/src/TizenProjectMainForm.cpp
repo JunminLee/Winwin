@@ -38,8 +38,8 @@ TizenProjectMainForm::OnInitializing(void)
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
 	footerItem[0].Construct(ID_FOOTER_ITEM1);
-	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED, pAppResource->GetBitmapN(L"TimeLine_Act.png"));
-	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,pAppResource->GetBitmapN(L"TimeLine_InAct.png"));
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED, pAppResource->GetBitmapN(L"TimeLine_InAct.png"));
+	footerItem[0].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,pAppResource->GetBitmapN(L"TimeLine_Act.png"));
 
 	footerItem[1].Construct(ID_FOOTER_ITEM2);
 	footerItem[1].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,pAppResource->GetBitmapN(L"Chatting_InAct.png"));
