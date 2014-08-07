@@ -51,7 +51,8 @@ Idl_intro::OnTerminating(void)
 void Idl_intro::OnTimerExpired(Tizen::Base::Runtime::Timer& timer)
 {
 		SceneManager* pSceneManager = SceneManager::GetInstance();
-		pSceneManager->GoForward(SceneTransitionId(IDSCNT_2));
+		AppAssert(pSceneManager);
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_TUTORIAL1, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 
 }
 
@@ -93,8 +94,8 @@ Idl_intro::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics:
 void
 Idl_intro::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	SceneManager* pSceneManager = SceneManager::GetInstance();
-	pSceneManager->GoForward(SceneTransitionId(IDSCNT_2));
+	
+
 	// TODO: Add your implementation codes here
 
 }

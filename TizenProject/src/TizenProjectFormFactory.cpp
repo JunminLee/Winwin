@@ -7,6 +7,10 @@
 #include "PartnerSearchForm.h"
 #include "SettingForm.h"
 #include "Idl_intro.h"
+#include "Idl_tutorial1.h"
+#include "Idl_tutorial2.h"
+#include "Idl_tutorial3.h"
+#include "Idl_tutorial4.h"
 
 using namespace Tizen::Ui::Scenes;
 
@@ -67,6 +71,34 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;
+	}
+	else if (formId == IDL_TUTORIAL1)
+	{
+			Idl_tutorial1* pForm = new Idl_tutorial1();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
+	}
+	else if (formId == IDL_TUTORIAL2)
+	{
+			Idl_tutorial2* pForm = new Idl_tutorial2();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
+	}
+	else if (formId == IDL_TUTORIAL3)
+	{
+			Idl_tutorial3* pForm = new Idl_tutorial3();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
+	}
+	else if (formId == IDL_TUTORIAL4)
+	{
+			Idl_tutorial4* pForm = new Idl_tutorial4();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
 	}
 	return pNewForm;
 }
