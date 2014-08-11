@@ -1,6 +1,7 @@
 #include "TizenProjectMainForm.h"
 #include "AppResourceId.h"
 #include "SceneRegister.h"
+#include "CustomPanel.h"
 
 using namespace Tizen::Base;
 using namespace Tizen::App;
@@ -85,50 +86,14 @@ TizenProjectMainForm::OnInitializing(void)
 
 	// Get a button via resource ID
 
+    TimelineTableView = new TableView();
+    TimelineTableView->Construct(Rectangle(0, 0, GetClientAreaBounds().width, GetClientAreaBounds().height), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
+    TimelineTableView->SetItemProvider(this);
+    TimelineTableView->AddScrollEventListener(*this);
 
 
-    // Creates an instance of ListView
-    TimeLineListView = new ListView();
-    TimeLineListView->Construct(Rectangle(0, 0, GetClientAreaBounds().width, GetClientAreaBounds().height), true, false);
-    TimeLineListView->SetItemProvider(*this);
-    TimeLineListView->AddListViewItemEventListener(*this);
-
-    // Adds the list view to the form
-    AddControl(TimeLineListView);
-
-    TimeLineListView->AddTouchEventListener(*this);
-    TimeLineListView->AddScrollEventListener(*this);
-
-
-    TimeLineItem h;
-
-    h.Initialize(L"Army Conzo", L"한국 12일 오전 11:00시", L"Wow, Amazing Movie");
-    h.SetExtendContentViewCheck(true);
-
-    ArrTimeLineItem.Add(h);
-
-    h.Initialize(L"Kermy Antos", L"한국 12일 오전 11:00시", L"Wow, Amazing Movie2");
-    h.SetExtendContentViewCheck(true);
-
-    ArrTimeLineItem.Add(h);
-
-    h.Initialize(L"Komyca sar", L"한국 12일 오전 11:00시", L"Wow, Amazing Movie3");
-    h.SetExtendContentViewCheck(true);
-
-    ArrTimeLineItem.Add(h);
-
-    h.Initialize(L"Barbieri kho", L"한국 12일 오전 11:00시", L"Wow, Amazing Movie4");
-    h.SetExtendContentViewCheck(true);
-
-    ArrTimeLineItem.Add(h);
-
-    h.Initialize(L"Rooney Soccer King", L"한국 12일 오전 11:00시", L"Wow, Amazing Movie5");
-    h.SetExtendContentViewCheck(true);
-
-    ArrTimeLineItem.Add(h);
-
-	PostingButtonCheck = true;
-
+    // Adds the TableView to the form
+    AddControl(TimelineTableView);
 	return r;
 }
 
@@ -196,114 +161,6 @@ TizenProjectMainForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& curre
 
 
 
-// IListViewItemEventListener implementation
-
-void
-TizenProjectMainForm::OnListViewItemStateChanged(ListView &listView, int index, int elementId, ListItemStatus status)
-{
-	/*
-    switch (elementId)
-    {
-    case ID_FORMAT_BITMAP:
-        {
-            // ....
-        }
-        break;
-    case ID_FORMAT_STRING:
-        {
-            // ....
-        	check = true;
-        	TimeLineListView->UpdateList();
-        }
-        break;
-    default:
-        break;
-    }*/
-}
-
-
-void
-TizenProjectMainForm::OnListViewContextItemStateChanged(ListView &listView, int index, int elementId, ListContextItemStatus state)
-{
-}
-
-void
-TizenProjectMainForm::OnListViewItemSwept(ListView &listView, int index, SweepDirection direction)
-{
-    // ....
-}
-
-// IListViewItemProvider implementation
-ListItemBase*
-TizenProjectMainForm::CreateItem(int index, int itemWidth)
-{
-    // Creates an instance of CustomItem
-    pItem = new CustomItem();
-    ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
-
-    TimeLineItem *h;
-
-	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
-
-    h = new TimeLineItem;
-
-    ArrTimeLineItem.GetAt(index, *h);
-
-
-    style = LIST_ANNEX_STYLE_NORMAL;
-
-    if(PostingButtonCheck == true && index == 0)
-    {
-		pItem->Construct(Dimension(itemWidth, 150), style);
-		pItem->AddElement(Rectangle(itemWidth/2 - 200, 20, 400, 100), 102, *pAppResource->GetBitmapN(L"PostingButton.png"),null,null);
-    }
-	else if(index < itemWidth && index >= 1)
-    {
-
-			pItem->Construct(Dimension(itemWidth-120, 630), style);
-			//  pItem->AddElement(Rectangle(10, 20, 60, 60), ID_FORMAT_BITMAP, *__pMsg, null, null);
-			//pItem->AddElement(Rectangle(10, 20, itemWidth-20, 500), ID_FORMAT_BITMAP, *BackGroundImg, null, null);
-
-			// pItem->AddElement(Rectangle(80, 25, 150, 50), ID_FORMAT_STRING, L"Msg", true);
-			//pItem->AddElement(Rectangle(80, 25, 150, 50), ID_FORMAT_STRING, L"Home", true);
-			pItem->AddElement(Rectangle(60, 30, itemWidth-120, 600), 0,
-					*(static_cast<ICustomElement *>(h)));
-
-
-		/*if (check == false) {
-			pItem->Construct(Dimension(itemWidth, 600), style);
-			pItem->AddElement(Rectangle(0, 0, itemWidth, 600), ID_FORMAT_STRING,
-					*(static_cast<ICustomElement *>(h)));
-			//__pListView->RefreshList(0, LIST_REFRESH_TYPE_ITEM_MODIFY);
-
-		}
-*/
-
-
-
-
-		//pItem->
-		//pItem->SetContextItem(TimeLineItemContext);
-    }
-    return pItem;
-}
-
-bool
-TizenProjectMainForm::DeleteItem(int index, ListItemBase* pItem, int itemWidth)
-{
-    delete pItem;
-    pItem = null;
-    return true;
-}
-
-int
-TizenProjectMainForm::GetItemCount(void)
-{
-    return 5;
-}
-
-
-
 
 void
 TizenProjectMainForm::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
@@ -344,31 +201,90 @@ TizenProjectMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen
 void
 TizenProjectMainForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	int index = 0, id = 0;
-	TimeLineListView->GetItemIndexFromPosition(currentPosition, index, id);
-	TimeLineItem h;
-	ArrTimeLineItem.GetAt(index,h);
-
-	h.ActiveButton(currentPosition, 0);
-
-	// TODO: Add your implementation codes here
-
+	/*CustomPanel *cp;
+	for(int i=0; i<TimelineTableView->GetItemCount(); i++)
+	{
+		cp = static_cast <CustomPanel *>(ArrCustomPanel.GetAt(i));
+		if(cp->GetHighlightMode()==true)
+		{
+			TimelineTableView->GetControl(1)->SetBounds(TimelineTableView->GetControl(1)->GetBounds());
+		}
+	}*/
 }
 
 void
 TizenProjectMainForm::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	// TODO: Add your implementation codes here
 
-	int index = 0, id = 0;
-	TimeLineListView->GetItemIndexFromPosition(currentPosition, index, id);
-	TimeLineItem h;
-	ArrTimeLineItem.GetAt(index,h);
-
-	h.ActiveButton(currentPosition, 1);
 }
 
 
+
+
+// ITableViewItemProvider implementation
+int
+TizenProjectMainForm::GetItemCount(void)
+{
+    return 5;
+}
+
+int
+TizenProjectMainForm::GetDefaultItemHeight(void)
+{
+    return 100;
+}
+
+TableViewItem*
+TizenProjectMainForm::CreateItem(int itemIndex, int itemWidth)
+{
+
+	String name, time, content, ex_content;
+
+    TableViewAnnexStyle style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+    TableViewItem* pItem = new TableViewItem();
+    CustomPanel		*cp;
+    int item_height;
+
+    content = L"Tizen is a new open platform that enables richer user experience Tizen is a new open platform that enables richer user experience Tizen is a new open platform that enables richer user experience";
+    ex_content = L"육군사관학교 34기인 권 총장은 육군본부 계획편제처장, 국방부 정책기획관 취임했다. 육군사관학교 34기인 권 총장은 육군본부 계획편제처장, 국방부 정책기획관 취임했다.";
+    Font font;
+    font.Construct(FONT_STYLE_PLAIN, 30);
+
+
+
+
+
+    style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+
+    cp = new CustomPanel();
+
+    cp->Construct(Rectangle(0,0,itemWidth,500));
+    cp->Initialize(L"David Beckham", L"123", content, ex_content, TimelineTableView, pItem, itemIndex);
+    item_height = cp->GetPanelHeight();
+    cp->AddTouchEventListener(*cp);
+
+    pItem->Construct(Dimension(itemWidth, item_height), style);
+
+    pItem->AddControl(cp);
+
+    ArrCustomPanel.Add(cp);
+
+    return pItem;
+}
+
+bool
+TizenProjectMainForm::DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+    pItem->Destroy();
+
+    return true;
+}
+
+void
+TizenProjectMainForm::UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+    // ....
+}
 
 void
 TizenProjectMainForm::OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type)
@@ -378,20 +294,6 @@ TizenProjectMainForm::OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui:
 void
 TizenProjectMainForm::OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition)
 {
-	AppLog("gg : %d", scrollPosition);
-
-	static int oldScrollPosition = 0;
-
-	if(oldScrollPosition < scrollPosition)
-	{
-		PostingButtonCheck = false;
-	}
-	else
-	{
-		PostingButtonCheck = true;
-	}
-
-	oldScrollPosition = scrollPosition;
 
 }
 void
@@ -399,4 +301,5 @@ TizenProjectMainForm::OnScrollStopped (Tizen::Ui::Control &source)
 {
 
 }
+
 

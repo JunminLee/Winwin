@@ -14,10 +14,14 @@ extern const wchar_t* SCENE_PARTNER_LIST_FORM;
 extern const wchar_t* SCENE_PARTNER_SEARCH_FORM;
 extern const wchar_t* SCENE_SETTING_FORM;
 
+
 extern const wchar_t* SCENE_TUTORIAL1;
 extern const wchar_t* SCENE_TUTORIAL2;
 extern const wchar_t* SCENE_TUTORIAL3;
 extern const wchar_t* SCENE_TUTORIAL4;
+
+
+extern const wchar_t* SCENE_EDITING_FORM;
 
 
 class SceneRegister

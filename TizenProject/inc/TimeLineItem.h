@@ -21,14 +21,12 @@ using namespace Tizen::Base;
 using namespace Tizen::Base::Collection;
 
 
-class TimeLineItem : public Tizen::Ui::Controls::ICustomElement
+class TimeLineItem
 {
 public:
 	void			Initialize(String pName, String pLocation_and_time, String pContent);
 	void			SetExtendContentViewCheck(bool t);
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap& bitmap);
-	virtual bool 	OnDraw	(	Tizen::Graphics::Canvas & 	canvas,
-	const 			Tizen::Graphics::Rectangle & rect, Tizen::Ui::Controls::ListItemDrawingStatus 	status);
 	void			ActiveButton(const Tizen::Graphics::Point &point, int state);
 
 private:
@@ -47,10 +45,6 @@ private:
 	Rectangle		RC_commentButton;
 	Rectangle		RC_feedbackButton;
 	Rectangle		RC_itemArea;
-	bool			extend_content_actived_check;
-
-	int			pressed_button_state;
-	int			released_button_state;
 
 public:
     //Overload the assignment operator.

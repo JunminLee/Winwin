@@ -18,10 +18,14 @@ const wchar_t* SCENE_PARTNER_LIST_FORM =L"SCENE_PARTNER_LIST_FORM";
 const wchar_t* SCENE_PARTNER_SEARCH_FORM =L"SCENE_PARTNER_SEARCH_FORM";
 const wchar_t* SCENE_SETTING_FORM =L"SCENE_SETTING_FORM";
 
+
 const wchar_t* SCENE_TUTORIAL1 =L"SCENE_TUTORIAL1";
 const wchar_t* SCENE_TUTORIAL2 =L"SCENE_TUTORIAL2";
 const wchar_t* SCENE_TUTORIAL3 =L"SCENE_TUTORIAL3";
 const wchar_t* SCENE_TUTORIAL4 =L"SCENE_TUTORIAL4";
+
+const wchar_t* SCENE_EDITING_FORM =L"SCENE_EDITING_FORM";
+
 
 SceneRegister::SceneRegister(void)
 {
@@ -51,10 +55,14 @@ SceneRegister::RegisterAllScenes(void)
 	pSceneManager->RegisterScene(SCENE_PARTNER_SEARCH_FORM, IDL_FORM4, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_SETTING_FORM, IDL_FORM5, PANEL_BLANK);
 
+
 	pSceneManager->RegisterScene(SCENE_TUTORIAL1, IDL_TUTORIAL1, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_TUTORIAL2, IDL_TUTORIAL2, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_TUTORIAL3, IDL_TUTORIAL3, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_TUTORIAL4, IDL_TUTORIAL4, PANEL_BLANK);
+
+
+	pSceneManager->RegisterScene(SCENE_EDITING_FORM, IDL_FORM6, PANEL_BLANK);
 
 }
 
