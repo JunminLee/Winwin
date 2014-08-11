@@ -100,6 +100,7 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 			pForm->Initialize();
 			pSceneManager->AddSceneEventListener(sceneId, *pForm);
 			pNewForm = pForm;
+	}
 	else if (formId == IDL_FORM6)
 	{
 		Editing* pForm = new Editing();

@@ -1,9 +1,6 @@
 #delete
 #add
+.manifest.tmp.swp
 #modify
 author-signature.xml
 signature1.xml
-res/screen-size-normal/IDL_TUTORIAL1.xml
-res/screen-size-normal/IDL_TUTORIAL2.xml
-res/screen-size-normal/IDL_TUTORIAL3.xml
-res/screen-size-normal/IDL_TUTORIAL4.xml
