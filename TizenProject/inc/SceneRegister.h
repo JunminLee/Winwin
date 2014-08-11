@@ -13,7 +13,7 @@ extern const wchar_t* SCENE_CHATTING_FORM;
 extern const wchar_t* SCENE_PARTNER_LIST_FORM;
 extern const wchar_t* SCENE_PARTNER_SEARCH_FORM;
 extern const wchar_t* SCENE_SETTING_FORM;
-
+extern const wchar_t* SCENE_EDITING_FORM;
 
 class SceneRegister
 {

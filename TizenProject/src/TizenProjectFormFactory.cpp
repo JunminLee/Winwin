@@ -6,6 +6,7 @@
 #include "PartnerListForm.h"
 #include "PartnerSearchForm.h"
 #include "SettingForm.h"
+#include "Editing.h"
 #include "Idl_intro.h"
 
 using namespace Tizen::Ui::Scenes;
@@ -64,6 +65,13 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 	else if (formId == IDL_FORM5)
 	{
 		SettingForm* pForm = new SettingForm();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+	else if (formId == IDL_FORM6)
+	{
+		Editing* pForm = new Editing();
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;

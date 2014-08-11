@@ -28,6 +28,8 @@ class TizenProjectMainForm
  	, public Tizen::Ui::Scenes::ISceneEventListener
  	, public Tizen::Ui::ITouchEventListener
     , public Tizen::Ui::Controls::ITableViewItemProvider
+    , public Tizen::Ui::Controls::IScrollEventListener
+
 {
 public:
 	TizenProjectMainForm(void);
@@ -52,6 +54,11 @@ public:
     virtual bool DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
     virtual void UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
     virtual int GetDefaultItemHeight(void);
+
+    virtual void 	OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type);
+    virtual void 	OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition);
+    virtual void 	OnScrollStopped (Tizen::Ui::Control &source);
+
 
 protected:
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);

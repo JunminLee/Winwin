@@ -89,6 +89,8 @@ TizenProjectMainForm::OnInitializing(void)
     TimelineTableView = new TableView();
     TimelineTableView->Construct(Rectangle(0, 0, GetClientAreaBounds().width, GetClientAreaBounds().height), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
     TimelineTableView->SetItemProvider(this);
+    TimelineTableView->AddScrollEventListener(*this);
+
 
     // Adds the TableView to the form
     AddControl(TimelineTableView);
@@ -199,8 +201,15 @@ TizenProjectMainForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen
 void
 TizenProjectMainForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-
-
+	/*CustomPanel *cp;
+	for(int i=0; i<TimelineTableView->GetItemCount(); i++)
+	{
+		cp = static_cast <CustomPanel *>(ArrCustomPanel.GetAt(i));
+		if(cp->GetHighlightMode()==true)
+		{
+			TimelineTableView->GetControl(1)->SetBounds(TimelineTableView->GetControl(1)->GetBounds());
+		}
+	}*/
 }
 
 void
@@ -229,15 +238,15 @@ TableViewItem*
 TizenProjectMainForm::CreateItem(int itemIndex, int itemWidth)
 {
 
-	String name, time, content;
+	String name, time, content, ex_content;
 
     TableViewAnnexStyle style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
     TableViewItem* pItem = new TableViewItem();
     CustomPanel		*cp;
     int item_height;
 
-    content = L"Tizen is a new open platform that enables richer user experience";
-
+    content = L"Tizen is a new open platform that enables richer user experience Tizen is a new open platform that enables richer user experience Tizen is a new open platform that enables richer user experience";
+    ex_content = L"육군사관학교 34기인 권 총장은 육군본부 계획편제처장, 국방부 정책기획관 취임했다. 육군사관학교 34기인 권 총장은 육군본부 계획편제처장, 국방부 정책기획관 취임했다.";
     Font font;
     font.Construct(FONT_STYLE_PLAIN, 30);
 
@@ -250,7 +259,7 @@ TizenProjectMainForm::CreateItem(int itemIndex, int itemWidth)
     cp = new CustomPanel();
 
     cp->Construct(Rectangle(0,0,itemWidth,500));
-    cp->Initialize(L"ToastMan", L"123", content);
+    cp->Initialize(L"David Beckham", L"123", content, ex_content, TimelineTableView, pItem, itemIndex);
     item_height = cp->GetPanelHeight();
     cp->AddTouchEventListener(*cp);
 
@@ -275,6 +284,22 @@ void
 TizenProjectMainForm::UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
 {
     // ....
+}
+
+void
+TizenProjectMainForm::OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type)
+{
+
+}
+void
+TizenProjectMainForm::OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition)
+{
+
+}
+void
+TizenProjectMainForm::OnScrollStopped (Tizen::Ui::Control &source)
+{
+
 }
 
 

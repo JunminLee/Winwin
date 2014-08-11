@@ -7,6 +7,7 @@ extern const wchar_t* IDL_FORM2;
 extern const wchar_t* IDL_FORM3;
 extern const wchar_t* IDL_FORM4;
 extern const wchar_t* IDL_FORM5;
+extern const wchar_t* IDL_FORM6;
 extern const wchar_t* IDL_INTRO;
 extern const wchar_t* IDSCNT_1;
 extern const wchar_t* IDSCNT_2;

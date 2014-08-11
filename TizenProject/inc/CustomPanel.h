@@ -25,11 +25,16 @@
 
 #define STRIATION_SPACING			50
 
-using namespace Tizen::Graphics;
-using namespace Tizen::Base;
-using namespace Tizen::Base::Collection;
+
 using namespace Tizen::Base::Runtime;
+using namespace Tizen::Base;
+using namespace Tizen::App;
+using namespace Tizen::Ui;
 using namespace Tizen::Ui::Controls;
+using namespace Tizen::Ui::Scenes;
+using namespace Tizen::Graphics;
+using namespace Tizen::Media;
+using namespace Tizen::Base::Collection;
 
 class CustomPanel
 	: public Tizen::Ui::Container
@@ -37,19 +42,30 @@ class CustomPanel
 	, public Tizen::Base::Runtime::ITimerEventListener
     , public Tizen::Ui::IActionEventListener
     , public Tizen::Ui::ITextEventListener
+    , public Tizen::Ui::Controls::IListViewItemProvider
 {
 private:
-	String			str_name;
-	String			str_time;
-	String			str_content;
+
+	String			 str_name;
+	String			 str_time;
+	String			 str_content;
+	String			 str_extend_content;
 
 	Canvas 			*pCanvas;
+
+	Button			*button_profile_image;
+	Bitmap			*profile_iamge;
+	Bitmap			*national_flag_image;
 
 	EnrichedText	*enriched_content;
 
 	ArrayList		arr_text_element;
 	ArrayList		arr_text_element_rect;
 	ArrayList		arr_text_element_highlight;
+
+	ArrayList		arr_extend_text_element;
+	ArrayList		arr_extend_text_element_rect;
+	ArrayList		arr_extend_text_element_highlight;
 
 	bool			isLongTouchPressed;
 
@@ -65,15 +81,49 @@ private:
 
 	bool			onContextMenu;
 
+	Point			touch_point;
+	bool			onHighlightStart;
+
+	Rectangle		cur_start_rect;
+	Rectangle		cur_end_rect;
+
+	Point			cur_start_point;
+	Point			cur_end_point;
+
+	int				select_cur;
+
+	int				start_index;
+
+	Panel			*context_menu;
+	Rectangle		context_rect;
+
+	Rectangle		content_area;
+
+	TableViewItem	*pvi;
+
+	int				index;
+	bool			extend_content_flag;
+	int				extend_content_area_y;
+
+	int name_width;
+    ListView* __pListView;
+
+    bool			comment_list_view_flag;
+    Button		*button_content;
+    Button		*button_like;
+    Button		*button_comment;
+	Button		*button_name;
 public:
 	virtual result	OnDraw();
 	bool			Construct(const Rectangle& rect);
-	void			Initialize(String name, String time, String content);
+	void			Initialize(String name, String time, String content, String extend_content, TableView *pb, TableViewItem *pItem, int _index);
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap &bitmap);
 	int				GetPanelHeight();
     void 			ShowPopup(void);
     void 			HidePopup(void);
 	void			ShowContextMenu(bool show, Point currentPosition);
+
+	bool			GetHighlightMode();
 
 	virtual void 	OnTimerExpired (Timer &timer);
 
@@ -82,6 +132,10 @@ public:
     virtual void OnTextValueChanged(const Tizen::Ui::Control& source);
     virtual void OnTextValueChangeCanceled(const Tizen::Ui::Control& source);
 
+
+    virtual Tizen::Ui::Controls::ListItemBase* CreateItem(int index, int itemWidth);
+    virtual bool DeleteItem(int index, Tizen::Ui::Controls::ListItemBase* pItem, int itemWidth);
+    virtual int GetItemCount(void);
 
 protected:
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);

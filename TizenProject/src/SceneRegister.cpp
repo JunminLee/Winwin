@@ -17,7 +17,7 @@ const wchar_t* SCENE_CHATTING_FORM =L"SCENE_CHATTING_FORM";
 const wchar_t* SCENE_PARTNER_LIST_FORM =L"SCENE_PARTNER_LIST_FORM";
 const wchar_t* SCENE_PARTNER_SEARCH_FORM =L"SCENE_PARTNER_SEARCH_FORM";
 const wchar_t* SCENE_SETTING_FORM =L"SCENE_SETTING_FORM";
-
+const wchar_t* SCENE_EDITING_FORM =L"SCENE_EDITING_FORM";
 
 SceneRegister::SceneRegister(void)
 {
@@ -46,6 +46,7 @@ SceneRegister::RegisterAllScenes(void)
 	pSceneManager->RegisterScene(SCENE_PARTNER_LIST_FORM, IDL_FORM3, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_PARTNER_SEARCH_FORM, IDL_FORM4, PANEL_BLANK);
 	pSceneManager->RegisterScene(SCENE_SETTING_FORM, IDL_FORM5, PANEL_BLANK);
+	pSceneManager->RegisterScene(SCENE_EDITING_FORM, IDL_FORM6, PANEL_BLANK);
 }
 
 
