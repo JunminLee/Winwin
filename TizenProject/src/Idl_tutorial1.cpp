@@ -54,7 +54,10 @@ void
 Idl_tutorial1::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
 	// TODO: Add your implementation codes here
-
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	AppAssert(pSceneManager);
+	// TODO: Add your implementation codes here
+	pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 }
 
 void
@@ -75,7 +78,10 @@ void
 Idl_tutorial1::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
 	// TODO: Add your implementation codes here
-
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	AppAssert(pSceneManager);
+	// TODO: Add your implementation codes here
+	pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 }
 
 void

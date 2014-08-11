@@ -101,7 +101,7 @@ Idl_tutorial4::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Gr
 	e_end = currentPosition.x;
 	if(e_start > e_end)
 	{
-
+		pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 	} else if(e_start == e_end)
 	{
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
