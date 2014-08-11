@@ -2,22 +2,6 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
-<Reference URI="bin/TizenProject.exe">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HcdulSro1jpipV3DF7ihO3Ih1kLhTDBoDN+xq1QMCvg=</DigestValue>
-</Reference>
-<Reference URI="info/manifest.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0W5jCMbYwPaJQCWbx+MlXAjOe5cFabgwa03Q9sB0QGE=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Chatting_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Chatting_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/comment_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=</DigestValue>
@@ -37,10 +21,6 @@
 <Reference URI="res/screen-density-xhigh/extend_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>WyG/lQGogCxtCbRy+bVCWVScCXpiRteQ8vKpmBCmnE4=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/fake_setting.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>b3Ay5hSg1Ou+tnv6Y4L42brnqdAnN4QvJx7AK5G0tOk=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/feedback_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -62,6 +42,46 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/PostingButton.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/tizen.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>7meDWQwPXdA/pNT2iwM//gR/GBmlp6zfF09PR27hkHg=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM2.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>hCGpYO3VF8MF5cqx31xAbWZ0E/n1HJoB4IWKcOmTg+0=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM4.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>aCoXc8CavKatFMSiOvpIJ/jkdV1VVucm/2GDvB5h8n4=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_INTRO.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>WujTKvqGrpoQbWOFiC8lYI6tfAQR0OPY2fqSChYAsPY=</DigestValue>
+</Reference>
+<Reference URI="shared/res/screen-density-xhigh/mainmenu.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
+</Reference>
+<Reference URI="info/manifest.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>0W5jCMbYwPaJQCWbx+MlXAjOe5cFabgwa03Q9sB0QGE=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/Chatting_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/Chatting_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=</DigestValue>
+</Reference>
 <Reference URI="res/screen-density-xhigh/PartnerList_Act.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>/U5kdUH7Lmr7TqY9EwT1yj/d497f9/plS2PZ65f2SLc=</DigestValue>
@@ -78,9 +98,25 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>59zH9oM6d3s/5k+C6VzP2blV6086om24F2MyuyeQtkQ=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/PostingButton.png">
+<Reference URI="res/screen-density-xhigh/Setting_Act.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=</DigestValue>
+<DigestValue>r1I+QjpQZbnusKlXTil0u2lj610UU/tWTisTt87KhX8=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/Setting_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>sthVSZqhqNo972+SyUD9kLFfII2LQaKY/MC30pmm+i0=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/TimeLine_Act.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>kw7wmEM2ZeUY/iTigx2kuoHnxIX76+gA4X+3MVArRDo=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/TimeLine_InAct.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>remyR121vjZb0f7kruwvtSQbWpA6kXqnLW/FkJ2q1dw=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/fake_setting.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>b3Ay5hSg1Ou+tnv6Y4L42brnqdAnN4QvJx7AK5G0tOk=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/s-face1.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -110,26 +146,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>zj4SoQrU6+g0cTriwqHFQMr9VFznDqOULGiB5K/CH4g=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/Setting_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>r1I+QjpQZbnusKlXTil0u2lj610UU/tWTisTt87KhX8=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/Setting_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sthVSZqhqNo972+SyUD9kLFfII2LQaKY/MC30pmm+i0=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/TimeLine_Act.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>kw7wmEM2ZeUY/iTigx2kuoHnxIX76+gA4X+3MVArRDo=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/TimeLine_InAct.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>remyR121vjZb0f7kruwvtSQbWpA6kXqnLW/FkJ2q1dw=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/tizen.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/tutorial1.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>4boSOstqe2uT/RUL6/glL6MPd80QWddYhGRIv0ugNNs=</DigestValue>
@@ -146,29 +162,13 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>unVLT+whMCB0qR6uqTa1sWbU/FKtEEOibCNERFoZJbo=</DigestValue>
 </Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7meDWQwPXdA/pNT2iwM//gR/GBmlp6zfF09PR27hkHg=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM2.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>hCGpYO3VF8MF5cqx31xAbWZ0E/n1HJoB4IWKcOmTg+0=</DigestValue>
-</Reference>
 <Reference URI="res/screen-size-normal/IDL_FORM3.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>DGVjCHOARtWWNqLoGq4oIvOt804gn1vh2BGX+O/Vf7s=</DigestValue>
 </Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM4.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>aCoXc8CavKatFMSiOvpIJ/jkdV1VVucm/2GDvB5h8n4=</DigestValue>
-</Reference>
 <Reference URI="res/screen-size-normal/IDL_FORM5.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>v5dNLnVs1l/lDTh531D1CQFCipsTM55EN2iWNgy3rGw=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_INTRO.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WujTKvqGrpoQbWOFiC8lYI6tfAQR0OPY2fqSChYAsPY=</DigestValue>
 </Reference>
 <Reference URI="res/screen-size-normal/IDL_TUTORIAL1.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -189,6 +189,10 @@
 <Reference URI="res/screen-size-normal/workflow.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>UGeQ3fYBhow3E5pvoGlYXk0ay36WR0Vm76S18RjSU2c=</DigestValue>
+</Reference>
+<Reference URI="res/themes/WinWinsTheme/WinWinsTheme.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>o0N2XWFAmIbVMBuzbW6o6X3ZMmuQrvAnIjtXMrU6wNw=</DigestValue>
 </Reference>
 <Reference URI="res/themes/WinWinsTheme/screen-density-xhigh/00_header_process_01.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -430,13 +434,9 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=</DigestValue>
 </Reference>
-<Reference URI="res/themes/WinWinsTheme/WinWinsTheme.xml">
+<Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>o0N2XWFAmIbVMBuzbW6o6X3ZMmuQrvAnIjtXMrU6wNw=</DigestValue>
-</Reference>
-<Reference URI="shared/res/screen-density-xhigh/mainmenu.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
+<DigestValue>mN9YynpPSYW81nw1H4mTQTgvj/DRd1VNONS+7o4yJ98=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -447,9 +447,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-SvqCizSwNtj+LSJQI9/KxFyLc30C8djNp5c7baPJKv5XgsLz+i5ovt/cNJ0HCbTA9asaE6yZ+ZaD
-s7OednD8wprOIwUs6oIYz00w+vVh69ddCYfq19iiFeT+XJQyqKfm9fYUum6U50b0GvZ3noN27AVq
-6GVBFVKtCknSXvhE6Ho=
+J9VcuoxEF2dN/8T2j60uZqL+XzVEgwd6TdoEAbl5mBf0iDzC0QnMDdOvR8KmvwkEMAVGodWzUGQg
+T+osHWjeX6RxpveMATaNg5Eh0JU60bgwD9k9N6GdqRKn6vvqcY9WTXOxtHHe7kwSKSP2NS2fUHm6
+C0k6sF7dRHs360tsDxw=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -1,6 +1,6 @@
 #delete
 #add
-.manifest.tmp.swp
 #modify
 author-signature.xml
 signature1.xml
+bin/TizenProject.exe

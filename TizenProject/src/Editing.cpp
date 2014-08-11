@@ -412,6 +412,7 @@ Editing::OnKeyReleased (const Tizen::Ui::Control &source, Tizen::Ui::KeyCode key
 	static int insert_cnt = 0;
 
 	int current_length = 0;
+	int revision = 0;
     wchar_t			tmp_char, tmp_char2;
     Integer *tmp_int;
 	Integer tmp;
@@ -435,6 +436,7 @@ Editing::OnKeyReleased (const Tizen::Ui::Control &source, Tizen::Ui::KeyCode key
 		tmp_int = static_cast< Integer *> (insert_start_index.GetAt(i));
 
 		restoration_edit_str.Remove(tmp_int->value, pTmp_edt_string->GetLength());
+		AppLog("haaaa : %d",tmp_int->value);
 		AppLog("remove restoration : %S", pTmp_edt_string->GetPointer());
    	}
 
@@ -619,10 +621,23 @@ Editing::OnKeyReleased (const Tizen::Ui::Control &source, Tizen::Ui::KeyCode key
 		{
 		    insert_cnt++;
 			AppLog("들어왔다!!");
+
+			for(i=0; i<insert_str.GetCount(); i++)
+			{
+				pTmp_edt_string = static_cast< String *> (insert_str.GetAt(i));
+				tmp_int = static_cast< Integer *> (insert_start_index.GetAt(i));
+
+				if(tmp_int->value >= popup_edit_area->GetCursorPosition())
+					break;
+
+				revision += pTmp_edt_string->GetLength();
+
+			}
+
 		    for(i=0; i<1000; i++)
 		    {
 		    	pTmp_edt_string = static_cast< String *> (arr_edit_text_element.GetAt(i));
-		    	if(popup_edit_area->GetCursorPosition() <= current_length)
+		    	if(popup_edit_area->GetCursorPosition() - revision <= current_length)
 		    		break;
 		    	current_length += pTmp_edt_string->GetLength();
 		    }
@@ -630,20 +645,27 @@ Editing::OnKeyReleased (const Tizen::Ui::Control &source, Tizen::Ui::KeyCode key
 
 		    pTmp_edt_string = static_cast< String *> (arr_edit_text_element.GetAt(cur_idx-1));
 		    insert_str.Add(new String(*pTmp_edt_string));
-		    insert_index_stack.Add(new Integer(cur_idx+start_index-insert_cnt-1));
-		    current_length -= pTmp_edt_string->GetLength();
+		    insert_index_stack.Add(new Integer(cur_idx+start_index-1));
+		    current_length = pTmp_edt_string->GetLength();
+		    insert_start_index.Add(new Integer(popup_edit_area->GetCursorPosition() - current_length));
 
-		    insert_start_index.Add(new Integer(current_length));
-		    AppLog("cur_idx : %d", current_length);
-		    AppLog("cur_idx_text : %S", pTmp_edt_string->GetPointer());
 
 
 
 		    pTmp_edt_string = static_cast< String *> (arr_edit_text_element.GetAt(cur_idx));
-		    pTmp_ori_string = static_cast< String *> (arr_edit_text_element.GetAt(cur_idx+start_index-insert_cnt));
+
+		    AppLog("cur_idx_text : %S", pTmp_edt_string->GetPointer());
+		    AppLog("cur_idx : %d", cur_idx);
+
+		    AppLog("pTmp_edt_string! : %S", pTmp_edt_string->GetPointer());
+
+		    pTmp_ori_string = static_cast< String *> (arr_text_element.GetAt(cur_idx+start_index-1));
+		    AppLog("insert_cnt : %d", insert_cnt);
+		    AppLog("pTmp_ori_string! : %S", pTmp_ori_string->GetPointer());
+
 		    if(pTmp_ori_string->Equals(*pTmp_ori_string) == true)
 		    {
-		    	arr_text_element_editing_mark.SetAt(new Integer(0), cur_idx+start_index-insert_cnt );
+		    	arr_text_element_editing_mark.SetAt(new Integer(0), cur_idx+start_index-1 );
 		    }
 
 			/*
