@@ -14,10 +14,6 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/chatting_name.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/comment_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=</DigestValue>
@@ -161,14 +157,6 @@
 <Reference URI="res/screen-size-normal/IDL_FORM4.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM5.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0WDgnjajdheedgqCS2jFCf5j/Ttjg6/uN0Y7iA4HkXQ=</DigestValue>
-</Reference>
-<Reference URI="res/screen-size-normal/IDL_FORM_CHAT.xml">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=</DigestValue>
 </Reference>
 <Reference URI="res/screen-size-normal/IDL_INTRO.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -442,9 +430,25 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/chatting_name.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM_CHAT.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=</DigestValue>
+</Reference>
+<Reference URI="res/screen-size-normal/IDL_FORM5.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Co+i9D+0dAAOVGvPMURfD+l+4sGn10OiXopBw9RM+ik=</DigestValue>
+</Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bt183rbIGaIdTVt6SbwFNg4ASWKwp1jkm5nR5AoKei0=</DigestValue>
+<DigestValue>vi31H9LoGe5+VdSX1VeWvzpVMBYC7HwnFPowpQFhxW8=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/fakepicture.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>o09GEFlXPdADLjSqB/UGorq4NKFhh+xOY/80ze+U18A=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -455,9 +459,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-gORK0OubKuDFMkXU6wxVo+nIcoLtIy9YfpxIGK2MUK3o3TBoOu9gPvalBWC9ex4/H4o8wkHcYpxU
-zDRIwuOghglkBuxsgUGyq6QRf06g56gWzxSJHg7xEJZ84u9jsYsncXwjgAcJJ0d9eotMcHDhUtJh
-9VztyeKxnssnPZBs4Cw=
+cnnkSI3D8P768AdWkgUqP/ruy601KNZQGz02R/TbPXrOrZWFDbaqpPKbye0MxyUL7icN0ub4/1eo
+sWVnvFikk+k8LialnIOSyBop44RH33nGqLc7+7a7e0mRM1OmHMPjEkETzcNk3DnXm7rCtn+G/rMr
+z/I2OET8ZUIMMB4YGek=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
