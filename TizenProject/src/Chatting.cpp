@@ -123,8 +123,14 @@ Chatting::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 			__pChattControl->Draw();
 			__pPanel->SetPosition(where.x,where.y-444);
 			__pPanel->Draw();
-			//__pPanel->CloseOverlayWindow();
+			/*__pPanel->CloseOverlayWindow();
+			Canvas* pUnderCanvas;
+			pUnderCanvas = new Canvas();
+			pUnderCanvas->Construct(Rectangle(where.x, where.y+96, this->GetWidth(), 444));
 
+			pUnderCanvas->SetBackgroundColor(Color(255,255,255,255));
+
+			 */
 			ischeck_plus = true;
 			} else {
 				__pChattControl->SetPosition(where2.x, where2.y);
