@@ -2,7 +2,9 @@ info/manifest.xml__DEL__0W5jCMbYwPaJQCWbx+MlXAjOe5cFabgwa03Q9sB0QGE=
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
 res/screen-density-xhigh/comment_button.png__DEL__gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=
+res/screen-density-xhigh/edit_background_cursor.png__DEL__dBu937hOAYU7Kk41HTqTXxlnOoiZLN79YUoOHZot600=
 res/screen-density-xhigh/editing_background.png__DEL__BT0ibldeZ8KRVdSKx6mpa1QmE/DhO873PeziUy1fKjo=
+res/screen-density-xhigh/editing_background_text.png__DEL__805F/fCCT0BTjyUBkPWDfwiSvI1ZEB9iK3m7b/ONhOA=
 res/screen-density-xhigh/editing_completion_inact.png__DEL__S+IRy+zag4x4ubRQFUlh3MUj9z8FQ6VL4Fy81DZd42U=
 res/screen-density-xhigh/Eng.png__DEL__jdY4525d3APO1MiAwriPSSmhAtpFbzvljlxAwU+EGjE=
 res/screen-density-xhigh/extend_button.png__DEL__WyG/lQGogCxtCbRy+bVCWVScCXpiRteQ8vKpmBCmnE4=
@@ -106,5 +108,5 @@ res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_29.png__DEL__+2sdhS
 res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_30.png__DEL__7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__o0N2XWFAmIbVMBuzbW6o6X3ZMmuQrvAnIjtXMrU6wNw=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
-bin/TizenProject.exe__DEL__qQAwM5+GR7ayRAVfahMcNKEjcOI+qYKQIx0SC5XhxzQ=
-author-signature.xml__DEL__Iey/isRLUMO25OKra2rNGE1LLrX7/n/3MD5WG6UlMq8=
+bin/TizenProject.exe__DEL__G3rttZESJHaSNbg8wSWc4SXvzwIq3zkv9jfRPRmsSgY=
+author-signature.xml__DEL__iC92G51WzBGupeJWlhk2noOGkLsFiQVdSc42aGiN1tc=
