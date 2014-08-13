@@ -29,7 +29,7 @@ ChattingForm::~ChattingForm(void)
 bool
 ChattingForm::Initialize(void)
 {
-	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER | FORM_STYLE_HEADER);
+	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
 	return true;
@@ -114,20 +114,25 @@ ChattingForm::OnInitializing(void)
 	footerItem[4].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	Activation_Image[4].DecodeN(Activation_Path[4], BITMAP_PIXEL_FORMAT_ARGB8888));
 
+	head = new Panel();
 
-	Header* pHeader = GetHeader();
-	pHeader->SetStyle(HEADER_STYLE_TITLE);
-	pHeader->SetBackgroundBitmap(pAppResource->GetBitmapN(L"header.png"));
+	head->Construct(Rectangle(0,0, this->GetWidth(), 96));
+	head->SetBackgroundColor(Color(0,181,238,255));
+
+	head_Center = new Button();
+	head_Center->Construct(Rectangle(285, 15, 129, 63));
+	head_Center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"chatting_name.png")));
+
+
+	this->AddControl(head);
+	this->AddControl(head_Center);
 
 	Footer* pFooter = GetFooter();
 	if (pFooter)
 	{
 		pFooter->AddActionEventListener(*this);
 	}
-	if (pHeader)
-	{
-		pHeader->AddActionEventListener(*this);
-	}
+
 	pFooter->AddItem(footerItem[0]);
 	pFooter->AddItem(footerItem[1]);
 	pFooter->AddItem(footerItem[2]);
@@ -137,6 +142,16 @@ ChattingForm::OnInitializing(void)
 	SetFormBackEventListener(this);
 
 	// Get a button via resource ID
+	// Get a button via resource ID
+
+	Chatting_List_View = new TableView();
+	Chatting_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
+	Chatting_List_View->SetItemProvider(this);
+	Chatting_List_View->AddScrollEventListener(*this);
+
+
+	    // Adds the TableView to the form
+	AddControl(Chatting_List_View);
 
 	return r;
 }
@@ -201,6 +216,136 @@ ChattingForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneI
 										   const Tizen::Ui::Scenes::SceneId& nextSceneId)
 {
 	// TODO: Deactivate your scene here.
+
+}
+
+// ITableViewItemProvider implementation
+int
+ChattingForm::GetItemCount(void)
+{
+    return 5;
+}
+
+int
+ChattingForm::GetDefaultItemHeight(void)
+{
+    return 100;
+}
+
+TableViewItem*
+ChattingForm::CreateItem(int itemIndex, int itemWidth)
+{
+
+	String name, time, content, profile, nation;
+
+    TableViewAnnexStyle style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+    TableViewItem* pItem = new TableViewItem();
+    ChattingListItem* ci;
+    int item_height=300;
+
+    name = L"Iron Man";
+    time = L"PM 1:30";
+    content = L"Hello, You can call me 'Iron Man' :)";
+    profile = L"s-face1.png";
+    nation = L"nationalflag.png";
+
+    Font font;
+    font.Construct(FONT_STYLE_PLAIN, 30);
+
+    style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+
+    ci = new ChattingListItem();
+
+    ci->Construct(Rectangle(0,0,itemWidth,300));
+    ci->Initialize(name, time, content, Chatting_List_View, pItem, profile, nation, itemIndex);
+
+
+    item_height = ci->GetPanelHeight();
+    AppLog("!!! : %d", item_height);
+    ci->AddTouchEventListener(*ci);
+
+    pItem->Construct(Dimension(itemWidth, item_height), style);
+
+    pItem->AddControl(ci);
+
+    ArrCustomItem.Add(ci);
+
+    return pItem;
+}
+
+bool
+ChattingForm::DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+    pItem->Destroy();
+
+    return true;
+}
+
+void
+ChattingForm::UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+    // ....
+}
+
+void 	ChattingForm::OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type)
+{
+
+}
+void 	ChattingForm::OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition)
+{
+
+}
+
+void 	ChattingForm::OnScrollStopped (Tizen::Ui::Control &source)
+{
+
+}
+
+void
+ChattingForm::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+
+}
+
+void
+ChattingForm::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+ChattingForm::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+ChattingForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+ChattingForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+	// TODO: Add your implementation codes here
+
+}
+
+void
+ChattingForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+
+void
+ChattingForm::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
 
 }
 

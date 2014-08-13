@@ -25,7 +25,7 @@ const wchar_t* SCENE_TUTORIAL3 =L"SCENE_TUTORIAL3";
 const wchar_t* SCENE_TUTORIAL4 =L"SCENE_TUTORIAL4";
 
 const wchar_t* SCENE_EDITING_FORM =L"SCENE_EDITING_FORM";
-
+const wchar_t* SCENE_CHATTING =L"SCENE_CHATTING";
 
 SceneRegister::SceneRegister(void)
 {
@@ -63,7 +63,7 @@ SceneRegister::RegisterAllScenes(void)
 
 
 	pSceneManager->RegisterScene(SCENE_EDITING_FORM, IDL_FORM6, PANEL_BLANK);
-
+	pSceneManager->RegisterScene(SCENE_CHATTING, IDL_FORM_CHAT, PANEL_BLANK);
 }
 
 

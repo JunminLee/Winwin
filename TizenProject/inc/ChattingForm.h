@@ -16,12 +16,28 @@
 #include <FGraphics.h>
 #include <gl.h>
 #include <FMedia.h>
+#include "tizenx.h"
+#include "ChattingListItem.h"
+
+
+using namespace Tizen::Base::Runtime;
+using namespace Tizen::Base;
+using namespace Tizen::App;
+using namespace Tizen::Ui;
+using namespace Tizen::Ui::Controls;
+using namespace Tizen::Ui::Scenes;
+using namespace Tizen::Graphics;
+using namespace Tizen::Media;
+using namespace Tizen::Base::Collection;
 
 class ChattingForm
 	: public Tizen::Ui::Controls::Form
 	, public Tizen::Ui::IActionEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
  	, public Tizen::Ui::Scenes::ISceneEventListener
+ 	, public Tizen::Ui::Controls::ITableViewItemProvider
+ 	, public Tizen::Ui::Controls::IScrollEventListener
+ 	, public Tizen::Ui::ITouchEventListener
 {
 public:
 	ChattingForm(void);
@@ -38,12 +54,38 @@ private:
 	virtual void OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
 									const Tizen::Ui::Scenes::SceneId& nextSceneId);
 
+	  // ITableViewItemProvider
+	    virtual int GetItemCount(void);
+	    virtual Tizen::Ui::Controls::TableViewItem* CreateItem(int itemIndex, int itemWidth);
+	    virtual bool DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
+	    virtual void UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem);
+	    virtual int GetDefaultItemHeight(void);
+
+	    virtual void 	OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type);
+	    virtual void 	OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition);
+	    virtual void 	OnScrollStopped (Tizen::Ui::Control &source);
+
+	    ///////////
+		virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+		virtual void OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+
 protected:
 	static const int ID_FOOTER_ITEM1 = 101;
 	static const int ID_FOOTER_ITEM2 = 102;
 	static const int ID_FOOTER_ITEM3 = 103;
 	static const int ID_FOOTER_ITEM4 = 104;
 	static const int ID_FOOTER_ITEM5 = 105;
+	Panel* head;
+	Button* head_Center;
+	Button* chatting_header_plus;
+	Button* chatting_header_edit;
+	TableView* Chatting_List_View;
+	ArrayList ArrCustomItem;
 };
 
 
