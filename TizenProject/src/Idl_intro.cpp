@@ -59,8 +59,10 @@ void Idl_intro::OnTimerExpired(Tizen::Base::Runtime::Timer& timer)
 void
 Idl_intro::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
+	SceneManager* pSceneManager = SceneManager::GetInstance();
+	AppAssert(pSceneManager);
 	// TODO: Add your implementation codes here
-
+	pSceneManager->GoForward(ForwardSceneTransition(SCENE_MAIN_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 }
 
 void

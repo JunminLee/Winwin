@@ -1,11 +1,15 @@
 info/manifest.xml__DEL__EnDyP5j1NhFIdmG8egi4XhWuLI4GivfWVOvudzjXcTk=
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
+res/screen-density-xhigh/chatting_name.png__DEL__21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=
 res/screen-density-xhigh/comment_button.png__DEL__gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=
 res/screen-density-xhigh/editing_background.png__DEL__BT0ibldeZ8KRVdSKx6mpa1QmE/DhO873PeziUy1fKjo=
+res/screen-density-xhigh/editing_background_text.png__DEL__805F/fCCT0BTjyUBkPWDfwiSvI1ZEB9iK3m7b/ONhOA=
 res/screen-density-xhigh/editing_completion_inact.png__DEL__S+IRy+zag4x4ubRQFUlh3MUj9z8FQ6VL4Fy81DZd42U=
+res/screen-density-xhigh/edit_background_cursor.png__DEL__dBu937hOAYU7Kk41HTqTXxlnOoiZLN79YUoOHZot600=
 res/screen-density-xhigh/Eng.png__DEL__jdY4525d3APO1MiAwriPSSmhAtpFbzvljlxAwU+EGjE=
 res/screen-density-xhigh/extend_button.png__DEL__WyG/lQGogCxtCbRy+bVCWVScCXpiRteQ8vKpmBCmnE4=
+res/screen-density-xhigh/fakepicture.png__DEL__o09GEFlXPdADLjSqB/UGorq4NKFhh+xOY/80ze+U18A=
 res/screen-density-xhigh/fake_setting.png__DEL__b3Ay5hSg1Ou+tnv6Y4L42brnqdAnN4QvJx7AK5G0tOk=
 res/screen-density-xhigh/feedback_button.png__DEL__4lnRbm7+yig17NMe/oTjyfVjZ/CJqVUGLLV14K7Mq+g=
 res/screen-density-xhigh/header.png__DEL__AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=
@@ -37,6 +41,8 @@ res/screen-size-normal/IDL_FORM.xml__DEL__W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+
 res/screen-size-normal/IDL_FORM2.xml__DEL__MkOMcR+XpijsTwnZVeeApaxCH/tBY99o1vEqNG/RBmU=
 res/screen-size-normal/IDL_FORM3.xml__DEL__cA7+dBm4rTVwg5J4iTRI1ACIkeuFaYxUEPz1LJ/9pjc=
 res/screen-size-normal/IDL_FORM4.xml__DEL__ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=
+res/screen-size-normal/IDL_FORM5.xml__DEL__Co+i9D+0dAAOVGvPMURfD+l+4sGn10OiXopBw9RM+ik=
+res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=
 res/screen-size-normal/IDL_INTRO.xml__DEL__Q6u41RPDKsdCXSrnA/tqlbPGHNQeaeC8OMP9Lo/D57c=
 res/screen-size-normal/IDL_TUTORIAL1.xml__DEL__20ZHnzy5ki3xaF8AVSPGSaP8QU4AFMcjmCFEr07Y5d8=
 res/screen-size-normal/IDL_TUTORIAL2.xml__DEL__svmWpIhmuwVa6FFfMKlDsPQ+admTbgmL8YjNG0ZFtqY=
@@ -105,9 +111,5 @@ res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_29.png__DEL__+2sdhS
 res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_30.png__DEL__7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__2nYyTwNrYGi2P9gWxhsEhuot83vdyZCwdLUv353g59s=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
-res/screen-density-xhigh/chatting_name.png__DEL__21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=
-res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=
-res/screen-size-normal/IDL_FORM5.xml__DEL__Co+i9D+0dAAOVGvPMURfD+l+4sGn10OiXopBw9RM+ik=
-bin/TizenProject.exe__DEL__vi31H9LoGe5+VdSX1VeWvzpVMBYC7HwnFPowpQFhxW8=
-res/screen-density-xhigh/fakepicture.png__DEL__o09GEFlXPdADLjSqB/UGorq4NKFhh+xOY/80ze+U18A=
-author-signature.xml__DEL__GbC0Eog+Yzyy5iz4rj/vA8Vf87+x87KcXV/K2N/md+A=
+bin/TizenProject.exe__DEL__k6xkNTXL3TN8JqC4fJKQu9qdyLlTV7FH2ogrMn52h38=
+author-signature.xml__DEL__b9ZZGu5jAChSOHHJ+0MkJnbUs4SNVoOvp7mxEHbkTRg=

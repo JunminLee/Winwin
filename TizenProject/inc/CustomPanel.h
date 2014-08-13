@@ -113,6 +113,8 @@ private:
     Button		*button_like;
     Button		*button_comment;
 	Button		*button_name;
+
+
 public:
 	virtual result	OnDraw();
 	bool			Construct(const Rectangle& rect);

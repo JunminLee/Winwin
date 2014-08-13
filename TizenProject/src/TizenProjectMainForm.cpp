@@ -259,7 +259,10 @@ TizenProjectMainForm::CreateItem(int itemIndex, int itemWidth)
     cp = new CustomPanel();
 
     cp->Construct(Rectangle(0,0,itemWidth,500));
+
     cp->Initialize(L"David Beckham", L"123", content, ex_content, TimelineTableView, pItem, itemIndex);
+
+
     item_height = cp->GetPanelHeight();
     cp->AddTouchEventListener(*cp);
 

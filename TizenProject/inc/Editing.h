@@ -20,6 +20,29 @@ using namespace Tizen::Graphics;
 using namespace Tizen::Media;
 using namespace Tizen::Base::Collection;
 
+
+class EditWord
+{
+
+
+public:
+	String 		word;
+	int			start_index;
+	int			end_index;
+	int			state;
+	int			blank_cnt;
+	ArrayListT <String> *arr_insert;
+
+    //Overload the assignment operator.
+	EditWord& operator = (const EditWord& rhs);
+
+    //Overload the equivalent operator.
+    bool operator ==(const EditWord& rhs) const;
+
+    //Overload the not equivalent operator.
+    bool operator !=(const EditWord& rhs) const;
+};
+
 class Editing
  	: public Tizen::Ui::Controls::Form
  	, public Tizen::Ui::ITouchEventListener
@@ -48,6 +71,7 @@ class Editing
  		ArrayList		arr_text_element_rect;
  		ArrayList		arr_text_element_highlight;
  		ArrayList		arr_text_element_editing_mark;
+ 		ArrayList		arr_text_insert;
 
 
  		ArrayList		arr_edit_text_element;
@@ -83,6 +107,18 @@ class Editing
         int		  edt_word_cnt;
 
         EditArea* popup_explain;
+
+        int		  minus[200];
+        int		  plus[200];
+
+        int		  plus_cnt;
+        int		  minus_cnt;
+
+        ArrayListT<EditWord>		arr_edit_word;
+        ArrayListT<EditWord>		arr_ori_word;
+
+
+    	Label *cur_label;
  	public:
  		Editing(void);
  		virtual ~Editing(void);
@@ -102,6 +138,10 @@ class Editing
 
  	    void 			ShowPopup(void);
  	    void 			HidePopup(void);
+
+ 	    void			Attached_decision(void);
+ 	    void			SyncText(void);
+ 	    void			TextCorrecting(void);
 
  	private:
  		virtual result OnInitializing(void);
