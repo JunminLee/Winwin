@@ -5,7 +5,6 @@ info/manifest.xml__DEL__EnDyP5j1NhFIdmG8egi4XhWuLI4GivfWVOvudzjXcTk=
 >>>>>>> refs/heads/Gants2
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
-res/screen-density-xhigh/chatting_name.png__DEL__21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=
 res/screen-density-xhigh/comment_button.png__DEL__gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=
 res/screen-density-xhigh/editing_background.png__DEL__BT0ibldeZ8KRVdSKx6mpa1QmE/DhO873PeziUy1fKjo=
 res/screen-density-xhigh/editing_completion_inact.png__DEL__S+IRy+zag4x4ubRQFUlh3MUj9z8FQ6VL4Fy81DZd42U=
@@ -42,8 +41,6 @@ res/screen-size-normal/IDL_FORM.xml__DEL__W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+
 res/screen-size-normal/IDL_FORM2.xml__DEL__MkOMcR+XpijsTwnZVeeApaxCH/tBY99o1vEqNG/RBmU=
 res/screen-size-normal/IDL_FORM3.xml__DEL__cA7+dBm4rTVwg5J4iTRI1ACIkeuFaYxUEPz1LJ/9pjc=
 res/screen-size-normal/IDL_FORM4.xml__DEL__ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=
-res/screen-size-normal/IDL_FORM5.xml__DEL__0WDgnjajdheedgqCS2jFCf5j/Ttjg6/uN0Y7iA4HkXQ=
-res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=
 res/screen-size-normal/IDL_INTRO.xml__DEL__Q6u41RPDKsdCXSrnA/tqlbPGHNQeaeC8OMP9Lo/D57c=
 res/screen-size-normal/IDL_TUTORIAL1.xml__DEL__20ZHnzy5ki3xaF8AVSPGSaP8QU4AFMcjmCFEr07Y5d8=
 res/screen-size-normal/IDL_TUTORIAL2.xml__DEL__svmWpIhmuwVa6FFfMKlDsPQ+admTbgmL8YjNG0ZFtqY=
@@ -113,9 +110,18 @@ res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_30.png__DEL__7fWpXC
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__2nYyTwNrYGi2P9gWxhsEhuot83vdyZCwdLUv353g59s=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
 <<<<<<< HEAD
+<<<<<<< HEAD
 bin/TizenProject.exe__DEL__qQAwM5+GR7ayRAVfahMcNKEjcOI+qYKQIx0SC5XhxzQ=
 author-signature.xml__DEL__Iey/isRLUMO25OKra2rNGE1LLrX7/n/3MD5WG6UlMq8=
 =======
 bin/TizenProject.exe__DEL__bt183rbIGaIdTVt6SbwFNg4ASWKwp1jkm5nR5AoKei0=
 author-signature.xml__DEL__wASqCZT5nKrFLGAiGtJqz2pY0Z0wEFJx0CqtW8miYLI=
+>>>>>>> refs/heads/Gants2
+=======
+res/screen-density-xhigh/chatting_name.png__DEL__21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=
+res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__tGN8F9qZAjqzaLE75MUILDv0AP+CrsCxBOiDcCueTNo=
+res/screen-size-normal/IDL_FORM5.xml__DEL__Co+i9D+0dAAOVGvPMURfD+l+4sGn10OiXopBw9RM+ik=
+bin/TizenProject.exe__DEL__vi31H9LoGe5+VdSX1VeWvzpVMBYC7HwnFPowpQFhxW8=
+res/screen-density-xhigh/fakepicture.png__DEL__o09GEFlXPdADLjSqB/UGorq4NKFhh+xOY/80ze+U18A=
+author-signature.xml__DEL__GbC0Eog+Yzyy5iz4rj/vA8Vf87+x87KcXV/K2N/md+A=
 >>>>>>> refs/heads/Gants2

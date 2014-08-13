@@ -114,8 +114,15 @@ SettingForm::OnInitializing(void)
 	footerItem[4].SetBackgroundBitmap(FOOTER_ITEM_STATUS_NORMAL,
 	Activation_Image[4].DecodeN(Activation_Path[4], BITMAP_PIXEL_FORMAT_ARGB8888));
 
+	Label* pLabel;
+	pLabel = new Label();
 
+	pLabel->Construct(Rectangle(0,0,this->GetWidth(),this->GetHeight()),L"");
+	AppLog("%d ,,,,%d", this->GetWidth(),this->GetHeight());
+	pLabel->SetBackgroundBitmap(*pAppResource->GetBitmapN(L"fakepicture.png"));
+	pLabel->Draw();
 
+	AddControl(pLabel);
 	Footer* pFooter = GetFooter();
 	if (pFooter)
 	{
@@ -139,7 +146,6 @@ result
 SettingForm::OnTerminating(void)
 {
 	result r = E_SUCCESS;
-
 	// TODO: Add your termination code here
 	return r;
 }
