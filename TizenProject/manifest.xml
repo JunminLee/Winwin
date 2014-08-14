@@ -8,7 +8,9 @@
     </Requirements>
     <Apps>
         <ApiVersion>2.2</ApiVersion>
-        <Privileges/>
+        <Privileges>
+            <Privilege>http://tizen.org/privilege/audiorecorder</Privilege>
+        </Privileges>
         <UiApp HwAcceleration="On" LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
             <UiScalability BaseScreenSize="Normal" CoordinateSystem="Logical" LogicalCoordinate="720"/>
             <UiTheme SystemTheme="White" UserDefinedTheme="WinWinsTheme"/>

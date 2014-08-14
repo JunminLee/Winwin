@@ -2,11 +2,14 @@
 #define _APP_RESOURCE_ID_H_
 
 extern const wchar_t* IDC_BUTTON_PLUS;
+extern const wchar_t* IDC_BUTTON_RECORD;
+extern const wchar_t* IDC_BUTTON_RECORDGO;
 extern const wchar_t* IDC_BUTTON_SEND;
 extern const wchar_t* IDC_EDIT_SEND;
 extern const wchar_t* IDC_GROUPEDLISTVIEW;
 extern const wchar_t* IDC_GROUPEDLISTVIEW1;
 extern const wchar_t* IDC_LABEL1;
+extern const wchar_t* IDC_PANEL1;
 extern const wchar_t* IDC_PANEL_CHAT;
 extern const wchar_t* IDC_TLABEL1;
 extern const wchar_t* IDC_TLABEL2;

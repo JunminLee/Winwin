@@ -1,11 +1,14 @@
 #include "AppResourceId.h"
 
 const wchar_t* IDC_BUTTON_PLUS = L"IDC_BUTTON_PLUS";
+const wchar_t* IDC_BUTTON_RECORD = L"IDC_BUTTON_RECORD";
+const wchar_t* IDC_BUTTON_RECORDGO = L"IDC_BUTTON_RECORDGO";
 const wchar_t* IDC_BUTTON_SEND = L"IDC_BUTTON_SEND";
 const wchar_t* IDC_EDIT_SEND = L"IDC_EDIT_SEND";
 const wchar_t* IDC_GROUPEDLISTVIEW = L"IDC_GROUPEDLISTVIEW";
 const wchar_t* IDC_GROUPEDLISTVIEW1 = L"IDC_GROUPEDLISTVIEW1";
 const wchar_t* IDC_LABEL1 = L"IDC_LABEL1";
+const wchar_t* IDC_PANEL1 = L"IDC_PANEL1";
 const wchar_t* IDC_PANEL_CHAT = L"IDC_PANEL_CHAT";
 const wchar_t* IDC_TLABEL1 = L"IDC_TLABEL1";
 const wchar_t* IDC_TLABEL2 = L"IDC_TLABEL2";
