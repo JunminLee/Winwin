@@ -10,6 +10,9 @@
         <ApiVersion>2.2</ApiVersion>
         <Privileges>
             <Privilege>http://tizen.org/privilege/audiorecorder</Privilege>
+            <Privilege>http://tizen.org/privilege/http</Privilege>
+            <Privilege>http://tizen.org/privilege/notification</Privilege>
+            <Privilege>http://tizen.org/privilege/push</Privilege>
         </Privileges>
         <UiApp HwAcceleration="On" LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="TizenProject">
             <UiScalability BaseScreenSize="Normal" CoordinateSystem="Logical" LogicalCoordinate="720"/>
