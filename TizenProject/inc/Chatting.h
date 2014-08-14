@@ -18,6 +18,12 @@
 #include <FLclLocale.h>
 #include "JMChattControl.h"
 #include "SceneRegister.h"
+#include <FMedia.h>
+#include <FContent.h>
+
+
+using namespace Tizen::Ui::Controls;
+using namespace Tizen::Media;
 
 class Chatting
 	: public Tizen::Ui::Controls::Form
@@ -28,6 +34,8 @@ class Chatting
 	, public Tizen::Ui::IScrollPanelEventListener
 	, public Tizen::Ui::ILanguageEventListener
 	, public Tizen::Ui::IKeypadEventListener
+ 	, public Tizen::Media::IAudioRecorderEventListener
+ 	, public Tizen::Media::IPlayerEventListener
 {
 public:
 	Chatting(void);
@@ -66,12 +74,32 @@ private:
 		virtual void  OnKeypadOpened (Tizen::Ui::Control &source);
 		virtual void  OnKeypadWillOpen (Tizen::Ui::Control &source);
 
+	    virtual void  OnAudioRecorderCanceled (result r) {}
+	    virtual void  OnAudioRecorderClosed (result r) {}
+	    virtual void  OnAudioRecorderEndReached(RecordingEndCondition endCondition) {}
+	    virtual void  OnAudioRecorderErrorOccurred(RecorderErrorReason r) {}
+	    virtual void  OnAudioRecorderPaused (result r) {}
+	    virtual void  OnAudioRecorderStarted (result r) {}
+	    virtual void  OnAudioRecorderStopped (result r) {}
+	    virtual void  OnPlayerAudioFocusChanged (void) {}
+	    virtual void  OnPlayerBuffering (int percent) {}
+	    virtual void  OnPlayerEndOfClip (void) {}
+	    virtual void  OnPlayerErrorOccurred(Tizen::Media::PlayerErrorReason r) {}
+	    virtual void  OnPlayerInterrupted (void) {}
+	    virtual void  OnPlayerOpened (result r) {}
+	    virtual void  OnPlayerReleased (void) {}
+	    virtual void  OnPlayerSeekCompleted (result r) {}
+
 
 protected:
 		static const int IDC_BUTTON_SEND = 201;
 		static const int ID_BUTTON_EDITFIELD_DONE = 501;
 		static const int ID_BUTTON_EDITFIELD_CANCEL = 502;
 		static const int IDC_BUTTON_PLUS = 202;
+		static const int IDC_BUTTON_RECORDGO = 203;
+		static const int IDC_BUTTON_RECORDER = 250;
+
+		static const int IDC_BUTTON_FEEDBACKX = 204;
 
 			Tizen::Ui::Controls::Button* __pButtonSend;
 			Tizen::Ui::Controls::Button* __pButtonPlus;
@@ -83,6 +111,16 @@ protected:
 			bool ischeck_plus = false;
 			bool ischeck_key = false;
 			JMChattControl* __pChattControl;
+			Button* __RecordGo;
+			Popup*	popup;
+			Button* __Record;
+
+			Button* feedback_x;
+			int Record_Status=0;
+
+			AudioRecorder __audioRecorder;
+		    Player __player;
+		    String __audioDestPath, __filepath, __filename;
 };
 
 

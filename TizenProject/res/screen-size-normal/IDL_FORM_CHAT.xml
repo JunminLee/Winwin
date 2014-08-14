@@ -12,12 +12,12 @@
     </Form>
     <Panel id="IDC_PANEL_CHAT" parent="IDL_FORM_CHAT">
         <property backgroundColor="#00B5EE" backgroundColorOpacity="100" compositeEnabled="true" groupStyle="GROUP_STYLE_NONE"/>
-        <layout height="96.0" mode="Portrait" type="NONE" width="720.0" x="0.0" y="1124.0"/>
+        <layout height="544.0" mode="Portrait" type="NONE" width="720.0" x="0.0" y="1124.0"/>
         <layout height="93.0" mode="Landscape" type="NONE" width="300.0" x="188.0" y="627.0"/>
     </Panel>
     <Button id="IDC_BUTTON_PLUS" parent="IDC_PANEL_CHAT">
         <property DisabledBitmapX="0.0" DisabledBitmapY="0.0" NormalBitmapX="0.0" NormalBitmapY="0.0" PressedBitmapX="0.0" PressedBitmapY="0.0" accessibilityHint="" disableTextColor="" disabledBGBitmapPath="" disabledBitmapPath="" disabledColor="" disabledColorOpacity="100" highlightedBGBitmapPath="" highlightedBitmapPath="" highlightedBitmapX="0.0" highlightedBitmapY="0.0" highlightedColor="" highlightedColorOpacity="100" highlightedTextColor="" horizontalAlign="ALIGN_CENTER" normalBGBitmapPath="" normalBitmapPath="" normalColor="" normalColorOpacity="100" normalTextColor="" pressedBGBitmapPath="" pressedBitmapPath="" pressedColor="" pressedColorOpacity="100" pressedTextColor="" text="" textSize="32.0" verticalAlign="ALIGN_MIDDLE"/>
-        <layout height="74.0" mode="Portrait" width="76.0" x="10.0" y="13.0"/>
+        <layout height="70.0" mode="Portrait" width="70.0" x="9.0" y="14.0"/>
         <layout height="74.0" mode="Landscape" width="136.0" x="19.0" y="19.0"/>
     </Button>
     <EditField id="IDC_EDIT_SEND" parent="IDC_PANEL_CHAT">
@@ -26,8 +26,18 @@
         <layout height="93.0" mode="Landscape" style="" width="300.0" x="32.0" y="0.0"/>
     </EditField>
     <Button id="IDC_BUTTON_SEND" parent="IDC_PANEL_CHAT">
-        <property DisabledBitmapX="0.0" DisabledBitmapY="0.0" NormalBitmapX="0.0" NormalBitmapY="0.0" PressedBitmapX="0.0" PressedBitmapY="0.0" accessibilityHint="" disableTextColor="" disabledBGBitmapPath="" disabledBitmapPath="" disabledColor="" disabledColorOpacity="100" highlightedBGBitmapPath="" highlightedBitmapPath="" highlightedBitmapX="0.0" highlightedBitmapY="0.0" highlightedColor="" highlightedColorOpacity="100" highlightedTextColor="" horizontalAlign="ALIGN_CENTER" normalBGBitmapPath="" normalBitmapPath="" normalColor="" normalColorOpacity="100" normalTextColor="" pressedBGBitmapPath="" pressedBitmapPath="" pressedColor="" pressedColorOpacity="100" pressedTextColor="" text="" textSize="32.0" verticalAlign="ALIGN_MIDDLE"/>
-        <layout height="51.0" mode="Portrait" width="86.0" x="607.0" y="23.0"/>
+        <property DisabledBitmapX="0.0" DisabledBitmapY="0.0" NormalBitmapX="0.0" NormalBitmapY="0.0" PressedBitmapX="0.0" PressedBitmapY="0.0" accessibilityHint="" disableTextColor="" disabledBGBitmapPath="" disabledBitmapPath="" disabledColor="" disabledColorOpacity="100" highlightedBGBitmapPath="" highlightedBitmapPath="" highlightedBitmapX="0.0" highlightedBitmapY="0.0" highlightedColor="" highlightedColorOpacity="100" highlightedTextColor="" horizontalAlign="ALIGN_CENTER" normalBGBitmapPath="sendbutton.png" normalBitmapPath="" normalColor="" normalColorOpacity="100" normalTextColor="" pressedBGBitmapPath="" pressedBitmapPath="" pressedColor="" pressedColorOpacity="100" pressedTextColor="" text="" textSize="32.0" verticalAlign="ALIGN_MIDDLE"/>
+        <layout height="69.0" mode="Portrait" width="97.0" x="594.0" y="15.0"/>
         <layout height="74.0" mode="Landscape" width="136.0" x="584.0" y="19.0"/>
+    </Button>
+    <Panel id="IDC_PANEL1" parent="IDC_PANEL_CHAT">
+        <property backgroundColor="#FFFFFF" backgroundColorOpacity="100" compositeEnabled="true" groupStyle="GROUP_STYLE_NONE"/>
+        <layout height="441.0" mode="Portrait" type="NONE" width="720.0" x="0.0" y="103.0"/>
+        <layout height="93.0" mode="Landscape" type="NONE" width="300.0" x="0.0" y="103.0"/>
+    </Panel>
+    <Button id="IDC_BUTTON_RECORDGO" parent="IDC_PANEL1">
+        <property DisabledBitmapX="0.0" DisabledBitmapY="0.0" NormalBitmapX="0.0" NormalBitmapY="0.0" PressedBitmapX="0.0" PressedBitmapY="0.0" accessibilityHint="" disableTextColor="" disabledBGBitmapPath="" disabledBitmapPath="" disabledColor="" disabledColorOpacity="100" highlightedBGBitmapPath="" highlightedBitmapPath="" highlightedBitmapX="0.0" highlightedBitmapY="0.0" highlightedColor="" highlightedColorOpacity="100" highlightedTextColor="" horizontalAlign="ALIGN_CENTER" normalBGBitmapPath="" normalBitmapPath="" normalColor="" normalColorOpacity="100" normalTextColor="" pressedBGBitmapPath="" pressedBitmapPath="" pressedColor="" pressedColorOpacity="100" pressedTextColor="" text="" textSize="32.0" verticalAlign="ALIGN_MIDDLE"/>
+        <layout height="200.0" mode="Portrait" width="200.0" x="261.0" y="129.0"/>
+        <layout height="93.0" mode="Landscape" width="237.0" x="259.0" y="101.0"/>
     </Button>
 </Scene>

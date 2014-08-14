@@ -86,6 +86,7 @@ protected:
 	Button* chatting_header_edit;
 	TableView* Chatting_List_View;
 	ArrayList ArrCustomItem;
+
 };
 
 

@@ -38,6 +38,11 @@ result
 Chatting::OnInitializing(void)
 {
 	result r = E_SUCCESS;
+	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
+
+		__audioRecorder.Construct(*this);
+	     __player.Construct(*this, null);
+
 
 		__pPanel = static_cast<Panel *>(GetControl(L"IDC_PANEL_CHAT", false));
 
@@ -58,12 +63,21 @@ Chatting::OnInitializing(void)
 			__pButtonSend->SetActionId(IDC_BUTTON_SEND);
 			__pButtonSend->AddActionEventListener(*this);
 		}
-
 		__pButtonPlus = static_cast<Button *>(GetControl(L"IDC_BUTTON_PLUS", true));
-				if (__pButtonPlus != null) {
-					__pButtonPlus->SetActionId(IDC_BUTTON_PLUS);
-					__pButtonPlus->AddActionEventListener(*this);
+						if (__pButtonPlus != null) {
+							__pButtonPlus->SetActionId(IDC_BUTTON_PLUS);
+							__pButtonPlus->AddActionEventListener(*this);
+						}
+		__pButtonPlus->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"chatting_plus.png"));
+		__pButtonPlus->Draw();
+		__RecordGo = static_cast<Button *>(GetControl(L"IDC_BUTTON_RECORDGO", true));
+				if (__RecordGo != null) {
+					__RecordGo->SetActionId(IDC_BUTTON_RECORDGO);
+					__RecordGo->AddActionEventListener(*this);
 				}
+		__RecordGo->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_chat.png"));
+		__RecordGo->SetHighlightedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_chat.png"));
+		__RecordGo->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_chat.png"));
 
 		where= __pPanel->GetPosition();
 
@@ -74,6 +88,37 @@ Chatting::OnInitializing(void)
 		AddDataToChattControl();
 		where2 = __pChattControl->GetPosition();
 		SetFormBackEventListener(this);
+
+		popup = new Popup;
+		popup->Construct(true, Dimension(720,440));
+		popup->SetPosition(0,840);
+
+		feedback_x = new Button();
+		feedback_x->Construct(Rectangle(630,-90,100,100));
+		feedback_x->SetActionId(IDC_BUTTON_FEEDBACKX);
+		feedback_x->AddActionEventListener(*this);
+		feedback_x->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"feedback_x.png"));
+		feedback_x->SetHighlightedBackgroundBitmap(*pAppResource->GetBitmapN(L"feedback_x.png"));
+		feedback_x->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"feedback_x.png"));
+		feedback_x->Draw();
+		popup->AddControl(feedback_x);
+
+		__Record = new Button();
+		__Record->Construct(Rectangle(30,0,300,300));
+		__Record->SetActionId(IDC_BUTTON_RECORDER);
+		__Record->AddActionEventListener(*this);
+		__Record->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Stop.png"));
+		__Record->SetHighlightedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Stop.png"));
+		__Record->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Stop.png"));
+		__Record->Draw();
+		popup->AddControl(__Record);
+		/*
+
+		 * popup->SetShowState(false);
+    	Invalidate(true);
+    	delete popup;
+		 */
+
 
 	return r;
 }
@@ -92,7 +137,7 @@ Chatting::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
-
+	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
 
 	switch(actionId)
@@ -118,25 +163,88 @@ Chatting::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 		case IDC_BUTTON_PLUS:
 			if(ischeck_plus==false)
 			{
+
 			__pChattControl->SetPosition(0, -444);
 			//__pChattControl->SetPosition(0, -813);
 			__pChattControl->Draw();
 			__pPanel->SetPosition(where.x,where.y-444);
+			__pButtonPlus->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"chatting_x.png"));
+			__pButtonPlus->Draw();
 			__pPanel->Draw();
 			//__pPanel->CloseOverlayWindow();
-
+			;
 			ischeck_plus = true;
 			} else {
 				__pChattControl->SetPosition(where2.x, where2.y);
 				__pChattControl->Draw();
 				__pPanel->SetPosition(where.x, where.y);
+				__pButtonPlus->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"chatting_plus.png"));
+				__pButtonPlus->Draw();
 				__pPanel->Draw();
 
 				ischeck_plus= false;
 			}
 
 			break;
+		case IDC_BUTTON_RECORDGO:
+			popup->SetShowState(true);
+			popup->Show();
+			break;
+		case IDC_BUTTON_FEEDBACKX:
+			popup->SetShowState(false);
 
+			break;
+		case IDC_BUTTON_RECORDER:
+			if(Record_Status == 0)
+				{
+				AppLog("녹음중");
+
+				__Record->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Start.png"));
+				__Record->SetHighlightedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Start.png"));
+				__Record->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Start.png"));
+				__Record->Draw();
+				popup->RequestRedraw(true);
+				Record_Status = 1;
+
+				    DateTime currentTime;
+				    SystemTime::GetCurrentTime(TIME_MODE_WALL, currentTime);
+
+
+				    __filename.Format(32, L"%04d%02d%02d_%02d%02d%02d.mp3", currentTime.GetYear(), currentTime.GetMonth(), currentTime.GetDay(), currentTime.GetHour(), currentTime.GetMinute(), currentTime.GetSecond());
+				    __filepath =App::GetInstance()->GetAppDataPath() + __filename;
+
+					__audioRecorder.CreateAudioFile(__filepath,true);
+			        __audioRecorder.SetMaxRecordingTime(60000);    //60 sec
+			        __audioRecorder.SetQuality(RECORDING_QUALITY_HIGH);
+			        __audioRecorder.SetFormat(CODEC_MP3,MEDIA_CONTAINER_MP3);
+
+			        __audioRecorder.Record();
+			        __audioDestPath = Tizen::System::Environment::GetMediaPath()+__filepath;
+				}
+				else if(Record_Status == 1)
+				{
+					AppLog("녹음완료");
+					__Record->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Complete.png"));
+					__Record->SetHighlightedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Complete.png"));
+					__Record->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"Record_Complete.png"));
+					__Record->Draw();
+					Record_Status = 2;
+
+					__audioRecorder.Stop();
+			        __audioRecorder.Close();
+				}
+				else if (Record_Status == 2)
+				{
+					AppLog("재생");
+					__filepath =App::GetInstance()->GetAppDataPath() + __filename;
+			        __player.OpenFile(__filepath);
+			        __player.SetVolume(100);
+			        __player.Play();
+
+				}
+
+
+		break;
 	default:
 		break;
 	}
