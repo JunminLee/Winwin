@@ -442,13 +442,17 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/attach_mark.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ixozU9uM1LiBi3YLpbHCMqBQIcnRcO5U7t+L1P2/49g=</DigestValue>
+</Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>G3rttZESJHaSNbg8wSWc4SXvzwIq3zkv9jfRPRmsSgY=</DigestValue>
+<DigestValue>VCFXnREv9St1y8phagofemBPRvSysY8MHaThI28/bjk=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>iC92G51WzBGupeJWlhk2noOGkLsFiQVdSc42aGiN1tc=</DigestValue>
+<DigestValue>5JFHvrREg/2n7/UtVthPtAg2NycPpuqxBym+FJJ1eaE=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -459,9 +463,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-uu5A+7e2WQ5X030BKswkEgzAypBv82kLBMzI5KDCm1Ta6eydocMjQXh7pmcqbJaNGRBj6wDaixLY
-sYyxRx2JjQeYyJN1V27RPKBgGc6CzsMOTCdrsFdYpH4M7cEKQzm7hps/6UGXvCyBO3Au9urmynpv
-/50RE/oSLlZI5n97QTw=
+VJmqaUrMj0s4YuHncAg41sD7dbExYEt4ckd3rlAGzgdZOyvY1i99AXTst6n9bUxrgnD2D2ppZokH
+1UpB9f+ahfThs2wAaQBcCa0oDTtJQpQVNe8trNict12jUqDk6Pt9c0kQbOvNwy8Y8B+NM35wXmnB
+6QGZzsgc6xRi+BT1U+g=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

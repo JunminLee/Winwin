@@ -85,6 +85,9 @@ Editing::OnDraw()
 	Rectangle *tmp_rect;
 	String	  *tmp_string;
 	Boolean	  *tmp_highlight;
+	Integer	  *tmp_int;
+	String	  *tmp_insert_str;
+	Integer   *tmp_check;
 	Font font;
     font.Construct(FONT_STYLE_PLAIN, 30);
 
@@ -95,6 +98,7 @@ Editing::OnDraw()
 	Canvas *pCanvas = this->GetCanvasN(Rectangle(30,tmp_client_rect.y+377,this->GetWidth()-60, tmp_client_rect.height-497));
 	pCanvas->SetFont(font);
 
+
 	//pCanvas->DrawBitmap(Rectangle(0,0,this->GetWidth(), 855), *(pAppResource->GetBitmapN(L"editing_background.png")));
 	//pCanvas->FillRectangle(Color(246,246,246,255), Rectangle(0,0,this->GetWidth(), tmp_client_rect.height-497));
 	pCanvas->FillRectangle(Color(255,255,255,255), Rectangle(0,0,this->GetWidth()-60, tmp_client_rect.height-497));
@@ -104,6 +108,9 @@ Editing::OnDraw()
 		tmp_rect = static_cast< Rectangle* > (arr_text_element_rect.GetAt(i));
 		tmp_string = static_cast< String *> (arr_text_element.GetAt(i));
 		tmp_highlight = static_cast <Boolean *> (arr_text_element_highlight.GetAt(i));
+		tmp_int = static_cast< Integer *> (arr_text_element_editing_mark.GetAt(i));
+		tmp_check = static_cast< Integer *> (arr_insert_check.GetAt(i));
+		tmp_insert_str = static_cast< String *> (arr_text_insert.GetAt(i));
 
 		if(tmp_rect->height < 0 || tmp_rect->y > tmp_client_rect.height-497)
 		{
@@ -118,6 +125,36 @@ Editing::OnDraw()
 			else
 			{
 				pCanvas->DrawText(Point(tmp_rect->x, tmp_rect->y), *tmp_string);
+			}
+			if(tmp_int->value == 2)
+			{
+
+				pCanvas->FillRectangle(Color(0,187,237,255), Rectangle(tmp_rect->x, tmp_rect->y+15, tmp_rect->width, 5));
+				pCanvas->DrawText(Point(tmp_rect->x, tmp_rect->y + tmp_rect->height), *tmp_insert_str, Color(0,187,237,255));
+
+			}
+			else if(tmp_int->value == 1)
+			{
+				pCanvas->FillRectangle(Color(0,187,237,255), Rectangle(tmp_rect->x, tmp_rect->y+15, tmp_rect->width, 5));
+			}
+			else if(tmp_check->value == 1)
+			{
+				pCanvas->DrawBitmap(Rectangle(tmp_rect->x-15, tmp_rect->y+15, 30 , 15), *pAppResource->GetBitmapN(L"attach_mark.png"));
+				pCanvas->DrawText(Point(tmp_rect->x-(tmp_insert_str->GetLength()/2), tmp_rect->y + tmp_rect->height), *tmp_insert_str, Color(0,255,0,255));
+			}
+			else if(tmp_check->value == 2)
+			{
+				pCanvas->DrawBitmap(Rectangle(tmp_rect->x-15, tmp_rect->y+15, 30 , 15), *pAppResource->GetBitmapN(L"attach_mark.png"));
+				pCanvas->DrawText(Point(tmp_rect->x-(tmp_insert_str->GetLength()/2), tmp_rect->y + tmp_rect->height), *tmp_insert_str, Color(0,255,0,255));
+				tmp_insert_str = static_cast< String *> (arr_text_insert.GetAt(i+1));
+				pCanvas->DrawBitmap(Rectangle(tmp_rect->x-15, tmp_rect->y+15, 30 , 15), *pAppResource->GetBitmapN(L"attach_mark.png"));
+				pCanvas->DrawText(Point(tmp_rect->x-(tmp_insert_str->GetLength()/2), tmp_rect->y + tmp_rect->height), *tmp_insert_str, Color(0,255,0,255));
+			}
+			else if(tmp_check->value == 3)
+			{
+				tmp_insert_str = static_cast< String *> (arr_text_insert.GetAt(i+1));
+				pCanvas->DrawBitmap(Rectangle(tmp_rect->x-15, tmp_rect->y+15, 30 , 15), *pAppResource->GetBitmapN(L"attach_mark.png"));
+				pCanvas->DrawText(Point(tmp_rect->x-(tmp_insert_str->GetLength()/2), tmp_rect->y + tmp_rect->height), *tmp_insert_str, Color(0,255,0,255));
 			}
 			pCanvas->DrawRectangle(*tmp_rect);
 		}
@@ -165,11 +202,12 @@ Editing::Initialize(void)
     wchar_t			tmp_char;
 	Font font;
     font.Construct(FONT_STYLE_PLAIN, 30);
+
     ori_word_cnt = 0;
     edt_word_cnt = 0;
 
 	str_content = L"이용수 위원장은 협상팀과 함께 지난 4일 출국해 6일 귀국했고 곧바로 7일 브리핑을 하는 셈이다. 큰 틀에서 이미 판 마르바이크 감독과 합의가 이루어진 것으로 예상할 수 있는 대목이다. 판 마르바이크 감독과의 교감이 없었다면 굳이 브리핑을 할 이유가 없으며 다른 후보자들을 두고 조기 귀국할 이유 역시 없기 때문이다. 사실상 판 마르바이크 감독과의 세부적인 조율만을 남겨놓고 있다는 전망이 나오고 있는 이유다. 이미 네덜란드 언론에서도 판 마르바이크 감독이 한국와의 협상이 진행중이라는 보도가 나온 만큼 대한축구협회가 판 마르바이크 감독에게 관심을 보이고 있다는 사실은 더 이상 비밀이 아니다. 7일 열리는 브리핑을 통해 한국 축구대표팀 차기 감독의 윤곽이 드러날지 기대된다.";
-
+	Eng = L"Chairman of the past four days to leave the water six days he returned with the negotiating team and that the briefing is Shem 7 days straight. It is to be expected that the agreement made ​​board director and Marquez already big frame bike passage. Without sympathetic because of the dry plate bike coach no reason to doubt why the briefing dare not leave the other candidates to return home early. The only reason that comes the prospect that detailed coordination and supervision left on the bike virtually dry plate. It is not a secret that there already seems to plate dry bike in Dutch media director for the Football Association as from the reports of the negotiations with South Korea coach underway dry plate is no longer interested in bikes. Briefing paper is expected to be revealed over the seven days of the South Korea national football team will open the outline next coach.";
 	bool		start_blank_check = false;
 
 	for(i=0; i<str_content.GetLength(); i++)
@@ -199,6 +237,8 @@ Editing::Initialize(void)
 					arr_text_element_highlight.Add(new Boolean(false));
 					arr_text_element_rect.Add(new Rectangle(current_x, current_y, tmp_dim.width ,STRIATION_SPACING/2));
 					arr_text_element_editing_mark.Add(new Integer(NONE));
+					arr_insert_check.Add(new Integer(0));
+					arr_text_insert.Add(new String(""));
 					current_x += tmp_dim.width;
 					ori_word_cnt++;
 					tmp_str.Clear();
@@ -217,6 +257,8 @@ Editing::Initialize(void)
 				arr_text_element_highlight.Add(new Boolean(false));
 				arr_text_element_rect.Add(new Rectangle(current_x, current_y, tmp_dim.width ,STRIATION_SPACING/2));
 				arr_text_element_editing_mark.Add(new Integer(NONE));
+				arr_insert_check.Add(new Integer(0));
+				arr_text_insert.Add(new String(""));
 				current_x += tmp_dim.width;
 				ori_word_cnt++;
 				tmp_str.Clear();
@@ -244,14 +286,15 @@ Editing::Initialize(void)
 	profile_button[4] = new Button();
 
 
-	profile_button[0]->Construct(Rectangle(30,30,100,100), L" ");
+	profile_button[0]->Construct(Rectangle(30,30,130,130), L" ");
 	profile_button[0]->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"tizen.png"));
 	profile_button[0]->SetActionId(300);
 	profile_button[0]->AddTouchEventListener(*this);
 
+
 	for(int i=1; i<5; i++)
 	{
-		profile_button[i]->Construct(Rectangle(150 + (i*60) + 15,50,60,60), L" ");
+		profile_button[i]->Construct(Rectangle(250 + (i*90),50,80,80), L" ");
 		profile_button[i]->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"tizen.png"));
 		profile_button[i]->SetActionId(301+i);
 		profile_button[i]->AddTouchEventListener(*this);
@@ -274,7 +317,7 @@ Editing::Initialize(void)
 
 	cur_label = new Label;
 
-	cur_label->Construct(Rectangle(30,176,31,19), " ");
+	cur_label->Construct(Rectangle(65,176,31,19), " ");
 	cur_label->SetBackgroundBitmap(*pAppResource->GetBitmapN(L"edit_background_cursor.png"));
 	tmp_label2->Construct(Rectangle(30,195,this->GetWidth()-60,86)," ");
 	tmp_label2->SetBackgroundBitmap(*pAppResource->GetBitmapN(L"editing_background_text.png"));
@@ -296,6 +339,8 @@ Editing::Initialize(void)
 
 	eng_button->Construct(Rectangle(this->GetWidth()-130,15,120, 66));
 	eng_button->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"Eng.png")));
+	eng_button->AddActionEventListener(*this);
+	eng_button->SetActionId(90);
 
 	editing_completion_button->Construct(Rectangle(204, 1120, 315, 73));
 	editing_completion_button->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"editing_completion_inact.png")));
@@ -546,6 +591,7 @@ Editing::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 		int i;
 		Integer *tmp_int;
 		String *tmp_str;
+		Integer *tmp_check;
 
 		Attached_decision();
 		SyncText();
@@ -569,6 +615,9 @@ Editing::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 		{
 			tmp_int = static_cast< Integer *> (arr_text_element_editing_mark.GetAt(i));
 			tmp_str = static_cast< String *> (arr_text_element.GetAt(i));
+			tmp_check = static_cast< Integer *> (arr_insert_check.GetAt(i));
+
+			AppLog("abra int : %d", tmp_int->value);
 
 			if(tmp_int->value == 3)
 				AppLog("attach : %S", tmp_str->GetPointer());
@@ -576,11 +625,11 @@ Editing::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 				AppLog("modify : %S", tmp_str->GetPointer());
 			else if(tmp_int->value == 1)
 				AppLog("delete : %S", tmp_str->GetPointer());
-			else if(tmp_int->value == 5)
+			/*else if(tmp_bool->GetTrue() == true)
 			{
 				tmp_str = static_cast< String *> (arr_text_insert.GetAt(i));
 				AppLog("insert : %S", tmp_str->GetPointer());
-			}
+			}*/
 		}
 
 		HidePopup();
@@ -588,9 +637,43 @@ Editing::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 		popup->Destroy();
 		break;
 	}
-	case '99':
+	case 90:
 	{
-		AppLog("fffffff");
+		Button *button = new Button;
+	    popup = new Popup;
+	    AppLog("goood!!!");
+	    popup->Construct(true, Dimension(600,800));
+	    draw_timer.Cancel();
+	    popup->SetPosition(60,60);
+
+	    popup->SetTitleText(L"Ellen Page님의 글");
+
+	    button->Construct(Rectangle(550,200,50,50),"닫");
+	    button->SetActionId(91);
+	    button->AddActionEventListener(*this);
+
+	    EditArea *eng = new EditArea;
+
+	    eng->Construct(Rectangle(0, 0, 550, 800),INPUT_STYLE_OVERLAY);
+	    eng->SetKeypadEnabled(false);
+	    eng->SetText(Eng);
+	    eng->SetColor(EDIT_STATUS_HIGHLIGHTED, Color(255,255,255,255));
+	    eng->SetColor(EDIT_STATUS_PRESSED, Color(255,255,255,255));
+	    eng->SetColor(EDIT_STATUS_NORMAL, Color(255,255,255,255));
+
+	    popup->SetColor(Color(255,255,255,255));
+
+	    popup->AddControl(button);
+	    popup->AddControl(eng);
+
+	    ShowPopup();
+	    break;
+
+	}
+	case 91:
+	{
+		HidePopup();
+		popup->Destroy();
 		break;
 	}
 	}
@@ -605,50 +688,66 @@ Editing::TextCorrecting()
 	String	tmp_str;
 	Integer *tmp_int;
 
+
 	if(arr_ori_word.GetCount() > arr_edit_word.GetCount())
 	{
-		for(i=start_index; i<end_index; i++)
+		int revise = 0;
+		for(i=start_index; i<=end_index; i++)
 		{
+
 			arr_ori_word.GetAt(i, tmp_word);
-			tmp_str.Clear();
 			tmp_int = static_cast< Integer *> (arr_text_element_editing_mark.GetAt(i));
+
 
 			if(tmp_int->value != 3)
 			{
-				for(j=0; j<arr_edit_word.GetCount(); j++)
+				for(j=i-start_index+revise; j<=i-start_index+revise; j++)
 				{
 					arr_edit_word.GetAt(j, tmp_word2);
+					//AppLog("ori_index : %S , %d", tmp_word.word.GetPointer(), tmp_word.start_index);
+					AppLog("edit_index : %S , %d", tmp_word2.word.GetPointer(), tmp_word2.start_index);
 					if(tmp_word.start_index == tmp_word2.start_index)
 					{
 						if(tmp_word.word.Equals(tmp_word2.word) == true)
 						{
+							AppLog("tmp_word : %S", tmp_word.word.GetPointer());
+							AppLog("tmp_word2 : %S", tmp_word2.word.GetPointer());
 							arr_text_element_editing_mark.SetAt(new Integer(0), i);
 							break;
 						}
 						else
 						{
+							tmp_str.Clear();
 							arr_text_element_editing_mark.SetAt(new Integer(2), i);
+							AppLog("tmp_word11 : %S", tmp_word.word.GetPointer());
+							AppLog("tmp_word22 : %S", tmp_word2.word.GetPointer());
+							tmp_str.Append(tmp_word2.word);
+							arr_text_insert.SetAt(new String(tmp_str), i);
 							break;
 						}
 					}
 					else if(tmp_word2.start_index < tmp_word.start_index)
 					{
 						arr_text_element_editing_mark.SetAt(new Integer(1), i);
+						revise++;
 					}
+
 				}
 			}
 		}
 	}
 	else if(arr_ori_word.GetCount() <= arr_edit_word.GetCount())
 	{
-		for(i=start_index; i<end_index; i++)
+		int revise = 0;
+		for(i=start_index; i<=end_index; i++)
 		{
 			arr_ori_word.GetAt(i, tmp_word);
 			tmp_str.Clear();
 			tmp_int = static_cast< Integer *> (arr_text_element_editing_mark.GetAt(i));
+			AppLog("tmp_int!!! : %d", tmp_int->value);
 			if(tmp_int->value != 3)
 			{
-				for(j=0; j<arr_edit_word.GetCount(); j++)
+				for(j=i-start_index+revise; j<=i-start_index+revise; j++)
 				{
 					arr_edit_word.GetAt(j, tmp_word2);
 					if(tmp_word.start_index == tmp_word2.start_index)
@@ -661,16 +760,54 @@ Editing::TextCorrecting()
 						else
 						{
 							arr_text_element_editing_mark.SetAt(new Integer(2), i);
+							AppLog("tmp_word11 : %S", tmp_word.word.GetPointer());
+							AppLog("tmp_word22 : %S", tmp_word2.word.GetPointer());
+							tmp_str.Append(tmp_word2.word);
+							arr_text_insert.SetAt(new String(tmp_str), i);
 							break;
 						}
 					}
 					else if(tmp_word2.start_index < tmp_word.start_index)
 					{
-						arr_text_element_editing_mark.SetAt(new Integer(5), i);
+						AppLog("!! ori_index : %S , %d", tmp_word.word.GetPointer(), tmp_word.start_index);
+						AppLog("!! arr_edit_word %S , %d ", tmp_word2.word.GetPointer(),tmp_word2.start_index);
+
+						arr_insert_check.SetAt(new Integer(1), i);
 						tmp_str.Append(tmp_word2.word);
 						arr_text_insert.SetAt(new String(tmp_str), i);
+
+						revise++;
+
 					}
+				//	AppLog("afsdf %d", i);
+
+				//	AppLog("edit_index : %S , %d", tmp_word2.word.GetPointer(), tmp_word2.start_index);
 				}
+
+
+			}
+		}
+		tmp_str.Clear();
+		AppLog("tmp_str_good11 : %S", tmp_str.GetPointer());
+		for(i=end_index-start_index+revise+1; i<arr_edit_word.GetCount(); i++)
+		{
+			tmp_int = static_cast< Integer *> (arr_insert_check.GetAt(end_index-start_index+revise));
+			if(tmp_int->value == 1)
+			{
+				arr_edit_word.GetAt(i, tmp_word2);
+				arr_insert_check.SetAt(new Integer(2), end_index-start_index+revise);
+				tmp_str.Append(tmp_word2.word);
+				arr_text_insert.SetAt(new String(tmp_str), end_index-start_index+revise+1);
+
+				AppLog("tmp_str_good22 : %S", tmp_str.GetPointer());
+
+			}
+			else
+			{
+				arr_edit_word.GetAt(i, tmp_word2);
+				arr_insert_check.SetAt(new Integer(3), end_index-start_index+revise);
+				tmp_str.Append(tmp_word2.word);
+				arr_text_insert.SetAt(new String(tmp_str), end_index-start_index+revise+1);
 			}
 		}
 	}
@@ -740,7 +877,6 @@ Editing::Attached_decision()
 				tmp_length += ptmp_word->word.GetLength();
 				ptmp_word->end_index = tmp_length;
 				arr_edit_word.Add(*ptmp_word);
-				AppLog("abc12 : %S", tmp_str.GetPointer());
 				tmp_str.Clear();
 			}
 		}
@@ -761,7 +897,7 @@ Editing::Attached_decision()
 	{
 		arr_edit_word.GetAt(i, tmp_word);
 
-		for(j = start_index + revise; j < end_index + revise; j++)
+		for(j = start_index + revise; j <= end_index + revise; j++)
 		{
 			if(arr_text_element.GetAt(j+1) != null)
 			{
@@ -817,7 +953,7 @@ Editing::Attached_decision()
 
 	Integer *tmp_int;
 	String *tmp_str2;
-	for(j = start_index; j < end_index; j++)
+	for(j = start_index; j <= end_index; j++)
 	{
 		tmp_int = static_cast <Integer *> (arr_text_element_editing_mark.GetAt(j));
 		tmp_str2 = static_cast <String *> (arr_text_element.GetAt(j));
@@ -845,9 +981,9 @@ Editing::OnKeyReleased (const Tizen::Ui::Control &source, Tizen::Ui::KeyCode key
 	int new_length = popup_edit_area->GetTextLength();
 	if(old_length < new_length)
 	{
-		plus[plus_cnt] = popup_edit_area->GetCursorPosition();
+		plus[plus_cnt] = popup_edit_area->GetCursorPosition()-1;
 		plus_cnt++;
-		AppLog("plus : %d",popup_edit_area->GetCursorPosition());
+		AppLog("plus : %d",popup_edit_area->GetCursorPosition()-1);
 	}
 	else if(old_length > new_length)
 	{

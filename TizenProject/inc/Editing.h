@@ -61,6 +61,8 @@ class Editing
  		String			 str_content;
  		String			popup_edit_string;
 
+ 		String			Eng;
+
  		Canvas 			*pCanvas;
 
  		Button			*editing_button;
@@ -71,6 +73,7 @@ class Editing
  		ArrayList		arr_text_element_rect;
  		ArrayList		arr_text_element_highlight;
  		ArrayList		arr_text_element_editing_mark;
+ 		ArrayList		arr_insert_check;
  		ArrayList		arr_text_insert;
 
 
