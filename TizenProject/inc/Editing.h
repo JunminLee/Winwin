@@ -96,7 +96,7 @@ class Editing
  		Point			cur_end_point;
 
  		int				select_cur;
-
+ 		int				like_cnt;
  		int				start_index;
  		int				end_index;
 

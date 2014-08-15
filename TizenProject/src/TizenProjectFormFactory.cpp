@@ -7,6 +7,7 @@
 #include "PartnerSearchForm.h"
 #include "SettingForm.h"
 #include "Editing.h"
+#include "CommentForm.h"
 #include "Idl_intro.h"
 #include "Idl_tutorial1.h"
 #include "Idl_tutorial2.h"
@@ -30,7 +31,7 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
 	Tizen::Ui::Controls::Form* pNewForm = null;
-
+	AppLog("ggg1 %S ", formId.GetPointer());
 	if (formId == IDL_FORM)
 	{
 		TizenProjectMainForm* pForm = new (std::nothrow) TizenProjectMainForm();
@@ -104,6 +105,14 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 	else if (formId == IDL_FORM6)
 	{
 		Editing* pForm = new Editing();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+	else if (formId == IDL_FORM7)
+	{
+		CommentForm* pForm = new CommentForm();
+		AppLog("ggg1");
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;

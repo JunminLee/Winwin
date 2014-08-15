@@ -1,8 +1,12 @@
+author-signature.xml__DEL__LXd9HOdPSMs8lLTi7GkJ/km2LAtBPVyFdvbbs0e9JGs=
+bin/TizenProject.exe__DEL__P8mS8Drkqt2kKjvbs9QEHBmOkoM42xxGuRqnfRjZMkI=
 info/manifest.xml__DEL__0W5jCMbYwPaJQCWbx+MlXAjOe5cFabgwa03Q9sB0QGE=
+res/screen-density-xhigh/attach_mark.png__DEL__ixozU9uM1LiBi3YLpbHCMqBQIcnRcO5U7t+L1P2/49g=
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
-res/screen-density-xhigh/comment_button.png__DEL__gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=
+res/screen-density-xhigh/comment_button.png__DEL__V6ooBaVCBi75U3uIw/uRaSDgdxmykjw4bXbn+sV9bTo=
 res/screen-density-xhigh/edit_background_cursor.png__DEL__dBu937hOAYU7Kk41HTqTXxlnOoiZLN79YUoOHZot600=
+res/screen-density-xhigh/edit_button.png__DEL__4CUGhLUSD45CuXf7EhKSN/keQZvct36ChtySpSjfals=
 res/screen-density-xhigh/editing_background.png__DEL__BT0ibldeZ8KRVdSKx6mpa1QmE/DhO873PeziUy1fKjo=
 res/screen-density-xhigh/editing_background_text.png__DEL__805F/fCCT0BTjyUBkPWDfwiSvI1ZEB9iK3m7b/ONhOA=
 res/screen-density-xhigh/editing_completion_inact.png__DEL__S+IRy+zag4x4ubRQFUlh3MUj9z8FQ6VL4Fy81DZd42U=
@@ -13,6 +17,7 @@ res/screen-density-xhigh/feedback_button.png__DEL__4lnRbm7+yig17NMe/oTjyfVjZ/CJq
 res/screen-density-xhigh/head_editing_button.png__DEL__UsoBKmx08UhPzxjr0Gsj45uX9+VYg7TDY7VejWiOico=
 res/screen-density-xhigh/header.png__DEL__AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=
 res/screen-density-xhigh/Intro.png__DEL__VkG4saL4JrayphxcPxEXnFGVww7rPwoD6aes98fDgQc=
+res/screen-density-xhigh/like_button.png__DEL__j7OEYkf6lnlswTrGlE9/r87P/EzBlAQtUZXlz5vGXDk=
 res/screen-density-xhigh/nationalflag.png__DEL__2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=
 res/screen-density-xhigh/PartnerList_Act.png__DEL__/U5kdUH7Lmr7TqY9EwT1yj/d497f9/plS2PZ65f2SLc=
 res/screen-density-xhigh/PartnerList_InAct.png__DEL__/XjpwGCAlg2ecihj9/DZgCKCZzGsIboTH2EEdaMp5xs=
@@ -108,6 +113,3 @@ res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_29.png__DEL__+2sdhS
 res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_30.png__DEL__7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__o0N2XWFAmIbVMBuzbW6o6X3ZMmuQrvAnIjtXMrU6wNw=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
-res/screen-density-xhigh/attach_mark.png__DEL__ixozU9uM1LiBi3YLpbHCMqBQIcnRcO5U7t+L1P2/49g=
-bin/TizenProject.exe__DEL__VCFXnREv9St1y8phagofemBPRvSysY8MHaThI28/bjk=
-author-signature.xml__DEL__5JFHvrREg/2n7/UtVthPtAg2NycPpuqxBym+FJJ1eaE=

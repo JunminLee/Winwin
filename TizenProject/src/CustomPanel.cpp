@@ -25,11 +25,14 @@ CustomPanel::OnDraw()
     Font font;
     font.Construct(FONT_STYLE_PLAIN, 30);
 
+	//pCanvas = this->GetCanvasN();
+
+
 	pCanvas = this->GetCanvasN();
 
     pCanvas->SetFont(font);
 
-    pCanvas->FillRectangle(Color(246, 246, 0, 255), Rectangle(0,0,this->GetWidth(), this->GetHeight()));
+    pCanvas->FillRectangle(Color(246, 246, 246, 255), Rectangle(0,0,this->GetWidth(), this->GetHeight()));
 
     pCanvas->FillRectangle(Color(255, 255, 255, 255), content_area);
 
@@ -82,6 +85,8 @@ CustomPanel::OnDraw()
 		pCanvas->FillRectangle(Color(100,100,255,255), cur_start_rect);
 		pCanvas->FillRectangle(Color(100,100,255,255), cur_end_rect);
 	}
+
+	pCanvas->~Canvas();
 }
 
 
@@ -214,6 +219,7 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
     button_comment = new Button;
     button_name = new Button;
     button_profile_image = new Button;
+    button_edit = new Button;
 
     //pCanvas->DrawText(Point(180, 80), L"David Beckham");
 
@@ -223,16 +229,20 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
     name_width = tmp_dim.width;
     button_name->Construct(Rectangle( 180, 80, tmp_dim.width, tmp_dim.height), name);
     button_profile_image->Construct(Rectangle(50,70,100,100), " ");
+
     button_profile_image->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"tizen.png")));
-    button_content->Construct(Rectangle( 50, current_y, this->GetWidth()-100, 50), " ");
-    button_like->Construct(Rectangle(50, extend_content_area_y, this->GetWidth()/2-50, 50), " ");
-    button_comment->Construct(Rectangle(this->GetWidth()/2, extend_content_area_y, this->GetWidth()/2-50, 50), " ");
+    button_content->Construct(Rectangle( 70, current_y, 580, 60), " ");
+    button_like->Construct(Rectangle(50, extend_content_area_y, 133, 60), " ");
+    button_comment->Construct(Rectangle(253, extend_content_area_y,112 , 60), " ");
+    button_edit->Construct(Rectangle(450, extend_content_area_y, 213, 68));
     button_content->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"extend_button.png")));
     button_comment->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"comment_button.png")));
-    button_like->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"feedback_button.png")));
+    button_like->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"like_button.png")));
+    button_edit->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"edit_button.png")));
 
     button_content->SetActionId(7);
-    button_like->SetActionId(8);
+    button_like->SetActionId(2);
+    button_edit->SetActionId(8);
     button_comment->SetActionId(9);
     button_name->SetActionId(10);
     button_profile_image->SetActionId(10);
@@ -244,16 +254,20 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
     button_comment->AddActionEventListener(*this);
     button_name->AddActionEventListener(*this);
     button_profile_image->AddActionEventListener(*this);
+    button_edit->AddActionEventListener(*this);
 
     AddControl(button_content);
     AddControl(button_like);
     AddControl(button_comment);
     AddControl(button_profile_image);
     AddControl(button_name);
+    AddControl(button_edit);
 
     current_y = current_y + STRIATION_SPACING*2;
 
 	current_x = 50;
+
+	like_cnt = 0;
 
 	for(i=0; i<extend_content.GetLength(); i++)
 	{
@@ -706,7 +720,7 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
         break;
     case 2:
         {
-            // ....
+            like_cnt++;
         }
         break;
     case 3:
@@ -724,14 +738,14 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 				tmp_rect = static_cast <Rectangle *> (arr_extend_text_element_rect.GetAt(arr_extend_text_element_rect.GetCount()-1));
 				panel_height = tmp_rect->y + tmp_rect->height;
 
-				int a = this->GetHeight();
-
 				pvi->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height+150));
 				this->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height+150));
 
 				content_area.SetBounds(30,30,this->GetWidth()-60, panel_height+120);
-			    button_like->SetBounds(Rectangle(50, this->GetHeight()-100, this->GetWidth()/2-50, 50));
-			    button_comment->SetBounds(Rectangle(this->GetWidth()/2, this->GetHeight()-100, this->GetWidth()/2-50, 50));
+			    button_like->SetBounds(Rectangle(50, this->GetHeight()-100, 133, 60));
+			    button_comment->SetBounds(Rectangle(253, this->GetHeight()-100,112 , 60));
+			    button_edit->SetBounds(Rectangle(450, this->GetHeight()-100, 213, 68));
+
 				table_view->RefreshAllItems();
 				extend_content_flag = true;
 			}
@@ -743,48 +757,23 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 				pvi->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 100));
 				this->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 100));
 				content_area.SetBounds(30,30,this->GetWidth()-60, panel_height + 70);
-			    button_like->SetBounds(Rectangle(50, extend_content_area_y, this->GetWidth()/2-50, 50));
-			    button_comment->SetBounds(Rectangle(this->GetWidth()/2, extend_content_area_y, this->GetWidth()/2-50, 50));
+
+			    button_like->SetBounds(Rectangle(50, extend_content_area_y, 133, 60));
+			    button_comment->SetBounds(Rectangle(253, extend_content_area_y,112 , 60));
+			    button_edit->SetBounds(Rectangle(450, extend_content_area_y, 213, 68));
+
 				table_view->RefreshAllItems();
 				extend_content_flag = false;
 			}
+			this->RequestRedraw(true);
 		}
 		break;
     case 8:
 		{
-			if(comment_list_view_flag == false)
-			{
-				pvi->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 200));
-				this->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 200));
-				content_area.SetBounds(30,30,this->GetWidth()-60, panel_height + 170);
-
-				__pListView = new ListView();
-				__pListView->Construct(Rectangle(30, button_comment->GetY() + 80, this->GetWidth()/2-50, 100));
-				__pListView->SetItemProvider(*this);
-				AddControl(__pListView);
-
-				table_view->RefreshAllItems();
-
-				comment_list_view_flag = true;
-			}
-			else if(comment_list_view_flag == true)
-			{
-				__pListView->Destroy();
-				if(extend_content_flag == false)
-				{
-					pvi->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 100));
-					this->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 100));
-					content_area.SetBounds(30,30,this->GetWidth()-60, panel_height + 70);
-				}
-				else
-				{
-					pvi->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 150));
-					this->SetBounds(Rectangle(0,0,this->GetWidth(), panel_height + 150));
-					content_area.SetBounds(30,30,this->GetWidth()-60, panel_height + 120);
-				}
-				table_view->RefreshAllItems();
-				comment_list_view_flag = false;
-			}
+	    	SceneManager* pSceneManager = SceneManager::GetInstance();
+	    	AppAssert(pSceneManager);
+	    	pSceneManager->GoForward(ForwardSceneTransition(SCENE_COMMENT_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+	    	break;
 		}
 		break;
     case 9:
@@ -858,63 +847,6 @@ CustomPanel::OnTextValueChanged(const Tizen::Ui::Control& source)
 }
 
 
-ListItemBase*
-CustomPanel::CreateItem(int index, int itemWidth)
-{
-    // Creates an instance of CustomItem
-    CustomItem* pItem = new CustomItem();
-    ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
-
-    switch (index % 4)
-    {
-    case 0:
-        {
-            style = LIST_ANNEX_STYLE_NORMAL;
-            pItem->Construct(Dimension(itemWidth,50), style);
-            pItem->AddElement(Rectangle(0, 0, itemWidth, 50), 555, L"Home", true);
-        }
-        break;
-    case 1:
-        {
-            style = LIST_ANNEX_STYLE_NORMAL;
-            pItem->Construct(Dimension(itemWidth,50), style);
-            pItem->AddElement(Rectangle(0, 0, 150, 50), 555, L"Home", true);
-        }
-        break;
-    case 2:
-        {
-            style = LIST_ANNEX_STYLE_NORMAL;
-            pItem->Construct(Dimension(itemWidth,50), style);
-            pItem->AddElement(Rectangle(0, 0, 150, 50), 555, L"Home", true);
-        }
-        break;
-    case 3:
-        {
-            style = LIST_ANNEX_STYLE_NORMAL;
-            pItem->Construct(Dimension(itemWidth,50), style);
-            pItem->AddElement(Rectangle(0, 0, 150, 50), 555, L"Home", true);
-        }
-        break;
-    default:
-        break;
-    }
-
-    return pItem;
-}
-
-bool
-CustomPanel::DeleteItem(int index, ListItemBase* pItem, int itemWidth)
-{
-    delete pItem;
-    pItem = null;
-    return true;
-}
-
-int
-CustomPanel::GetItemCount(void)
-{
-    return 15;
-}
 
 void
 CustomPanel::OnTextValueChangeCanceled(const Tizen::Ui::Control& source)
