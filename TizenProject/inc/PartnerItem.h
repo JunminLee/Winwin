@@ -11,16 +11,24 @@
 #include "tizenx.h"
 
 
-using namespace Tizen::Graphics;
+using namespace Tizen::Base::Runtime;
 using namespace Tizen::Base;
+using namespace Tizen::App;
+using namespace Tizen::Ui;
+using namespace Tizen::Ui::Controls;
+using namespace Tizen::Ui::Scenes;
+using namespace Tizen::Graphics;
+using namespace Tizen::Media;
 using namespace Tizen::Base::Collection;
-
 
 class PartnerItem : public Tizen::Ui::Controls::ICustomElement
 {
 public:
-	void			Initialize(String pName, String pProfile);
+	void			Initial(String pName, String pProfile, String pnation, String pnation_name, String phobby, String phobby_pic);
 	String			GetPartnerName();
+	String			GetPartnerNation();
+	String			GetPartnerNationflag();
+	String			GetPartnerHobby();
 	wchar_t			GetPartnerFirstName();
 	String			GetProfilePath();
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap& bitmap);
@@ -29,6 +37,15 @@ public:
 	Dimension		Dim_Content;
 	String Bitmap_Pofile;
 	String Partner_Name;
+
+	String partner_nation;
+	String partner_hobby;
+	String partner_hobby_pic;
+	String partner_nation_what;
+
+	Canvas 			*pCanvas;
+	Label* nation_flag;
+	Label* Person_Hobby;
 public:
     //Overload the assignment operator.
 	PartnerItem& operator = (const PartnerItem& rhs);

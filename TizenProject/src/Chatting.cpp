@@ -496,9 +496,9 @@ void Chatting::CreateChattControl() {
 	__pChattControl->Initialize(rtCtrl, L"IronMan", iconImage, L"TESTMAN",
 			iconImage);
 	AddControl(*__pChattControl);
-	//__pChattControl->SetBackgroundColor(Color(240,240,240));
-	Bitmap* strBackImageFile = pAppResource->GetBitmapN(L"tizen.png");
-	__pChattControl->SetBackImage(strBackImageFile);
+	__pChattControl->SetBackgroundColor(Color(240,240,240));
+	//Bitmap* strBackImageFile = pAppResource->GetBitmapN(L"tizen.png");
+	//__pChattControl->SetBackImage(strBackImageFile);
 }
 
 void Chatting::AddDataToChattControl() {

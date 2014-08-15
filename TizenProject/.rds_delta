@@ -34,9 +34,12 @@ res/screen-density-xhigh/fake_setting.png
 res/screen-density-xhigh/fakepicture.png
 res/screen-density-xhigh/feedback_button.png
 res/screen-density-xhigh/feedback_x.png
+res/screen-density-xhigh/flag_partner.png
+res/screen-density-xhigh/friend_plz.png
 res/screen-density-xhigh/head_editing_button.png
 res/screen-density-xhigh/header.png
 res/screen-density-xhigh/nationalflag.png
+res/screen-density-xhigh/partnerList.png
 res/screen-density-xhigh/s-face1.png
 res/screen-density-xhigh/s-face2.png
 res/screen-density-xhigh/s-face3.png
@@ -51,6 +54,8 @@ res/screen-density-xhigh/tutorial2.jpg
 res/screen-density-xhigh/tutorial3.jpg
 res/screen-density-xhigh/tutorial4.jpg
 res/screen-density-xhigh/voice_chat.png
+res/screen-density-xhigh/voice_pb1.png
+res/screen-density-xhigh/voice_pb2.png
 res/screen-size-normal/IDL_FORM.xml
 res/screen-size-normal/IDL_FORM2.xml
 res/screen-size-normal/IDL_FORM3.xml

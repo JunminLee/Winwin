@@ -441,11 +441,13 @@ void JMChattControl::DrawTimeText(Canvas* pCanvas, Rectangle rtText, DateTime ti
 	else {
 		strTime.Format(50, L"AM %d:%02d", nHour, timeSend.GetMinute());
 	}
-
+	Point tmp;
+	tmp.x= rtText.GetTopLeft().x-10;
+	tmp.y= rtText.GetTopLeft().y-10;
 	pCanvas->SetForegroundColor(__stScreenInfo.colorTextTime);
 	pCanvas->SetBackgroundColor(__stScreenInfo.colorTextBackTime);
 	pCanvas->SetFont(__stScreenInfo.fontTime);
-	pCanvas->DrawText(rtText.GetTopLeft(), strTime);
+	pCanvas->DrawText(tmp, strTime);
 }
 
 
@@ -807,11 +809,13 @@ void JMChattControl::DrawChattDataDate(Canvas* pCanvas, stCHATT_DATA* pChattData
 	rtText.x = (rtTextBox.width - dimText.width) / 2;
 	rtText.width = dimText.width;
 
-
+	Point timetmp;
+	timetmp.x = rtText.GetTopLeft().x + 10;
+	timetmp.y = rtText.GetTopLeft().y - 10;
 	pCanvas->SetForegroundColor(__stScreenInfo.colorTextTime);
 	pCanvas->SetBackgroundColor(__stScreenInfo.colorTextBackTime);
 	pCanvas->SetFont(__stScreenInfo.fontTime);
-	pCanvas->DrawText(rtText.GetTopLeft(), pChattData->strText);
+	pCanvas->DrawText(timetmp, pChattData->strText);
 }
 
 // Touch Pressed
