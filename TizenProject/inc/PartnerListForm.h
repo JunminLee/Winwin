@@ -66,6 +66,7 @@ private:
 	virtual Tizen::Ui::Controls::ListItemBase* CreateItem(int groupIndex, int itemIndex, float itemWidth);
 	virtual bool DeleteItem(int groupIndex, int itemIndex, Tizen::Ui::Controls::ListItemBase* pItem, float itemWidth);
 
+	void CheckGorupComponent();
 	void CreateListView(void);
 	void CreateGroupedListView(void);
 
@@ -84,6 +85,10 @@ protected:
 	ArrayListT<PartnerItem> ArrPartnerItem;
 	Bitmap *Profile;
 	String	name;
+	Panel* head;
+	Button* head_center;
+	Button* head_left;
+	Button* head_right;
 };
 
 

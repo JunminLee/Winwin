@@ -50,6 +50,7 @@ int Total_COUNT;
 int Group_Item_Count[26];
 char Group_name[26];
 int Group_Scroll[26];
+PartnerItem p;
 PartnerListForm::PartnerListForm(void) : __pList(null)
 {
 }
@@ -61,7 +62,7 @@ PartnerListForm::~PartnerListForm(void)
 bool
 PartnerListForm::Initialize(void)
 {
-	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER | FORM_STYLE_HEADER);
+	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
 	return true;
@@ -147,19 +148,36 @@ PartnerListForm::OnInitializing(void)
 	footerItem[4].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	Activation_Image[4].DecodeN(Activation_Path[4], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	Header* pHeader = GetHeader();
-	pHeader->SetStyle(HEADER_STYLE_TITLE);
-	pHeader->SetBackgroundBitmap(pAppResource->GetBitmapN(L"header.png"));
 
 	Footer* pFooter = GetFooter();
 	if (pFooter)
 	{
 		pFooter->AddActionEventListener(*this);
 	}
-	if (pHeader)
-	{
-		pHeader->AddActionEventListener(*this);
-	}
+
+
+	head = new Panel();
+
+	head->Construct(Rectangle(0,0, this->GetWidth(), 96));
+	head->SetBackgroundColor(Color(0,181,238,255));
+
+
+	head_center = new Button();
+	head_center->Construct(Rectangle(257, 32, 206, 40));
+	head_center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"partnerList.png")));
+
+	head_left = new Button();
+	head_left->Construct(Rectangle(37, 22, 62, 56));
+	head_left->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"friend_plz.png")));
+
+	head_right = new Button();
+	head_right->Construct(Rectangle(646, 29, 38, 43));
+	head_right->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"flag_partner.png")));
+
+	this->AddControl(head);
+	this->AddControl(head_center);
+	this->AddControl(head_left);
+	this->AddControl(head_right);
 
 	pFooter->AddItem(footerItem[0]);
 	pFooter->AddItem(footerItem[1]);
@@ -170,51 +188,40 @@ PartnerListForm::OnInitializing(void)
 	SetFormBackEventListener(this);
 	CreateGroupedListView();
 
-	PartnerItem p;
+
 	String check_name;
-	wchar_t temp;
 
-	p.Initialize(L"Black Widow",L"s-face7.png");
-	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
 
-	p.Initialize(L"Captain Amerian",L"s-face6.png");
-	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
 
-	p.Initialize(L"Hawk Eye",L"s-face2.png");
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
-	ArrPartnerItem.Add(p);
 
-	p.Initialize(L"Hulk",L"s-face5.png");
-	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
 
-	p.Initialize(L"Iron Man",L"s-face1.png");
+	p.Initial(L"Black Widow",L"s-face7.png", L"nationalflag.png","한국" , "축구, 배구", L"hobby.png" );
 	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
+	CheckGorupComponent();
 
-	p.Initialize(L"Nick Fury",L"s-face4.png");
+	p.Initial(L"Captain Amerian",L"s-face6.png",L"nationalflag.png","한국","축구, 배구", L"hobby.png");
 	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
+	CheckGorupComponent();
 
-	p.Initialize(L"Thor",L"s-face3.png");
+	p.Initial(L"Hawk Eye",L"s-face2.png",L"nationalflag.png","한국","독서", L"hobby.png");
 	ArrPartnerItem.Add(p);
-	temp = p.GetPartnerFirstName();
-	temp-='A';
-	ITEM_COUNT[temp]++;
+	CheckGorupComponent();
+
+	p.Initial(L"Hulk",L"s-face5.png",L"nationalflag.png","한국","공부, 토론", L"hobby.png");
+	ArrPartnerItem.Add(p);
+	CheckGorupComponent();
+
+	p.Initial(L"Iron Man",L"s-face1.png",L"nationalflag.png","한국","랩, 노래", L"hobby.png");
+	ArrPartnerItem.Add(p);
+	CheckGorupComponent();
+
+	p.Initial(L"Nick Fury",L"s-face4.png",L"nationalflag.png","한국","족구, 테니스", L"hobby.png");
+	ArrPartnerItem.Add(p);
+	CheckGorupComponent();
+
+	p.Initial(L"Thor",L"s-face3.png",L"nationalflag.png","한국","헬스", L"hobby.png");
+	ArrPartnerItem.Add(p);
+	CheckGorupComponent();
 
 
 
@@ -230,6 +237,14 @@ PartnerListForm::OnTerminating(void)
 	return r;
 }
 
+void PartnerListForm::CheckGorupComponent()
+{
+	wchar_t temp;
+	temp = p.GetPartnerFirstName();
+	temp-='A';
+	ITEM_COUNT[temp]++;
+
+}
 void
 PartnerListForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
@@ -295,7 +310,8 @@ void
 PartnerListForm::CreateGroupedListView(void)
 {
 	__pList = new GroupedListView();
-	__pList->Construct(Rectangle(0, 0, GetClientAreaBounds().width, GetClientAreaBounds().height), GROUPED_LIST_VIEW_STYLE_INDEXED, true, true);
+	__pList->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height), GROUPED_LIST_VIEW_STYLE_INDEXED, true, true);
+	__pList->SetBackgroundColor(Color(246,246,246));
 	__pList->SetItemProvider(*this);
 	__pList->SetFastScrollIndex(L"ABCDEFGHIJKLMNOPQRSTUVWXYZ", false);
 	__pList->AddFastScrollListener(*this);
@@ -731,12 +747,12 @@ PartnerListForm::CreateItem(int groupIndex, int itemIndex, float itemWidth)
 {
 	ListAnnexStyle style = LIST_ANNEX_STYLE_NORMAL;
 		CustomItem* pItem = new (std::nothrow) CustomItem();
-		pItem->Construct(Tizen::Graphics::FloatDimension(itemWidth, 120.0f), style);
+		pItem->Construct(Tizen::Graphics::FloatDimension(itemWidth, 210.0f), style);
 
 		PartnerItem *p;
 		p= new PartnerItem;
 		ArrPartnerItem.GetAt(ITEM_CREATE_CNT++, *p);
-		pItem->AddElement(Rectangle(10, 10, itemWidth, 120.0f), 0, *(static_cast<ICustomElement *>(p)));
+		pItem->AddElement(Rectangle(0, 0, itemWidth, 210.0f), 0, *(static_cast<ICustomElement *>(p)));
 		return pItem;
 }
 

@@ -16,6 +16,7 @@ ChattingListItem::OnDraw()
 {
 
 	pCanvas = this->GetCanvasN();
+
 	pCanvas->FillRectangle(Color(255,255,255,255), Rectangle(50,15,620,170));
 	pCanvas->DrawBitmap(Rectangle(80,50,100,100), *profile_iamge);
 	pCanvas->DrawBitmap(Rectangle(140,130,50,30), *national_flag_image);

@@ -327,7 +327,10 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 			__pPanel->Draw();
 			ischeck_plus = true;
 
+
 		} else {
+			if(ischeck_key == false)
+			{
 			__pChattControl->SetPosition(where2.x, where2.y);
 			__pChattControl->Draw();
 			__pPanel->SetPosition(where.x, where.y);
@@ -337,6 +340,7 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 			__pPanel->Draw();
 
 			ischeck_plus = false;
+			}
 		}
 
 		break;
@@ -492,20 +496,21 @@ void Chatting::CreateChattControl() {
 	__pChattControl->Initialize(rtCtrl, L"IronMan", iconImage, L"TESTMAN",
 			iconImage);
 	AddControl(*__pChattControl);
-	//__pChattControl->SetBackgroundColor(Color::COLOR_GREY);
-	Bitmap* strBackImageFile = pAppResource->GetBitmapN(L"Wallpaper_05.jpg");
-	__pChattControl->SetBackImage(strBackImageFile);
+	__pChattControl->SetBackgroundColor(Color(240,240,240));
+	//Bitmap* strBackImageFile = pAppResource->GetBitmapN(L"tizen.png");
+	//__pChattControl->SetBackImage(strBackImageFile);
 }
 
 void Chatting::AddDataToChattControl() {
 	DateTime timeSend;
+
 	String strText;
 	Bitmap* strBitmap;
 
 	timeSend.SetValue(2014, 7, 30, 9, 12, 4);
 	int nTimeGap = 4;
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
-	/*
+/*
 	 for(int i=0 ; i < 10 ; i++) {
 
 	 strText.Format(200, L"%d번이나 시도를 하지. ", i+1);
@@ -528,7 +533,7 @@ void Chatting::AddDataToChattControl() {
 	 //timeSend.AddMinutes(nTimeGap);
 	 timeSend.AddHours(nTimeGap);
 
-	 strBitmap = pAppResource->GetBitmapN(L"feedback_voice.png");
+	 strBitmap = pAppResource->GetBitmapN(L"voice_pb1.png");
 	 __pChattControl->AddDataImage(timeSend, strBitmap, false);
 	 //timeSend.AddMinutes(nTimeGap);
 	 timeSend.AddHours(nTimeGap);
@@ -544,9 +549,14 @@ void Chatting::AddDataToChattControl() {
 	 timeSend.AddHours(nTimeGap);
 	 }
 
+*/
+	strBitmap = pAppResource->GetBitmapN(L"voice_pb1.png");
+		 __pChattControl->AddDataImage(timeSend, strBitmap, false);
+		 //timeSend.AddMinutes(nTimeGap);
+		 timeSend.AddHours(nTimeGap);
 
 	 __pChattControl->RequestRedraw();
-	 */
+
 }
 
 void Chatting::OnUserEventReceivedN(RequestId requestId,
@@ -573,6 +583,7 @@ void Chatting::OnUserEventReceivedN(RequestId requestId,
 		}
 	}
 		break;
+
 	default:
 		break;
 	}

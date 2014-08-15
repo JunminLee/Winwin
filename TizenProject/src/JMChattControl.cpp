@@ -29,7 +29,7 @@ JMChattControl::JMChattControl() :
 	__stScreenInfo.nElementGapY = 10;
 
 	__stScreenInfo.nTextBoxWidth = 240;
-	__stScreenInfo.nTextBoxInsideGap = 5;
+	__stScreenInfo.nTextBoxInsideGap = 15;
 	__stScreenInfo.nTextBoxMarginI = 25;
 	__stScreenInfo.nTextBoxMarginYou = __stScreenInfo.nPhotoBoxMarginYou * 2 + __stScreenInfo.nYouPhotoBoxHeight;
 
@@ -180,9 +180,9 @@ void JMChattControl::InitVariable()
 
 	__stScreenInfo.nTextBoxWidth = (int)(__stScreenInfo.rtScreen.width * 50. / 100.);
 
-	__stScreenInfo.nTextBoxInsideGap = (int)(__stScreenInfo.rtScreen.width * 1.5 / 100.);
+	__stScreenInfo.nTextBoxInsideGap = (int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10;
 
-	__stScreenInfo.nTextBoxMarginI = (int)(__stScreenInfo.rtScreen.width * 5. / 100.);
+	__stScreenInfo.nTextBoxMarginI = (int)(__stScreenInfo.rtScreen.width * 5. / 100.)+10;
 
 
 	__stScreenInfo.nPhotoBoxMarginYou = (int)(__stScreenInfo.rtScreen.width * 2.5 / 100.);
@@ -213,6 +213,9 @@ void JMChattControl::InitVariable()
 
 void JMChattControl::DrawFillRoundRectangle(Canvas* pCanvas, Rectangle rtArea, Color colorBack, Color colorOutline)
 {
+
+	AppLog("33333DrawFillRoundRectangle");
+
 	int nLineWidth = 4, nGapWidth=0;
 	Dimension sizeCorner;
 	Rectangle rtBack;
@@ -250,8 +253,8 @@ Rectangle JMChattControl::GetTextAreaInTextBox(Rectangle rtArea)
 Rectangle JMChattControl::GetImageBoxArea(Rectangle rtArea)
 {
 	Rectangle rtText;
-	rtText.x = rtArea.x + __stScreenInfo.nTextBoxInsideGap - 20;
-	rtText.y = rtArea.y + __stScreenInfo.nTextBoxInsideGap - 5;
+	rtText.x = rtArea.x + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-30;
+	rtText.y = rtArea.y + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-3;
 	rtText.width = __stScreenInfo.nImageBoxMaxHeight + 262;
 	rtText.height = __stScreenInfo.nImageBoxMaxHeight + 70;
 	return rtText;
@@ -288,6 +291,7 @@ void JMChattControl::DrawTextBox(Canvas* pCanvas, String strText, Rectangle rtAr
 
 void JMChattControl::DrawMultiLineText(Canvas* pCanvas, String strText, Rectangle rtArea, Color colorText, Color colorBack)
 {
+	AppLog("3333DrawMultiLineText");
 	result r = E_SUCCESS;
 
 	EnrichedText* pEnrichedText = null;
@@ -407,7 +411,6 @@ Rectangle JMChattControl::GetTimeAreaFromTextBox(Rectangle rtTextBox, bool bIsI)
 {
 	Rectangle rtTime;
 
-
 	if( bIsI ) {
 		rtTime.x = rtTextBox.x - __stScreenInfo.nTimeAreaWidth;
 	}
@@ -419,6 +422,7 @@ Rectangle JMChattControl::GetTimeAreaFromTextBox(Rectangle rtTextBox, bool bIsI)
 	rtTime.width = __stScreenInfo.nTimeAreaWidth;
 	rtTime.y = rtTextBox.y + rtTextBox.height - (int)(__stScreenInfo.nTimeAreaHeight * 1.1);
 	rtTime.height = __stScreenInfo.nTimeAreaHeight;
+
 
 	return rtTime;
 }
@@ -437,11 +441,13 @@ void JMChattControl::DrawTimeText(Canvas* pCanvas, Rectangle rtText, DateTime ti
 	else {
 		strTime.Format(50, L"AM %d:%02d", nHour, timeSend.GetMinute());
 	}
-
+	Point tmp;
+	tmp.x= rtText.GetTopLeft().x-10;
+	tmp.y= rtText.GetTopLeft().y-10;
 	pCanvas->SetForegroundColor(__stScreenInfo.colorTextTime);
 	pCanvas->SetBackgroundColor(__stScreenInfo.colorTextBackTime);
 	pCanvas->SetFont(__stScreenInfo.fontTime);
-	pCanvas->DrawText(rtText.GetTopLeft(), strTime);
+	pCanvas->DrawText(tmp, strTime);
 }
 
 
@@ -480,7 +486,7 @@ void JMChattControl::OnTimerExpired(Timer& timer)
 
 		if( (__stScreenInfo.fSlideSpeed > 0.f && __stScreenInfo.fSlideSpeedDecrease > 0.f) ||
 				(__stScreenInfo.fSlideSpeed < 0.f && __stScreenInfo.fSlideSpeedDecrease < 0.f)	) {
-			//AppLog(">>> OnTimerExpired - %0.1f", __stScreenInfo.fSlideSpeed);
+			//AppLog(">>> OnTimerExpired - %0.f", __stScreenInfo.fSlideSpeed);
 
 			__stScreenInfo.nSlideDistance = (int)__stScreenInfo.fSlideSpeed;
 
@@ -491,7 +497,7 @@ void JMChattControl::OnTimerExpired(Timer& timer)
 
 		else {
 
-			__stScreenInfo.fSlideSpeed == 0.f;
+			__stScreenInfo.fSlideSpeed = 0.f;
 
 			__stScreenInfo.nSlideDistance = 0;
 
@@ -519,6 +525,8 @@ void JMChattControl::SetImageRectToSize(Rectangle &rtImage, Bitmap* pImage)
 
 void JMChattControl::DrawElementBackAndTime(Canvas* pCanvas, stCHATT_DATA* pChattData, Rectangle rtTextBox)
 {
+
+	AppLog("3333DrawElementBackAndTime");
 	Rectangle rtTime, rtText;
 	Color colorTextBack, colorTextOutline;
 
@@ -530,8 +538,10 @@ void JMChattControl::DrawElementBackAndTime(Canvas* pCanvas, stCHATT_DATA* pChat
 
 	else {
 
+
 		colorTextBack = __stScreenInfo.colorTextBackYou;
 		colorTextOutline = __stScreenInfo.colorTextOutlineYou;
+
 	}
 
 
@@ -545,13 +555,16 @@ void JMChattControl::DrawElementBackAndTime(Canvas* pCanvas, stCHATT_DATA* pChat
 
 
 	DrawFillRoundRectangle(pCanvas, rtTextBox, colorTextBack, colorTextOutline);
+
+
 }
 
 
 void JMChattControl::AddDataText(DateTime timeSend, String strText, bool bISend, bool bRedraw)
 {
 
-
+	AppLog("3333AddDataText");
+	isimage = false;
 	if( IsChangedDate(timeSend) ) {
 
 		AddDataDate(timeSend);
@@ -615,6 +628,8 @@ void JMChattControl::AddDataText(DateTime timeSend, String strText, bool bISend,
 void JMChattControl::AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool bISend, bool bRedraw)
 {
 
+	AppLog("3333AddDataImage");
+	isimage = true;
 	if( IsChangedDate(timeSend) )
 	{
 
@@ -638,7 +653,7 @@ void JMChattControl::AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool 
 
 
 	pChattData->rtElementBox.y = __stScreenInfo.nTotalElementHeight + __stScreenInfo.nElementGapY;
-	pChattData->rtElementBox.height = __stScreenInfo.nImageBoxMaxHeight + 70;
+	pChattData->rtElementBox.height = __stScreenInfo.nImageBoxMaxHeight + 66;
 	pChattData->rtElementBox.width = __stScreenInfo.nImageBoxMaxHeight + 262;
 
 	if( bISend )
@@ -646,9 +661,9 @@ void JMChattControl::AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool 
 
 	else {
 
-		pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou;
+		pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou+35;
 
-		pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight;
+		pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight+20;
 
 		__stScreenInfo.nTotalElementHeight += __stScreenInfo.nYouNameHeight;
 	}
@@ -700,6 +715,7 @@ bool JMChattControl::IsChangedDate(DateTime timeSend)
 
 void JMChattControl::AddDataDate(DateTime timeSend)
 {
+	AppLog("33333AddDataDate");
 	stCHATT_DATA* pChattData = new stCHATT_DATA;
 
 	pChattData->nDataType = DATA_TYPE_DATE;
@@ -793,16 +809,19 @@ void JMChattControl::DrawChattDataDate(Canvas* pCanvas, stCHATT_DATA* pChattData
 	rtText.x = (rtTextBox.width - dimText.width) / 2;
 	rtText.width = dimText.width;
 
-
+	Point timetmp;
+	timetmp.x = rtText.GetTopLeft().x + 10;
+	timetmp.y = rtText.GetTopLeft().y - 10;
 	pCanvas->SetForegroundColor(__stScreenInfo.colorTextTime);
 	pCanvas->SetBackgroundColor(__stScreenInfo.colorTextBackTime);
 	pCanvas->SetFont(__stScreenInfo.fontTime);
-	pCanvas->DrawText(rtText.GetTopLeft(), pChattData->strText);
+	pCanvas->DrawText(timetmp, pChattData->strText);
 }
 
 // Touch Pressed
 void JMChattControl::OnTouchPressed(const Tizen::Ui::Control &source, const Tizen::Graphics::Point &currentPosition, const Tizen::Ui::TouchEventInfo &touchInfo)
 {
+
 
 	if( touchInfo.GetPointId() != 0 )
 		return;
@@ -819,10 +838,11 @@ void JMChattControl::OnTouchPressed(const Tizen::Ui::Control &source, const Tize
 	}
 
 
-	__stScreenInfo.nSelectedImageIndex = GetImageIndexByPoint(currentPosition);
+	//__stScreenInfo.nSelectedImageIndex = GetImageIndexByPoint(currentPosition);
 
 
 	__stScreenInfo.pointTouchPrev = currentPosition;
+
 }
 
 // Touch Moved
@@ -851,6 +871,7 @@ void JMChattControl::OnTouchMoved(const Tizen::Ui::Control &source, const Tizen:
 
 
 	__stScreenInfo.bNeedRedraw = true;
+
 }
 
 
@@ -884,20 +905,25 @@ void JMChattControl::OnTouchReleased(const Tizen::Ui::Control &source, const Tiz
 		__stScreenInfo.bNeedRedraw = true;
 	}
 
-
+/*
 	if( __stScreenInfo.nSelectedImageIndex >= 0 ) {
 
 		long nSelectedIndex = GetImageIndexByPoint(currentPosition);
 
 		if( __stScreenInfo.nSelectedImageIndex == nSelectedIndex ) {
+
 			ArrayList* __pArraySelectedElement = new ArrayList();
+
 			__pArraySelectedElement->Construct();
+
 			__pArraySelectedElement->Add(*(new Long(nSelectedIndex)));
 
 			Container* pParent = this->GetParent();
 			pParent->SendUserEvent(REQUEST_JCHATT_SELECT_IMAGE, (IList*)__pArraySelectedElement);
+
 		}
-	}
+	}*/
+
 }
 
 
@@ -1133,7 +1159,7 @@ void JMChattControl::DrawYouPhotoAndName(Canvas* pCanvas, stCHATT_DATA* pChattDa
 	Rectangle rtPhoto;
 
 
-	pointYouName.x = rtTextBox.x;
+	pointYouName.x = __stScreenInfo.nPhotoBoxMarginYou + __stScreenInfo.nYouPhotoBoxHeight + 30;
 	pointYouName.y = rtTextBox.y;
 
 	pCanvas->SetFont(__stScreenInfo.fontText);

@@ -9,6 +9,8 @@
 
 using namespace Tizen::Graphics;
 using namespace Tizen::App;
+using namespace Tizen::Ui::Controls;
+using namespace Tizen::Base;
 
 #define RED32(color32) static_cast< byte >(0x00F8 & (color32 >> 16))
 #define GREEN32(color32) static_cast< byte >(0x00FC & (color32 >> 8))
@@ -22,11 +24,17 @@ using namespace Tizen::App;
 #define COLOR32ToCOLOR16(color32) RGB888ToCOLOR16(RED32(color32), GREEN32(color32), BLUE32(color32))
 
 void
-PartnerItem::Initialize(String pName, String pProfile)
+PartnerItem::Initial(String pName, String pProfile, String pnation, String pnation_name, String phobby, String phobby_pic)
 {
+
 
 	Partner_Name = pName;
 	Bitmap_Pofile=pProfile;
+	partner_nation = pnation;
+	partner_nation_what = pnation_name.GetPointer();
+	partner_hobby = phobby.GetPointer();
+	partner_hobby_pic = phobby_pic;
+
 }
 
 bool
@@ -36,20 +44,42 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 )
 {
 
+	canvas.FillRectangle(Color(246,246,246), Rectangle(0,0,720,210));
+	canvas.FillRectangle(Color(255,255,255,255), Rectangle(40,15,620,210));
 
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
     Font *pFont = new Font;
-    pFont->Construct(FONT_STYLE_PLAIN, 50);
+    Font *pFont2 = new Font;
+    Font *pFont3 = new Font;
+    pFont->Construct(FONT_STYLE_PLAIN, 40);
+    pFont2->Construct(FONT_STYLE_PLAIN, 30);
+    pFont3->Construct(FONT_STYLE_PLAIN, 25);
 
     Dimension Dim_Location;
+
+
 
     EnrichedText *pEnrichedText = new EnrichedText();
     TextElement* pTextElement = new TextElement();
 
+    EnrichedText *pEnrichedText2 = new EnrichedText();
+    TextElement* pTextElement2 = new TextElement();
+
+     EnrichedText *pEnrichedText3 = new EnrichedText();
+     TextElement* pTextElement3 = new TextElement();
+     String tmp;
+
+/*
+    nation_flag->Construct(Rectangle(rect.x + 200, rect.y + 70, 50, 30),L"");
+    nation_flag->SetBackgroundBitmap(*pAppResource->GetBitmapN(Partner_nation));*/
 
 
-    DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 10, rect.y + 10, 80, 80), *pAppResource->GetBitmapN(Bitmap_Pofile));
+    canvas.DrawBitmap(Rectangle(rect.x + 220, rect.y + 95, 50, 30),*pAppResource->GetBitmapN(partner_nation));
+    canvas.DrawBitmap(Rectangle(rect.x + 225, rect.y + 145, 39, 39),*pAppResource->GetBitmapN(partner_hobby_pic));
+
+
+    DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 90, rect.y + 40, 100, 100), *pAppResource->GetBitmapN(Bitmap_Pofile));
 
 	pTextElement->Construct(Partner_Name);
 
@@ -60,11 +90,46 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 	pEnrichedText->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
 	pEnrichedText->SetTextAbbreviationEnabled(true);
 
-	pTextElement->SetTextColor(Color(123,123,123,255));
+	pTextElement->SetTextColor(Color(40,40,40,255));
 
 	pTextElement->SetFont(*pFont);
 	pEnrichedText->Add(*pTextElement);
-	canvas.DrawText(Point(rect.x + 150, rect.y + 20), *pEnrichedText);
+	canvas.DrawText(Point(rect.x + 220, rect.y + 40), *pEnrichedText);
+
+
+
+	pTextElement2->Construct(partner_nation_what.GetPointer());
+
+	pFont2->GetTextExtent(pTextElement2->GetText(), pTextElement2->GetText().GetLength(), Dim_Location);
+	pEnrichedText2->Construct(Dim_Location);
+	pEnrichedText2->SetHorizontalAlignment(TEXT_ALIGNMENT_LEFT);
+	pEnrichedText2->SetVerticalAlignment(TEXT_ALIGNMENT_MIDDLE);
+	pEnrichedText2->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
+	pEnrichedText2->SetTextAbbreviationEnabled(true);
+
+	pTextElement2->SetTextColor(Color(140,140,140,255));
+
+	pTextElement2->SetFont(*pFont2);
+	pEnrichedText2->Add(*pTextElement2);
+	canvas.DrawText(Point(rect.x + 280, rect.y + 94), *pEnrichedText2);
+
+
+
+
+	pTextElement3->Construct(partner_hobby.GetPointer());
+
+	pFont3->GetTextExtent(pTextElement3->GetText(), pTextElement3->GetText().GetLength(), Dim_Location);
+	pEnrichedText3->Construct(Dim_Location);
+	pEnrichedText3->SetHorizontalAlignment(TEXT_ALIGNMENT_LEFT);
+	pEnrichedText3->SetVerticalAlignment(TEXT_ALIGNMENT_MIDDLE);
+	pEnrichedText3->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
+	pEnrichedText3->SetTextAbbreviationEnabled(true);
+
+	pTextElement3->SetTextColor(Color(140,140,140,255));
+
+	pTextElement3->SetFont(*pFont3);
+	pEnrichedText3->Add(*pTextElement3);
+	canvas.DrawText(Point(rect.x + 280, rect.y + 149), *pEnrichedText3);
 
 	return 0;
 }
@@ -219,6 +284,10 @@ PartnerItem::operator = (const PartnerItem& rhs)
 
 	Partner_Name = rhs.Partner_Name;
 	Bitmap_Pofile=rhs.Bitmap_Pofile;
+	partner_hobby = rhs.partner_hobby;
+	partner_hobby_pic = rhs.partner_hobby_pic;
+	partner_nation = rhs.partner_nation;
+	partner_nation_what = rhs.partner_nation_what;
 
 	return *this;
 }
@@ -271,6 +340,18 @@ String PartnerItem::GetProfilePath()
 {
 	return Bitmap_Pofile;
 }
+String			PartnerItem::GetPartnerNation()
+{
+	return partner_nation_what;
 
+}
+String			PartnerItem::GetPartnerNationflag()
+{
+	return partner_nation;
+}
+String			PartnerItem::GetPartnerHobby()
+{
+	return partner_hobby;
+}
 
 
