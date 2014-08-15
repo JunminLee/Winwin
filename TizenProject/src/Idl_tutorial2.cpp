@@ -5,6 +5,7 @@
 using namespace Tizen::Base;
 using namespace Tizen::Ui;
 using namespace Tizen::Ui::Controls;
+using namespace Tizen::App;
 
 
 Idl_tutorial2::Idl_tutorial2(void)
@@ -123,4 +124,10 @@ Idl_tutorial2::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentScene
 {
 	// TODO: Add your implementation codes here
 
+}
+void  Idl_tutorial2::OnFormBackRequested (Tizen::Ui::Controls::Form &source)
+{
+	UiApp* pApp = UiApp::GetInstance();
+	AppAssert(pApp);
+	pApp->Terminate();
 }

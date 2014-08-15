@@ -5,13 +5,14 @@
 #include <FBase.h>
 #include <FUi.h>
 #include "SceneRegister.h"
-
+#include <FApp.h>
 using namespace Tizen::Ui::Scenes;
 
 class Idl_tutorial3 :
 	public Tizen::Ui::Controls::Form,
  	public Tizen::Ui::ITouchEventListener,
- 	public Tizen::Ui::Scenes::ISceneEventListener
+ 	public Tizen::Ui::Scenes::ISceneEventListener,
+ 	public Tizen::Ui::Controls::IFormBackEventListener
 {
 
 // Construction
@@ -32,7 +33,7 @@ protected:
 
 // Generated call-back functions
 public:
-
+	virtual void  OnFormBackRequested (Tizen::Ui::Controls::Form &source);
 
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);

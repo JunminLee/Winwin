@@ -165,7 +165,7 @@ protected:
 	static const int DF_TIMER_INTERVAL_REDRAW = 40;
 	Tizen::Base::Runtime::Timer* __pTimerRedraw;
 	Tizen::Base::Runtime::Timer* __pTimerAutoSlide;
-
+	bool isimage= false;
 	Canvas* __pCanvasMain;
 	Canvas* __pCanvasBack;
 
