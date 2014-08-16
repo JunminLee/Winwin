@@ -21,7 +21,8 @@ using namespace Tizen::Graphics;
 using namespace Tizen::Media;
 using namespace Tizen::Base::Collection;
 
-class PartnerItem : public Tizen::Ui::Controls::ICustomElement
+class PartnerItem : public Tizen::Ui::Controls::ICustomElement,
+public Tizen::Ui::IActionEventListener
 {
 public:
 	void			Initial(String pName, String pProfile, String pnation, String pnation_name, String phobby, String phobby_pic);
@@ -46,6 +47,8 @@ public:
 	Canvas 			*pCanvas;
 	Label* nation_flag;
 	Label* Person_Hobby;
+
+	virtual void OnActionPerformed(const Tizen::Ui::Control& source, int actionId);
 public:
     //Overload the assignment operator.
 	PartnerItem& operator = (const PartnerItem& rhs);
@@ -55,6 +58,8 @@ public:
 
     //Overload the not equivalent operator.
     bool operator !=(const PartnerItem& rhs) const;
+
+    static const int IDC_PARTNERITEM_PROFILE = 431;
 };
 
 

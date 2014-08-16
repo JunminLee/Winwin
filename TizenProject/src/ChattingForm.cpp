@@ -50,6 +50,7 @@ ChattingForm::OnInitializing(void)
 	Image Activation_Image[5];
 	String Activation_Path[5];
 
+
 	for(int i=0; i<5; i++)
 	{
 		inActivation_Image[i].Construct();
@@ -124,6 +125,16 @@ ChattingForm::OnInitializing(void)
 	head_Center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"chatting_name.png")));
 
 
+
+
+	head_right = new Button();
+	head_right->Construct(Rectangle(620, 30, 67, 34));
+	head_right->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"edit_chat.png")));
+	head_right->SetActionId(ID_CHAT_PARTNER_RIGHT);
+	head_right->AddActionEventListener(*this);
+
+
+	this->AddControl(head_right);
 	this->AddControl(head);
 	this->AddControl(head_Center);
 
@@ -145,11 +156,13 @@ ChattingForm::OnInitializing(void)
 	// Get a button via resource ID
 
 	Chatting_List_View = new TableView();
-	Chatting_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
+
+	Chatting_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height - 99), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
 	Chatting_List_View->SetItemProvider(this);
+	Chatting_List_View->SetBackgroundColor(Color(246,246,246));
 	Chatting_List_View->AddScrollEventListener(*this);
 
-
+	SetBackgroundColor(Color(246,246,246));
 	    // Adds the TableView to the form
 	AddControl(Chatting_List_View);
 
@@ -187,6 +200,10 @@ ChattingForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 		break;
 	case ID_FOOTER_ITEM5:
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
+		break;
+	case ID_CHAT_PARTNER_RIGHT:
+		toast = new Toast();
+		toast->Construct(Rectangle(30,1100 ,660,70), L"채팅 페이지를 편집합니다", 2000);
 		break;
 
 
@@ -265,7 +282,6 @@ ChattingForm::CreateItem(int itemIndex, int itemWidth)
     ci->AddTouchEventListener(*ci);
 
     pItem->Construct(Dimension(itemWidth, item_height), style);
-
     pItem->AddControl(ci);
 
     ArrCustomItem.Add(ci);

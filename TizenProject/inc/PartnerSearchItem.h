@@ -1,12 +1,17 @@
 /*
- * ChattingListItem.cpp
+ * PartnerSearchItem.h
  *
- *  Created on: Aug 13, 2014
+ *  Created on: Aug 16, 2014
  *      Author: Gants
  */
 
+#ifndef PARTNERSEARCHITEM_H_
+#define PARTNERSEARCHITEM_H_
+
 #include "tizenx.h"
 #include "SceneRegister.h"
+#include "AppResourceId.h"
+#include "Toast.h"
 
 #define RED32(color32) static_cast< byte >(0x00F8 & (color32 >> 16))
 #define GREEN32(color32) static_cast< byte >(0x00FC & (color32 >> 8))
@@ -33,30 +38,50 @@ using namespace Tizen::Graphics;
 using namespace Tizen::Media;
 using namespace Tizen::Base::Collection;
 
-class ChattingListItem
+class PartnerSearchItem
 	: public Tizen::Ui::Container
 	, public Tizen::Ui::ITouchEventListener
     , public Tizen::Ui::IActionEventListener
     , public Tizen::Ui::Controls::IListViewItemProvider
+
 {
 private:
-
+	Canvas*			pCanvas;
 	String			 str_name;
-	String			 str_time;
+	String			 str_profile;
+	String			str_nation;
+	String			str_nation_language;
+	String			str_hobby;
+	String 			str_hobby_what;
 	String 			str_contents;
-	Canvas 			*pCanvas;
+	Button*			Introduce_Button;
+	Button* 			Friend_Add;
+	bool			isFriend_add_clicked=false;
+	bool 			introduce_open=false;
 	Bitmap			*profile_iamge;
 	Bitmap			*national_flag_image;
+	Bitmap			* hobby_pic;
+	int 			panel_height;
 	int 			_index;
 	TableViewItem	*pvi;
 	ListView* 		__pListView;
 	Rectangle		content_area;
+	ScrollPanel*    extend_panel;
+	Button*			chat_onetoone;
+	EditArea*		__EditArea;
+
+
+	int pcount=0;
+
+	Toast* toast;
+
 public:
 	virtual result	OnDraw();
 	bool			Construct(const Rectangle& rect);
 
 
-	void			Initialize(String name, String time, String content, TableView *pb, TableViewItem *pItem, String profile, String nation, int _index);
+	void			Initialize(String _name, String _profile, String _nation, String _nation_language, String hobby, String phobby_what, String content, TableView *pb, TableViewItem *pItem, int __index
+			);
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap &bitmap);
 	int				GetPanelHeight();
     virtual void OnActionPerformed(const Tizen::Ui::Control& source, int actionId);
@@ -73,4 +98,10 @@ protected:
 	virtual void OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 
+	static const int IDC_BUTTON_PROFILE      = 410;
+	static const int IDC_BUTTON_PARTNER_PLUS = 411;
+	static const int ID_INTRODUCE_BUTTON	 = 401;
+	static const int IDC_BUTTON_ONE_TO_ONE   = 420;
 };
+
+#endif /* PARTNERSEARCHITEM_H_ */

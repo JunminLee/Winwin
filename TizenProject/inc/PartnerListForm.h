@@ -17,7 +17,7 @@
 #include <gl.h>
 #include <FMedia.h>
 #include "PartnerItem.h"
-
+#include "Toast.h"
 using namespace Tizen::Base;
 using namespace Tizen::App;
 using namespace Tizen::Ui;
@@ -79,9 +79,11 @@ protected:
 	static const int ID_FOOTER_ITEM3 = 103;
 	static const int ID_FOOTER_ITEM4 = 104;
 	static const int ID_FOOTER_ITEM5 = 105;
+	static const int ID_LIST_PARTNER_LEFT = 415;
+	static const int ID_LIST_PARTNER_RIGHT = 416;
 
 	Tizen::Ui::Controls::GroupedListView* __pList;
-
+	Toast* toast;
 	ArrayListT<PartnerItem> ArrPartnerItem;
 	Bitmap *Profile;
 	String	name;

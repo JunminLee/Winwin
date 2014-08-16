@@ -340,6 +340,20 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 			__pPanel->Draw();
 
 			ischeck_plus = false;
+			} else {
+
+				__pEditField->SetKeypadEnabled(false);
+
+				__pChattControl->SetPosition(where2.x, where2.y);
+				__pChattControl->Draw();
+				__pPanel->SetPosition(where.x, where.y);
+				__pButtonPlus->SetNormalBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"chatting_plus.png"));
+				__pButtonPlus->Draw();
+				__pPanel->Draw();
+				ischeck_key = false;
+				ischeck_plus = false;
+				__pEditField->SetKeypadEnabled(true);
 			}
 		}
 
