@@ -18,7 +18,7 @@
 #include <FMedia.h>
 #include "tizenx.h"
 #include "ChattingListItem.h"
-
+#include "Toast.h"
 
 using namespace Tizen::Base::Runtime;
 using namespace Tizen::Base;
@@ -80,6 +80,12 @@ protected:
 	static const int ID_FOOTER_ITEM3 = 103;
 	static const int ID_FOOTER_ITEM4 = 104;
 	static const int ID_FOOTER_ITEM5 = 105;
+	static const int ID_CHAT_PARTNER_RIGHT = 371;
+	static const int ID_CHAT_PARTNER_LEFT  = 372;
+
+	Button* head_left;
+	Button* head_right;
+	Toast* toast;
 	Panel* head;
 	Button* head_Center;
 	Button* chatting_header_plus;

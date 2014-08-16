@@ -29,7 +29,7 @@ PartnerSearchForm::~PartnerSearchForm(void)
 bool
 PartnerSearchForm::Initialize(void)
 {
-	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER| FORM_STYLE_HEADER);
+	result r =  Construct(FORM_STYLE_NORMAL | FORM_STYLE_PORTRAIT_INDICATOR | FORM_STYLE_FOOTER);
 	TryReturn(r == E_SUCCESS, false, "Failed to construct form");
 
 	return true;
@@ -114,19 +114,14 @@ PartnerSearchForm::OnInitializing(void)
 	footerItem[4].SetBackgroundBitmap(FOOTER_ITEM_STATUS_PRESSED,
 	Activation_Image[4].DecodeN(Activation_Path[4], BITMAP_PIXEL_FORMAT_ARGB8888));
 
-	Header* pHeader = GetHeader();
-	pHeader->SetStyle(HEADER_STYLE_TITLE);
-	pHeader->SetBackgroundBitmap(pAppResource->GetBitmapN(L"header.png"));
+
 
 	Footer* pFooter = GetFooter();
 	if (pFooter)
 	{
 		pFooter->AddActionEventListener(*this);
 	}
-	if (pHeader)
-	{
-		pHeader->AddActionEventListener(*this);
-	}
+
 	pFooter->AddItem(footerItem[0]);
 	pFooter->AddItem(footerItem[1]);
 	pFooter->AddItem(footerItem[2]);
@@ -136,6 +131,42 @@ PartnerSearchForm::OnInitializing(void)
 	SetFormBackEventListener(this);
 
 	// Get a button via resource ID
+	head = new Panel();
+
+	head->Construct(Rectangle(0,0, this->GetWidth(), 96));
+	head->SetBackgroundColor(Color(0,181,238,255));
+
+	head_center = new Button();
+	head_center->Construct(Rectangle(257, 32, 206, 40));
+	head_center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"partnersearch.png")));
+
+	head_left = new Button();
+	head_left->Construct(Rectangle(31, 24, 47, 47));
+	head_left->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"searchicon.png")));
+	head_left->SetActionId(ID_SEARCH_PARTNER_LEFT);
+	head_left->AddActionEventListener(*this);
+
+	head_right = new Button();
+	head_right->Construct(Rectangle(646, 29, 38, 43));
+	head_right->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"flag_partner.png")));
+	head_right->SetActionId(ID_SEARCH_PARTNER_RIGHT);
+	head_right->AddActionEventListener(*this);
+
+
+	AddControl(head);
+	AddControl(head_center);
+	AddControl(head_left);
+	AddControl(head_right);
+
+
+	Search_List_View = new TableView();
+	Search_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height - 97), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
+	Search_List_View->SetItemProvider(this);
+	Search_List_View->AddScrollEventListener(*this);
+
+
+		    // Adds the TableView to the form
+	AddControl(Search_List_View);
 
 	return r;
 }
@@ -172,6 +203,15 @@ PartnerSearchForm::OnActionPerformed(const Tizen::Ui::Control& source, int actio
 	case ID_FOOTER_ITEM5:
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 		break;
+	case ID_SEARCH_PARTNER_LEFT:
+		toast = new Toast();
+		toast->Construct(Rectangle(30,1100 ,660,70), L"파트너를 찾는 페이지로 넘어갑니다", 2000);
+		break;
+	case ID_SEARCH_PARTNER_RIGHT:
+		toast = new Toast();
+		toast->Construct(Rectangle(30,1100 ,660,70), L"언어를 선택합니다", 2000);
+		break;
+
 
 
 	default:
@@ -203,3 +243,102 @@ PartnerSearchForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentS
 
 }
 
+int
+PartnerSearchForm::GetItemCount(void)
+{
+	return 7;
+}
+Tizen::Ui::Controls::TableViewItem*
+PartnerSearchForm::CreateItem(int itemIndex, int itemWidth)
+{
+
+
+	    TableViewAnnexStyle style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+	    TableViewItem* pItem = new TableViewItem();
+
+	    PartnerSearchItem* ci;
+	    int item_height;
+
+
+	    style = TABLE_VIEW_ANNEX_STYLE_NORMAL;
+
+	    ci = new PartnerSearchItem();
+
+	    ci->Construct(Rectangle(0,0,itemWidth,260));
+	    ci->Initialize(L"IronMan",L"s-face1.png",L"nationalflag.png",L"Eng",L"hobby.png",L"Soccer",L"Hello my name is gogosing Hello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosing",Search_List_View,pItem,itemIndex);
+
+
+	    item_height = ci->GetPanelHeight();
+	    AppLog("!!! : %d", item_height);
+	    ci->AddTouchEventListener(*ci);
+
+	    pItem->Construct(Dimension(itemWidth, item_height), style);
+	    pItem->AddControl(ci);
+
+	    ArrCustomItem.Add(ci);
+
+
+	    return pItem;
+}
+bool
+PartnerSearchForm::DeleteItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+	pItem->Destroy();
+
+	return true;
+}
+void
+PartnerSearchForm::UpdateItem(int itemIndex, Tizen::Ui::Controls::TableViewItem* pItem)
+{
+
+}
+
+int
+PartnerSearchForm::GetDefaultItemHeight(void)
+{
+	return 300;
+}
+
+void
+PartnerSearchForm::OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type)
+{
+
+}
+void
+PartnerSearchForm::OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition)
+{
+
+}
+void
+PartnerSearchForm::OnScrollStopped (Tizen::Ui::Control &source)
+{
+
+}
+void PartnerSearchForm::OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}
+void PartnerSearchForm::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+
+}

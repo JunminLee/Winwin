@@ -35,6 +35,11 @@ PartnerItem::Initial(String pName, String pProfile, String pnation, String pnati
 	partner_hobby = phobby.GetPointer();
 	partner_hobby_pic = phobby_pic;
 
+
+
+
+
+
 }
 
 bool
@@ -80,6 +85,8 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 
 
     DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 90, rect.y + 40, 100, 100), *pAppResource->GetBitmapN(Bitmap_Pofile));
+
+
 
 	pTextElement->Construct(Partner_Name);
 
@@ -355,3 +362,12 @@ String			PartnerItem::GetPartnerHobby()
 }
 
 
+void PartnerItem::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
+{
+	switch(actionId)
+		{
+
+
+		}
+
+}

@@ -17,6 +17,7 @@ ChattingListItem::OnDraw()
 
 	pCanvas = this->GetCanvasN();
 
+	pCanvas->FillRectangle(Color(246,246,246,255), Rectangle(0,0,this->GetWidth(),this->GetHeight()));
 	pCanvas->FillRectangle(Color(255,255,255,255), Rectangle(50,15,620,170));
 	pCanvas->DrawBitmap(Rectangle(80,50,100,100), *profile_iamge);
 	pCanvas->DrawBitmap(Rectangle(140,130,50,30), *national_flag_image);
@@ -173,6 +174,8 @@ ChattingListItem::Initialize(String name, String time, String content , TableVie
 		table_view = pb;
 
 	content_area.SetBounds(30,30,this->GetWidth()-60, this->GetHeight()-60);
+
+
 
 }
 

@@ -164,15 +164,20 @@ PartnerListForm::OnInitializing(void)
 
 	head_center = new Button();
 	head_center->Construct(Rectangle(257, 32, 206, 40));
-	head_center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"partnerList.png")));
+	head_center->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"partnerList2.png")));
 
 	head_left = new Button();
 	head_left->Construct(Rectangle(37, 22, 62, 56));
 	head_left->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"friend_plz.png")));
+	head_left->SetActionId(ID_LIST_PARTNER_LEFT);
+	head_left->AddActionEventListener(*this);
+
 
 	head_right = new Button();
 	head_right->Construct(Rectangle(646, 29, 38, 43));
 	head_right->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"flag_partner.png")));
+	head_right->SetActionId(ID_LIST_PARTNER_RIGHT);
+	head_right->AddActionEventListener(*this);
 
 	this->AddControl(head);
 	this->AddControl(head_center);
@@ -268,7 +273,14 @@ PartnerListForm::OnActionPerformed(const Tizen::Ui::Control& source, int actionI
 	case ID_FOOTER_ITEM5:
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_SETTING_FORM, SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 		break;
-
+	case ID_LIST_PARTNER_LEFT:
+		toast = new Toast();
+		toast->Construct(Rectangle(30,1100 ,660,70), L"들어온 파트너 요청페이지로 이동합니다", 2000);
+		break;
+	case ID_LIST_PARTNER_RIGHT:
+		toast = new Toast();
+		toast->Construct(Rectangle(30,1100 ,660,70), L"언어를 선택합니다", 2000);
+		break;
 
 	default:
 		break;
@@ -310,7 +322,7 @@ void
 PartnerListForm::CreateGroupedListView(void)
 {
 	__pList = new GroupedListView();
-	__pList->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height), GROUPED_LIST_VIEW_STYLE_INDEXED, true, true);
+	__pList->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height -100), GROUPED_LIST_VIEW_STYLE_INDEXED, true, true);
 	__pList->SetBackgroundColor(Color(246,246,246));
 	__pList->SetItemProvider(*this);
 	__pList->SetFastScrollIndex(L"ABCDEFGHIJKLMNOPQRSTUVWXYZ", false);
