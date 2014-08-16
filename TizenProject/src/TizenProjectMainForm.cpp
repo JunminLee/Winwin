@@ -326,7 +326,9 @@ TizenProjectMainForm::OnActionPerformed(const Tizen::Ui::Control& source,
 	}
 
 	case 701: {
-
+		pSceneManager->GoForward(
+				ForwardSceneTransition(SCENE_MYHOME_FORM,
+						SCENE_TRANSITION_ANIMATION_TYPE_NONE));
 		break;
 	}
 	case 702: {
