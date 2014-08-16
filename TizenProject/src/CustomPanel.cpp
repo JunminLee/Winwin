@@ -10,6 +10,7 @@
 #include "CustomPanel.h"
 #include "AppResourceId.h"
 #include "SceneRegister.h"
+#include "Toast.h"
 
 static TableView *table_view = null;
 
@@ -86,6 +87,37 @@ CustomPanel::OnDraw()
 		pCanvas->FillRectangle(Color(100,100,255,255), cur_end_rect);
 	}
 
+	pCanvas->DrawBitmap(Rectangle(594, 70, 44, 40), *button_item_remove);
+
+/*	if(text_singo == true)
+	{
+		EnrichedText et;
+		TextElement te;
+
+		et.Construct(Dimension(150, 900));
+
+		te.Construct(L"      글 숨기기를 완료하였습니다.     ");
+		et.Add(te);
+
+		draw_timer.Start(1500);
+		pCanvas->DrawText(Point(150, 900), et);
+	}
+	else if(text_remove == true)
+	{
+		EnrichedText et;
+		TextElement te;
+
+		et.Construct(Dimension(150, 900));
+
+		te.Construct(L"      글 신고를 완료하였습니다.      ");
+		te.SetBackgroundColor(Color(130,130,130,150));
+
+		et.Add(te);
+		draw_timer.Start(1500);
+		pCanvas->DrawText(Point(150, 900), et);
+
+	}*/
+
 	pCanvas->~Canvas();
 }
 
@@ -125,6 +157,7 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
 	arr_text_element_rect.Construct();
 	arr_text_element_highlight.Construct();
 
+	button_item_remove = pAppResource->GetBitmapN(L"item_remove_button.png");
 	arr_extend_text_element.Construct();
 	arr_extend_text_element_rect.Construct();
 	arr_extend_text_element_highlight.Construct();
@@ -185,8 +218,9 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
     contextMenu = new ContextMenu();
     contextMenu->Construct(Point(50, 50), CONTEXT_MENU_STYLE_GRID, CONTEXT_MENU_ANCHOR_DIRECTION_UPWARD );
     contextMenu->SetFocusable(true);
-    contextMenu->AddItem(L"복사", 1);
-    contextMenu->AddItem(L"메모장", 2);
+    contextMenu->AddItem(L"복사하기", 20);
+    contextMenu->AddItem(L"단어장 추가", 1);
+    contextMenu->AddItem(L"음성 피드백 요청", 22);
     onContextMenu = false;
     contextMenu->AddActionEventListener(*this);
 
@@ -204,6 +238,8 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
 	if(table_view == null)
 		table_view = pb;
 
+	text_singo = false;
+	text_remove = false;
 
 
 
@@ -231,6 +267,7 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
     button_profile_image->Construct(Rectangle(50,70,100,100), " ");
 
     button_profile_image->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"tizen.png")));
+
     button_content->Construct(Rectangle( 70, current_y, 580, 60), " ");
     button_like->Construct(Rectangle(50, extend_content_area_y, 133, 60), " ");
     button_comment->Construct(Rectangle(253, extend_content_area_y,112 , 60), " ");
@@ -242,8 +279,8 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
 
     button_content->SetActionId(7);
     button_like->SetActionId(2);
-    button_edit->SetActionId(8);
-    button_comment->SetActionId(9);
+    button_edit->SetActionId(9);
+    button_comment->SetActionId(8);
     button_name->SetActionId(10);
     button_profile_image->SetActionId(10);
 
@@ -313,6 +350,7 @@ CustomPanel::Initialize(String name, String time, String content, String extend_
 	}
 
 	comment_list_view_flag = false;
+	remove_button_on = false;
 }
 
 
@@ -491,6 +529,18 @@ CustomPanel::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphic
 				if(cur_end_rect.x >= (tmp_rect->x + tmp_rect->width) && (tmp_rect->y + tmp_rect->height) == cur_end_rect.y)
 				{
 					arr_text_element_highlight.SetAt(new Boolean(true), i);
+					if(contextPosition.y >= tmp_rect->y)
+					{
+						contextPosition.y = tmp_rect->y;
+					}
+					if(contextPosition.x >= tmp_rect->x)
+					{
+						contextPosition.x = tmp_rect->x;
+					}
+					else if((contextPosition.width) <= (tmp_rect->x + tmp_rect->width))
+					{
+						contextPosition.width =  (tmp_rect->x + tmp_rect->width);
+					}
 				}
 				else
 					arr_text_element_highlight.SetAt(new Boolean(false), i);
@@ -501,10 +551,34 @@ CustomPanel::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphic
 				if((tmp_rect->y + tmp_rect->height) == cur_end_rect.y && cur_end_rect.x >= (tmp_rect->x + tmp_rect->width))
 				{
 					arr_text_element_highlight.SetAt(new Boolean(true), i);
+					if(contextPosition.y >= tmp_rect->y)
+					{
+						contextPosition.y = tmp_rect->y;
+					}
+					if(contextPosition.x >= tmp_rect->x)
+					{
+						contextPosition.x = tmp_rect->x;
+					}
+					else if((contextPosition.width) <= (tmp_rect->x + tmp_rect->width))
+					{
+						contextPosition.width =  (tmp_rect->x + tmp_rect->width);
+					}
 				}
 				else if((tmp_rect->y + tmp_rect->height) < cur_end_rect.y)
 				{
 					arr_text_element_highlight.SetAt(new Boolean(true), i);
+					if(contextPosition.y >= tmp_rect->y)
+					{
+						contextPosition.y = tmp_rect->y;
+					}
+					if(contextPosition.x >= tmp_rect->x)
+					{
+						contextPosition.x = tmp_rect->x;
+					}
+					else if((contextPosition.width) <= (tmp_rect->x + tmp_rect->width))
+					{
+						contextPosition.width =  (tmp_rect->x + tmp_rect->width);
+					}
 				}
 				else
 					arr_text_element_highlight.SetAt(new Boolean(false), i);
@@ -577,7 +651,9 @@ CustomPanel::GetHighlightMode()
 void
 CustomPanel::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-
+	contextPosition.x = 0;
+	contextPosition.width = 0;
+	contextPosition.y = 15000;
 	touch_point = currentPosition;
 
 	if(onHighlightStart == true)
@@ -601,6 +677,7 @@ CustomPanel::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Grap
 	Point		tmp_point;
 
 	Point screenPosition;
+
 	int i;
 	int cnt = 0;
 
@@ -608,12 +685,27 @@ CustomPanel::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Grap
 
 	if(touch_point == currentPosition)
 	{
+
 		for(i=0; i<arr_text_element.GetCount(); i++)
 		{
 			tmp_rect = static_cast <Rectangle *> (arr_text_element_rect.GetAt(i));
+
 			if(currentPosition.x > tmp_rect->x && currentPosition.x < (tmp_rect->x + tmp_rect->width) &&
 					currentPosition.y > tmp_rect->y && currentPosition.y < (tmp_rect->y + tmp_rect->height))
 			{
+				if(contextPosition.y >= tmp_rect->y)
+				{
+					contextPosition.y = tmp_rect->y;
+				}
+				if(contextPosition.x >= tmp_rect->x)
+				{
+					contextPosition.x = tmp_rect->x;
+				}
+				else if((contextPosition.width) <= (tmp_rect->x + tmp_rect->width))
+				{
+					contextPosition.width =  (tmp_rect->x + tmp_rect->width);
+				}
+
 				onHighlightStart = true;
 
 				cur_start_rect.x = tmp_rect->x - 30;
@@ -637,6 +729,8 @@ CustomPanel::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Grap
 
 				arr_text_element_highlight.SetAt(new Boolean(true), i);
 				start_index = i;
+
+				contextPosition.width = tmp_rect->x + tmp_rect->width;
 			}
 			else
 			{
@@ -651,7 +745,8 @@ CustomPanel::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Grap
 
 	if(onHighlightStart == true)
 	{
-		screenPosition = this->ConvertToScreenPosition(currentPosition);
+		AppLog("x : %d, y : %d", (contextPosition.x + contextPosition.width)/2,contextPosition.y );
+		screenPosition = this->ConvertToScreenPosition(Point((contextPosition.x + contextPosition.width)/2, contextPosition.y));
 		contextMenu->SetAnchorPosition(screenPosition);
 		bool abc = contextMenu->HasFocus();
 		ShowContextMenu(true, screenPosition);
@@ -659,6 +754,38 @@ CustomPanel::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Grap
 		abc = contextMenu->HasFocus();
 	}
 
+
+	Rectangle temp_button = Rectangle(594, 70, 44, 40);
+
+	if(currentPosition.x > temp_button.x && currentPosition.x < (temp_button.x + temp_button.width) &&
+			currentPosition.y > temp_button.y && currentPosition.y < (temp_button.y + temp_button.height))
+	{
+		AppLog("currentPositoin : %d, %d", currentPosition.x, currentPosition.y);
+		AppLog("temp_button : %d, %d", temp_button.x, temp_button.y);
+		remove_button_on = true;
+
+    	Button *remove = new Button;
+    	Button *singo = new Button;
+
+    	popup = new Popup;
+        popup->Construct(false, Dimension(500,400));
+        popup->SetPosition(Point(110, 400));
+        popup->SetColor(Color(255,255,255,255));
+
+        remove->Construct(Rectangle(0,0,500,200), "글숨기기");
+        singo->Construct(Rectangle(0,200,500,200), "글 신고하기");
+
+        remove->SetActionId(12);
+        singo->SetActionId(13);
+        remove->AddActionEventListener(*this);
+        singo->AddActionEventListener(*this);
+
+        popup->AddControl(remove);
+        popup->AddControl(singo);
+
+
+        ShowPopup();
+	}
 
 }
 
@@ -669,9 +796,8 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 
     switch (actionId)
     {
-    case 1:
+    case 1:								//정보
         {
-
     		String	  *tmp_string;
     		Boolean	  *tmp_highlight;
 
@@ -695,25 +821,52 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 
         	this->RequestRedraw(true);
 
-            popup = new Popup;
-            popup->Construct(true, Dimension(600,800));
-            popup->SetTitleText(L"Popup Sample");
+        	title = new Label;
 
+        	title->Construct(Rectangle(0,0,500,100), " ");
+            title->SetText(L"단어장으로 보내기");
+            title->SetTextColor(Color(0,181,237,255));
+
+            popup = new Popup;
+            popup->Construct(false, Dimension(500,600));
+            popup->SetPosition(Point(110, 130));
             EditArea* __pEditArea;
             __pEditArea = new EditArea();
-            __pEditArea->Construct(Rectangle(50, 100, 400, 150),INPUT_STYLE_OVERLAY);
+            __pEditArea->Construct(Rectangle(30, 100, 440, 180),INPUT_STYLE_OVERLAY);
             __pEditArea->SetText(popup_edit_string);
 
             __pEditArea->AddTextEventListener(*this);
             popup->AddControl(__pEditArea);
 
+            EditArea* __pEditArea2;
+            __pEditArea2 = new EditArea();
+            __pEditArea2->Construct(Rectangle(30, 310, 440, 180),INPUT_STYLE_OVERLAY);
+            __pEditArea2->SetGuideText("한글 뜻을 적어 주세요");
+            __pEditArea2->SetGuideTextColor(Color(200,200,200,255));
+
+            __pEditArea->AddTextEventListener(*this);
+            popup->AddControl(__pEditArea2);
+
+            popup->AddControl(title);
+
+        	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
+
             Button* pCloseButton = new Button();
-            pCloseButton->Construct(Rectangle(10, 10, 250, 80), L"Close Popup");
+            pCloseButton->Construct(Rectangle(450, 12, 38, 38), L"");
+            pCloseButton->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"close_button.png")));
             pCloseButton->SetActionId(3);
             pCloseButton->AddActionEventListener(*this);
 
+            Button* ok_button = new Button;
+            ok_button->Construct(Rectangle(30, 520, 440, 65), L"");
+            ok_button->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN(L"ok_button.png")));
+            ok_button->SetActionId(3);
+            ok_button->AddActionEventListener(*this);
+
+
             // Adds the button to the popup
             popup->AddControl(pCloseButton);
+            popup->AddControl(ok_button);
 
             ShowPopup();
         }
@@ -725,9 +878,14 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
         break;
     case 3:
     	{
+	   		title->Destroy();
     		popup_edit_string.Clear();
     		HidePopup();
     		popup->Destroy();
+
+    		Toast *tt = new Toast;
+    		tt->Construct(Rectangle(150, 900, 420, 100), L"단어장에 추가되었습니다", 3000);
+
     	}
     	break;
     case 7:
@@ -834,6 +992,83 @@ CustomPanel::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
             ShowPopup();
         }
         break;
+    case 11:
+    {
+
+    }
+    break;
+    case 12:
+    {
+    	AppLog("index : %d",index);
+
+
+
+
+    	if(index != 0)
+    	{
+    		table_view->RefreshItem(index, TABLE_VIEW_REFRESH_TYPE_ITEM_REMOVE);
+
+    		Toast *tt = new Toast;
+    		tt->Construct(Rectangle(150, 900, 420, 100), L"글 숨기기를 완료하였습니다.",3000);
+
+    	}
+    	else
+    	{
+
+        	Toast *tt = new Toast;
+        	tt->Construct(Rectangle(150, 900, 420, 100), L"글 숨기기를 실패하였습니다.",3000);
+
+    	}
+
+    	remove_button_on = false;
+		HidePopup();
+		popup->Destroy();
+    }
+    break;
+    case 13:
+    {
+
+		Toast *tt = new Toast;
+		tt->Construct(Rectangle(150, 900, 420, 100), L"글 신고하기를 완료하였습니다.",3000);
+
+
+		HidePopup();
+    	remove_button_on = false;
+		popup->Destroy();
+    }
+    break;
+
+    case20:
+    {
+    	/*
+    	Popup *memo;
+
+    	momo = new Popup();
+
+    	memo->Construct(true, Dimension(500,600));
+    	memo->SetTitleText(L"단어장으로 보내기");
+    	memo->SetTitleTextColor(Color(0,181,237,255));
+
+    	EditArea *memo_area, *memo_area2;
+
+    	memo_area = new EditArea;
+    	memo_area2 = new EditArea;
+
+    	memo_area->Construct(Rectangle(30,100,440,180));
+    	memo_area2->Construct(Rectangle(30,330,440,180));
+
+    	Button	*ok;
+    	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
+
+    	ok = new Button;
+
+    	ok->Construct(Rectangle(30,500,440,65), " ");
+    	ok->SetNormalBackgroundBitmap(*(pAppResource->GetBitmapN("ok_button.png")));
+
+    	memo->AddControl(ok);
+    	memo->AddControl(memo_area);
+    	memo->AddControl(memo_area2);*/
+    }
     default:
         break;
     }
@@ -879,6 +1114,7 @@ CustomPanel::OnTimerExpired (Timer &timer)
 			draw_timer.Start(100);
 		}
 	}
+
 
 	AppLog("timer On");
 }

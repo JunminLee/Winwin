@@ -100,7 +100,7 @@ private:
 
 	TableViewItem	*pvi;
 
-	int				index;
+
 	bool			extend_content_flag;
 	int				extend_content_area_y;
 	int				like_cnt;
@@ -111,7 +111,15 @@ private:
     Button		*button_comment;
 	Button		*button_name;
 	Button		*button_edit;
+	Bitmap		*button_item_remove;
 
+	Rectangle contextPosition;
+
+	Label *toast_label;
+	bool		text_singo;
+	bool		text_remove;
+
+   	Label *title;
 
 public:
 	virtual result	OnDraw();
@@ -132,6 +140,8 @@ public:
     virtual void OnTextValueChanged(const Tizen::Ui::Control& source);
     virtual void OnTextValueChangeCanceled(const Tizen::Ui::Control& source);
 
+	int				index;
+	bool 		remove_button_on;
 protected:
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);

@@ -30,6 +30,8 @@ class TizenProjectMainForm
  	, public Tizen::Ui::ITouchEventListener
     , public Tizen::Ui::Controls::ITableViewItemProvider
     , public Tizen::Ui::Controls::IScrollEventListener
+    , public Tizen::Ui::IFocusEventListener
+    , public  Tizen::Ui::Controls::ITableViewItemEventListener
 
 {
 public:
@@ -60,7 +62,8 @@ public:
     virtual void 	OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition);
     virtual void 	OnScrollStopped (Tizen::Ui::Control &source);
 
-
+    virtual void 	OnFocusGained (const Tizen::Ui::Control &source);
+    virtual void 	OnFocusLost (const Tizen::Ui::Control &source);
 protected:
 	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
@@ -78,10 +81,29 @@ protected:
 	static const int ID_FOOTER_ITEM5 = 105;
 	static const int ID_HEADER_ITEM	 = 106;
 
+public:
+	void ShowPopup(void);
+	void HidePopup(void);
 
+
+	virtual void 	OnTableViewContextItemActivationStateChanged (Tizen::Ui::Controls::TableView &tableView, int itemIndex, Tizen::Ui::Controls::TableViewContextItem *pContextItem, bool activated);
+	virtual void 	OnTableViewItemReordered (Tizen::Ui::Controls::TableView &tableView, int itemIndexFrom, int itemIndexTo);
+	virtual void 	OnTableViewItemStateChanged (Tizen::Ui::Controls::TableView &tableView, int itemIndex, Tizen::Ui::Controls::TableViewItem *pItem, Tizen::Ui::Controls::TableViewItemStatus status);
 private:
 	TableView* 		TimelineTableView;
 	ArrayList  		ArrCustomPanel;
+	Panel			*head;
+	Popup 			*popup;
+	ScrollPanel 	*sp;
+	TextBox 		*tb;
+
+	Button*			button_my;
+	Button*			button_flag;
+	Button*			button_winwin;
+
+	Button*			button_text_upload;
+
+	ArrayList		arr_comment_item;
 };
 
 #endif	//_TIZEN_PROJECT_MAIN_FORM_H_

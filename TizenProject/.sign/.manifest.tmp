@@ -1,7 +1,6 @@
-author-signature.xml__DEL__LXd9HOdPSMs8lLTi7GkJ/km2LAtBPVyFdvbbs0e9JGs=
-bin/TizenProject.exe__DEL__P8mS8Drkqt2kKjvbs9QEHBmOkoM42xxGuRqnfRjZMkI=
 info/manifest.xml__DEL__0W5jCMbYwPaJQCWbx+MlXAjOe5cFabgwa03Q9sB0QGE=
-res/screen-density-xhigh/attach_mark.png__DEL__ixozU9uM1LiBi3YLpbHCMqBQIcnRcO5U7t+L1P2/49g=
+res/.DS_Store__DEL__aSh0jwbpRbkFVrgQc85wqU8sPW6uUV44wzZjvTW9UvI=
+res/screen-density-xhigh/.DS_Store__DEL__1lFlJ5EFymdzGAUAaI30vcaaLHt3F1LwpG7xILf9jsM=
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
 res/screen-density-xhigh/comment_button.png__DEL__V6ooBaVCBi75U3uIw/uRaSDgdxmykjw4bXbn+sV9bTo=
@@ -14,10 +13,12 @@ res/screen-density-xhigh/Eng.png__DEL__jdY4525d3APO1MiAwriPSSmhAtpFbzvljlxAwU+EG
 res/screen-density-xhigh/extend_button.png__DEL__WyG/lQGogCxtCbRy+bVCWVScCXpiRteQ8vKpmBCmnE4=
 res/screen-density-xhigh/fake_setting.png__DEL__b3Ay5hSg1Ou+tnv6Y4L42brnqdAnN4QvJx7AK5G0tOk=
 res/screen-density-xhigh/feedback_button.png__DEL__4lnRbm7+yig17NMe/oTjyfVjZ/CJqVUGLLV14K7Mq+g=
+res/screen-density-xhigh/flag_button.png__DEL__XLtg7Tvp77KuZcMpFv2olRJ0dSd4Xb2mZbztfjPTCkc=
 res/screen-density-xhigh/head_editing_button.png__DEL__UsoBKmx08UhPzxjr0Gsj45uX9+VYg7TDY7VejWiOico=
 res/screen-density-xhigh/header.png__DEL__AL/jJ9TeJJw4xX8SrAuTB/0mI7jrpc8AFlmOeQFar+Q=
 res/screen-density-xhigh/Intro.png__DEL__VkG4saL4JrayphxcPxEXnFGVww7rPwoD6aes98fDgQc=
 res/screen-density-xhigh/like_button.png__DEL__j7OEYkf6lnlswTrGlE9/r87P/EzBlAQtUZXlz5vGXDk=
+res/screen-density-xhigh/my_button.png__DEL__wWLK+QXdG0gA0b0xiwPi6V2wgXfjzD7P9ZSrSqZup/I=
 res/screen-density-xhigh/nationalflag.png__DEL__2plY7RHNr8d2M+wAXRAkJj11QnU9M/S+pE7NTnW9WlY=
 res/screen-density-xhigh/PartnerList_Act.png__DEL__/U5kdUH7Lmr7TqY9EwT1yj/d497f9/plS2PZ65f2SLc=
 res/screen-density-xhigh/PartnerList_InAct.png__DEL__/XjpwGCAlg2ecihj9/DZgCKCZzGsIboTH2EEdaMp5xs=
@@ -40,6 +41,7 @@ res/screen-density-xhigh/tutorial1.jpg__DEL__4boSOstqe2uT/RUL6/glL6MPd80QWddYhGR
 res/screen-density-xhigh/tutorial2.jpg__DEL__Rb1JL/Lpeyt1cB/aatCFZ6RnkiMAqZWlzd5yxwndlYQ=
 res/screen-density-xhigh/tutorial3.jpg__DEL__8DTbIvFVz4J39E2+q7QJJg03DJy+sLAkY3dGMGF5WPA=
 res/screen-density-xhigh/tutorial4.jpg__DEL__unVLT+whMCB0qR6uqTa1sWbU/FKtEEOibCNERFoZJbo=
+res/screen-density-xhigh/winwin_button.png__DEL__CdXq6cTQtI9JxNvgg/EgPVmLOxYPx0Jqv+4JV7f/z4U=
 res/screen-size-normal/IDL_FORM.xml__DEL__7meDWQwPXdA/pNT2iwM//gR/GBmlp6zfF09PR27hkHg=
 res/screen-size-normal/IDL_FORM2.xml__DEL__hCGpYO3VF8MF5cqx31xAbWZ0E/n1HJoB4IWKcOmTg+0=
 res/screen-size-normal/IDL_FORM3.xml__DEL__DGVjCHOARtWWNqLoGq4oIvOt804gn1vh2BGX+O/Vf7s=
@@ -113,3 +115,9 @@ res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_29.png__DEL__+2sdhS
 res/themes/WinWinsTheme/screen-density-xhigh/00_list_process_30.png__DEL__7fWpXCjIgBVbo2gNNeQtzako+KH31nEj2NWQIN3GdBg=
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__o0N2XWFAmIbVMBuzbW6o6X3ZMmuQrvAnIjtXMrU6wNw=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
+res/screen-density-xhigh/item_remove_button.png__DEL__b/XJtsoYA+xT/vDFuf1cjmUPL00vhf5vxrE8IEQyiAU=
+res/screen-density-xhigh/upload_button.png__DEL__+K9uZMcpMvwan2DXUzbfQe5AdL25oR6Ub4C4T4kZiwE=
+res/screen-density-xhigh/ok_button.png__DEL__9TH2tMe8k9z6JXHkxJEzsbI3yQgips6G8pLCTgS1wSs=
+res/screen-density-xhigh/close_button.png__DEL__LG+7UChLSOSpA2LV82TScUzNYTlroazDyiakrZPE8Ps=
+bin/TizenProject.exe__DEL__ZNHMinYHntMSiYce+arCZ1zSCsAxv929jbFng0ObQNk=
+author-signature.xml__DEL__LLi5EUEdTIpEhZoIUTYMDlpGDsF8u0YA/B0xZ9d/4sU=
