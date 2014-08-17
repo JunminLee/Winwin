@@ -41,7 +41,10 @@ class Toast
 		this->AddControl(ToastLabel);
 		ToastTimer.Construct(*this);
 		ToastTimer.Start(time);
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/heads/pji4
 		this->Show();
 	};
 
