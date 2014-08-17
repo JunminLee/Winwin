@@ -157,7 +157,7 @@ ChattingForm::OnInitializing(void)
 
 	Chatting_List_View = new TableView();
 
-	Chatting_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height - 99), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
+	Chatting_List_View->Construct(Rectangle(0, 96, GetClientAreaBounds().width, GetClientAreaBounds().height - 98), true, TABLE_VIEW_SCROLL_BAR_STYLE_FADE_OUT);
 	Chatting_List_View->SetItemProvider(this);
 	Chatting_List_View->SetBackgroundColor(Color(246,246,246));
 	Chatting_List_View->AddScrollEventListener(*this);

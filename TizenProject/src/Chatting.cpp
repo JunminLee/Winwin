@@ -76,18 +76,52 @@ result Chatting::OnInitializing(void) {
 	__pButtonPlus->SetNormalBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"chatting_plus.png"));
 	__pButtonPlus->Draw();
-	__RecordGo =
-			static_cast<Button *>(GetControl(L"IDC_BUTTON_RECORDGO", true));
+	__RecordGo = static_cast<Button *>(GetControl(L"IDC_BUTTON_RECORDGO", true));
 	if (__RecordGo != null) {
 		__RecordGo->SetActionId(IDC_BUTTON_RECORDGO);
 		__RecordGo->AddActionEventListener(*this);
 	}
+	pic = static_cast<Button *>(GetControl(L"IDC_BUTTON_PIC", true));
+
+
+	camera = static_cast<Button *>(GetControl(L"IDC_BUTTON_CAMERA", true));
+
+
+	voice = static_cast<Button *>(GetControl(L"IDC_BUTTON_VO", true));
+	            if (voice != null) {
+					voice->SetActionId(IDC_BUTTON_VOICE);
+					voice->AddActionEventListener(*this);
+				}
+
+
+
 	__RecordGo->SetNormalBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"voice_chat.png"));
 	__RecordGo->SetHighlightedBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"voice_chat.png"));
 	__RecordGo->SetPressedBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"voice_chat.png"));
+
+	voice->SetNormalBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"call_chat.png"));
+	voice->SetHighlightedBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"call_chat.png"));
+	voice->SetPressedBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"call_chat.png"));
+
+	pic->SetNormalBackgroundBitmap(
+					*pAppResource->GetBitmapN(L"pic_chat.png"));
+	pic->SetHighlightedBackgroundBitmap(
+					*pAppResource->GetBitmapN(L"pic_chat.png"));
+	pic->SetPressedBackgroundBitmap(
+					*pAppResource->GetBitmapN(L"pic_chat.png"));
+
+	camera->SetNormalBackgroundBitmap(
+						*pAppResource->GetBitmapN(L"camera_chat.png"));
+	camera->SetHighlightedBackgroundBitmap(
+						*pAppResource->GetBitmapN(L"camera_chat.png"));
+	camera->SetPressedBackgroundBitmap(
+						*pAppResource->GetBitmapN(L"camera_chat.png"));
 
 	where = __pPanel->GetPosition();
 
@@ -101,6 +135,8 @@ result Chatting::OnInitializing(void) {
 	popup = new Popup;
 	popup->Construct(true, Dimension(720, 440));
 	popup->SetPosition(0, 840);
+	popup->SetColor(Color(219,219,219));
+
 
 	feedback_x = new Button();
 	feedback_x->Construct(Rectangle(630, -90, 100, 100));
@@ -116,7 +152,7 @@ result Chatting::OnInitializing(void) {
 	popup->AddControl(feedback_x);
 
 	__Record = new Button();
-	__Record->Construct(Rectangle(30, 0, 300, 300));
+	__Record->Construct(Rectangle(200, 0, 300, 300));
 	__Record->SetActionId(IDC_BUTTON_RECORDER);
 	__Record->AddActionEventListener(*this);
 	__Record->SetNormalBackgroundBitmap(
@@ -126,7 +162,25 @@ result Chatting::OnInitializing(void) {
 	__Record->SetPressedBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"Record_Stop.png"));
 	__Record->Draw();
+
+	trans_voice = new Button();
+	trans_voice->Construct(Rectangle(570 ,105 , 103, 103));
+	trans_voice->SetActionId(IDC_BUTTON_TRANSPORT);
+	trans_voice->AddActionEventListener(*this);
+	trans_voice->SetNormalBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"voice_trans1.png"));
+	trans_voice->SetHighlightedBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"voice_trans1.png"));
+	trans_voice->SetPressedBackgroundBitmap(
+				*pAppResource->GetBitmapN(L"voice_trans1.png"));
+	trans_voice->Draw();
+
+
 	popup->AddControl(__Record);
+	popup->AddControl(trans_voice);
+
+	__pChattControl->feed_back->SetActionId(IDC_BUTTON_FEEDBACKB);
+	__pChattControl->feed_back->AddActionEventListener(*this);
 	/*
 
 	 * popup->SetShowState(false);
@@ -295,7 +349,10 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 	AppAssert(pSceneManager);
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
+
 	switch (actionId) {
+
+
 	case IDC_BUTTON_SEND:
 		AppLog("Send Button is clicked! \n");
 		RequestHttpPost();
@@ -358,13 +415,14 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 		}
 
 		break;
+	case IDC_BUTTON_FEEDBACKB:
 	case IDC_BUTTON_RECORDGO:
 		popup->SetShowState(true);
 		popup->Show();
 		break;
 	case IDC_BUTTON_FEEDBACKX:
 		popup->SetShowState(false);
-
+		Record_Status=0;
 		break;
 	case IDC_BUTTON_RECORDER:
 		if (Record_Status == 0) {
@@ -410,6 +468,15 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 
 			__audioRecorder.Stop();
 			__audioRecorder.Close();
+
+			trans_voice->SetNormalBackgroundBitmap(
+							*pAppResource->GetBitmapN(L"voice_trans2.png"));
+				trans_voice->SetHighlightedBackgroundBitmap(
+							*pAppResource->GetBitmapN(L"voice_trans2.png"));
+				trans_voice->SetPressedBackgroundBitmap(
+							*pAppResource->GetBitmapN(L"voice_trans2.png"));
+				trans_voice->Draw();
+				istransport = true;
 		} else if (Record_Status == 2) {
 			AppLog("재생");
 			__filepath = App::GetInstance()->GetAppDataPath() + __filename;
@@ -419,6 +486,22 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 
 		}
 
+		break;
+	case IDC_BUTTON_TRANSPORT:
+		if(istransport == true)
+		{
+			trans_voice->SetNormalBackgroundBitmap(
+									*pAppResource->GetBitmapN(L"voice_trans1.png"));
+						trans_voice->SetHighlightedBackgroundBitmap(
+									*pAppResource->GetBitmapN(L"voice_trans1.png"));
+						trans_voice->SetPressedBackgroundBitmap(
+									*pAppResource->GetBitmapN(L"voice_trans1.png"));
+						trans_voice->Draw();
+
+			istransport = false;
+			Toast* to = new Toast();
+			to->Construct(Rectangle(30,1100 ,660,70), L"음성피드백을 전송하였습니다", 2000);
+		}
 		break;
 	default:
 		break;
@@ -564,9 +647,9 @@ void Chatting::AddDataToChattControl() {
 	 }
 
 */
-	strBitmap = pAppResource->GetBitmapN(L"voice_pb1.png");
-		 __pChattControl->AddDataImage(timeSend, strBitmap, false);
-		 //timeSend.AddMinutes(nTimeGap);
+
+
+		 __pChattControl->AddDataFeedback(timeSend, L"Hello",false);
 		 timeSend.AddHours(nTimeGap);
 
 	 __pChattControl->RequestRedraw();
@@ -620,9 +703,13 @@ void Chatting::OnChattImageSelected(long nIndex) {
 	String strText, strFileName;
 
 	strFileName = __pChattControl->GetImageFileName(nIndex);
+
+/*
 	strText.Format(50, L"%d번째꺼 %ls", nIndex, strFileName.GetPointer());
 	__pEditField->SetText(strText);
 	__pEditField->RequestRedraw();
+	*/
+	this->RequestRedraw();
 }
 
 void Chatting::OnLanguageChanged(const Tizen::Ui::Control &source,

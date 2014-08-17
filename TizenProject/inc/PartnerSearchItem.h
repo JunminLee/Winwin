@@ -69,7 +69,8 @@ private:
 	ScrollPanel*    extend_panel;
 	Button*			chat_onetoone;
 	EditArea*		__EditArea;
-
+	String 			str_want_language;
+	int				_level;
 
 	int pcount=0;
 
@@ -81,7 +82,7 @@ public:
 
 
 	void			Initialize(String _name, String _profile, String _nation, String _nation_language, String hobby, String phobby_what, String content, TableView *pb, TableViewItem *pItem, int __index
-			);
+			, String want_language, int __level);
 	void			DrawEllipseImage(Canvas& canvas, const Color& color, const Rectangle& rect, const Bitmap &bitmap);
 	int				GetPanelHeight();
     virtual void OnActionPerformed(const Tizen::Ui::Control& source, int actionId);

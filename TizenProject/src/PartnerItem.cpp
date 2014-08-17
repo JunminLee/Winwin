@@ -24,7 +24,7 @@ using namespace Tizen::Base;
 #define COLOR32ToCOLOR16(color32) RGB888ToCOLOR16(RED32(color32), GREEN32(color32), BLUE32(color32))
 
 void
-PartnerItem::Initial(String pName, String pProfile, String pnation, String pnation_name, String phobby, String phobby_pic)
+PartnerItem::Initial(String pName, String pProfile, String pnation, String pnation_name, String phobby, String phobby_pic , String want_language, int __level)
 {
 
 
@@ -34,7 +34,8 @@ PartnerItem::Initial(String pName, String pProfile, String pnation, String pnati
 	partner_nation_what = pnation_name.GetPointer();
 	partner_hobby = phobby.GetPointer();
 	partner_hobby_pic = phobby_pic;
-
+	str_want_language = want_language;
+	_level = __level;
 
 
 
@@ -68,12 +69,21 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
     EnrichedText *pEnrichedText = new EnrichedText();
     TextElement* pTextElement = new TextElement();
 
+
+	EnrichedText *pEnrichedText1 = new EnrichedText();
+	TextElement* pTextElement1 = new TextElement();
+
+
     EnrichedText *pEnrichedText2 = new EnrichedText();
     TextElement* pTextElement2 = new TextElement();
 
      EnrichedText *pEnrichedText3 = new EnrichedText();
      TextElement* pTextElement3 = new TextElement();
-     String tmp;
+
+     String lang_pic;
+     lang_pic.Append(L"blue_point");
+     lang_pic.Append(_level);
+     lang_pic.Append(L".png");
 
 /*
     nation_flag->Construct(Rectangle(rect.x + 200, rect.y + 70, 50, 30),L"");
@@ -82,7 +92,7 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 
     canvas.DrawBitmap(Rectangle(rect.x + 220, rect.y + 95, 50, 30),*pAppResource->GetBitmapN(partner_nation));
     canvas.DrawBitmap(Rectangle(rect.x + 225, rect.y + 145, 39, 39),*pAppResource->GetBitmapN(partner_hobby_pic));
-
+    canvas.DrawBitmap(Rectangle(rect.x + 455, rect.y + 107, 43, 13),*pAppResource->GetBitmapN(lang_pic));
 
     DrawEllipseImage(canvas, Color(249,246,239,255),Rectangle(rect.x + 90, rect.y + 40, 100, 100), *pAppResource->GetBitmapN(Bitmap_Pofile));
 
@@ -103,7 +113,33 @@ Tizen::Ui::Controls::ListItemDrawingStatus 	status
 	pEnrichedText->Add(*pTextElement);
 	canvas.DrawText(Point(rect.x + 220, rect.y + 40), *pEnrichedText);
 
+//////////////////////////////////////////////////////////
 
+	pTextElement1->Construct(str_want_language);
+
+		pFont2->GetTextExtent(pTextElement1->GetText(), pTextElement1->GetText().GetLength(), Dim_Location);
+		pEnrichedText1->Construct(Dim_Location);
+		pEnrichedText1->SetHorizontalAlignment(TEXT_ALIGNMENT_LEFT);
+		pEnrichedText1->SetVerticalAlignment(TEXT_ALIGNMENT_MIDDLE);
+		pEnrichedText1->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
+		pEnrichedText1->SetTextAbbreviationEnabled(true);
+
+		pTextElement1->SetTextColor(Color(140,140,140,255));
+
+		pTextElement1->SetFont(*pFont2);
+		pEnrichedText1->Add(*pTextElement1);
+		canvas.DrawText(Point(rect.x + 400, rect.y + 94), *pEnrichedText1);
+
+
+
+
+
+
+
+
+
+
+	///////////////////////////////////////////////////
 
 	pTextElement2->Construct(partner_nation_what.GetPointer());
 
@@ -295,6 +331,8 @@ PartnerItem::operator = (const PartnerItem& rhs)
 	partner_hobby_pic = rhs.partner_hobby_pic;
 	partner_nation = rhs.partner_nation;
 	partner_nation_what = rhs.partner_nation_what;
+	str_want_language = rhs.str_want_language;
+	_level = rhs._level;
 
 	return *this;
 }
