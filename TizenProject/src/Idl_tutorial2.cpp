@@ -100,12 +100,12 @@ Idl_tutorial2::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Gr
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
 	e_end = currentPosition.x;
-	if(e_start > e_end)
+	if(e_start > e_end && e_start - e_end > 10)
 	{
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_TUTORIAL3, SCENE_TRANSITION_ANIMATION_TYPE_LEFT));
 
 	}
-	else
+	else if (e_start <= e_end &&  e_end - e_start > 10 )
 	{
 		pSceneManager->GoForward(ForwardSceneTransition(SCENE_TUTORIAL1, SCENE_TRANSITION_ANIMATION_TYPE_RIGHT));
 	}
