@@ -470,21 +470,17 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/item_remove_button.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>b/XJtsoYA+xT/vDFuf1cjmUPL00vhf5vxrE8IEQyiAU=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/upload_button.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>+K9uZMcpMvwan2DXUzbfQe5AdL25oR6Ub4C4T4kZiwE=</DigestValue>
-</Reference>
-<Reference URI="res/screen-density-xhigh/ok_button.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9TH2tMe8k9z6JXHkxJEzsbI3yQgips6G8pLCTgS1wSs=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/close_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>LG+7UChLSOSpA2LV82TScUzNYTlroazDyiakrZPE8Ps=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/garbage_can.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>L8gN9q7L3P4qfdyhoJc9syYp56+wMH43UJNkImOvfFA=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/item_remove_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>b/XJtsoYA+xT/vDFuf1cjmUPL00vhf5vxrE8IEQyiAU=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/my_home_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -494,29 +490,33 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>fvldXONauaxmHKuBqu1K61RhDIUjA9fHW+rimQNEhhM=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/garbage_can.png">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>L8gN9q7L3P4qfdyhoJc9syYp56+wMH43UJNkImOvfFA=</DigestValue>
-</Reference>
 <Reference URI="res/screen-density-xhigh/note_word_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>/EVncKb/dqScCq8FoR0aoJ6lTmaMl/pBaTkr+UfBMXA=</DigestValue>
 </Reference>
-<Reference URI="res/screen-density-xhigh/word_del_button.png">
+<Reference URI="res/screen-density-xhigh/ok_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>FjDXnugEO+ll0lEP833ArDxzO8TiCSAWqx4FLPSuuDo=</DigestValue>
+<DigestValue>9TH2tMe8k9z6JXHkxJEzsbI3yQgips6G8pLCTgS1wSs=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/search_bar.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>hueLRx6NpjEAKHTJha8MWBoQdT4bObfPwGWFveqw8Tk=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/upload_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+K9uZMcpMvwan2DXUzbfQe5AdL25oR6Ub4C4T4kZiwE=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/word_del_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>FjDXnugEO+ll0lEP833ArDxzO8TiCSAWqx4FLPSuuDo=</DigestValue>
+</Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2zVWYY0Bsa0tCPnHVUxw3Ngo7B2G3r+qZ7E4udmNMyY=</DigestValue>
+<DigestValue>ProByseTbh0AO7mZqHhsAdpk0yBGxykbqZ+QeeynP+A=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>EN4B0xTdj+fWxfubwbP7sWgQmlARhQDb4DSde2EvsB0=</DigestValue>
+<DigestValue>Vm0xt6lpVLhCLSKfUMmR0tXE/QzFQOpV0+eqiZbJvcI=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -527,9 +527,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-WxODulLY254bCqgbbWDzGAu0v9ZP/Ryyoh4qFE6inWD7wZM659uQCJMJ2DwqCAERKlYDQLO9Yadv
-sfDWczW3aRsiUoHW7eKHZmK70LzBVUxIjChpSPFkMP+3jImEtNoSEyJ8nlsvOoeg5Ox7KyocZ4E6
-tHC/g2x1M8FUJBNnoXc=
+utA1SJd+XWZyE7yhc+F9ubt7UCE1PjXYImwuzRErL33IJ0cDGV6F3fU/GQrSZIoG0nnbo3Ie7dGx
+YDde5CiAi3qThJ0U0hhkZsoECoiWDh18QGtRUxzbsw32mAkxUU2cK63LHyDJ1hhYqcgPDXYUy1zH
+0OFJk6OgVeDju5E56rM=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

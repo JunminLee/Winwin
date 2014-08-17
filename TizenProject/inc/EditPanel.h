@@ -11,6 +11,7 @@
 
 #include "tizenx.h"
 #include "Editing.h"
+#include "Word.h"
 
 #define	NONE 0
 #define DELETED 1
@@ -31,7 +32,7 @@ using namespace Tizen::Base::Collection;
 
 
 class EditPanel
- 	: public Tizen::Ui::Controls::ScrollPanel
+ 	: public Tizen::Ui::Controls::Panel
  	, public Tizen::Ui::ITouchEventListener
  	, public Tizen::Base::Runtime::ITimerEventListener
 	, public Tizen::Ui::Controls::IFormBackEventListener
@@ -54,10 +55,12 @@ class EditPanel
  		ArrayList		arr_text_element_editing_mark;
  		ArrayList		arr_insert_check;
  		ArrayList		arr_text_insert;
-
-
+    	ArrayList		arr_binding_start_and_end;
+    	ArrayList		arr_memo;
+    	ArrayList		arr_memo_rect;
  		ArrayList		arr_edit_text_element;
 
+ 		Point select_index_edit;
  		int scroll_end_point;
 
  		Point touch_point;
@@ -66,6 +69,7 @@ class EditPanel
  		Timer			draw_timer;
 
  		ContextMenu		*contextMenu;
+ 		ContextMenu 	*contextMenu2;
  		bool			onContextMenu;
 
  		Rectangle		cur_start_rect;
@@ -99,16 +103,27 @@ class EditPanel
         ArrayListT<EditWord>		arr_edit_word;
         ArrayListT<EditWord>		arr_ori_word;
 
-
     	Label *cur_label;
+
+    	bool	 onEditClick;
+
  	public:
+
+        int  scroll_state;
+        int  real_position;
+        int  real_position_end;
+
+    	bool		GetHighligtmode()
+    	{
+    		return onHighlightStart;
+    	}
     	EditPanel(void);
  		virtual ~EditPanel(void);
  		virtual result	OnDraw();
  		bool Construct(String content, bool me);
  		virtual void 	OnTimerExpired (Timer &timer);
 
- 		void ShowContextMenu(bool show, Point currentPosition);
+ 		void ShowContextMenu(bool show, Point currentPosition, int menu1_or_menu2);
 
  		virtual void 	OnScrollEndReached (Tizen::Ui::Control &source, Tizen::Ui::Controls::ScrollEndEvent type);
  		virtual void 	OnScrollPositionChanged (Tizen::Ui::Control &source, int scrollPosition);

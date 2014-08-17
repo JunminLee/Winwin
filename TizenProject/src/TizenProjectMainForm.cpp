@@ -23,7 +23,10 @@ using namespace Tizen::Ui::Scenes;
 using namespace Tizen::Graphics;
 
 using namespace Tizen::Media;
-
+using namespace Tizen::Web::Json;
+using namespace Tizen::Net::Http;
+const static wchar_t* HTTP_CLIENT_HOST_ADDRESS=L"http://211.189.77:3000";
+const static wchar_t* HTTP_CLIENT_REQUEST_URI=L"http://211.189.77:3000/timeLineList";
 TizenProjectMainForm::TizenProjectMainForm(void)
 
 {
@@ -132,6 +135,8 @@ TizenProjectMainForm::OnInitializing(void)
 
 	Footer* pFooter = GetFooter();
 
+	timer.Construct(*this);
+	timer.Start(10);
 	if (pFooter)
 
 	{
@@ -226,6 +231,129 @@ TizenProjectMainForm::OnInitializing(void)
 	return r;
 
 }
+void
+TizenProjectMainForm::OnTimerExpired (Timer &timer)
+{
+
+		if(&timer == &timer)
+		{
+
+			timer.Start(20000);
+		}
+
+}
+result TizenProjectMainForm::RequestHttpPost(void) {
+   result r = E_SUCCESS;
+   HttpSession* pSession = null;
+   HttpTransaction* pTransaction = null;
+   HttpRequest* pRequest = null;
+   HttpMultipartEntity* pMultipartEntity = null;
+   String hostAddr(HTTP_CLIENT_HOST_ADDRESS);
+
+   // Creates an HTTP session.
+   pSession = new HttpSession();
+   r = pSession->Construct(NET_HTTP_SESSION_MODE_NORMAL, null, hostAddr, null);
+
+   pTransaction = pSession->OpenTransactionN();
+   r = pTransaction->AddHttpTransactionListener(*this);
+   //  r = pTransaction->SetHttpProgressListener(*this);
+
+   pRequest = pTransaction->GetRequest();
+   pRequest->SetMethod(NET_HTTP_METHOD_POST);
+   r = pRequest->SetUri(HTTP_CLIENT_REQUEST_URI);
+
+   pMultipartEntity = new HttpMultipartEntity();
+   r = pMultipartEntity->Construct();
+
+   //String me = __pEditField->GetText();
+
+   Tizen::Text::Encoding* pEnc = Tizen::Text::Encoding::GetEncodingN(L"UTF-8");
+
+   pMultipartEntity->AddStringPart(L"userId", L"박종인", L"text/plain", L"UTF-8",
+         *pEnc);
+
+   r = pRequest->SetEntity(*pMultipartEntity);
+   r = pTransaction->Submit();
+
+   return r;
+}
+void TizenProjectMainForm::OnTransactionReadyToRead(HttpSession& httpSession,
+      HttpTransaction& httpTransaction, int availableBodyLen) {
+   AppLog("OnTransactionReadyToRead");
+
+   HttpResponse* pHttpResponse = httpTransaction.GetResponse();
+   if (pHttpResponse->GetHttpStatusCode() == HTTP_STATUS_OK) {
+      HttpHeader* pHttpHeader = pHttpResponse->GetHeader();
+      if (pHttpHeader != null) {
+         String* tempHeaderString = pHttpHeader->GetRawHeaderN();
+         ByteBuffer* pBuffer = pHttpResponse->ReadBodyN();
+         AppLog((const char*)pBuffer->GetPointer());
+         String str((const char*) (pBuffer->GetPointer()));
+
+         IJsonValue* pJson = JsonParser::ParseN(*pBuffer);
+         JsonObject *pObject = static_cast<JsonObject*>(pJson);
+
+          JsonString *userName = new JsonString("name");
+          IJsonValue *pValName = null;
+
+         pObject->GetValue(userName, pValName);
+
+         JsonArray *pJsonArray =(JsonArray *)pValName;
+         for(int i=0; i<pJsonArray->GetCount(); i++)
+         {
+          pJsonArray->GetAt(i, pValName);
+
+          JsonString* pName = static_cast<JsonString*>(pValName);
+          AppLog("%ls",pName->GetPointer());
+         }
+
+
+
+
+
+
+
+
+
+         delete tempHeaderString;
+         delete pBuffer;
+      }
+   }
+}
+
+void TizenProjectMainForm::OnTransactionAborted(HttpSession& httpSession,
+      HttpTransaction& httpTransaction, result r) {
+   AppLog("OnTransactionAborted(%s)", GetErrorMessage(r));
+
+   delete &httpTransaction;
+}
+
+void TizenProjectMainForm::OnTransactionReadyToWrite(HttpSession& httpSession,
+      HttpTransaction& httpTransaction, int recommendedChunkSize) {
+   AppLog("OnTransactionReadyToWrite");
+}
+
+void TizenProjectMainForm::OnTransactionHeaderCompleted(HttpSession& httpSession,
+      HttpTransaction& httpTransaction, int headerLen, bool authRequired) {
+   AppLog("OnTransactionHeaderCompleted");
+}
+
+void TizenProjectMainForm::OnTransactionCompleted(HttpSession& httpSession,
+      HttpTransaction& httpTransaction) {
+   AppLog("OnTransactionCompleted");
+
+   delete &httpTransaction;
+}
+
+void TizenProjectMainForm::OnTransactionCertVerificationRequiredN(HttpSession& httpSession,
+      HttpTransaction& httpTransaction, Tizen::Base::String* pCert) {
+   AppLog("OnTransactionCertVerificationRequiredN");
+
+   httpTransaction.Resume();
+
+   delete pCert;
+}
+
 
 result
 
