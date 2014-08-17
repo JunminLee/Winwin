@@ -19,13 +19,20 @@ const wchar_t* IDC_TLABEL1 = L"IDC_TLABEL1";
 const wchar_t* IDC_TLABEL2 = L"IDC_TLABEL2";
 const wchar_t* IDC_TLABEL3 = L"IDC_TLABEL3";
 const wchar_t* IDC_TLABEL4 = L"IDC_TLABEL4";
+
 const wchar_t* IDL_FORM = L"IDL_FORM";
 const wchar_t* IDL_FORM2 = L"IDL_FORM2";
 const wchar_t* IDL_FORM3 = L"IDL_FORM3";
 const wchar_t* IDL_FORM4 = L"IDL_FORM4";
 const wchar_t* IDL_FORM5 = L"IDL_FORM5";
 const wchar_t* IDL_FORM6 = L"IDL_FORM6";
+
 const wchar_t* IDL_FORM_CHAT = L"IDL_FORM_CHAT";
+
+const wchar_t* IDL_FORM7 = L"IDL_FORM7";
+const wchar_t* IDL_FORM8 = L"IDL_FORM8";
+const wchar_t* IDL_FORM9 = L"IDL_FORM9";
+
 const wchar_t* IDL_INTRO = L"IDL_INTRO";
 const wchar_t* IDL_TUTORIAL1 = L"IDL_TUTORIAL1";
 const wchar_t* IDL_TUTORIAL2 = L"IDL_TUTORIAL2";

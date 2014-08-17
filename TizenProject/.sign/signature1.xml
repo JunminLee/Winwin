@@ -18,6 +18,14 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>F4YT6xywEUK7pb/5LwLnP+ZFRUGT46b1AvGP3Mhxpbo=</DigestValue>
 </Reference>
+<Reference URI="res/.DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>aSh0jwbpRbkFVrgQc85wqU8sPW6uUV44wzZjvTW9UvI=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/.DS_Store">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>1lFlJ5EFymdzGAUAaI30vcaaLHt3F1LwpG7xILf9jsM=</DigestValue>
+</Reference>
 <Reference URI="res/screen-density-xhigh/Chatting_Act.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=</DigestValue>
@@ -44,7 +52,19 @@
 </Reference>
 <Reference URI="res/screen-density-xhigh/comment_button.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<<<<<<< HEAD
 <DigestValue>gaOIqrlnR+wcpAOMxr5VfxKUXB171R6TZLqbmkejWhc=</DigestValue>
+=======
+<DigestValue>V6ooBaVCBi75U3uIw/uRaSDgdxmykjw4bXbn+sV9bTo=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/edit_background_cursor.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>dBu937hOAYU7Kk41HTqTXxlnOoiZLN79YUoOHZot600=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/edit_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>4CUGhLUSD45CuXf7EhKSN/keQZvct36ChtySpSjfals=</DigestValue>
+>>>>>>> refs/heads/pji4
 </Reference>
 <Reference URI="res/screen-density-xhigh/editing_background.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -86,7 +106,15 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>4lnRbm7+yig17NMe/oTjyfVjZ/CJqVUGLLV14K7Mq+g=</DigestValue>
 </Reference>
+<<<<<<< HEAD
 <Reference URI="res/screen-density-xhigh/feedback_x.png">
+=======
+<Reference URI="res/screen-density-xhigh/flag_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>XLtg7Tvp77KuZcMpFv2olRJ0dSd4Xb2mZbztfjPTCkc=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/head_editing_button.png">
+>>>>>>> refs/heads/pji4
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>zY139LDOGWVUuSNfzxcjrl6Y5aAKS8EJrvEZuLWtfX0=</DigestValue>
 </Reference>
@@ -113,6 +141,14 @@
 <Reference URI="res/screen-density-xhigh/Intro.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>VkG4saL4JrayphxcPxEXnFGVww7rPwoD6aes98fDgQc=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/like_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>j7OEYkf6lnlswTrGlE9/r87P/EzBlAQtUZXlz5vGXDk=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/my_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>wWLK+QXdG0gA0b0xiwPi6V2wgXfjzD7P9ZSrSqZup/I=</DigestValue>
 </Reference>
 <Reference URI="res/screen-density-xhigh/introduce1.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -254,6 +290,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>unVLT+whMCB0qR6uqTa1sWbU/FKtEEOibCNERFoZJbo=</DigestValue>
 </Reference>
+<Reference URI="res/screen-density-xhigh/winwin_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>CdXq6cTQtI9JxNvgg/EgPVmLOxYPx0Jqv+4JV7f/z4U=</DigestValue>
+</Reference>
 <Reference URI="res/screen-density-xhigh/voice_chat.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>dnMuJn1uoscQZNlsqXEk9iU1d/jUO2ZNCt+aDmYLZCc=</DigestValue>
@@ -326,6 +366,7 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=</DigestValue>
 </Reference>
+<<<<<<< HEAD
 <Reference URI="res/screen-density-xhigh/smile.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>TLIsJ4jr/74grZ7gNbszKcm8bMi6FQxSH5R41ZCCgWk=</DigestValue>
@@ -353,14 +394,63 @@
 <Reference URI="res/screen-density-xhigh/voice_trans2.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>TiFfkO2S9Mn3I9L+XjBZqaABRHOwLpmcxNVjX+Q+NAM=</DigestValue>
+=======
+<Reference URI="res/screen-density-xhigh/close_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>LG+7UChLSOSpA2LV82TScUzNYTlroazDyiakrZPE8Ps=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/garbage_can.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>L8gN9q7L3P4qfdyhoJc9syYp56+wMH43UJNkImOvfFA=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/item_remove_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>b/XJtsoYA+xT/vDFuf1cjmUPL00vhf5vxrE8IEQyiAU=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/my_home_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>BEbDIAH0rPcwOWXnJUhRX2LVB46qRqWCXpJM8Q9x8EY=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/note.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>fvldXONauaxmHKuBqu1K61RhDIUjA9fHW+rimQNEhhM=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/note_word_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>/EVncKb/dqScCq8FoR0aoJ6lTmaMl/pBaTkr+UfBMXA=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/ok_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>9TH2tMe8k9z6JXHkxJEzsbI3yQgips6G8pLCTgS1wSs=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/search_bar.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>hueLRx6NpjEAKHTJha8MWBoQdT4bObfPwGWFveqw8Tk=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/upload_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>+K9uZMcpMvwan2DXUzbfQe5AdL25oR6Ub4C4T4kZiwE=</DigestValue>
+</Reference>
+<Reference URI="res/screen-density-xhigh/word_del_button.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>FjDXnugEO+ll0lEP833ArDxzO8TiCSAWqx4FLPSuuDo=</DigestValue>
+>>>>>>> refs/heads/pji4
 </Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<<<<<<< HEAD
 <DigestValue>ClrwNUS71naknfiSl0XlEEOa3HQc9p1aXN7hNm8Ti0c=</DigestValue>
+=======
+<DigestValue>ProByseTbh0AO7mZqHhsAdpk0yBGxykbqZ+QeeynP+A=</DigestValue>
+>>>>>>> refs/heads/pji4
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<<<<<<< HEAD
 <DigestValue>jSZwxLTKnPeRMw2Kg+c8wn1VB4tOnWREqY3ea1QPPm4=</DigestValue>
+=======
+<DigestValue>Vm0xt6lpVLhCLSKfUMmR0tXE/QzFQOpV0+eqiZbJvcI=</DigestValue>
+>>>>>>> refs/heads/pji4
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -371,9 +461,15 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
+<<<<<<< HEAD
 plCkHtCO0TycNTPQp7inb6aVKr9mz87q74UCCbz6MtXr3KfB2pe3fXkbUkcXww/Jqxv9K/h0aT69
 GoPwVGQ0QXlwR07G+CRpfQ35xciwN9G6HxMI5l54EQFTiG8SimUeXSJgF9a8OMACCSuaEhwXTAHo
 ZV3vR/UoskqxY8Vi7xc=
+=======
+utA1SJd+XWZyE7yhc+F9ubt7UCE1PjXYImwuzRErL33IJ0cDGV6F3fU/GQrSZIoG0nnbo3Ie7dGx
+YDde5CiAi3qThJ0U0hhkZsoECoiWDh18QGtRUxzbsw32mAkxUU2cK63LHyDJ1hhYqcgPDXYUy1zH
+0OFJk6OgVeDju5E56rM=
+>>>>>>> refs/heads/pji4
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -41,7 +41,6 @@ class Toast
 		this->AddControl(ToastLabel);
 		ToastTimer.Construct(*this);
 		ToastTimer.Start(time);
-
 		this->Show();
 	};
 

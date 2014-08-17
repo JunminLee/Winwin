@@ -22,7 +22,12 @@ extern const wchar_t* SCENE_TUTORIAL4;
 
 
 extern const wchar_t* SCENE_EDITING_FORM;
+
 extern const wchar_t* SCENE_CHATTING;
+
+extern const wchar_t* SCENE_COMMENT_FORM;
+extern const wchar_t* SCENE_MYHOME_FORM;
+extern const wchar_t* SCENE_NOTE_FORM;
 
 class SceneRegister
 {

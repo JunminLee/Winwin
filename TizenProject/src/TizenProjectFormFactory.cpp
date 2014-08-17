@@ -12,7 +12,12 @@
 #include "Idl_tutorial2.h"
 #include "Idl_tutorial3.h"
 #include "Idl_tutorial4.h"
+
 #include "Chatting.h"
+
+#include "MyHome.h"
+#include "Note.h"
+
 
 using namespace Tizen::Ui::Scenes;
 
@@ -31,7 +36,7 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 	SceneManager* pSceneManager = SceneManager::GetInstance();
 	AppAssert(pSceneManager);
 	Tizen::Ui::Controls::Form* pNewForm = null;
-
+	AppLog("ggg1 %S ", formId.GetPointer());
 	if (formId == IDL_FORM)
 	{
 		TizenProjectMainForm* pForm = new (std::nothrow) TizenProjectMainForm();
@@ -111,6 +116,32 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 	} else if (formId == IDL_FORM_CHAT)
 	{
 		Chatting* pForm = new Chatting();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+
+	/*else if (formId == IDL_FORM7)
+	{
+		CommentForm* pForm = new CommentForm();
+		AppLog("ggg1");
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}*/
+	else if (formId == IDL_FORM8)
+	{
+		MyHome* pForm = new MyHome();
+		AppLog("ggg1");
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
+	}
+
+	else if (formId == IDL_FORM9)
+	{
+		Note* pForm = new Note();
+		AppLog("ggg1");
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;
