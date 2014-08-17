@@ -81,7 +81,7 @@ Note::OnInitializing(void)
 	button_note_word->AddActionEventListener(*this);
 
 	button_note_word->SetActionId(50);
-
+//
 	AppLog("11");
 	button_garbage_can = new Button();
 
