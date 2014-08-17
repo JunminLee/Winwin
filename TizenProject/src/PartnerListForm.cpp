@@ -200,31 +200,31 @@ PartnerListForm::OnInitializing(void)
 
 
 
-	p.Initial(L"Black Widow",L"s-face7.png", L"nationalflag.png","한국" , "축구, 배구", L"hobby.png" );
+	p.Initial(L"Black Widow",L"s-face7.png", L"nationalflag.png","한국" , "축구, 배구", L"hobby.png", L"Eng", 3 );
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Captain Amerian",L"s-face6.png",L"nationalflag.png","한국","축구, 배구", L"hobby.png");
+	p.Initial(L"Captain Amerian",L"s-face6.png",L"nationalflag.png","한국","축구, 배구", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Hawk Eye",L"s-face2.png",L"nationalflag.png","한국","독서", L"hobby.png");
+	p.Initial(L"Hawk Eye",L"s-face2.png",L"nationalflag.png","한국","독서", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Hulk",L"s-face5.png",L"nationalflag.png","한국","공부, 토론", L"hobby.png");
+	p.Initial(L"Hulk",L"s-face5.png",L"nationalflag.png","한국","공부, 토론", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Iron Man",L"s-face1.png",L"nationalflag.png","한국","랩, 노래", L"hobby.png");
+	p.Initial(L"Iron Man",L"s-face1.png",L"nationalflag.png","한국","랩, 노래", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Nick Fury",L"s-face4.png",L"nationalflag.png","한국","족구, 테니스", L"hobby.png");
+	p.Initial(L"Nick Fury",L"s-face4.png",L"nationalflag.png","한국","족구, 테니스", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 
-	p.Initial(L"Thor",L"s-face3.png",L"nationalflag.png","한국","헬스", L"hobby.png");
+	p.Initial(L"Thor",L"s-face3.png",L"nationalflag.png","한국","헬스", L"hobby.png", L"Eng", 3);
 	ArrPartnerItem.Add(p);
 	CheckGorupComponent();
 

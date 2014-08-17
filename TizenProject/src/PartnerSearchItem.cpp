@@ -45,10 +45,20 @@ PartnerSearchItem::OnDraw()
 
 	EnrichedText *pEnrichedText3 = new EnrichedText();
 	TextElement* pTextElement3 = new TextElement();
-	String tmp;
+
+	EnrichedText *pEnrichedText1 = new EnrichedText();
+	TextElement* pTextElement1 = new TextElement();
+
+
+
+	String lang_pic;
+	lang_pic.Append(L"blue_point");
+	lang_pic.Append(_level);
+	lang_pic.Append(L".png");
 
 	pCanvas->DrawBitmap(Rectangle( 225, 95, 50, 30),*pAppResource->GetBitmapN(str_nation));
 	pCanvas->DrawBitmap(Rectangle( 230, 145, 39, 39),*pAppResource->GetBitmapN(str_hobby));
+	pCanvas->DrawBitmap(Rectangle( 455, 107, 43, 13), *pAppResource->GetBitmapN(lang_pic));
 
 
 
@@ -72,9 +82,32 @@ PartnerSearchItem::OnDraw()
 		pTextElement->SetFont(*pFont);
 		pEnrichedText->Add(*pTextElement);
 		pCanvas->DrawText(Point(225, 40), *pEnrichedText);
+/////////////////////////////////////////////////
+
+		pTextElement1->Construct(str_nation_language.GetPointer());
+
+			pFont2->GetTextExtent(pTextElement1->GetText(), pTextElement1->GetText().GetLength(), Dim_Location);
+			pEnrichedText1->Construct(Dim_Location);
+			pEnrichedText1->SetHorizontalAlignment(TEXT_ALIGNMENT_LEFT);
+			pEnrichedText1->SetVerticalAlignment(TEXT_ALIGNMENT_MIDDLE);
+			pEnrichedText1->SetTextWrapStyle(TEXT_WRAP_CHARACTER_WRAP);
+			pEnrichedText1->SetTextAbbreviationEnabled(true);
+
+			pTextElement1->SetTextColor(Color(140,140,140,255));
+
+			pTextElement1->SetFont(*pFont2);
+			pEnrichedText1->Add(*pTextElement1);
+			pCanvas->DrawText(Point(400, 94), *pEnrichedText1);
 
 
 
+
+
+
+
+
+
+		/////////////////////////////////////
 		pTextElement2->Construct(str_nation_language.GetPointer());
 
 		pFont2->GetTextExtent(pTextElement2->GetText(), pTextElement2->GetText().GetLength(), Dim_Location);
@@ -132,7 +165,7 @@ PartnerSearchItem::GetPanelHeight()
 }
 void
 PartnerSearchItem::Initialize(String _name, String _profile, String _nation, String _nation_language, String hobby,
-		String phobby_what, String content, TableView *pb, TableViewItem *pItem, int __index)
+		String phobby_what, String content, TableView *pb, TableViewItem *pItem, int __index, String want_language, int __level)
 {
 
 
@@ -164,7 +197,8 @@ PartnerSearchItem::Initialize(String _name, String _profile, String _nation, Str
 	str_hobby=hobby;
 	str_hobby_what=phobby_what;
 	str_contents=content;
-
+	str_want_language = want_language;
+	_level = __level;
 	national_flag_image = pAppResource->GetBitmapN(str_nation);
 	profile_iamge = pAppResource->GetBitmapN(str_profile);
 	hobby_pic = pAppResource->GetBitmapN(L"hobby.png");
@@ -277,6 +311,7 @@ PartnerSearchItem::OnActionPerformed(const Tizen::Ui::Control& source, int actio
 
     			Rectangle(0,0,720,260);
     			*/
+
     			int reset_index = _index+1;
     			int plus=0;
 

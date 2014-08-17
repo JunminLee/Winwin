@@ -265,7 +265,8 @@ PartnerSearchForm::CreateItem(int itemIndex, int itemWidth)
 	    ci = new PartnerSearchItem();
 
 	    ci->Construct(Rectangle(0,0,itemWidth,260));
-	    ci->Initialize(L"IronMan",L"s-face1.png",L"nationalflag.png",L"Eng",L"hobby.png",L"Soccer",L"Hello my name is gogosing Hello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosing",Search_List_View,pItem,itemIndex);
+	    ci->Initialize(L"IRON MANNN",L"s-face1.png",L"nationalflag.png",L"Eng",L"hobby.png",L"Soccer",L"Hello my name is gogosing Hello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosingHello my name is gogosing",
+	    		Search_List_View,pItem,itemIndex, "한국어", 2);
 
 
 	    item_height = ci->GetPanelHeight();

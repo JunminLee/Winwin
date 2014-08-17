@@ -36,7 +36,7 @@ class Toast
 		ToastLabel->Construct(Rectangle(0,0,rect.width,rect.height), text);
 		ToastLabel->SetTextColor(Color(255,255,255,255));
 		ToastLabel->SetBackgroundColor(Color(93,93,93,255));
-			ToastLabel->SetTextConfig(30, LABEL_TEXT_STYLE_NORMAL);
+		ToastLabel->SetTextConfig(30, LABEL_TEXT_STYLE_NORMAL);
 
 		this->AddControl(ToastLabel);
 		ToastTimer.Construct(*this);

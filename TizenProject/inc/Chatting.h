@@ -24,6 +24,7 @@
 #include <FIo.h>
 #include <FWebJson.h>
 #include <FNet.h>
+#include "Toast.h"
 
 using namespace Tizen::Ui::Controls;
 using namespace Tizen::Media;
@@ -158,8 +159,10 @@ protected:
 	static const int IDC_BUTTON_PLUS = 202;
 	static const int IDC_BUTTON_RECORDGO = 203;
 	static const int IDC_BUTTON_RECORDER = 250;
-
+	static const int IDC_BUTTON_FEEDBACKB = 205;
 	static const int IDC_BUTTON_FEEDBACKX = 204;
+	static const int IDC_BUTTON_TRANSPORT = 207;
+	static const int IDC_BUTTON_VOICE = 206;
 
 	Tizen::Ui::Controls::Button* __pButtonSend;
 	Tizen::Ui::Controls::Button* __pButtonPlus;
@@ -170,12 +173,17 @@ protected:
 	Point where2;
 	bool ischeck_plus = false;
 	bool ischeck_key = false;
+	bool istransport = false;
 	JMChattControl* __pChattControl;
 	Button* __RecordGo;
 	Popup* popup;
 	Button* __Record;
 
+	Button* pic;
+	Button* camera;
+	Button* voice;
 	Button* feedback_x;
+	Button* trans_voice;
 	int Record_Status = 0;
 
 	AudioRecorder __audioRecorder;

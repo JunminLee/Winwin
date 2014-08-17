@@ -17,8 +17,9 @@
 #include <FApp.h>
 #include <FUiIme.h>
 #include <gl.h>
+#include <FMedia.h>
 
-
+using namespace Tizen::Media;
 using namespace Tizen::Base;
 using namespace Tizen::Base::Runtime;
 using namespace Tizen::Base::Collection;
@@ -90,7 +91,7 @@ struct stCHATT_DATA {
 	bool bISend;
 	String strText;
 	EnrichedText* pEnrichedText;
-	Bitmap* strImageFile;
+	String strImageFile;
 	Bitmap* pBitmapImage;
 	DateTime timeSend;
 	Rectangle rtElementBox;
@@ -101,7 +102,10 @@ struct stCHATT_DATA {
 class JMChattControl:
 	public Tizen::Ui::Controls::Panel,
 	public Tizen::Ui::ITouchEventListener,
-	public Tizen::Base::Runtime::ITimerEventListener
+	public Tizen::Base::Runtime::ITimerEventListener,
+	public Tizen::Ui::IActionEventListener,
+	public Tizen::Media::IAudioRecorderEventListener,
+	public Tizen::Media::IPlayerEventListener
 {
 public:
 	JMChattControl();
@@ -112,7 +116,7 @@ public:
 	void SetBackColor(Color colorBackground, bool bRedraw=false);
 	Tizen::Graphics::Bitmap* GetBitmapN(const Tizen::Base::String& name);
 	void SetBackImage(Bitmap* strImageFileName, bool bRedraw=false);
-
+	void ReDrawFeedback();
 	void InitVariable();
 
 	void DrawChattData(Canvas* pCanvas);
@@ -132,8 +136,13 @@ public:
 
 
 	void DrawTimeText(Canvas* pCanvas, Rectangle rtText, DateTime timeSend);
+
+
 	void AddDataText(DateTime timeSend, String strText, bool bISend, bool bRedraw=false);
-	void AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool bISend, bool bRedraw=false);
+	void AddDataImage(DateTime timeSend, String strImageFile, bool bISend, bool bRedraw=false);
+	void AddDataFeedback(DateTime timeSend, String contents, bool bIsend, bool bRedraw=false);
+
+
 	void AddIndexToNeedLoadImageArray(int nIndex);
 	void SetImageRectToSize(Rectangle &rtImage, Bitmap* pImage);
 	bool LoadImageInArray();
@@ -155,6 +164,45 @@ public:
 
 	void ReDraw(const Rectangle& bounds);
 
+	virtual void OnActionPerformed(const Tizen::Ui::Control& source, int actionId);
+
+
+
+
+
+
+
+	virtual void OnAudioRecorderCanceled(result r) {
+	}
+	virtual void OnAudioRecorderClosed(result r) {
+	}
+	virtual void OnAudioRecorderEndReached(RecordingEndCondition endCondition) {
+	}
+	virtual void OnAudioRecorderErrorOccurred(RecorderErrorReason r) {
+	}
+	virtual void OnAudioRecorderPaused(result r) {
+	}
+	virtual void OnAudioRecorderStarted(result r) {
+	}
+	virtual void OnAudioRecorderStopped(result r) {
+	}
+	virtual void OnPlayerAudioFocusChanged(void) {
+	}
+	virtual void OnPlayerBuffering(int percent) {
+	}
+	virtual void OnPlayerEndOfClip(void) {
+	}
+	virtual void OnPlayerErrorOccurred(Tizen::Media::PlayerErrorReason r) {
+	}
+	virtual void OnPlayerInterrupted(void) {
+	}
+	virtual void OnPlayerOpened(result r) {
+	}
+	virtual void OnPlayerReleased(void) {
+	}
+	virtual void OnPlayerSeekCompleted(result r) {
+	}
+
 // Implementation
 protected:
 	stSCREEN_INFO __stScreenInfo;
@@ -163,11 +211,24 @@ protected:
 
 	//static const int DF_TIMER_INTERVAL_REDRAW = 30;
 	static const int DF_TIMER_INTERVAL_REDRAW = 40;
+	static const int IDC_BUTTON_FEEDBACKX1 = 446;
+	static const int IDC_BUTTON_RECORDER1 = 447;
 	Tizen::Base::Runtime::Timer* __pTimerRedraw;
 	Tizen::Base::Runtime::Timer* __pTimerAutoSlide;
 	bool isimage= false;
+	bool isfeedback = false;
+	bool isfeedback_complete = false;
 	Canvas* __pCanvasMain;
 	Canvas* __pCanvasBack;
+
+
+
+
+
+
+
+
+
 
 public:
 
@@ -186,6 +247,9 @@ public:
 	virtual void OnTouchMoved(const Tizen::Ui::Control &source, const Tizen::Graphics::Point &currentPosition, const Tizen::Ui::TouchEventInfo &touchInfo);
 	virtual void OnTouchPressed(const Tizen::Ui::Control &source, const Tizen::Graphics::Point &currentPosition, const Tizen::Ui::TouchEventInfo &touchInfo);
 	virtual void OnTouchReleased(const Tizen::Ui::Control &source, const Tizen::Graphics::Point &currentPosition, const Tizen::Ui::TouchEventInfo &touchInfo);
+	Button* feed_back;
+	Rectangle rtCanvas;
+	static const int IDC_FEEDBACK_BUTTON = 344;
 };
 
 

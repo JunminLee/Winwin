@@ -1,14 +1,19 @@
 #ifndef _APP_RESOURCE_ID_H_
 #define _APP_RESOURCE_ID_H_
 
+extern const wchar_t* IDC_BUTTON_CAMERA;
+extern const wchar_t* IDC_BUTTON_LO;
+extern const wchar_t* IDC_BUTTON_PIC;
 extern const wchar_t* IDC_BUTTON_PLUS;
 extern const wchar_t* IDC_BUTTON_RECORD;
 extern const wchar_t* IDC_BUTTON_RECORDGO;
 extern const wchar_t* IDC_BUTTON_SEND;
+extern const wchar_t* IDC_BUTTON_VO;
 extern const wchar_t* IDC_EDIT_SEND;
 extern const wchar_t* IDC_GROUPEDLISTVIEW;
 extern const wchar_t* IDC_GROUPEDLISTVIEW1;
 extern const wchar_t* IDC_LABEL1;
+extern const wchar_t* IDC_LABEL_SMILE;
 extern const wchar_t* IDC_PANEL1;
 extern const wchar_t* IDC_PANEL_CHAT;
 extern const wchar_t* IDC_TLABEL1;

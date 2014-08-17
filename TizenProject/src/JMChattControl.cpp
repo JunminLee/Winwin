@@ -197,7 +197,7 @@ void JMChattControl::InitVariable()
 	__stScreenInfo.nTextBoxMarginDate = (int)(__stScreenInfo.rtScreen.width * 2. / 100.);
 
 
-	__stScreenInfo.fontText.Construct(FONT_STYLE_PLAIN, (int)(__stScreenInfo.rtScreen.width/16.));
+	__stScreenInfo.fontText.Construct(FONT_STYLE_PLAIN, (int)(__stScreenInfo.rtScreen.width/17.));
 
 	__stScreenInfo.nImageBoxMaxHeight = (int)(__stScreenInfo.rtScreen.width * 26. / 100.);
 
@@ -253,8 +253,8 @@ Rectangle JMChattControl::GetTextAreaInTextBox(Rectangle rtArea)
 Rectangle JMChattControl::GetImageBoxArea(Rectangle rtArea)
 {
 	Rectangle rtText;
-	rtText.x = rtArea.x + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-30;
-	rtText.y = rtArea.y + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-3;
+	rtText.x = rtArea.x + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-52;
+	rtText.y = rtArea.y + __stScreenInfo.nTextBoxInsideGap - ((int)(__stScreenInfo.rtScreen.width * 1.5 / 100.)+10)-2 ;
 	rtText.width = __stScreenInfo.nImageBoxMaxHeight + 262;
 	rtText.height = __stScreenInfo.nImageBoxMaxHeight + 70;
 	return rtText;
@@ -317,6 +317,8 @@ void JMChattControl::DrawMultiLineText(Canvas* pCanvas, String strText, Rectangl
     // Add the TextElement to the EnrichedText
     pEnrichedText->Add(*pTextElement1);
     pCanvas->SetBackgroundColor(colorBack);
+
+
 
     // Draw the EnrichedText at the specified Point
     pCanvas->DrawText(Point(rtArea.x, rtArea.y), *pEnrichedText);
@@ -418,11 +420,16 @@ Rectangle JMChattControl::GetTimeAreaFromTextBox(Rectangle rtTextBox, bool bIsI)
 	else {
 		rtTime.x = rtTextBox.x + rtTextBox.width;
 	}
-
+	if(isfeedback == false)
+	{
 	rtTime.width = __stScreenInfo.nTimeAreaWidth;
 	rtTime.y = rtTextBox.y + rtTextBox.height - (int)(__stScreenInfo.nTimeAreaHeight * 1.1);
 	rtTime.height = __stScreenInfo.nTimeAreaHeight;
-
+	} else {
+		rtTime.width = __stScreenInfo.nTimeAreaWidth;
+		rtTime.y = rtTextBox.y + rtTextBox.height - (int)(__stScreenInfo.nTimeAreaHeight * 1.1);
+		rtTime.height = __stScreenInfo.nTimeAreaHeight;
+	}
 
 	return rtTime;
 }
@@ -562,6 +569,7 @@ void JMChattControl::DrawElementBackAndTime(Canvas* pCanvas, stCHATT_DATA* pChat
 
 void JMChattControl::AddDataText(DateTime timeSend, String strText, bool bISend, bool bRedraw)
 {
+	isfeedback = false;
 
 	AppLog("3333AddDataText");
 	isimage = false;
@@ -623,9 +631,107 @@ void JMChattControl::AddDataText(DateTime timeSend, String strText, bool bISend,
 	if( bRedraw )
 		this->RequestRedraw();
 }
+void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bIsend, bool bRedraw)
+{
+
+	isfeedback = true;
+	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
+
+	if( IsChangedDate(timeSend) )
+	{
+
+			AddDataDate(timeSend);
+	}
+	stCHATT_DATA* pChattData = new stCHATT_DATA;
+	Color colorText;
+	String strText;
+
+	strText.Append(L"\"");
+	strText.Append(contents);
+	strText.Append(L"\"");
+	strText.Append(L" 이 표현좀 읽어줘 ~");
+
+	pChattData->isImage=false;
+
+		pChattData->nDataType = DATA_TYPE_TEXT;
+
+		pChattData->timeSend = timeSend;
+
+		pChattData->bISend = bIsend;
+
+		pChattData->pBitmapImage = null;
+
+		pChattData->pBitmapCapture = null;
 
 
-void JMChattControl::AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool bISend, bool bRedraw)
+		if( bIsend )
+			colorText = __stScreenInfo.colorTextI;
+
+		else
+			colorText = __stScreenInfo.colorTextYou;
+
+
+		pChattData->pEnrichedText = StringToEnrichedText(strText, colorText);
+
+		pChattData->rtElementBox.y = __stScreenInfo.nTotalElementHeight + __stScreenInfo.nElementGapY;
+		pChattData->rtElementBox.height = pChattData->pEnrichedText->GetHeight() + __stScreenInfo.nTextBoxInsideGap * 2 + 50;
+		pChattData->rtElementBox.width = 428;
+
+		if( bIsend )
+		{
+
+			pChattData->rtElementBox.x = (pChattData->rtElementBox.width + __stScreenInfo.nTextBoxMarginI) * -1;
+		}
+
+		else {
+
+			pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou;
+
+			pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight;
+
+			__stScreenInfo.nTotalElementHeight += __stScreenInfo.nYouNameHeight + 100;
+		}
+
+		feed_back = new Button();
+		feed_back->Construct(Rectangle(pChattData->rtElementBox.x-1, pChattData->rtElementBox.y+ pChattData->rtElementBox.height - 60, 432,  110));
+		feed_back->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
+		feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
+		AddControl(feed_back);
+
+		__pArrayChattData->Add(*(Object*)pChattData);
+
+
+		__stScreenInfo.nTotalElementHeight += (pChattData->rtElementBox.height + __stScreenInfo.nElementGapY);
+
+		__stScreenInfo.nViewAreaBottom = __stScreenInfo.nTotalElementHeight;
+
+
+	if( bRedraw )
+		this->RequestRedraw();
+
+}
+
+void JMChattControl::ReDrawFeedback()
+{
+			AppResource* pAppResource = Application::GetInstance()->GetAppResource();
+			feed_back->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback2.png"));
+			feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback2.png"));
+			feed_back->Draw();
+}
+void JMChattControl::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
+{
+
+
+
+	switch(actionId)
+	{
+
+
+
+	}
+
+}
+void JMChattControl::AddDataImage(DateTime timeSend, String strImageFile, bool bISend, bool bRedraw)
 {
 
 	AppLog("3333AddDataImage");
@@ -653,19 +759,21 @@ void JMChattControl::AddDataImage(DateTime timeSend, Bitmap* strImageFile, bool 
 
 
 	pChattData->rtElementBox.y = __stScreenInfo.nTotalElementHeight + __stScreenInfo.nElementGapY;
-	pChattData->rtElementBox.height = __stScreenInfo.nImageBoxMaxHeight + 66;
-	pChattData->rtElementBox.width = __stScreenInfo.nImageBoxMaxHeight + 262;
+	pChattData->rtElementBox.height = __stScreenInfo.nImageBoxMaxHeight + 70;
+	pChattData->rtElementBox.width = __stScreenInfo.nImageBoxMaxHeight + 50;
+
 
 	if( bISend )
 		pChattData->rtElementBox.x = (pChattData->rtElementBox.width + __stScreenInfo.nTextBoxMarginI) * -1;
 
 	else {
 
-		pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou+35;
+		pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou +50;
 
-		pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight+20;
+		pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight ;
 
 		__stScreenInfo.nTotalElementHeight += __stScreenInfo.nYouNameHeight;
+
 	}
 
 
@@ -838,7 +946,7 @@ void JMChattControl::OnTouchPressed(const Tizen::Ui::Control &source, const Tize
 	}
 
 
-	//__stScreenInfo.nSelectedImageIndex = GetImageIndexByPoint(currentPosition);
+	__stScreenInfo.nSelectedImageIndex = GetImageIndexByPoint(currentPosition);
 
 
 	__stScreenInfo.pointTouchPrev = currentPosition;
@@ -905,7 +1013,7 @@ void JMChattControl::OnTouchReleased(const Tizen::Ui::Control &source, const Tiz
 		__stScreenInfo.bNeedRedraw = true;
 	}
 
-/*
+
 	if( __stScreenInfo.nSelectedImageIndex >= 0 ) {
 
 		long nSelectedIndex = GetImageIndexByPoint(currentPosition);
@@ -922,7 +1030,7 @@ void JMChattControl::OnTouchReleased(const Tizen::Ui::Control &source, const Tiz
 			pParent->SendUserEvent(REQUEST_JCHATT_SELECT_IMAGE, (IList*)__pArraySelectedElement);
 
 		}
-	}*/
+	}
 
 }
 
@@ -951,10 +1059,18 @@ long JMChattControl::GetImageIndexByPoint(Point point)
 
 String JMChattControl::GetImageFileName(long nIndex)
 {
+
+
+
 	stCHATT_DATA* pChattData = null;
 	pChattData = (stCHATT_DATA*)(__pArrayChattData->GetAt(nIndex));
-	String strFileName;
-	//String strFileName = pChattData->strImageFile;
+
+
+
+
+	//String strFileName;
+	String strFileName = pChattData->strImageFile;
+
 	return strFileName;
 }
 
@@ -1107,7 +1223,7 @@ void JMChattControl::DrawChattData(Canvas* pCanvas)
 
 void JMChattControl::CreateElementCaptureImage(long nIndex)
 {
-	Rectangle rtCanvas;
+
 	stCHATT_DATA* pChattData = (stCHATT_DATA*)(__pArrayChattData->GetAt(nIndex));
 
 	rtCanvas.x = 0;
@@ -1175,9 +1291,10 @@ void JMChattControl::DrawYouPhotoAndName(Canvas* pCanvas, stCHATT_DATA* pChattDa
 	pCanvas->DrawBitmap(rtPhoto, *__stScreenInfo.pBitmapYouPhoto);
 
 }
+
 void JMChattControl::DrawMyPhotoAndName(Canvas* pCanvas, stCHATT_DATA* pChattData, Rectangle rtTextBox)
 {
-	/*
+/*
 	Point pointMyName;
 	Rectangle rtPhoto;
 
@@ -1196,7 +1313,7 @@ void JMChattControl::DrawMyPhotoAndName(Canvas* pCanvas, stCHATT_DATA* pChattDat
 	rtPhoto.height = __stScreenInfo.nYouPhotoBoxHeight;
 
 	pCanvas->DrawBitmap(rtPhoto, *__stScreenInfo.pBitmapYouPhoto);
-	*/
+*/
 }
 
 void JMChattControl::DrawChattDataText(Canvas* pCanvas, stCHATT_DATA* pChattData)
@@ -1228,7 +1345,7 @@ void JMChattControl::DrawChattDataText(Canvas* pCanvas, stCHATT_DATA* pChattData
 void JMChattControl::DrawChattDataImage(Canvas* pCanvas, stCHATT_DATA* pChattData)
 {
 	Rectangle rtTextBox, rtText, rtTime;
-
+	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
 	rtTextBox = ChangeRightRectangleToNormal(pChattData->rtElementBox);
 	rtTextBox.y = 0;
@@ -1243,12 +1360,13 @@ void JMChattControl::DrawChattDataImage(Canvas* pCanvas, stCHATT_DATA* pChattDat
 
 	DrawElementBackAndTime(pCanvas, pChattData, rtTextBox);
 
-
+	pChattData->pBitmapImage = pAppResource->GetBitmapN(L"voice_pb1.png");
+	AppLog("ffffffffff");
 	if( pChattData->pBitmapImage ) {
 
 		rtText = GetImageBoxArea(rtTextBox);
 
-		pCanvas->DrawBitmap(rtText, *pChattData->pBitmapImage);
+		pCanvas->DrawBitmap(rtText, *pChattData->pBitmapImage );
 	}
 }
 
@@ -1272,14 +1390,14 @@ bool JMChattControl::LoadImageInArray()
 
 	stCHATT_DATA* pChattData = (stCHATT_DATA*)(__pArrayChattData->GetAt(nIndex));
 
-//	if( pChattData->strImageFile.GetLength() < 1 )
-//		return false;
+	if( pChattData->strImageFile.GetLength() < 1 )
+		return false;
 
 	if( pChattData->pBitmapImage )
 		return false;
 
 
-	pChattData->pBitmapImage = pChattData->strImageFile;
+
 	//pChattData->strImageFile = L"";
 	if( pChattData->pBitmapImage == null )
 		return false;
@@ -1292,7 +1410,7 @@ bool JMChattControl::LoadImageInArray()
 
 
 	delete pChattData->pBitmapImage;
-	//pChattData->pBitmapImage = null;
+	pChattData->pBitmapImage = null;
 
 	return true;
 }
