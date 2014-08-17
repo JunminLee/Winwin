@@ -360,7 +360,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bJKhtT6uTj5BLO8+LCbKnSy0tCY6Clj3RyWuWQzIwjI=</DigestValue>
+<DigestValue>bA0sRQ7qxTVgwnogTL+rhG9JdY1ZJQvyNSYVi1B1exQ=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -371,9 +371,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-GkRNJLNVhPc+oVhVZY4ECqEhlGWNjV3OgaGvQVz3TPkSVKpSLRqfwndi5X5HulUv6nSmtwhXk+3W
-NXQOrfPqylC5ZQIvRdOqH1/9xqIprc1Wkd0/7B4s8PmBIH+ayzNA3obnZqgBnWThK/em5wH32SqV
-L5uuYuUEra+3GOQjKVg=
+B7/4gTWtvMrA3+xnTtK45K8DNbKkIOT1idsWRTt9uCZYpf5zWdRxQ6MumyBWJuouAQ76/38jU2Rb
+Cj64gSKbNMoBXpF9wEAyC8rBFd+LHG3jjZGUIDBAvMcfPmuW7mXlhJQQoN9lXaVQBW2Rn96mTN05
+poGnoJdIPG+uw5ivjFE=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
