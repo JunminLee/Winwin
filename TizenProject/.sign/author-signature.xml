@@ -424,7 +424,7 @@
 </Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ZEw3WvmhJmvVXiMr4UhnFohvEr4RlJpmbokOdHnzZ4o=</DigestValue>
+<DigestValue>vL+LK8Igdzcr9f80OtX9deMDSTrDEY2D6WaZqdkMXPo=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -435,9 +435,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-BtwAMwl4xQKTvQtPDEqdENcu+4AqsHBdIn3DLzp6/tIA7JqB2d+3IrNukZIDFMueVHQTENhLgZWJ
-9wpJ40E5P6gYCHv3q2R9Ip4lm6qhfAot/TQ+HNDK8bBKuBfK3sNxR2tPrdRr1rmAWrdxWWgCXnlE
-ibRXWCY1ctDkwqraeJU=
+TCl7k/k0BXRxwpfSIsJU4Ap5XkKJuh5PQjehQmGo5GOf31uSOOvcumBisDqPB+iyXWoDT/aj7wKz
+Oq0nJuYfoDXskpQ2uB0flPrXyUtz3+buZ32HFtYzD7fqXEyc2I71OaAJBqctH8rB1SB0gwiiJXAO
+eCRjQdAjPFmtjsh96RQ=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

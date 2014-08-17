@@ -55,6 +55,7 @@ struct stSCREEN_INFO {
 	int nMyNameHeight;
 
 
+
 	int nTextBoxMarginDate;
 	Font fontText;
 	int nImageBoxMaxHeight;
@@ -221,7 +222,8 @@ protected:
 	Canvas* __pCanvasMain;
 	Canvas* __pCanvasBack;
 
-
+	int feed_back_count[100];
+	int feed_back_cnt=0;
 
 
 

@@ -276,7 +276,7 @@ void JMChattControl::DrawTextBox(Canvas* pCanvas, String strText, Rectangle rtAr
 {
 
 
-
+	AppLog("3333DrawMultiLineText");
 	DrawFillRoundRectangle(pCanvas, rtArea, colorBack, colorOutline);
 
 	Rectangle rtText;
@@ -291,7 +291,7 @@ void JMChattControl::DrawTextBox(Canvas* pCanvas, String strText, Rectangle rtAr
 
 void JMChattControl::DrawMultiLineText(Canvas* pCanvas, String strText, Rectangle rtArea, Color colorText, Color colorBack)
 {
-	AppLog("3333DrawMultiLineText");
+
 	result r = E_SUCCESS;
 
 	EnrichedText* pEnrichedText = null;
@@ -634,6 +634,7 @@ void JMChattControl::AddDataText(DateTime timeSend, String strText, bool bISend,
 void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bIsend, bool bRedraw)
 {
 
+
 	isfeedback = true;
 	AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 
@@ -698,7 +699,10 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 		feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
 		AddControl(feed_back);
 
+
 		__pArrayChattData->Add(*(Object*)pChattData);
+
+		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount();
 
 
 		__stScreenInfo.nTotalElementHeight += (pChattData->rtElementBox.height + __stScreenInfo.nElementGapY);
@@ -920,6 +924,8 @@ void JMChattControl::DrawChattDataDate(Canvas* pCanvas, stCHATT_DATA* pChattData
 	Point timetmp;
 	timetmp.x = rtText.GetTopLeft().x + 10;
 	timetmp.y = rtText.GetTopLeft().y - 10;
+
+
 	pCanvas->SetForegroundColor(__stScreenInfo.colorTextTime);
 	pCanvas->SetBackgroundColor(__stScreenInfo.colorTextBackTime);
 	pCanvas->SetFont(__stScreenInfo.fontTime);
@@ -1170,7 +1176,8 @@ void JMChattControl::DrawChattData(Canvas* pCanvas)
 
 
 	nDataCount = __pArrayChattData->GetCount();
-	for(i=nDataCount-1 ; i >= 0 ; i--)	{
+	for(i=nDataCount-1 ; i >= 0 ; i--)
+	{
 
 		pChattData = (stCHATT_DATA*)(__pArrayChattData->GetAt(i));
 
@@ -1206,7 +1213,18 @@ void JMChattControl::DrawChattData(Canvas* pCanvas)
 		if( pChattData->nDataType != DATA_TYPE_DATE && !pChattData->bISend )
 			rtTextBox.y -= __stScreenInfo.nYouNameHeight;
 
+		for(int k=0; k<feed_back_cnt; k++)
+		{
+		if(feed_back_count[k] == i)
+		{
+			if(feed_back)
+			{
+				feed_back->SetBounds(rtTextBox.x + 135, rtTextBox.y - 203, 432, 110);
+				feed_back->RequestRedraw();
 
+			}
+		}
+		}
 		pCanvas->DrawBitmap(rtTextBox, *pChattData->pBitmapCapture);
 
 
@@ -1244,6 +1262,7 @@ void JMChattControl::CreateElementCaptureImage(long nIndex)
 	if( pChattData->nDataType == DATA_TYPE_TEXT ) {
 
 		DrawChattDataText(pCanvas, pChattData);
+
 	}
 
 	else if( pChattData->nDataType == DATA_TYPE_IMAGE ) {
@@ -1331,11 +1350,11 @@ void JMChattControl::DrawChattDataText(Canvas* pCanvas, stCHATT_DATA* pChattData
 		rtTextBox.y += __stScreenInfo.nYouNameHeight;
 	}
 
-
 	DrawElementBackAndTime(pCanvas, pChattData, rtTextBox);
 
 
 	rtText = GetTextAreaInTextBox(rtTextBox);
+
 
 
 	pCanvas->DrawText(rtText.GetTopLeft(), *pChattData->pEnrichedText);
