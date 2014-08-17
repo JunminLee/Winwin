@@ -1,7 +1,11 @@
+author-signature.xml__DEL__77V4wqNGrhKGsCAWEC1ubH9jCkvSXal9TkIZXknwbeQ=
+bin/TizenProject.exe__DEL__XwwLPsXzZVHZ6xeMcKCqgUXUx3jN+A8n4rk8DdSWpj0=
 info/manifest.xml__DEL__ADLSSWOCTXa0BQtHOCJsX56rD7fpLKrjE2/EyWFpLos=
 res/screen-density-xhigh/blue_point1.png__DEL__z53pjtEp77urf5nDYc2f8uwd/eCQgWhsTLooHSWUxGk=
 res/screen-density-xhigh/blue_point2.png__DEL__tLOEbNt5XCsQtv7fBL4LPjcKZ8BtLyIJp7YgNs1PiRA=
 res/screen-density-xhigh/blue_point3.png__DEL__F4YT6xywEUK7pb/5LwLnP+ZFRUGT46b1AvGP3Mhxpbo=
+res/screen-density-xhigh/call_chat.png__DEL__pJFTLOolPC/UeyMU+jMpGP+K4kMfeFETEkVqwmX05e4=
+res/screen-density-xhigh/camera_chat.png__DEL__C12LA7rukj5AzNltmueSXr7qaqREkjCsXF55agvefXI=
 res/screen-density-xhigh/Chatting_Act.png__DEL__QoHEgNCW1RSGth84qz/+o84uYOe5yYPMuMiuoQt2gfQ=
 res/screen-density-xhigh/Chatting_InAct.png__DEL__HfFeAKW+ugAQ+URlT/NfUbhUp8Jot2lNp95NgjEunNk=
 res/screen-density-xhigh/chatting_name.png__DEL__21VmjEM7x3ezmvI5cUo7WOIJHHfKQA+dhfQvVsW2dtQ=
@@ -38,6 +42,7 @@ res/screen-density-xhigh/PartnerResearch_InAct.png__DEL__59zH9oM6d3s/5k+C6VzP2bl
 res/screen-density-xhigh/partnersearch.png__DEL__yUr5cKIBvUWd+WQ+uxfPrgjy2DG3USRo3f71KdEDyqY=
 res/screen-density-xhigh/partner_plus.png__DEL__ETw2gvMpIzFi+BlJbpthyQjeQVDOIXAmAvca31fhpYk=
 res/screen-density-xhigh/partner_wait.png__DEL__J1IJA5QWv+uOlo9vm2TBpDLvDBFCycSnLkgbRPx34VE=
+res/screen-density-xhigh/pic_chat.png__DEL__iooT1po3KAcKvu4pstWY8/jgW242XvaIvbEaQSZS2EQ=
 res/screen-density-xhigh/PostingButton.png__DEL__HXbDmT/1EdCNXPB4mNqklGEE9MGEih5U16kHq4SQw1Y=
 res/screen-density-xhigh/Record_Complete.png__DEL__aeLrcp3ngKYXF504iSrS6l/r4UrFOo8eM/nwr3FU0W0=
 res/screen-density-xhigh/Record_Start.png__DEL__6EMihE+Mv9CPeO2CWiwSwfQaUO5MVVzIdnpxsnl0EzA=
@@ -53,6 +58,7 @@ res/screen-density-xhigh/searchicon.png__DEL__HxMrYevcsQs+H2c2mg1e6DlSSdD+z9vzNQ
 res/screen-density-xhigh/sendbutton.png__DEL__mCBO7R5uH03G5cxswRBq+ekHATMJHjkIb9HC5MLv+IA=
 res/screen-density-xhigh/Setting_Act.png__DEL__r1I+QjpQZbnusKlXTil0u2lj610UU/tWTisTt87KhX8=
 res/screen-density-xhigh/Setting_InAct.png__DEL__sthVSZqhqNo972+SyUD9kLFfII2LQaKY/MC30pmm+i0=
+res/screen-density-xhigh/smile.png__DEL__TLIsJ4jr/74grZ7gNbszKcm8bMi6FQxSH5R41ZCCgWk=
 res/screen-density-xhigh/TimeLine_Act.png__DEL__kw7wmEM2ZeUY/iTigx2kuoHnxIX76+gA4X+3MVArRDo=
 res/screen-density-xhigh/TimeLine_InAct.png__DEL__remyR121vjZb0f7kruwvtSQbWpA6kXqnLW/FkJ2q1dw=
 res/screen-density-xhigh/tizen.png__DEL__ySfnUXjrAY1YhTxM1tErNPnx1ThzGp2Xr+woWTUkg2Y=
@@ -66,11 +72,14 @@ res/screen-density-xhigh/voice_feedback1.png__DEL__UWDdbhHqVUAx1JWKHSDhYE8bdYIVc
 res/screen-density-xhigh/voice_feedback2.png__DEL__PRH42JspZPs2rQm1aAMuee09u10bURn0jfd8ApooNAs=
 res/screen-density-xhigh/voice_pb1.png__DEL__7vj0/CfxfsjUX8+h/v3nR+ek3F0WYbRMABdXhe9p6M8=
 res/screen-density-xhigh/voice_pb2.png__DEL__0AmpvwAcv2abxPjMRR+Dw+r41VqpRT0UO6xVmQqF8+s=
+res/screen-density-xhigh/voice_trans1.png__DEL__yLrH5+iHbUGxkiKpLWQ/f8r8S0/lowm5q/jf5p7lWgY=
+res/screen-density-xhigh/voice_trans2.png__DEL__TiFfkO2S9Mn3I9L+XjBZqaABRHOwLpmcxNVjX+Q+NAM=
 res/screen-size-normal/IDL_FORM.xml__DEL__W14E/QSrOvOT+tYpCImiIMHbOYD+j+9rbAtYJ+gO7fw=
 res/screen-size-normal/IDL_FORM2.xml__DEL__MkOMcR+XpijsTwnZVeeApaxCH/tBY99o1vEqNG/RBmU=
 res/screen-size-normal/IDL_FORM3.xml__DEL__cA7+dBm4rTVwg5J4iTRI1ACIkeuFaYxUEPz1LJ/9pjc=
 res/screen-size-normal/IDL_FORM4.xml__DEL__ZI3ZV8kZbz23rMmLxA9WnWXzU+u6QcYsV16PdmcVvyo=
 res/screen-size-normal/IDL_FORM5.xml__DEL__Co+i9D+0dAAOVGvPMURfD+l+4sGn10OiXopBw9RM+ik=
+res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__0Rbe8P5AO13KUAII83T8P+5rWPsk9GnWocv4JNQrNI4=
 res/screen-size-normal/IDL_INTRO.xml__DEL__Q6u41RPDKsdCXSrnA/tqlbPGHNQeaeC8OMP9Lo/D57c=
 res/screen-size-normal/IDL_TUTORIAL1.xml__DEL__20ZHnzy5ki3xaF8AVSPGSaP8QU4AFMcjmCFEr07Y5d8=
 res/screen-size-normal/IDL_TUTORIAL2.xml__DEL__svmWpIhmuwVa6FFfMKlDsPQ+admTbgmL8YjNG0ZFtqY=
@@ -79,12 +88,3 @@ res/screen-size-normal/IDL_TUTORIAL4.xml__DEL__Yi7EH/kl06EpyCUo75RuxkQJYLmHy9B68
 res/screen-size-normal/workflow.xml__DEL__b9Vk0VbxN0oZRda3z6z15JLXPEgZO/rQrYdxfSTVs9w=
 res/themes/WinWinsTheme/WinWinsTheme.xml__DEL__2nYyTwNrYGi2P9gWxhsEhuot83vdyZCwdLUv353g59s=
 shared/res/screen-density-xhigh/mainmenu.png__DEL__1d0oEZHqPn+QzNzGIHwj9ODby6x9ggFs9uOsav6jPNs=
-res/screen-density-xhigh/smile.png__DEL__TLIsJ4jr/74grZ7gNbszKcm8bMi6FQxSH5R41ZCCgWk=
-res/screen-density-xhigh/call_chat.png__DEL__pJFTLOolPC/UeyMU+jMpGP+K4kMfeFETEkVqwmX05e4=
-res/screen-density-xhigh/camera_chat.png__DEL__C12LA7rukj5AzNltmueSXr7qaqREkjCsXF55agvefXI=
-res/screen-density-xhigh/pic_chat.png__DEL__iooT1po3KAcKvu4pstWY8/jgW242XvaIvbEaQSZS2EQ=
-res/screen-size-normal/IDL_FORM_CHAT.xml__DEL__0Rbe8P5AO13KUAII83T8P+5rWPsk9GnWocv4JNQrNI4=
-res/screen-density-xhigh/voice_trans1.png__DEL__yLrH5+iHbUGxkiKpLWQ/f8r8S0/lowm5q/jf5p7lWgY=
-res/screen-density-xhigh/voice_trans2.png__DEL__TiFfkO2S9Mn3I9L+XjBZqaABRHOwLpmcxNVjX+Q+NAM=
-bin/TizenProject.exe__DEL__ClrwNUS71naknfiSl0XlEEOa3HQc9p1aXN7hNm8Ti0c=
-author-signature.xml__DEL__jSZwxLTKnPeRMw2Kg+c8wn1VB4tOnWREqY3ea1QPPm4=
