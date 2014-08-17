@@ -649,7 +649,7 @@ void Chatting::AddDataToChattControl() {
 */
 
 
-		 __pChattControl->AddDataFeedback(timeSend, L"Hello",false);
+		 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
 		 timeSend.AddHours(nTimeGap);
 
 	 __pChattControl->RequestRedraw();

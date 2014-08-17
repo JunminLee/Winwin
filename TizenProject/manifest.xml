@@ -24,6 +24,12 @@
                 <Icon Section="MainMenu">mainmenu.png</Icon>
             </Icons>
             <LaunchConditions/>
+            <Notifications>
+                <Notification Name="Sounds">On</Notification>
+                <Notification Name="Contents">Off</Notification>
+                <Notification Name="Notification">On</Notification>
+                <Notification Name="Badge">On</Notification>
+            </Notifications>
             <Permissions>
                 <Permission Type="Signature"/>
             </Permissions>

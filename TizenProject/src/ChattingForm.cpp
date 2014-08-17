@@ -240,7 +240,7 @@ ChattingForm::OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneI
 int
 ChattingForm::GetItemCount(void)
 {
-    return 5;
+    return 1;
 }
 
 int

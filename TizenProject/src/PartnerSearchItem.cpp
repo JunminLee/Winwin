@@ -212,7 +212,7 @@ PartnerSearchItem::Initialize(String _name, String _profile, String _nation, Str
 	Introduce_Button = new Button();
 	Introduce_Button->Construct(Rectangle(50,206, 620, 54),L"");
 	Introduce_Button->SetActionId(ID_INTRODUCE_BUTTON);
-	Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce1.png"));
+	Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce2.png"));
 	Introduce_Button->AddActionEventListener(*this);
 	AddControl(Introduce_Button);
 
@@ -301,7 +301,7 @@ PartnerSearchItem::OnActionPerformed(const Tizen::Ui::Control& source, int actio
     		if(introduce_open==false)
     		{
 
-    			Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce2.png"));
+    			Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce1.png"));
     			Introduce_Button->Draw();
 
     			introduce_open = true;
@@ -362,7 +362,7 @@ PartnerSearchItem::OnActionPerformed(const Tizen::Ui::Control& source, int actio
     		} else if(introduce_open ==true) {
 
 
-    			Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce1.png"));
+    			Introduce_Button->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"introduce2.png"));
     			Introduce_Button->Draw();
 
     			panel_height-=240;
