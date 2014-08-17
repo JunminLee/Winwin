@@ -224,6 +224,7 @@ protected:
 
 	int feed_back_count[100];
 	int feed_back_cnt=0;
+	bool feedback_check;
 
 
 

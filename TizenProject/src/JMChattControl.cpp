@@ -675,17 +675,17 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 		pChattData->pEnrichedText = StringToEnrichedText(strText, colorText);
 
 		pChattData->rtElementBox.y = __stScreenInfo.nTotalElementHeight + __stScreenInfo.nElementGapY;
-		pChattData->rtElementBox.height = pChattData->pEnrichedText->GetHeight() + __stScreenInfo.nTextBoxInsideGap * 2 + 50;
+
 		pChattData->rtElementBox.width = 428;
 
 		if( bIsend )
 		{
-
+			pChattData->rtElementBox.height = pChattData->pEnrichedText->GetHeight() + __stScreenInfo.nTextBoxInsideGap * 2;
 			pChattData->rtElementBox.x = (pChattData->rtElementBox.width + __stScreenInfo.nTextBoxMarginI) * -1;
 		}
 
 		else {
-
+			pChattData->rtElementBox.height = pChattData->pEnrichedText->GetHeight() + __stScreenInfo.nTextBoxInsideGap * 2 + 50;
 			pChattData->rtElementBox.x = __stScreenInfo.nTextBoxMarginYou;
 
 			pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight;
@@ -702,7 +702,7 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 
 		__pArrayChattData->Add(*(Object*)pChattData);
 
-		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount();
+		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount()-1;
 
 
 		__stScreenInfo.nTotalElementHeight += (pChattData->rtElementBox.height + __stScreenInfo.nElementGapY);
@@ -1213,17 +1213,23 @@ void JMChattControl::DrawChattData(Canvas* pCanvas)
 		if( pChattData->nDataType != DATA_TYPE_DATE && !pChattData->bISend )
 			rtTextBox.y -= __stScreenInfo.nYouNameHeight;
 
+
 		for(int k=0; k<feed_back_cnt; k++)
 		{
 		if(feed_back_count[k] == i)
 		{
+			if(pChattData->bISend== false)
+			{
 			if(feed_back)
 			{
+
 				feed_back->SetBounds(rtTextBox.x + 135, rtTextBox.y - 203, 432, 110);
 				feed_back->RequestRedraw();
 
 			}
+			}
 		}
+
 		}
 		pCanvas->DrawBitmap(rtTextBox, *pChattData->pBitmapCapture);
 
