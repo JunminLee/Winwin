@@ -13,6 +13,8 @@
 #include "Idl_tutorial3.h"
 #include "Idl_tutorial4.h"
 #include "Chatting.h"
+#include "MyHome.h"
+#include "Note.h"
 
 using namespace Tizen::Ui::Scenes;
 
@@ -114,7 +116,27 @@ TizenProjectFormFactory::CreateFormN(const Tizen::Base::String& formId, const Ti
 		pForm->Initialize();
 		pSceneManager->AddSceneEventListener(sceneId, *pForm);
 		pNewForm = pForm;
+	} else if (formId == IDL_FORM7)
+	{
+		Editing* pForm = new Editing();
+		pForm->Initialize();
+		pSceneManager->AddSceneEventListener(sceneId, *pForm);
+		pNewForm = pForm;
 	}
+	else if (formId == IDL_FORM8)
+		{
+			MyHome* pForm = new MyHome();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
+		}
+	else if (formId == IDL_FORM9)
+		{
+			Note* pForm = new Note();
+			pForm->Initialize();
+			pSceneManager->AddSceneEventListener(sceneId, *pForm);
+			pNewForm = pForm;
+		}
 
 	return pNewForm;
 }
