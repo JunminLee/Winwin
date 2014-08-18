@@ -260,9 +260,9 @@ ChattingForm::CreateItem(int itemIndex, int itemWidth)
     ChattingListItem* ci;
     int item_height=300;
 
-    name = L"Iron Man";
+    name = L"IRON MAN";
     time = L"PM 1:30";
-    content = L"Hello, You can call me 'Iron Man' :)";
+    content = L"Hello You can call me Hero!!!";
     profile = L"s-face1.png";
     nation = L"nationalflag.png";
 

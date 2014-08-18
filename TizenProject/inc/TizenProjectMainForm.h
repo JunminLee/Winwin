@@ -14,6 +14,9 @@
 #include <FNet.h>
 #include <FWebJson.h>
 #include <CommentItem.h>
+
+#include "TimeLineItemObject.h"
+
 using namespace Tizen::Base;
 using namespace Tizen::App;
 using namespace Tizen::Ui;
@@ -55,9 +58,9 @@ private:
 	virtual void OnActionPerformed(const Tizen::Ui::Control& source, int actionId);
 	virtual void OnFormBackRequested(Tizen::Ui::Controls::Form& source);
 	virtual void OnSceneActivatedN(const Tizen::Ui::Scenes::SceneId& previousSceneId,
-								   const Tizen::Ui::Scenes::SceneId& currentSceneId, Tizen::Base::Collection::IList* pArgs);
+								   const Tizen::Ui::Scenes::SceneId& currentSceneId, Tizen::Base::Collection::IList* pArgs){};
 	virtual void OnSceneDeactivated(const Tizen::Ui::Scenes::SceneId& currentSceneId,
-									const Tizen::Ui::Scenes::SceneId& nextSceneId);
+									const Tizen::Ui::Scenes::SceneId& nextSceneId){};
 
 
 public:
@@ -75,10 +78,10 @@ public:
     virtual void 	OnFocusGained (const Tizen::Ui::Control &source);
     virtual void 	OnFocusLost (const Tizen::Ui::Control &source);
 protected:
-	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
-	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
-	virtual void OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
-	virtual void OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+	virtual void OnTouchDoublePressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo){};
+	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo){};
+	virtual void OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo){};
+	virtual void OnTouchLongPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo){};
 	virtual void OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
@@ -116,7 +119,12 @@ private:
 	Button*			button_text_upload;
 
 	ArrayList		arr_comment_item;
+
+	int				item_cnt;
+	ArrayListT <TimeLineItemObject> arr_timeline_object;
 	Tizen::Net::Http::HttpSession* __pHttpSession;
+
+	Timer http_timer;
 
 };
 

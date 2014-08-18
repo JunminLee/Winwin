@@ -590,7 +590,7 @@ void Chatting::CreateChattControl() {
 
 
 	__pChattControl = new JMChattControl();
-	__pChattControl->Initialize(rtCtrl, L"IronMan", iconImage, L"TESTMAN",
+	__pChattControl->Initialize(rtCtrl, L"IRON MAN", iconImage, L"JongIn Park",
 			iconImage);
 	AddControl(*__pChattControl);
 	__pChattControl->SetBackgroundColor(Color(240,240,240));
@@ -649,7 +649,7 @@ void Chatting::AddDataToChattControl() {
 */
 
 
-		 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",true);
+		 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
 		 timeSend.AddHours(nTimeGap);
 
 	 __pChattControl->RequestRedraw();
