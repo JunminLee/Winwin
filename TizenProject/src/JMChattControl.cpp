@@ -702,7 +702,7 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 
 		__pArrayChattData->Add(*(Object*)pChattData);
 
-		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount()-1;
+		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount();
 
 
 		__stScreenInfo.nTotalElementHeight += (pChattData->rtElementBox.height + __stScreenInfo.nElementGapY);

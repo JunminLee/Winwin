@@ -424,11 +424,11 @@
 </Reference>
 <Reference URI="bin/TizenProject.exe">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>VkWfw9BrBc9nwxK36phzuBK3BcEse3I4f3dF9cBKeyg=</DigestValue>
+<DigestValue>oE5e7K6jVLEkauRYmyK/RKCLd/5E3m4mPwT8Vupr9XI=</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>OaK3/FNNN2xDv5GhGbXwGnlW2XVVNOuWbHk1jQJzjtY=</DigestValue>
+<DigestValue>XMJrsXd9nt1OEiWph4YyWRhkw2jj7QDgjKEdhvde7LU=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -439,9 +439,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-eB7TLl9GpJ4SP+JwrRj5aXbWI8q8MtXxEe2CLV2Zr6O/1VAMzlbrbXD4MXfr8dl0VMEuS/tULAhw
-ERkbXPgDJ21bIrb5JYhnScgK4xUBw5Ah+yco42nWPJ3SD/3gX7np4LHsVVSKXRamCD23R7VKYIoy
-Oumi2ShVyp28x1cfnrw=
+Sx/4Y6T5G1lbCLuP36dS9Eag7CeTfD0edxljljecx3Npi7GNvi+N2xotuoFfL/id3aoZFUfu7icx
+wytb53+vCByXDouV+7xxwVau41RaxHpjX1p8/6iW1PUXvs1hooiJMZLo0fhPcWLoAF3fFjV8qzuD
+8d3cN46rTfb9EI48QZw=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
