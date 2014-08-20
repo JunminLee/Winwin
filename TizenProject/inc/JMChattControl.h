@@ -98,6 +98,7 @@ struct stCHATT_DATA {
 	Rectangle rtElementBox;
 	Bitmap* pBitmapCapture;
 	bool isImage;
+	bool isfeedback=false;
 };
 
 class JMChattControl:
@@ -225,7 +226,7 @@ protected:
 	int feed_back_count[100];
 	int feed_back_cnt=0;
 	bool feedback_check;
-
+	int time_plus=-1;
 
 
 

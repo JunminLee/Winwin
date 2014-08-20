@@ -646,7 +646,7 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 	stCHATT_DATA* pChattData = new stCHATT_DATA;
 	Color colorText;
 	String strText;
-
+	pChattData->isfeedback = true;
 	strText.Append(L"\"");
 	strText.Append(contents);
 	strText.Append(L"\"");
@@ -691,18 +691,21 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 			pChattData->rtElementBox.y += __stScreenInfo.nYouNameHeight;
 
 			__stScreenInfo.nTotalElementHeight += __stScreenInfo.nYouNameHeight + 100;
+			feed_back = new Button();
+			feed_back->Construct(Rectangle(pChattData->rtElementBox.x-1, pChattData->rtElementBox.y+ pChattData->rtElementBox.height - 60, 432,  110));
+			feed_back->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
+			feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
+			AddControl(feed_back);
+
 		}
 
-		feed_back = new Button();
-		feed_back->Construct(Rectangle(pChattData->rtElementBox.x-1, pChattData->rtElementBox.y+ pChattData->rtElementBox.height - 60, 432,  110));
-		feed_back->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
-		feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback1.png"));
-		AddControl(feed_back);
+		AppLog("2222222%d", __pArrayChattData->GetCount());
 
+		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount();
 
 		__pArrayChattData->Add(*(Object*)pChattData);
 
-		feed_back_count[feed_back_cnt++] = __pArrayChattData->GetCount();
+
 
 
 		__stScreenInfo.nTotalElementHeight += (pChattData->rtElementBox.height + __stScreenInfo.nElementGapY);
@@ -717,10 +720,12 @@ void JMChattControl::AddDataFeedback(DateTime timeSend, String contents, bool bI
 
 void JMChattControl::ReDrawFeedback()
 {
+	/*
 			AppResource* pAppResource = Application::GetInstance()->GetAppResource();
 			feed_back->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback2.png"));
 			feed_back->SetPressedBackgroundBitmap(*pAppResource->GetBitmapN(L"voice_feedback2.png"));
 			feed_back->Draw();
+			*/
 }
 void JMChattControl::OnActionPerformed(const Tizen::Ui::Control& source, int actionId)
 {
@@ -827,7 +832,7 @@ bool JMChattControl::IsChangedDate(DateTime timeSend)
 
 void JMChattControl::AddDataDate(DateTime timeSend)
 {
-	AppLog("33333AddDataDate");
+	time_plus++;
 	stCHATT_DATA* pChattData = new stCHATT_DATA;
 
 	pChattData->nDataType = DATA_TYPE_DATE;
@@ -1216,21 +1221,23 @@ void JMChattControl::DrawChattData(Canvas* pCanvas)
 
 		for(int k=0; k<feed_back_cnt; k++)
 		{
-		if(feed_back_count[k] == i)
+		if(feed_back_count[k]+1 == i)
 		{
-			if(pChattData->bISend== false)
-			{
-			if(feed_back)
-			{
 
+
+			if(pChattData->isfeedback==true && pChattData->bISend == false)
+			{
+				AppLog("!!!!!!!!!!!!%d // %d ", feed_back_count[k],i);
 				feed_back->SetBounds(rtTextBox.x + 135, rtTextBox.y - 203, 432, 110);
 				feed_back->RequestRedraw();
 
 			}
-			}
+
+
 		}
 
 		}
+
 		pCanvas->DrawBitmap(rtTextBox, *pChattData->pBitmapCapture);
 
 
