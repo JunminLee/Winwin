@@ -178,9 +178,12 @@ result Chatting::OnInitializing(void) {
 
 	popup->AddControl(__Record);
 	popup->AddControl(trans_voice);
+	if(__pChattControl->feed_back)
+	{
 
 	__pChattControl->feed_back->SetActionId(IDC_BUTTON_FEEDBACKB);
 	__pChattControl->feed_back->AddActionEventListener(*this);
+	}
 	/*
 
 	 * popup->SetShowState(false);
@@ -647,7 +650,13 @@ void Chatting::AddDataToChattControl() {
 	 }
 
 */
+	 strText = L"음성 피드백이나 해라";
+		 __pChattControl->AddDataText(timeSend, strText, false);
+		 //timeSend.AddMinutes(nTimeGap);
+		 timeSend.AddHours(nTimeGap);
 
+	 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
+		 timeSend.AddHours(nTimeGap);
 
 		 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
 		 timeSend.AddHours(nTimeGap);
