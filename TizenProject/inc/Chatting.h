@@ -163,7 +163,8 @@ protected:
 	static const int IDC_BUTTON_FEEDBACKX = 204;
 	static const int IDC_BUTTON_TRANSPORT = 207;
 	static const int IDC_BUTTON_VOICE = 206;
-
+	static const int IDC_BUTTON_JUSTTRANS = 209;
+	Tizen::Ui::Controls::Button* __pButtontrans;
 	Tizen::Ui::Controls::Button* __pButtonSend;
 	Tizen::Ui::Controls::Button* __pButtonPlus;
 	Tizen::Ui::Controls::EditField* __pEditField;
@@ -174,11 +175,12 @@ protected:
 	bool ischeck_plus = false;
 	bool ischeck_key = false;
 	bool istransport = false;
+	bool ispanel2up = false;
 	JMChattControl* __pChattControl;
 	Button* __RecordGo;
 	Popup* popup;
 	Button* __Record;
-
+	Label* __pLabel;
 	Button* pic;
 	Button* camera;
 	Button* voice;

@@ -222,7 +222,7 @@ protected:
 	bool isfeedback_complete = false;
 	Canvas* __pCanvasMain;
 	Canvas* __pCanvasBack;
-
+	Point feedback_p;
 	int feed_back_count[100];
 	int feed_back_cnt=0;
 	bool feedback_check;

@@ -8,6 +8,7 @@ extern const wchar_t* IDC_BUTTON_PLUS;
 extern const wchar_t* IDC_BUTTON_RECORD;
 extern const wchar_t* IDC_BUTTON_RECORDGO;
 extern const wchar_t* IDC_BUTTON_SEND;
+extern const wchar_t* IDC_BUTTON_TRANS;
 extern const wchar_t* IDC_BUTTON_VO;
 extern const wchar_t* IDC_EDIT_SEND;
 extern const wchar_t* IDC_GROUPEDLISTVIEW;

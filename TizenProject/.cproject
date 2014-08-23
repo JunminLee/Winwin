@@ -443,5 +443,7 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="com.samsung.tizen.nativeapp.projectInfo" version="1.0.0"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/TizenProject"/>
+	</storageModule>
 </cproject>

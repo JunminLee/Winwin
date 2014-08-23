@@ -50,6 +50,7 @@ result Chatting::OnInitializing(void) {
 
 	__pPanel = static_cast<Panel *>(GetControl(L"IDC_PANEL_CHAT", false));
 
+
 	__pEditField = static_cast<EditField *>(GetControl(L"IDC_EDIT_SEND", true));
 
 	__pEditField->AddTextEventListener(*this);
@@ -68,6 +69,11 @@ result Chatting::OnInitializing(void) {
 		__pButtonSend->SetActionId(IDC_BUTTON_SEND);
 		__pButtonSend->AddActionEventListener(*this);
 	}
+	__pButtontrans = static_cast<Button *>(GetControl(L"IDC_BUTTON_TRANS", true));
+		if (__pButtontrans != null) {
+			__pButtontrans->SetActionId(IDC_BUTTON_JUSTTRANS);
+			__pButtontrans->AddActionEventListener(*this);
+			}
 	__pButtonPlus = static_cast<Button *>(GetControl(L"IDC_BUTTON_PLUS", true));
 	if (__pButtonPlus != null) {
 		__pButtonPlus->SetActionId(IDC_BUTTON_PLUS);
@@ -93,7 +99,12 @@ result Chatting::OnInitializing(void) {
 					voice->AddActionEventListener(*this);
 				}
 
-
+	            __pButtontrans->SetNormalBackgroundBitmap(
+	        			*pAppResource->GetBitmapN(L"translate.png"));
+	            __pButtontrans->SetHighlightedBackgroundBitmap(
+	        			*pAppResource->GetBitmapN(L"translate.png"));
+	            __pButtontrans->SetPressedBackgroundBitmap(
+	        			*pAppResource->GetBitmapN(L"translate.png"));
 
 	__RecordGo->SetNormalBackgroundBitmap(
 			*pAppResource->GetBitmapN(L"voice_chat.png"));
@@ -355,7 +366,45 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 
 	switch (actionId) {
 
+	case IDC_BUTTON_JUSTTRANS:
+		if(ispanel2up == false)
+		{
+			__pChattControl->SetPosition(0, -444);
+						//__pChattControl->SetPosition(0, -813);
+			__pChattControl->Draw();
+			__pPanel->SetPosition(where.x, where.y - 444);
+			__pButtonPlus->SetNormalBackgroundBitmap(*pAppResource->GetBitmapN(L"chatting_x.png"));
+			__pButtonPlus->Draw();
+			__pPanel->Draw();
+			ischeck_plus = true;
+			__pLabel = new Label();
 
+			__pLabel->Construct(Rectangle(0, 100, 720, 444),L"");
+			__pLabel->SetBackgroundBitmap(*pAppResource->GetBitmapN(L"jadong.png"));
+			__pPanel->AddControl(__pLabel);
+
+
+			ispanel2up = true;
+		} else {
+
+			__pChattControl->SetPosition(where2.x, where2.y);
+			__pChattControl->Draw();
+			__pPanel->SetPosition(where.x, where.y);
+			__pButtonPlus->SetNormalBackgroundBitmap(
+			*pAppResource->GetBitmapN(L"chatting_plus.png"));
+			__pButtonPlus->Draw();
+			__pPanel->Draw();
+
+			__pLabel->Destroy();
+			ispanel2up = false;
+			if(ischeck_key == true)
+			{
+				__pEditField->SetKeypadEnabled(false);
+				__pEditField->SetKeypadEnabled(true);
+				ischeck_key = false;
+			}
+		}
+		break;
 	case IDC_BUTTON_SEND:
 		AppLog("Send Button is clicked! \n");
 		RequestHttpPost();
@@ -389,6 +438,14 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 
 
 		} else {
+
+			if(ispanel2up == true)
+			{
+				__pLabel->Destroy();
+			}
+			ispanel2up = false;
+
+
 			if(ischeck_key == false)
 			{
 			__pChattControl->SetPosition(where2.x, where2.y);
@@ -452,6 +509,7 @@ void Chatting::OnActionPerformed(const Tizen::Ui::Control& source,
 
 			__audioRecorder.CreateAudioFile(__filepath, true);
 			__audioRecorder.SetMaxRecordingTime(60000); //60 sec
+
 			__audioRecorder.SetQuality(RECORDING_QUALITY_HIGH);
 			__audioRecorder.SetFormat(CODEC_MP3, MEDIA_CONTAINER_MP3);
 
@@ -561,18 +619,21 @@ void Chatting::OnOverlayControlCreated(const Tizen::Ui::Control& source) {
 void Chatting::OnOverlayControlOpened(const Tizen::Ui::Control& source) {
 	AppLog("OverlayControl Opend\n");
 	ischeck_key = true;
+
 	__pChattControl->SetPosition(0, -444);
 	__pChattControl->Draw();
 	__pPanel->SetPosition(where.x, where.y - 444);
 	__pPanel->Draw();
 	__pEditFieldText->Clear();
 	__pEditFieldText->Append(__pEditField->GetText());
+
 }
 
 void Chatting::OnOverlayControlClosed(const Tizen::Ui::Control& source) {
 	AppLog("OverlayControl Closed\n");
 
 	ischeck_key = false;
+	ispanel2up = false;
 	__pChattControl->SetPosition(0, 0);
 	__pChattControl->Draw();
 	__pPanel->SetPosition(where.x, where.y);
@@ -655,12 +716,11 @@ void Chatting::AddDataToChattControl() {
 		 //timeSend.AddMinutes(nTimeGap);
 		 timeSend.AddHours(nTimeGap);
 
-	 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
-		 timeSend.AddHours(nTimeGap);
 
+/*
 		 __pChattControl->AddDataFeedback(timeSend, L"Hello Friday night we are the one we are the children",false);
 		 timeSend.AddHours(nTimeGap);
-
+*/
 	 __pChattControl->RequestRedraw();
 
 }
